@@ -13,8 +13,8 @@
     .login-logo{
         margin-top: 20px;
         margin-bottom: 10px;
-        width:100px;
-        height:100px;
+        width:50px;
+        height:50px;
         background-color: aqua;
     }
     .login-page-line1{
@@ -34,15 +34,19 @@
     }
     
     .login-form{
-        width: 200px;
+        width: 250px;
     }
-    .form-text{
-        width: 100%;
-        text-align: left;
-    }    
+
     .input-text{
         width: 100%;
-        text-align: left;
+        height: 24px;
+        padding: 4px;
+        font-size: 1.0em;
+        background-color: rgba(0,0,0,0);
+        border-top: 0px;
+        border-bottom: 2px solid #9d9d9d;
+        border-left: 0px;
+        border-right: 0px;
     }
     
     .button {
@@ -56,7 +60,7 @@
     text-align: center;
 	border-radius: 4px;
     border: 0px;
-    color: rgba(30, 22, 54, 0.6);
+    color: #9d9d9d;
     background-color: rgba(0,0,0,0);
     box-shadow: #9D9D9D 0 0px 0px 2px inset;
     }
@@ -77,17 +81,15 @@
         <h2 class="login-header">로그인</h2>
         <div class="login-page-line2"></div>
     
-        <form class="login-form" name="loginform" method="post" action="#로그인">
-            <div class="form-text">아이디</div>
-            <input type="email" class="input-text" name="id" placeholder="아이디"/><br>
-            <div class="form-text">비밀번호</div>
+        <form class="login-form" name="loginform" method="post" action="/DailyHappy/WebApp/jsp/login.jsp">
+
+            <input type="email" class="input-text" name="id" placeholder="E-mail"/><br>
             <input type="password" class="input-text" name="pw" placeholder="비밀번호"/><br>
             <input type="submit" class="button" value="로그인"/>
+            
         </form>
         아직 계정이 없으신가요?
         <a href="#회원가입" class="button">회원가입</a>
-
-
    </div>
 
 </body>
