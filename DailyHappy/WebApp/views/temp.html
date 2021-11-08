@@ -1,0 +1,97 @@
+<meta name = "google-signin-client_id" content = " 복사한 클라이언트 ID ">
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script type="text/javascript">
+const CLIENT_ID = "f932d197237f18f68889018647ba71c4";
+const REDIRECT_URI =  "http://localhost:8080/redirecturl/kakaologin";
+
+const KAKAO_AUTH_URL = "https://kauth.kakao.com/oauth/authorize?client_id="+CLIENT_ID+"&redirect_uri="+REDIRECT_URI+"&response_type=code";
+    
+function kakaoLogin(){
+    location.href=KAKAO_AUTH_URL;
+}    
+
+</script>
+    
+
+            /*구글 로그인 css*/
+/*    *, *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        .g-sign-in-button {
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            background-color: #4285f4;
+            color: #fff;
+            border-radius: 1.5px;
+            transition: background-color .218s, border-color .218s, box-shadow .218s;
+        }
+
+        .g-sign-in-button:hover {
+            cursor: pointer;
+        }
+
+        .g-sign-in-button:active {
+            background-color: #3367D6;
+            transition: background-color 0.2s;
+        }
+
+        .g-sign-in-button .content-wrapper {
+            height: 100%;
+            width: 100%;
+            border: 1px solid transparent;
+        }
+
+        .g-sign-in-button img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .g-sign-in-button .logo-wrapper {
+            padding: 15px;
+            background: #fff;
+            width: 48px;
+            height: 100%;
+            border-radius: 1px;
+            display: inline-block;
+        }
+
+        .g-sign-in-button .text-container {
+            font-family: 'Roboto','arial',sans-serif;
+            font-weight: 500;
+            letter-spacing: .21px;
+            font-size: 13px;
+            line-height: 48px;
+            vertical-align: top;
+            border: none;
+            display: inline-block;
+            text-align: center;
+            width: 140px;
+        }*/
+      
+
+      <div class="g-signin2" data-width="200" data-onsuccess="onSignIn"></div>
+       <div class="g-sign-in-button">
+            <div class="content-wrapper">
+                <div class="logo-wrapper">
+                    <img src="https://developers.google.com/identity/images/g-logo.png">
+                </div>
+                <span class="text-container">
+                  <span>구글 계정으로 로그인</span>
+                </span>
+            </div>
+        </div>
+
+        <div id="custom-login-btn" onclick="kakaoLogin()">
+            <img
+            src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+            width="200"
+            alt="카카오 계정으로 로그인"
+            
+            />
+        </div>
