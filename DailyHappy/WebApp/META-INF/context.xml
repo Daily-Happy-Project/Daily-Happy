@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<Resource name="jdbc/mysns"
+auth="Container"
+type="javax.sql.DataSource" 
+driverClassName="com.mysql.jdbc.Driver" 
+url="jdbc:mysql://localhost:3306/mysns?serverTimezone=UTC" 
+username="root"
+password="1111" 
+maxTotal="16" 
+maxIdle="4" 
+maxWaitMillis="-1" />
+</Context>
