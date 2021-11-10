@@ -25,17 +25,19 @@
                 <br>
 
                 <input id="signup" type="submit" class="disabled-button" value="가입하기" disabled="true"/>
-<!--이메일 중복 확인, 비밀번호 일치 확인(OK), x버튼, 다 입력해야 가입하기 활성화, 글자수 제한-->
+<!--이메일 중복 확인, 비밀번호 일치 확인(OK), x버튼, 다 입력해야 가입하기 활성화(OK), 글자수 제한-->
             </form>
         </div>
         
         <script type="text/javascript">
             var pwok = false;
-            $('.pwcheck').focusout(function PwCheck(){   
+            var nullok = false;
+            
+            function PwCheck(){   
                 //비밀번호 일치 확인 함수
                 var pw1 = document.getElementById('pw').value;
                 var pw2 = document.getElementById('pwcorrect').value;
-                if(pw1.length == 0 && pw2.length == 0){
+                if(!pw1.length && !pw2.length){
                    document.getElementById('alert-correct').style.display = 'none';
                    document.getElementById('alert-incorrect').style.display = 'none';
                     pwok=false;
@@ -52,11 +54,31 @@
                     pwok = true;
                     
                 }                
-            })
+            }
+            
+            function ChkNull(){
+                //form 빈값 체크
+                var a = document.signupform.username.value;
+                var b = document.signupform.id.value;
+                var c = document.signupform.pw.value;
+                var d = document.signupform.pwcorrect.value;
+                
+                if(a!="" && b!="" && c!="" && d!=""){
+                    nullok = true;
+                }
+                else{
+                    nullok = false;
+                }
+
+            }
             
             $('.input-text').focusout(function(){
-                //form 모두 입력, 비밀번호 일치(OK), 이메일 중복 확인 시 버튼 활성화
-                if(pwok == true){
+                //form 모두 입력(OK), 비밀번호 일치(OK), 이메일 중복 확인 시 버튼 활성화
+                PwCheck();
+                ChkNull();
+                
+                
+                if(pwok == true && nullok == true){
                     $('#signup').addClass("button");
                     $('#signup').removeClass("disabled-button");
                     $('#signup').disabled = 'false';
@@ -68,6 +90,7 @@
                 }
             })
             
+
 
         </script>
     </body>
