@@ -1,93 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 
-<title>로그인</title>    
-<style type="text/css">
-    body{
-        background-color: #FEFBF3;
-        width: 100%;
-    }
-    .login-logo{
-        margin-top: 20px;
-        margin-bottom: 10px;
-        width:100px;
-        height:100px;
-        background-color: aqua;
-    }
-    .login-page-line1{
-        
-        width: 1px;
-        height: 30px;
-        background-color: #9D9D9D;
-    }    
-    .login-page-line2{
-        width: 1px;
-        height: 50px;
-        background-color: #9D9D9D;
-    }
-    .login-header{
-        margin : 0;
-        color: #9d9d9d;
-    }
-    
-    .login-form{
-        width: 200px;
-    }
-    .form-text{
-        width: 100%;
-        text-align: left;
-    }    
-    .input-text{
-        width: 100%;
-        text-align: left;
-    }
-    
-    .button {
-    font-size: 1.0em;
-	display: block;
-	margin: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-	width: 150px;
-	text-decoration: none;
-    text-align: center;
-	border-radius: 4px;
-    border: 0px;
-    color: rgba(30, 22, 54, 0.6);
-    background-color: rgba(0,0,0,0);
-    box-shadow: #9D9D9D 0 0px 0px 2px inset;
-    }
-
-    .button:hover {
-        color: rgba(255, 255, 255, 0.85);
-        box-shadow: #9D9D9D 0 0px 0px 40px inset;
-        cursor: pointer;
-    }
-</style>
+<title>로그인</title>  
 
 
+<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/allStyle.css"/>
+<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/loginStyle.css"/>
+<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/formStyle.css"/>
 </head>
+
 <body>
-   <div class="login-container" align="center">
+   <div class="container" align="center">
         <div class="login-logo">로고<br></div>
-        <div class="login-page-line1"></div>
-        <h2 class="login-header">로그인</h2>
-        <div class="login-page-line2"></div>
+        <!--<div class="login-page-line1"></div>-->
+        <h2 class="form-header">로그인</h2>
+        <!--<div class="login-page-line2"></div>-->
     
-        <form class="login-form" name="loginform" method="post" action="#로그인">
-            <div class="form-text">아이디</div>
-            <input type="email" class="input-text" name="id" placeholder="아이디"/><br>
-            <div class="form-text">비밀번호</div>
+        <form class="form-style" name="loginform" method="post" action="/DailyHappy/WebApp/jsp/login.jsp">
+
+            <input type="email" class="input-text" name="id" placeholder="E-mail"/><br>
             <input type="password" class="input-text" name="pw" placeholder="비밀번호"/><br>
             <input type="submit" class="button" value="로그인"/>
+            
         </form>
         아직 계정이 없으신가요?
         <a href="#회원가입" class="button">회원가입</a>
-
-
+        <!--계정 찾기 기능 추가?-->
    </div>
 
 </body>
