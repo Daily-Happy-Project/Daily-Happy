@@ -16,25 +16,44 @@
            
             <form class="form-style" name="signupform" method="post" action="#">
 
-                <input type="text" class="input-text" name="username" placeholder="별명"/><br>
+                <input type="text" class="input-text" name="username" placeholder="별명 (7자 이내)" maxlength="7" minlength="1"/><br>
                 <input type="email" class="input-text" name="id" placeholder="이메일 주소를 입력해 주세요."/><br>
-                <input type="password" class="input-text pwcheck" id="pw" name="pw" placeholder="비밀번호"/><br>
+                <input type="password" class="input-text pwcheck" id="pw" name="pw" placeholder="비밀번호 (4~15자 이내의 영문,숫자 조합)" maxlength="15" minlength="4" onkeyup="pwCharCheck(this)" onkeydown="pwCharCheck(this)"/><br>
                 <input type="password" class="input-text pwcheck" id="pwcorrect" name="pwcorrect" placeholder="비밀번호 확인"/><br>
                 <span id="alert-correct" style="display: none;">비밀번호가 일치합니다.</span>
                 <span id="alert-incorrect" style="display: none;">비밀번호가 일치하지 않습니다. 다시 확인해주세요.</span>
+                <span id="pw-char" style="display: none;">비밀번호는 특수문자를 제외한 15자 이내의 영문, 숫자만 가능합니다.</span>
                 <br>
 
-                <input id="signup" type="submit" class="disabled-button" value="가입하기" disabled="true"/>
-<!--이메일 중복 확인, 비밀번호 일치 확인(OK), x버튼, 다 입력해야 가입하기 활성화(OK), 글자수 제한-->
+                <input id="signup" type="submit" class="disabled-button" value="가입하기" disabled/>
+<!--이메일 중복 확인, 비밀번호 일치 확인(OK), x버튼, 다 입력해야 가입하기 활성화(OK), 글자수 제한(OK)-->
             </form>
         </div>
         
         <script type="text/javascript">
             var pwok = false;
+            var pwcharok = false;
             var nullok = false;
             
+            //패스워드 입력제한
+            function pwCharCheck(obj){
+                
+                var regExp = /[ \{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
+                var regExp2 = /[ㄱ-ㅎ가-힣]/gi;
+                var regExp3 = /[\s]/gi;
+                
+                if(regExp.test(obj.value)||regExp2.test(obj.value)||regExp3.test(obj.value)){
+                    document.getElementById('pw-char').style.display = 'inline-block';
+                    pwcharok = false;
+                }
+                else{
+                    document.getElementById('pw-char').style.display = 'none';
+                    pwcharok = true;
+                }
+            }
+            //비밀번호 일치 확인 함수
             function PwCheck(){   
-                //비밀번호 일치 확인 함수
+                
                 var pw1 = document.getElementById('pw').value;
                 var pw2 = document.getElementById('pwcorrect').value;
                 if(!pw1.length && !pw2.length){
@@ -55,9 +74,9 @@
                     
                 }                
             }
-            
+            //form 빈값 체크
             function ChkNull(){
-                //form 빈값 체크
+                
                 var a = document.signupform.username.value;
                 var b = document.signupform.id.value;
                 var c = document.signupform.pw.value;
@@ -72,26 +91,23 @@
 
             }
             
+            //form 모두 입력(OK), 비밀번호 일치(OK), 이메일 중복 확인 시 버튼 활성화
             $('.input-text').focusout(function(){
-                //form 모두 입력(OK), 비밀번호 일치(OK), 이메일 중복 확인 시 버튼 활성화
+                
                 PwCheck();
                 ChkNull();
                 
-                
-                if(pwok == true && nullok == true){
+                if(pwok == true && pwcharok == true && nullok == true){
                     $('#signup').addClass("button");
                     $('#signup').removeClass("disabled-button");
-                    $('#signup').disabled = 'false';
+                    $('#signup').removeAttr("disabled");
                 }
                 else{
                     $('#signup').removeClass("button");
                     $('#signup').addClass("disabled-button");
-                    $('#signup').disabled = 'true';
+                    $('#signup').attr("disabled", "true");
                 }
             })
-            
-
-
         </script>
     </body>
 </html>
