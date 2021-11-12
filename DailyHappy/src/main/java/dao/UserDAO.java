@@ -1,10 +1,13 @@
 package dao;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.naming.NamingException;
 
+import dto.UserDTO;
 import util.ConnectionPool;
+import util.UserObj;
 
 public class UserDAO {
 	public boolean insert(String uid, String upass, String uname) throws NamingException, SQLException {
@@ -116,5 +119,33 @@ public class UserDAO {
     		    	conn.close();
     	}
     }
+    
+    //user 목록 
+    public ArrayList<UserObj> getList() throws NamingException, SQLException {
+    	Connection conn=ConnectionPool.get();
+    	PreparedStatement stmt=null;
+    	ResultSet rs=null;
+    	try {
+    		String sql="SELECT email, name, coin, memberType FROM user ORDER BY ts DESC";
+    		stmt=conn.prepareStatement(sql);
+    		rs=stmt.executeQuery();
+    		
+    		ArrayList<UserObj> users=new ArrayList<UserObj>();
+    		while(rs.next()) {
+    			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getString("memberType")));
+    		}
+    		
+    		return users;
+    	} finally {
+    		if(rs!=null) 
+		    	rs.close();
+		    if(stmt!=null) 
+		    	stmt.close();
+		    if(conn!=null) 
+		    	conn.close();
+    	}
+    }
+    
+    
     
 }
