@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-<Resource name="jdbc/mysns"
+<Resource name="jdbc/daily_happy"
 auth="Container"
 type="javax.sql.DataSource" 
 driverClassName="com.mysql.jdbc.Driver" 
-url="jdbc:mysql://localhost:3306/mysns?serverTimezone=UTC" 
+url="jdbc:mysql://localhost:3306/daily_happy?serverTimezone=UTC" 
 username="root"
-password="1111" 
+password="root" 
 maxTotal="16" 
 maxIdle="4" 
 maxWaitMillis="-1" />
