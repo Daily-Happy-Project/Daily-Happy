@@ -1,16 +1,16 @@
 package dto;
 
 public class StoreDTO {
-	private String itemCode;
+	private int itemCode;
 	private String itemName;
 	private int price;
 	private String info;
 	private String img1;
 	
-	public String getItemCode() {
+	public int getItemCode() {
 		return itemCode;
 	}
-	public void setItemCode(String itemCode) {
+	public void setItemCode(int itemCode) {
 		this.itemCode = itemCode;
 	}
 	public String getItemName() {
