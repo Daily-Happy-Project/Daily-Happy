@@ -122,7 +122,7 @@ public class UserDAO {
     	PreparedStatement stmt=null;
     	ResultSet rs=null;
     	try {
-    		String sql="SELECT email, name, coin, memberType FROM user ORDER BY ts DESC";
+    		String sql="SELECT email, name, coin, memberType FROM user ORDER BY name DESC";
     		stmt=conn.prepareStatement(sql);
     		rs=stmt.executeQuery();
     		
@@ -143,7 +143,7 @@ public class UserDAO {
     }
     
     
-    //새 유리병 
+    //�깉 �쑀由щ퀝 
     
     
     

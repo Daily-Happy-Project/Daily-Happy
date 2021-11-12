@@ -3,7 +3,7 @@ DEFAULT CHARACTER SET utf-8 COLLATE utf-8_general_ci;
 
 USE daily_happy;
 
--- »ç¿ëÀÚ Á¤º¸ Å×ÀÌºí --
+-- ì‚¬ìš©ì ì •ë³´ í…Œì´ë¸” --
 CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
@@ -11,38 +11,39 @@ CREATE TABLE IF NOT EXISTS user(
     coin int,                               	-- user owned coin  --
     memberType char,                         	-- member type --
     userThemeCode int  							-- apply theme --
+    
 );
 
 
--- ±Û ¸ñ·Ï Å×ÀÌºí --
+-- ê¸€ ëª©ë¡ í…Œì´ë¸” --
 CREATE TABLE IF NOT EXISTS writing(
     email VARCHAR(128) PRIMARY KEY,            -- writer email --
     name VARCHAR(32),                          -- writer name --
     content VARCHAR(8192),                     -- content --
-    jarName VARCHAR(32),                       -- ¼Ò¼ÓµÈ À¯¸®º´ --
+    jarName VARCHAR(32),                       -- ì†Œì†ëœ ìœ ë¦¬ë³‘ --
     paperName VARCHAR(32),                     -- paper type --
     no INT UNSIGNED AUTO_INCREMENT,            -- writing no --
     ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP     -- writing time--
 );
 
 
--- º¸À¯ Àú±İÅë --
+-- ë³´ìœ  ì €ê¸ˆí†µ --
 CREATE TABLE IF NOT EXISTS savedJar(
     email VARCHAR(128) PRIMARY KEY,            -- jar owner email --
     jarName VARCHAR(32),                       -- jar name --
     foldmethodName VARCHAR(32),                -- fold method --
-    cnt int                                    -- ÇØ´ç Àú±İÅë¿¡ ÀÛ¼ºµÈ ±Û °³¼ö --
+    cnt int                                    -- í•´ë‹¹ ì €ê¸ˆí†µì— ì‘ì„±ëœ ê¸€ ê°œìˆ˜ --
 );
 
 
--- º¸À¯ ¾ÆÀÌÅÛ --
+-- ë³´ìœ  ì•„ì´í…œ --
 CREATE TABLE IF NOT EXIST userItem(
 	email VARCHAR(128) PRIMARY KEY,         -- user email --
 	itemcode int NOT NULL					-- item code --
 );
 
 
--- ¾ÆÀÌÅÛ --
+-- ì•„ì´í…œ --
 CREATE TABLE IF NOT EXISTS item(
 	itemcode int PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
