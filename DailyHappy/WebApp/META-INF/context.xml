@@ -6,7 +6,7 @@ type="javax.sql.DataSource"
 driverClassName="com.mysql.jdbc.Driver" 
 url="jdbc:mysql://localhost:3306/daily_happy?serverTimezone=UTC" 
 username="root"
-password="root" 
+password="1111" 
 maxTotal="16" 
 maxIdle="4" 
 maxWaitMillis="-1" />
