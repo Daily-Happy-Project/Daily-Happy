@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ page import="main.UserDAO"%>
+<%@ page import="dao.UserDAO"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-	String uname = 
+	/* String uname = 
 	String uid = 
-	String ucoin = 
+	String ucoin =  */
 %>
 <!DOCTYPE html>
 <html>
