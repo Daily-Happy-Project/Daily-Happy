@@ -1,10 +1,13 @@
 package dto;
 
+import java.util.Date;
+
 public class UserDTO {
 	private String email;
 	private String name;
 	private String pw;
 	private int coin;
+	private Date join_date;
 	
 	public int getCoin() { //코인 얻음 
 		return coin;
@@ -30,4 +33,8 @@ public class UserDTO {
 	public void setPw(String pw) {
 		this.pw=pw;
 	}
+	public void setJoin_date(Date join_date) {
+		this.join_date=join_date;
+	}
+	
 }
