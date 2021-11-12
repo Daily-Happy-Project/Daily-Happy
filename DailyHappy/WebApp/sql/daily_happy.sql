@@ -7,7 +7,7 @@ USE daily_happy;
 CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
-    pw VARCHAR(32)								-- user password --
+    pw VARCHAR(32),								-- user password --
     coin int,                               	-- user owned coin  --
     memberType char,                         	-- member type --
     userThemeCode int  							-- apply theme --
