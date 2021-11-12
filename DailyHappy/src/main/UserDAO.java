@@ -31,7 +31,7 @@ public class UserDAO {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String sql = "SELECT id FROM user WHERE id = ?";
+            String sql = "SELECT id FROM user WHERE email = ?";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, uid);
             rs = stmt.executeQuery();
@@ -62,20 +62,59 @@ public class UserDAO {
         }
     }
     
-    public int login(String uid, String upass) throws NamingException, SQLException { Connection conn = null;
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-    try {
-    String sql = "SELECT id, password FROM user WHERE id = ?";
-    conn = ConnectionPool.get();
-    stmt = conn.prepareStatement(sql); stmt.setString(1, uid);
-    rs = stmt.executeQuery();
-    if (!rs.next()) return 1;
-    if (!upass.equals(rs.getString("password"))) return 2; return 0;
-    } finally {
-    if(rs!=null) rs.close();
-    if(stmt!=null) stmt.close();
-    if(conn!=null) conn.close();
+    public int login(String uid, String upass) throws NamingException, SQLException {
+    	Connection conn = null;
+    	PreparedStatement stmt = null;
+    	ResultSet rs = null;
+	    try {
+	    	String sql = "SELECT id, password FROM user WHERE id = ?";
+	    
+		    conn = ConnectionPool.get();
+		    stmt = conn.prepareStatement(sql);
+		    stmt.setString(1, uid);
+		    
+		    rs = stmt.executeQuery();
+		    if (!rs.next())
+		    	return 1;
+		    if (!upass.equals(rs.getString("password")))
+		    	return 2; 
+		    
+		    return 0;
+	    } finally {
+		    if(rs!=null) 
+		    	rs.close();
+		    if(stmt!=null) 
+		    	stmt.close();
+		    if(conn!=null) 
+		    	conn.close();
+		}
+}
+	    
+    public void myInfo(String email, String name, int coin) throws NamingException, SQLException{
+    	Connection conn=null;
+    	PreparedStatement stmt=null;
+    	ResultSet rs=null;
+    	try {
+    		 String sql = "SELECT email, name, coin FROM daily_happy WHERE email = ? AND name = ? AND coin = ?";
+    		 conn = ConnectionPool.get();
+		     stmt = conn.prepareStatement(sql);
+		    
+    		 stmt.setString(1, email);
+             stmt.setString(2, name);
+             stmt.setInt(3, coin);
+             
+             rs = stmt.executeQuery();
+             
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	} finally {
+    		    if(rs!=null) 
+    		    	rs.close();
+    		    if(stmt!=null) 
+    		    	stmt.close();
+    		    if(conn!=null) 
+    		    	conn.close();
+    	}
     }
-    }
+    
 }
