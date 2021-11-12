@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS writing(
     paperName VARCHAR(32),                     -- paper type --
     no INT UNSIGNED AUTO_INCREMENT,            -- writing no --
     ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP     -- writing time--
+    FOREIGN KEY (jarName) 
 );
 
 
@@ -31,7 +32,7 @@ CREATE TABLE IF NOT EXISTS savedJar(
     email VARCHAR(128) PRIMARY KEY,            -- jar owner email --
     jarName VARCHAR(32),                       -- jar name --
     foldmethodName VARCHAR(32),                -- fold method --
-    cnt int                                    -- 해당 저금통에 작성된 글 개수 --
+    cnt int UNSIGNED AUTO_INCREMENT            -- 해당 저금통에 작성된 글 개수 --
 );
 
 
