@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.NamingException;
@@ -13,7 +14,7 @@ public class StoreDAO {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
-            String sql = "INSERT INTO user(itemcode, itemName, price, info, img1) VALUES(?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO item(itemcode, itemName, price, info, img1) VALUES(?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, itemcode);
             stmt.setString(2, itemName);
@@ -29,4 +30,23 @@ public class StoreDAO {
             if (conn != null) conn.close();
         }
     }
+	
+	public boolean exists(int itemcode) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String sql = "SELECT itemcode FROM item WHERE itemcode = ?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, itemcode);
+            rs = stmt.executeQuery();
+            return rs.next();
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+	
+	
 }
