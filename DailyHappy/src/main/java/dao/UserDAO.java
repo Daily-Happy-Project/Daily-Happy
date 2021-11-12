@@ -5,20 +5,19 @@ import java.util.ArrayList;
 
 import javax.naming.NamingException;
 
-import dto.UserDTO;
 import util.ConnectionPool;
 import util.UserObj;
 
 public class UserDAO {
-	public boolean insert(String uid, String upass, String uname) throws NamingException, SQLException {
+	public boolean insert(String email, String name, String pw) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
-            String sql = "INSERT INTO user(id, password, name) VALUES(?, ?, ?)";
+            String sql = "INSERT INTO user(email, name, pw) VALUES(?, ?, ?)";
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, uid);
-            stmt.setString(2, upass);
-            stmt.setString(3, uname);
+            stmt.setString(1, email);
+            stmt.setString(2, name);
+            stmt.setString(3, pw);
             
             int count = stmt.executeUpdate();
             return (count == 1) ? true : false;
@@ -29,14 +28,14 @@ public class UserDAO {
         }
     }
     
-    public boolean exists(String uid) throws NamingException, SQLException {
+    public boolean exists(String email) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String sql = "SELECT id FROM user WHERE email = ?";
+            String sql = "SELECT email FROM user WHERE name = ?";
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, uid);
+            stmt.setString(1, email);
             rs = stmt.executeQuery();
             return rs.next();
         } finally {
@@ -46,15 +45,15 @@ public class UserDAO {
         }
     }
     
-    public boolean delete(String uid) throws NamingException, SQLException {
+    public boolean delete(String email) throws NamingException, SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-            String sql = "DELETE FROM user WHERE id = ?";
+            String sql = "DELETE FROM user WHERE email = ?";
             
             conn = ConnectionPool.get();
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, uid);
+            stmt.setString(1, email);
             
             int count = stmt.executeUpdate();
             return (count > 0) ? true : false;
@@ -65,21 +64,21 @@ public class UserDAO {
         }
     }
     
-    public int login(String uid, String upass) throws NamingException, SQLException {
+    public int login(String email, String pw) throws NamingException, SQLException {
     	Connection conn = null;
     	PreparedStatement stmt = null;
     	ResultSet rs = null;
 	    try {
-	    	String sql = "SELECT id, password FROM user WHERE id = ?";
+	    	String sql = "SELECT email, pw FROM user WHERE email = ?";
 	    
 		    conn = ConnectionPool.get();
 		    stmt = conn.prepareStatement(sql);
-		    stmt.setString(1, uid);
+		    stmt.setString(1, email);
 		    
 		    rs = stmt.executeQuery();
 		    if (!rs.next())
 		    	return 1;
-		    if (!upass.equals(rs.getString("password")))
+		    if (!pw.equals(rs.getString("pw")))
 		    	return 2; 
 		    
 		    return 0;
@@ -99,7 +98,6 @@ public class UserDAO {
     	ResultSet rs=null;
     	try {
     		 String sql = "SELECT email, name, coin FROM daily_happy WHERE email = ? AND name = ? AND coin = ?";
-//    		 conn = ConnectionPool.get();
 		     stmt = conn.prepareStatement(sql);
 		    
     		 stmt.setString(1, email);
@@ -108,8 +106,6 @@ public class UserDAO {
              
              rs = stmt.executeQuery();
              
-//    	} catch(Exception e) {
-//    		e.printStackTrace();
     	} finally {
     		    if(rs!=null) 
     		    	rs.close();
