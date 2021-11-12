@@ -1,6 +1,6 @@
-package main;
+package DTO;
 
-public class StoreVO {
+public class StoreDTO {
 	//상점 - 색종이 
 	private String paperName;
 	private int sprice;
