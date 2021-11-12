@@ -3,7 +3,7 @@ import java.sql.*;
 
 import javax.naming.NamingException;
 import util.*;
-public class FeedDAO {
+public class WritingDAO {
 	public boolean insert(String content, String paperName) throws NamingException, SQLException {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
