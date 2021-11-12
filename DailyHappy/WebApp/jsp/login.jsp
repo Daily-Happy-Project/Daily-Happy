@@ -1,5 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="utf-8" %>
-<%@ page import="main.UserDAO" %>
+<%@ page import="dao.UserDAO" %>
 <%
 request.setCharacterEncoding("utf-8");
 

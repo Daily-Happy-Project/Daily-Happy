@@ -116,7 +116,7 @@ public class UserDAO {
     	}
     }
     
-    //user 목록 
+    //user list
     public ArrayList<UserObj> getList() throws NamingException, SQLException {
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
