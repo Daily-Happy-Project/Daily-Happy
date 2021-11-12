@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS daily_happy
+CREATE DATABASE IF NOT EXISTS daily_happy;
 DEFAULT CHARACTER SET utf-8 COLLATE utf-8_general_ci;
 
 USE daily_happy;
