@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS daily_happy
+CREATE DATABASE IF NOT EXISTS daily_happy;
 DEFAULT CHARACTER SET utf-8 COLLATE utf-8_general_ci;
 
 USE daily_happy;
@@ -7,7 +7,7 @@ USE daily_happy;
 CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
-    pw VARCHAR(32)								-- user password --
+    pw VARCHAR(32),								-- user password --
     coin int,                               	-- user owned coin  --
     memberType char,                         	-- member type --
     userThemeCode int  							-- apply theme --
