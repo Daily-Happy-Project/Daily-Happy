@@ -5,12 +5,12 @@ USE daily_happy;
 
 -- 사용자 정보 테이블 --
 CREATE TABLE IF NOT EXISTS user(
-    email VARCHAR(128) PRIMARY KEY,         					-- user email --
-    name VARCHAR(32),                       					-- user name --
-    pw VARCHAR(32)												-- user password --
-    coin int,                               					-- user owned coin  --
-    memberType char                         					-- member type --
-    FOREIGN KEY (userThemeName) REFERENCES theme(themeName) 	-- apply theme --
+    email VARCHAR(128) PRIMARY KEY,         	-- user email --
+    name VARCHAR(32),                       	-- user name --
+    pw VARCHAR(32)								-- user password --
+    coin int,                               	-- user owned coin  --
+    memberType char,                         	-- member type --
+    userThemeCode int  							-- apply theme --
 );
 
 
@@ -37,23 +37,21 @@ CREATE TABLE IF NOT EXISTS savedJar(
 
 -- 보유 아이템 --
 CREATE TABLE IF NOT EXIST userItem(
-	FOREIGN KEY (email) REFERENCES theme(user) PRIMARY KEY,			-- user email --
-	FOREIGN KEY (itemcode) REFERENCES theme(item)					-- item code --
+	email VARCHAR(128) PRIMARY KEY,         -- user email --
+	itemcode int NOT NULL					-- item code --
 );
 
 
 -- 아이템 --
 CREATE TABLE IF NOT EXISTS item(
 	itemcode int PRIMARY KEY,			-- item code --
-	itemName VARCHAR(32) NOT NULL,				-- item name --
-	price INT NOT NULL,							-- item price --
-	info VARCHAR(1024) NOT NULL,					-- item information --
-	img1 VARCHAR(1024) NOT NULL,					-- item image1 --
+	itemName VARCHAR(32) NOT NULL,		-- item name --
+	price INT NOT NULL,					-- item price --
+	info VARCHAR(1024) NOT NULL,		-- item information --
+	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
 	img2 VARCHAR(1024),					-- item image2--
 	img3 VARCHAR(1024),					-- item image3 --
 	img4 VARCHAR(1024)					-- item image4 --
 );
-
-
 
 

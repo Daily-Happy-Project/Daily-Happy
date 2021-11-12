@@ -1,9 +1,10 @@
 package dao;
 import java.sql.*;
+import java.util.Random;
 
 import javax.naming.NamingException;
 import util.*;
-public class FeedDAO {
+public class WritingDAO {
 	public boolean insert(String content, String paperName) throws NamingException, SQLException {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
@@ -21,22 +22,46 @@ public class FeedDAO {
 		}
 	}
 	
-    public boolean getList(int no) throws NamingException, SQLException {
-        Connection conn = ConnectionPool.get();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        try {
-            String sql = "SELECT content, name, ts FROM feed WHERE no = ?";
-            stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, no);
-            rs = stmt.executeQuery();
-            return rs.next();
-        } finally {
-            if (rs != null) rs.close(); 
-            if (stmt != null) stmt.close(); 
-            if (conn != null) conn.close();
-        }
+	
+	public int randomNo(String email, String jarName) {
+		Connection conn=ConnectionPool.get();
+		PreparedStatement stmt=null;
+		ResultSet rs=null;
+    	try {
+    		 String sql = "SELECT cnt FROM savedJar WHERE no = ?";
+		     stmt = conn.prepareStatement(sql);
+		    
+    		 stmt.setInt(1, no);
+             
+             rs = stmt.executeQuery();
+             
+    	} finally {
+    		    if(rs!=null) rs.close();
+    		    if(stmt!=null) stmt.close();
+    		    if(conn!=null) conn.close();
+    	}
+	}
+	
+    
+    public void content(int no) throws NamingException, SQLException{
+    	Connection conn=ConnectionPool.get();
+    	PreparedStatement stmt=null;
+    	ResultSet rs=null;
+    	try {
+    		 String sql = "SELECT content, name, ts FROM feed WHERE no = ?";
+		     stmt = conn.prepareStatement(sql);
+		    
+    		 stmt.setInt(1, no);
+             
+             rs = stmt.executeQuery();
+             
+    	} finally {
+    		    if(rs!=null) rs.close();
+    		    if(stmt!=null) stmt.close();
+    		    if(conn!=null) conn.close();
+    	}
     }
+    
     
     public boolean delete(int no) throws NamingException, SQLException {
         Connection conn = null;
@@ -57,4 +82,4 @@ public class FeedDAO {
         }
     }
 }
-	
+
