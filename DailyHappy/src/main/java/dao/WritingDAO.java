@@ -23,18 +23,26 @@ public class WritingDAO {
 	}
 	
 	
-	public int randomNo(String email, String jarName) {
+	public int randomNo(String email, String jarName) throws NamingException, SQLException {
 		Connection conn=ConnectionPool.get();
 		PreparedStatement stmt=null;
 		ResultSet rs=null;
+		int maxNo=0;
+		int ranNo=0;
     	try {
-    		 String sql = "SELECT cnt FROM savedJar WHERE no = ?";
+    		 String sql = "SELECT cnt FROM savedJar WHERE email = ? AND jarName = ?";
 		     stmt = conn.prepareStatement(sql);
-		    
-    		 stmt.setInt(1, no);
+		     
+    		 stmt.setString(1, email);
+    		 stmt.setString(2, jarName);
              
              rs = stmt.executeQuery();
+             maxNo = rs.getInt("cnt"); 
              
+             Random random = new Random();
+             ranNo = random.nextInt(maxNo+1);
+             
+             return ranNo;
     	} finally {
     		    if(rs!=null) rs.close();
     		    if(stmt!=null) stmt.close();
@@ -43,17 +51,25 @@ public class WritingDAO {
 	}
 	
     
-    public void content(int no) throws NamingException, SQLException{
+    public void content(int ranNo) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
     	ResultSet rs=null;
+    	String content;
+    	String name;
+    	Date ts;
     	try {
     		 String sql = "SELECT content, name, ts FROM feed WHERE no = ?";
 		     stmt = conn.prepareStatement(sql);
 		    
-    		 stmt.setInt(1, no);
+    		 stmt.setInt(1, ranNo);
              
              rs = stmt.executeQuery();
+             
+             content = rs.getString("content");
+             name= rs.getString("name");
+             ts = rs.getDate("ts");
+             
              
     	} finally {
     		    if(rs!=null) rs.close();
