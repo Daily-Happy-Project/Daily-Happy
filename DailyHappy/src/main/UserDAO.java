@@ -91,12 +91,12 @@ public class UserDAO {
 }
 	    
     public void myInfo(String email, String name, int coin) throws NamingException, SQLException{
-    	Connection conn=null;
+    	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
     	ResultSet rs=null;
     	try {
     		 String sql = "SELECT email, name, coin FROM daily_happy WHERE email = ? AND name = ? AND coin = ?";
-    		 conn = ConnectionPool.get();
+//    		 conn = ConnectionPool.get();
 		     stmt = conn.prepareStatement(sql);
 		    
     		 stmt.setString(1, email);
@@ -105,8 +105,8 @@ public class UserDAO {
              
              rs = stmt.executeQuery();
              
-    	} catch(Exception e) {
-    		e.printStackTrace();
+//    	} catch(Exception e) {
+//    		e.printStackTrace();
     	} finally {
     		    if(rs!=null) 
     		    	rs.close();
