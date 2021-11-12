@@ -5,30 +5,40 @@ USE daily_happy;
 
 -- 사용자 정보 테이블 --
 CREATE TABLE IF NOT EXISTS user(
-    email VARCHAR(128) PRIMARY KEY,         -- 사용자 이메일 --
-    name VARCHAR(32),                       -- 사용자 이름 --
-    pw VARCHAR(32)							-- 사용자 비밀번호 --
-    coin int,                               -- 사용자 보유 코인 --
-    memberType char                         -- 회원 유형 --
+    email VARCHAR(128) PRIMARY KEY,         -- user email --
+    name VARCHAR(32),                       -- user name --
+    pw VARCHAR(32)							-- user password --
+    coin int,                               -- user owned coin  --
+    memberType char                         -- member type --
+    FOREIGN KEY (userThemeName) REFERENCES theme(themeName) 
 );
+
 
 -- 글 목록 테이블 --
 CREATE TABLE IF NOT EXISTS feed(
-    email VARCHAR(128) PRIMARY KEY,            -- 글 작성자 이메일 --
-    name VARCHAR(32),                          -- 글 작성자명 --
-    content VARCHAR(8192),                     -- 글 내용 --
+    email VARCHAR(128) PRIMARY KEY,            -- writer email --
+    name VARCHAR(32),                          -- writer name --
+    content VARCHAR(8192),                     -- content --
     jarname VARCHAR(32),                       -- 소속된 유리병 --
-    paperName VARCHAR(32),                     -- 색종이 종류 --
-    no INT UNSIGNED AUTO_INCREMENT,            -- 글 번호 --
-    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP     -- 글 작성 시간--
+    paperName VARCHAR(32),                     -- paper type --
+    no INT UNSIGNED AUTO_INCREMENT,            -- writing no --
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP     -- writing time--
 );
 
 -- 보유 저금통 --
 CREATE TABLE IF NOT EXISTS savedJar(
-    email VARCHAR(128) PRIMARY KEY,            -- 유리병 소유자 --
-    jarname VARCHAR(32),                       -- 유리병 이름 --
-    foldmethodName VARCHAR(32),                -- 접는 방법 --
+    email VARCHAR(128) PRIMARY KEY,            -- jar owner email --
+    jarname VARCHAR(32),                       -- jar name --
+    foldmethodName VARCHAR(32),                -- fold method --
     cnt int                                    -- 해당 저금통에 작성된 글 개수 --
+);
+
+CREATE TABLE IF NOT EXIST userItem(
+	FOREIGN KEY (email) REFERENCES theme(user) PRIMARY KEY,
+	FOREIGN KEY (paperName) REFERENCES theme(paper),
+	FOREIGN KEY (themeName) REFERENCES theme(theme),
+	FOREIGN KEY (jarname) REFERENCES theme(jar),
+	FOREIGN KEY (folemethodName) REFERENCES theme(folemethod)
 );
 
 
