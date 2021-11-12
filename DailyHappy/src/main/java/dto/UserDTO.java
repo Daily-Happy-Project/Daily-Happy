@@ -1,6 +1,6 @@
-package main;
+package dto;
 
-public class UserVO {
+public class UserDTO {
 	private String email;
 	private String name;
 	private String pw;
