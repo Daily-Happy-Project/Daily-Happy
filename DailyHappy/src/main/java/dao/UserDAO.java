@@ -92,17 +92,17 @@ public class UserDAO {
 		}
 }
 	    
+    
+    //my info 
     public void myInfo(String email, String name, int coin) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
     	ResultSet rs=null;
     	try {
-    		 String sql = "SELECT email, name, coin FROM daily_happy WHERE email = ? AND name = ? AND coin = ?";
+    		 String sql = "SELECT email, name, coin FROM daily_happy WHERE email = ?";
 		     stmt = conn.prepareStatement(sql);
 		    
     		 stmt.setString(1, email);
-             stmt.setString(2, name);
-             stmt.setInt(3, coin);
              
              rs = stmt.executeQuery();
              
@@ -117,7 +117,7 @@ public class UserDAO {
     }
     
     //user list
-    public ArrayList<UserObj> getList() throws NamingException, SQLException {
+    public ArrayList<UserObj> getUserList() throws NamingException, SQLException {
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
     	ResultSet rs=null;
@@ -142,9 +142,9 @@ public class UserDAO {
     	}
     }
     
-    
+
     //�깉 �쑀由щ퀝 
-    
+
     
     
 }
