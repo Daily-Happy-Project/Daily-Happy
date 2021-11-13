@@ -3,11 +3,11 @@
 <%
 request.setCharacterEncoding("utf-8");
 
-String uid = request.getParameter("id");
+String uemail = request.getParameter("email");
 String upw = request.getParameter("pw");
 
 UserDAO dao = new UserDAO();
-int code = dao.login(uid, upw);
+int code = dao.login(uemail, upw);
 if(code ==1){
 	out.print("아이디 없음");
 }
@@ -15,7 +15,7 @@ else if(code==2){
 	out.print("비밀번호 없음");
 }
 else{
-	session.setAttribute("id", uid);
-	out.print("로그인 되었습니다: "+uid);
+	session.setAttribute("email", uemail);
+	out.print("로그인 되었습니다: "+uemail);
 }
 %>
