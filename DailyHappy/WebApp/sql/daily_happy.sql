@@ -3,7 +3,7 @@ DEFAULT CHARACTER SET utf-8 COLLATE utf-8_general_ci;
 
 USE daily_happy;
 
--- ъ⑹ �蹂 대 --
+-- user table --
 CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
@@ -15,37 +15,33 @@ CREATE TABLE IF NOT EXISTS user(
 );
 
 
--- 湲 紐⑸ 대 --
-CREATE TABLE IF NOT EXISTS writing(
-    email VARCHAR(128) PRIMARY KEY,            -- writer email --
-    name VARCHAR(32),                          -- writer name --
-    content VARCHAR(8192),                     -- content --
-    jarName VARCHAR(32),                       --  由щ --
-    paperName VARCHAR(32),                     -- paper type --
-    no INT UNSIGNED AUTO_INCREMENT,            -- writing no --
-    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP     -- writing time--
-    FOREIGN KEY (jarName) 
+-- writing table --
+CREATE TABLE IF NOT EXISTS USERNAME+writing(                     
+    no INT UNSIGNED AUTO_INCREMENT,
+    name VARCHAR(32),                           -- writer name --
+    content VARCHAR(8192),                      -- content --
+    paperCode int,            					-- paper code --
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP      -- writing time--
+    FOREIGN KEY (jarName) 						-- USERNAMEjarList(jarName) --
 );
 
 
--- 蹂댁 �湲 --
-CREATE TABLE IF NOT EXISTS savedJar(
-    email VARCHAR(128) PRIMARY KEY,            -- jar owner email --
-    jarName VARCHAR(32),                       -- jar name --
+-- savedJar
+CREATE TABLE IF NOT EXISTS USERNAME+JarList(
+    jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
     foldmethodName VARCHAR(32),                -- fold method --
-    cnt int                                    -- 대 �湲듭 깅 湲 媛 --
-    cnt int UNSIGNED AUTO_INCREMENT            -- 해당 저금통에 작성된 글 개수 --
-);
+    cnt int UNSIGNED AUTO_INCREMENT            -- count --
+);--
 
 
--- 蹂댁 댄 --
+-- user item --
 CREATE TABLE IF NOT EXIST userItem(
 	email VARCHAR(128) PRIMARY KEY,         -- user email --
 	itemcode int NOT NULL					-- item code --
 );
 
 
--- 댄 --
+-- store item --
 CREATE TABLE IF NOT EXISTS item(
 	itemcode int PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
