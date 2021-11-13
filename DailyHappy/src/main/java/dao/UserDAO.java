@@ -94,21 +94,25 @@ public class UserDAO {
 	    
     
     //my info 
-    public void myInfo(String email, String name, int coin) throws NamingException, SQLException{
+    public ArrayList<UserObj> myInfo(String email) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
-    	ResultSet rs=null;
+    	ResultSet rs = null;
     	try {
-    		 String sql = "SELECT email, name, coin FROM daily_happy WHERE email = ?";
+    		 String sql = "SELECT name, email, coin FROM user WHERE email = ?";
 		     stmt = conn.prepareStatement(sql);
-		    
     		 stmt.setString(1, email);
-             
-             rs = stmt.executeQuery();
+    		 rs=stmt.executeQuery();
+    		 ArrayList<UserObj> users=new ArrayList<UserObj>();
+     		while(rs.next()) {
+     			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getString("memberType")));
+     		}
+     		
+     		return users;
              
     	} finally {
-    		    if(rs!=null) 
-    		    	rs.close();
+    			if(rs!=null) 
+		    	rs.close();
     		    if(stmt!=null) 
     		    	stmt.close();
     		    if(conn!=null) 
