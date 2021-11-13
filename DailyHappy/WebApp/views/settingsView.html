@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>환경설정</title>
         
-        <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
+        <link rel="stylesheet" href="css/headerStyle.css"/>
         <style type="text/css">
             .button-container{
                 display: inline-block;
@@ -13,11 +13,12 @@
                 text-align: center;
             }
             .box{
+            	display: inline-block;
                 width: 100%;
                 padding-top: 10px;
                 padding-bottom: 10px;
                 margin-bottom: 25px;
-                
+ 
                 outline: 2.5px solid #000;
                 border-radius: 8px;
                 
@@ -26,7 +27,7 @@
     </head>
     <body>
         <header>
-            <h2 class="title">내 정보</h2>
+            <h2 class="title">환경설정</h2>
             <div class="x-button">x</div>
             <hr class = "dotted-line2">
         </header>
@@ -49,8 +50,8 @@
                 <article onclick="#저작권정보페이지" class="box">
                     <div>저작권 정보</div>
                 </article>
-                <article onclick="#회원관리페이지" class="box">
-                    <div>회원 관리</div>
+                <article>
+                    <a class="box" href="uManageView.jsp"><div>회원 관리</div></a>
                 </article>
             </div>
         </section>
