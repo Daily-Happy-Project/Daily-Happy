@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ page import="dao.UserDAO"%>
+<%@ page import="java.util.*" %>
+<%@ page import="util.*"%>
+<%@ page import="dao.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-	UserDAO dao = new UserDAO();
+
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
-		uemail = "d@d";
-		return;
+		response.sendRedirect("loginView.html");
+		//test string: 
+			//uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
-	String[] uInfo = dao.myInfo(uemail);
-	
+	ArrayList<UserObj> list = (new UserDAO()).getUserList();
 	
 	/* String uname = 
 	String uid = 
@@ -86,7 +87,10 @@
 					<td class = "info-table-line1">별명</td>
 					<td>&nbsp;&nbsp;</td>
 					<td class = "info-table-line2"><div class = "info-box">
-					<% out.print(str[0]); %>
+					<%
+						for (UserObj user : list) {
+							out.print(user.getName()); 
+					%>
 					</div></td>
 				</tr>
 				<tr>
@@ -96,7 +100,7 @@
 					<td class = "info-table-line1">아이디</td>
 					<td>&nbsp;&nbsp;</td>
 					<td class = "info-table-line2"><div class = "info-box">
-					<% out.print(str[1]); %>
+					<% out.print(user.getEmail()); %>
 					</div></td>
 				</tr>
 				<tr>
@@ -106,12 +110,15 @@
 					<td class = "info-table-line1">보유 코인</td>
 					<td>&nbsp;&nbsp;</td>
 					<td class = "info-table-line2"><div class = "info-box">
-					<% out.print(str[2]); %>
+					<% 	
+						out.print(user.getCoin());
+						}
+					%>
 					</div></td>
 				</tr>
 			</table>
 			<div id="info-logo">로고</div><br>
-			<div id="logout-button">로그아웃</div>
+			<a id="logout-button" href="#로그아웃.jsp">로그아웃</a></a>
 		</article>
 	</section>
 </body>
