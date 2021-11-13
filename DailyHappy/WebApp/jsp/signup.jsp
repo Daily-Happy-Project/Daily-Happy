@@ -20,9 +20,9 @@
 	
 
 	stmt.executeUpdate("CREATE TABLE IT NOT EXIST " + uid + 
-			"JarList(email VARCHAR(128) PRIMARY KEY, jarName VARCHAR(32), foldmethodName VARCHAR(32), cnt int UNSIGNED AUTO_INCREMENT)");
+			"JarList(jarName VARCHAR(32) PRIMARY KEY, foldmethodName VARCHAR(32), cnt int UNSIGNED AUTO_INCREMENT)");
 	
 	stmt.executeUpdate("CREATE TABLE IT NOT EXIST " + uid + 
-			"WritingList(email VARCHAR(128) PRIMARY KEY, name VARCHAR(32), content VARCHAR(8192), paperName)");
+			"WritingList(no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(32), content VARCHAR(8192), paperCode int, ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (jarName) REFERENCES" + uid + "JarList(jarName))");
 	
 %>
