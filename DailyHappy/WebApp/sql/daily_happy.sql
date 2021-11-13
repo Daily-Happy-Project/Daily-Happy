@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS writing(
 );
 
 
+
 -- 보유 저금통 --
 CREATE TABLE IF NOT EXISTS savedJar(
     email VARCHAR(128) PRIMARY KEY,            -- jar owner email --
