@@ -3,6 +3,17 @@
 <%@ page import="dao.UserDAO"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
+	UserDAO dao = new UserDAO();
+	String uemail = (String)session.getAttribute("email");
+	if (uemail == null) {
+		//response.sendRedirect("loginView.html");
+		uemail = "d@d";
+		return;
+	}
+	session.setAttribute("email", uemail);
+	String[] uInfo = dao.myInfo(uemail);
+	
+	
 	/* String uname = 
 	String uid = 
 	String ucoin =  */
@@ -74,7 +85,9 @@
 				<tr>
 					<td class = "info-table-line1">별명</td>
 					<td>&nbsp;&nbsp;</td>
-					<td class = "info-table-line2"><div class = "info-box">#별명 db</div></td>
+					<td class = "info-table-line2"><div class = "info-box">
+					<% out.print(str[0]); %>
+					</div></td>
 				</tr>
 				<tr>
 					<td colspan="3"><div class = "info-empty"></div></td>
@@ -82,7 +95,9 @@
 				<tr>					
 					<td class = "info-table-line1">아이디</td>
 					<td>&nbsp;&nbsp;</td>
-					<td class = "info-table-line2"><div class = "info-box">#아이디 db</div></td>
+					<td class = "info-table-line2"><div class = "info-box">
+					<% out.print(str[1]); %>
+					</div></td>
 				</tr>
 				<tr>
 					<td colspan="3"><div class = "info-empty"></div></td>
@@ -90,7 +105,9 @@
 				<tr>
 					<td class = "info-table-line1">보유 코인</td>
 					<td>&nbsp;&nbsp;</td>
-					<td class = "info-table-line2"><div class = "info-box">#보유 코인 db</div></td>
+					<td class = "info-table-line2"><div class = "info-box">
+					<% out.print(str[2]); %>
+					</div></td>
 				</tr>
 			</table>
 			<div id="info-logo">로고</div><br>

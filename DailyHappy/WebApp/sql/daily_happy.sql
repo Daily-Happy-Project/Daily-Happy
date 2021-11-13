@@ -3,7 +3,7 @@ DEFAULT CHARACTER SET utf-8 COLLATE utf-8_general_ci;
 
 USE daily_happy;
 
--- »ç¿ëÀÚ Á¤º¸ Å×ÀÌºí --
+-- Â‚ÑŠÂšâ‘¹ÂÂ ï¿½Â•è¹‚ Â…ÂŒÂëŒ€Â” --
 CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
@@ -11,15 +11,16 @@ CREATE TABLE IF NOT EXISTS user(
     coin int,                               	-- user owned coin  --
     memberType char,                         	-- member type --
     userThemeCode int  							-- apply theme --
+    
 );
 
 
--- ±Û ¸ñ·Ï Å×ÀÌºí --
+-- æ¹²Â€ ï§â‘¸Â Â…ÂŒÂëŒ€Â” --
 CREATE TABLE IF NOT EXISTS writing(
     email VARCHAR(128) PRIMARY KEY,            -- writer email --
     name VARCHAR(32),                          -- writer name --
     content VARCHAR(8192),                     -- content --
-    jarName VARCHAR(32),                       -- ¼Ò¼ÓµÈ À¯¸®º´ --
+    jarName VARCHAR(32),                       -- Â†ÂŒÂ†ÂÂÂœ Âœç”±Ñ‰Â‘ --
     paperName VARCHAR(32),                     -- paper type --
     no INT UNSIGNED AUTO_INCREMENT,            -- writing no --
     ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP     -- writing time--
@@ -27,23 +28,24 @@ CREATE TABLE IF NOT EXISTS writing(
 );
 
 
--- º¸À¯ Àú±İÅë --
+-- è¹‚ëŒÂœ ï¿½Â€æ¹²ÂˆÂ† --
 CREATE TABLE IF NOT EXISTS savedJar(
     email VARCHAR(128) PRIMARY KEY,            -- jar owner email --
     jarName VARCHAR(32),                       -- jar name --
     foldmethodName VARCHAR(32),                -- fold method --
-    cnt int UNSIGNED AUTO_INCREMENT            -- ÇØ´ç Àú±İÅë¿¡ ÀÛ¼ºµÈ ±Û °³¼ö --
+    cnt int                                    -- Â•ëŒ€Â‹ ï¿½Â€æ¹²ÂˆÂ†ë“­Â—Â ÂÂ‘Â„ê¹…ÂÂœ æ¹²Â€ åª›ÂœÂˆÂ˜ --
+    cnt int UNSIGNED AUTO_INCREMENT            -- í•´ë‹¹ ì €ê¸ˆí†µì— ì‘ì„±ëœ ê¸€ ê°œìˆ˜ --
 );
 
 
--- º¸À¯ ¾ÆÀÌÅÛ --
+-- è¹‚ëŒÂœ Â•Â„ÂëŒ„Â…Âœ --
 CREATE TABLE IF NOT EXIST userItem(
 	email VARCHAR(128) PRIMARY KEY,         -- user email --
 	itemcode int NOT NULL					-- item code --
 );
 
 
--- ¾ÆÀÌÅÛ --
+-- Â•Â„ÂëŒ„Â…Âœ --
 CREATE TABLE IF NOT EXISTS item(
 	itemcode int PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
