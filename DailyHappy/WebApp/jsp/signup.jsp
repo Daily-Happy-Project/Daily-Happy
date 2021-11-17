@@ -1,5 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="utf-8" %>
-<%@ page import="java.sql.*" %>
+<%@ page import="dao.UserDAO" %>
 <%
 
    request.setCharacterEncoding("utf-8");
@@ -8,15 +8,17 @@
    String upass = request.getParameter("pw");
    String uname = request.getParameter("username");
    
-   String sql = "INSERT INTO user(email, pw, name) VALUES(?, ?, ?)";
-   
-   Class.forName("com.mysql.jdbc.Driver");
-   Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/daily_happy", "root", "1111");
-   PreparedStatement stmt = conn.prepareStatement(sql);
-   stmt.setString(1, uid);
-   stmt.setString(2, upass);
-   stmt.setString(3, uname);
-   stmt.executeUpdate();
+   UserDAO dao = new UserDAO();
+   if (dao.exists(uid)) {
+   out.print("이미 가입한 회원입니다.");
+   return;
+   }
+   if (dao.insert(uid, upass, uname)) {
+   out.print("회원 가입이 완료되었습니다.");
+   }
+   else {
+   out.print("회원 가입 처리 중 오류가 발생하였습니다.");
+   }
    
    String splitUid[] = uid.split("@");
    uid=splitUid[0];
@@ -25,11 +27,6 @@
 //         "JarList(jarName VARCHAR(32) PRIMARY KEY, foldmethodName VARCHAR(32), cnt int UNSIGNED AUTO_INCREMENT)";
 	    
    
-   stmt.execute("CREATE TABLE IF NOT EXIST " + uid + 
-         "JarList(jarName VARCHAR(32) PRIMARY KEY, foldmethodName VARCHAR(32), cnt int UNSIGNED AUTO_INCREMENT)");
-   
-   stmt.execute("CREATE TABLE IF NOT EXIST " + uid + 
-         "WritingList(no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(32), content VARCHAR(8192), paperCode int, ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (jarName) REFERENCES" + uid + "JarList(jarName))");
    
    out.print("회원가입이 완료되었습니다 ^^");
    
