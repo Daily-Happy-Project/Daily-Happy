@@ -1,9 +1,9 @@
 <%@ page contentType="text/html" pageEncoding="utf-8" %>
 <%@ page import="dao.UserDAO" %>
 <head>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/allStyle.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/loginStyle.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/formStyle.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/allStyle.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/loginStyle.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/formStyle.css">
 </head>
 <%
 request.setCharacterEncoding("utf-8");
