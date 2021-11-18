@@ -9,10 +9,10 @@ CREATE TABLE IF NOT EXISTS user(
     name VARCHAR(32),                       	-- user name --
     pw VARCHAR(32),								-- user password --
     coin int,                               	-- user owned coin  --
-    memberType char DEFAULT 'M',                -- member type. member='M' manager='K' -- 
-    userThemeCode int  							-- apply theme --   
+    memberType char,                         	-- member type --
+    userThemeCode int  							-- apply theme --
+    
 );
-
 
 
 -- writing table --
