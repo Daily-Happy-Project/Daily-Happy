@@ -20,17 +20,7 @@ public class UserDAO {
             stmt.setString(3, pw);
             
             int count = stmt.executeUpdate();
-            
-            
-            String splitUid[] = email.split("@");
-            email=splitUid[0];
-            
-            stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "JarList(jarName VARCHAR(32) PRIMARY KEY, foldmethodName VARCHAR(32), cnt int UNSIGNED DEFAULT 0)");
-            
-            stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList(no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(32), content VARCHAR(8192), paperCode int, ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (jarName) REFERENCES" + email + "JarList(jarName))");
-          
             return (count == 1) ? true : false;
-            
             
         } finally {
             if (stmt != null) stmt.close(); 
