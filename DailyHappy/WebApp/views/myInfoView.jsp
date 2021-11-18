@@ -8,10 +8,9 @@
 
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
-		//insert into user(email,name,pw) values('d@d','이민진','1111');
+		response.sendRedirect("loginView.html");
 		//test string: 
-			uemail = "d@d";
+			//uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
 	ArrayList<UserObj> list = (new UserDAO()).getUserList();
@@ -119,8 +118,7 @@
 				</tr>
 			</table>
 			<div id="info-logo">로고</div><br>
-			<a id="logout-button" href="#로그아웃.jsp">로그아웃</a><br>
-			<a id="delete-myself" href="#회원 탈퇴.jsp">회원 탈퇴하기</a>
+			<a id="logout-button" href="#로그아웃.jsp">로그아웃</a></a>
 		</article>
 	</section>
 </body>
