@@ -28,7 +28,7 @@
 	</header>
 	<article>
 		<%
-			String str = "<table align=\"center\">";
+			String str = "<table align=center>";
 			str += "<tr><th>이름</th><th>이메일</th><th>보유코인</th><th>회원유형</th><th><th>";
 			str += "<tr colspan=5><hr></tr>";
 			for (UserObj user : list) {
@@ -37,7 +37,7 @@
 			str += "<td>" + user.getEmail() + "</td>";
 			str += "<td>" + user.getCoin() + "</td>";
 			str += "<td>" + user.getMemberType() + "</td>";
-			str += "<td><a href=\"#삭제jsp\">삭제</a></td>";
+			str += "<td><a href=\"#삭제jsp\">삭제</a>>/td>";
 			str += "</tr>";
 			}
 			str += "</table>";

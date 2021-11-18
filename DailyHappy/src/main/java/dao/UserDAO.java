@@ -19,8 +19,7 @@ public class UserDAO {
             stmt.setString(2, name);
             stmt.setString(3, pw);
             
-            int count = stmt.executeUpdate();
-            
+            int count = stmt.executeUpdate();           
             
             String splitUid[] = email.split("@");
             email=splitUid[0];
