@@ -13,7 +13,7 @@
    out.print("이미 가입한 회원입니다.");
    return;
    }
-   if (dao.insert(uid, upass, uname)) {
+   if (dao.insert(uid, uname, upass)) {
    out.print("회원 가입이 완료되었습니다.");
    }
    else {
