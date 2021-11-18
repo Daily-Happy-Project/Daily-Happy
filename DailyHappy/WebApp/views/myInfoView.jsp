@@ -8,9 +8,9 @@
 
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		response.sendRedirect("loginView.html");
+		//response.sendRedirect("loginView.html");
 		//test string: 
-			//uemail = "d@d";
+			uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
 	ArrayList<UserObj> list = (new UserDAO()).getUserList();
