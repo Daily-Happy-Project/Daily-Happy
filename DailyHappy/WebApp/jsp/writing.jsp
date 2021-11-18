@@ -3,12 +3,19 @@
 <%@ page import="dao.*" %>
 <% 
 	request.setCharacterEncoding("utf-8");
-	session.getAttribute("uid");
-
-	String email=request.getParameter("email");
-	out.print((new UserDAO()).get(email));
+	
+	String email = (String)session.getAttribute("email");
+	String content = request.getParameter("content");
+	String paperName = request.getParameter("paperName");
+	
+	
+	WritingDAO dao = new WritingDAO();
+	if (dao.insert(email, content, paperName)){
+	//if (dao.insert((String)session.getAttribute("email"), content, paperName)){
+		out.print("글 작성이 완료되었습니다.");
+	}
+	else {
+		out.print("글 작성 중 오류가 발생하였습니다.");
+	}
+	   
 %>
-
-
-
-

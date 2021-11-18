@@ -5,11 +5,11 @@ import java.util.Random;
 import javax.naming.NamingException;
 import util.*;
 public class WritingDAO {
-	public boolean insert(String content, String paperName) throws NamingException, SQLException {
+	public boolean insert(String email, String content, String paperName) throws NamingException, SQLException {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
 		try {
-			String sql = "INSERT INTO feed(content, paperName) VALUES(?, ?)";
+			String sql = "INSERT INTO " + email + "WritingList(content, paperName) VALUES(?, ?)";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, content);
 			stmt.setString(2, paperName);
