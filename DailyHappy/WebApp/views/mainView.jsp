@@ -14,21 +14,13 @@
 			uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
-	//ArrayList<UserObj> list = (new UserDAO()).getUserList();
+	//ArrayList<JarObj> list = (new JarDAO()).getJarList();
 
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-   <!-- 실제 모바일에서 구동해보면.. viewport문제로 인해 글씨가 너무 작게 보임 -->
-    <!-- why? 모바일의 웹브라우저는 viewport가 무조건 980으로 고정되어 있음. 실제 디바이스의 viewport와 상관없이 크기가 결정됨 -->
-    <!-- viewport[웹 브라우저의 document영역의 가상의 사각형영역]는 해상도와는 다름. Nexus 5x의 해상도는 1080*1920이지만 viewport는 412*712임-->
-    <!-- 넥서스 5x의 뷰포트 412에서 200px인 img의 width가 모바일 웹브라우저에서는 기본 뷰포트크기인 980에서는 대략 2배정도 작아진 100px정도의 크기임 -->
-    <!-- 디바이스의 실제 뷰포트로 변경해주는 작업이 필요 -->
-    <!-- <meta name="viewport" content="width=412, initial-scale=1.0"> -->
-    <!-- <meta name="viewport" content="width=600, initial-scale=1.0"> -->
-    <!-- <meta name="viewport" content="width=980, initial-scale=1.0"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>메인</title>
@@ -44,10 +36,22 @@ article{
 .scr-wrap{
 	position: fixed;
 	top: 30px;
+	left: 10px;
 	z-index: 3;
+	width: 30px;
 }
 .scr{
-	
+	float:left;
+	width: 100%;
+	height: 30px;
+	background-color: gray;
+}
+#cnt{
+	position: absolute;
+	top: 10%;
+	font-size: 30pt;
+	z-index: 3;
+	width: 100%;
 }
 .main-wrap{
 	position: absolute;
@@ -86,8 +90,8 @@ article{
 .background-image{
 	display: inline-block;
 	background-image: 
-  		url('https://c.tenor.com/NkAegm0IP8IAAAAC/popcat.gif');
-  	background-color: #000000;
+  		url('#');
+  	background-color: #00ff00;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -108,9 +112,7 @@ article{
  	display: inline-block;
 	width: 60%;
 	max-width: 400px;
-	height: 40%;
-	max-height: 120px;
-	min-height: 80px;
+	height: 110px;
 	background-color: #ffffff;
 }
 .navi{
@@ -130,16 +132,17 @@ article{
 	height: 100%;
 }
 </style>
+<!-- count() -->
 </head>
 <body>
 	<section align="center">
 
 		<article class="scr-wrap">
-			<div class="scr"><%//스크린샷 공유 %></div>
+			<div class="scr">공유<%//스크린샷 공유 %></div>
 			
 		</article>
 		<article>
-			<div><%//접은 학종이 카운트 %></div>
+			<div id="cnt">00<%//접은 학종이 카운트 %></div>
 		</article>
 		<article>
 			<div class="main-wrap">
