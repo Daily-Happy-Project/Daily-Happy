@@ -20,6 +20,14 @@
     <!-- web application will be reloaded.                                   -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    
+    <Resource name="jdbc/daily_happy" auth="Container"
+    	type="javax.sql.DataSource"
+    	driverClassName="com.mysql.jdbc.Driver"
+    	url="jdbc:mysql://localhost:3306/daily_happy"
+    	username="root"
+    	password="veryAwesome999!"
+    	maxTotal="16" maxldle="4" maxWaitMillis="-1" />
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
