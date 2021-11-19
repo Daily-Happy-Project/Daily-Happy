@@ -17,5 +17,6 @@ else if(code==2){
 else{
 	session.setAttribute("email", uemail);
 	out.print("로그인 되었습니다: "+uemail);
+	out.print("<a href=\"../views/mainView.jsp\">메인화면 가기</a>");
 }
 %>

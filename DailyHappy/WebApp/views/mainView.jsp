@@ -33,7 +33,7 @@
 <body>
 	<section>
 		<article>
-			<div>배경화면</div>
+			<div class="">배경화면</div>
 		</article>
 		<article>
 			<div>스크린샷 공유</div>
