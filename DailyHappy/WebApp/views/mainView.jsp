@@ -15,10 +15,7 @@
 	}
 	session.setAttribute("email", uemail);
 	//ArrayList<UserObj> list = (new UserDAO()).getUserList();
-	
-	/* String uname = 
-	String uid = 
-	String ucoin =  */
+
 %>
 <!DOCTYPE html>
 <html>
@@ -125,28 +122,12 @@ article{
 	background-color: #00ffff;
 	z-index: 3;
 }
-.store-btn{
-	position: relative;
+.menu{
+	position: inline-block;
+	text-align: center;
+	float:left;
 	width: 25%;
 	height: 100%;
-	background-color: red;
-}
-.bottle-btn{
-	position: relative;
-	left:5px;
-	width: 25%;
-	height: 100%;
-	background-color: orange;
-}
-.myInfo-btn{
-	position: relative;
-	left:0px;
-	width: 25%;
-	height: 100%;
-	background-color: orange;
-}
-.settings-btn{
-	position: relative;
 }
 </style>
 </head>
@@ -171,7 +152,7 @@ article{
 		</article>
 		<article>
 			<div id="paper-wrap">
-				<div id="paper-img-box" onclick="#유리병 이름을 넘겨주고 글작성 페이지로 넘어가는 자바스크립트 함수">
+				<div id="paper-img-box" onclick="GotoWrite();">
 				<%//학종이: 소지 학종이 중 랜덤으로 보여진다 %>
 				</div>
 			</div>
@@ -182,10 +163,20 @@ article{
 	</section>
 
 	<navi class="navi">
-		<div class="store-btn">상점</div>
-		<div class="bottle-btn"><a href="#유리병 관리 페이지">유</a></div>
-		<div class="myInfo-btn"><a href="myInfoView.jsp">내정보</a></div>
-		<div class="settings-btn"><a href="settingsView.html">환경설정</a></div>
+		<div class="menu">상점</div>
+		<div class="menu"><a href="#유리병 관리 페이지">유</a></div>
+		<div class="menu"><a href="myInfoView.jsp">내정보</a></div>
+		<div class="menu"><a href="settingsView.html">환경설정</a></div>
 	</navi>
+	
+	<script type="text/javascript">
+		function GotoWrite(){
+			<% 
+			String str = "nowB";	//임시 값
+			session.setAttribute("nowBottle", str);
+			%>
+			location.href="writingView.jsp";
+		}
+	</script>
 </body>
 </html>
