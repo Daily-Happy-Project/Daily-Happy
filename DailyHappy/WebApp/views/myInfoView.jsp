@@ -13,7 +13,7 @@
 			uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
-	ArrayList<UserObj> list = (new UserDAO()).getUserList();
+	ArrayList<UserObj> list = (new UserDAO()).myInfo(uemail);
 	
 	/* String uname = 
 	String uid = 
@@ -23,6 +23,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>내 정보</title>
 
 <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>

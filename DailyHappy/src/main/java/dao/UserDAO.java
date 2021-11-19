@@ -35,7 +35,7 @@ public class UserDAO {
             		+ "content VARCHAR(8192), "
             		+ "paperCode int, "
             		+ "ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
-            		+ "FOREIGN KEY (jarName) REFERENCES" + email + "JarList(jarName))");
+            		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList(jarName))");
           
             return (count == 1) ? true : false;
             
@@ -123,7 +123,7 @@ public class UserDAO {
     		 rs=stmt.executeQuery();
     		 ArrayList<UserObj> users=new ArrayList<UserObj>();
      		while(rs.next()) {
-     			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getString("memberType")));
+     			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin")));
      		}
      		
      		return users;
