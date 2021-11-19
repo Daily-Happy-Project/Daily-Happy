@@ -4,16 +4,16 @@
 
    request.setCharacterEncoding("utf-8");
       
-   String uid = request.getParameter("id");
+   String uemail = request.getParameter("email");
    String upass = request.getParameter("pw");
    String uname = request.getParameter("username");
    
    UserDAO dao = new UserDAO();
-   if (dao.exists(uid)) {
+   if (dao.exists(uemail)) {
    out.print("이미 가입한 회원입니다.");
    return;
    }
-   if (dao.insert(uid, uname, upass)) {
+   if (dao.insert(uemail, uname, upass)) {
    out.print("회원 가입이 완료되었습니다.");
    out.print("<a href=\"../views/loginView.html\">로그인</a>");
    }
