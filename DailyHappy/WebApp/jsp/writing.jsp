@@ -7,11 +7,11 @@
 	String email = (String)session.getAttribute("email");
 	String content = request.getParameter("content");
 	String paperName = request.getParameter("paperName");
+	String jarName = request.getParameter("jarName");
 	
 	
 	WritingDAO dao = new WritingDAO();
 	if (dao.insert(email, content, paperName)){
-	//if (dao.insert((String)session.getAttribute("email"), content, paperName)){
 		out.print("글 작성이 완료되었습니다.");
 	}
 	else {
