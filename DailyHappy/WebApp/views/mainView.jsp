@@ -40,19 +40,81 @@
 body{
 	margin: 0;
 }
-.background-image{
-	background-image: 
-  		url('https://mdn.mozillademos.org/files/7693/catfront.png');
-  	background-color: #0fffff;
-  	background-size: 100%;
-  	background-repeat: no-repeat;
+
+article{
+	width: 100%;
+}
+.scr-wrap{
+	position: fixed;
+	top: 30px;
+	z-index: 3;
+}
+.scr{
+	
+}
+.main-wrap{
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	z-index:2
+}
+#bottle-img-box{
+	display: inline-block;
+	width: 60%;
+	max-width: 400px;
+	height: 150px;
+	background-color: #000000;
+
+}
+#left-bottle, #right-bottle{
+	cursor: pointer;
+    position: absolute;
+    top: 40%;
+    padding: 5%;
+    font-size: 20pt;
+    z-index: 4;
+}
+#left-bottle{
+	left: 0;
+}
+#right-bottle {
+	right: 0;
+}
+.bg-image-wrap{
 	width: 100%;
 	height: 100%;
-
 	position: absolute;
-	
 	z-index: 1;
-	
+}
+.background-image{
+	display: inline-block;
+	background-image: 
+  		url('https://c.tenor.com/NkAegm0IP8IAAAAC/popcat.gif');
+  	background-color: #000000;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+	height: 100%;
+
+
+}
+#paper-wrap{
+	position: fixed;
+	bottom:0px;
+	width: 100%;
+	z-index: 2;
+}
+#paper-img-box{
+ 	display: inline-block;
+	width: 60%;
+	max-width: 400px;
+	height: 40%;
+	max-height: 120px;
+	min-height: 80px;
+	background-color: #ffffff;
 }
 .navi{
 	position: fixed;
@@ -61,52 +123,69 @@ body{
 	width: 100%;
 	height: 35px;
 	background-color: #00ffff;
-	z-index: 2;
+	z-index: 3;
 }
-.store-button{
-	position: absolute;
-	left: 5px;
+.store-btn{
+	position: relative;
+	width: 25%;
+	height: 100%;
+	background-color: red;
 }
-.myInfo-button{
-	position: absolute;
-	width: 100%;
-	text-align: center;
+.bottle-btn{
+	position: relative;
+	left:5px;
+	width: 25%;
+	height: 100%;
+	background-color: orange;
 }
-.settings-button{
-	position: absolute;
-	right: 5px;
+.myInfo-btn{
+	position: relative;
+	left:0px;
+	width: 25%;
+	height: 100%;
+	background-color: orange;
+}
+.settings-btn{
+	position: relative;
 }
 </style>
 </head>
 <body>
-	<section>
+	<section align="center">
 
-		<article>
-			<div>스크린샷 공유</div>
-			<div>유리병 공유</div>
+		<article class="scr-wrap">
+			<div class="scr"><%//스크린샷 공유 %></div>
+			
 		</article>
 		<article>
 			<div><%//접은 학종이 카운트 %></div>
 		</article>
 		<article>
-			<div onclick="#팝업 창 생성"><%//유리병 이미지 %></div>
+			<div class="main-wrap">
+				<div id="bottle-img-box" onclick="#팝업 창 생성"><%//유리병 이미지 %></div>
+			</div>
 		</article>
 		<article>
-			<div>◀</div>
-			<div>▶</div>
+			<div id="left-bottle">◁</div>
+			<div id="right-bottle">▷</div>
 		</article>
 		<article>
-			<div><%//학종이: 소지 학종이 중 랜덤으로 보여진다 %></div>
+			<div id="paper-wrap">
+				<div id="paper-img-box" onclick="#유리병 이름을 넘겨주고 글작성 페이지로 넘어가는 자바스크립트 함수">
+				<%//학종이: 소지 학종이 중 랜덤으로 보여진다 %>
+				</div>
+			</div>
 		</article>
-		<article>
+		<article class="bg-image-wrap">
 			<div class="background-image">배경화면</div>
 		</article>
 	</section>
 
 	<navi class="navi">
-		<div class="store-button">상점</div>
-		<div class="myInfo-button"><a href="myInfoView.jsp">내정보</a></div>
-		<div class="settings-button"><a href="settingsView.html">환경설정</a></div>
+		<div class="store-btn">상점</div>
+		<div class="bottle-btn"><a href="#유리병 관리 페이지">유</a></div>
+		<div class="myInfo-btn"><a href="myInfoView.jsp">내정보</a></div>
+		<div class="settings-btn"><a href="settingsView.html">환경설정</a></div>
 	</navi>
 </body>
 </html>
