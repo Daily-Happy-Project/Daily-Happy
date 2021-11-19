@@ -29,8 +29,8 @@
 	<form method="post" action="../jsp/writing.jsp">
 		<textarea name="content" rows="12" cols="12">당신의 행복은 무엇인가요?</textarea>
 		<!-- 하단은 임시로 넣어둔 예제이다. -->
-		<input type="radio" id="paperCode" name="img1" value="hak" checked/>
-		<input type="radio" id="paperCode" name="img2" value="img2"/>
+		<input type="radio" name="paperCode" value="1" checked/>
+		<input type="radio" name="paperCode" value="2"/>
 		<input type="text" name="jarName" value="djar" style="visibility:hidden;"/>
 		<input type="submit">
 		
