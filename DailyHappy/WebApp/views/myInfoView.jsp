@@ -118,7 +118,7 @@
 				</tr>
 			</table>
 			<div id="info-logo">로고</div><br>
-			<a id="logout-button" href="#로그아웃.jsp">로그아웃</a></a>
+			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a></a>
 		</article>
 	</section>
 </body>

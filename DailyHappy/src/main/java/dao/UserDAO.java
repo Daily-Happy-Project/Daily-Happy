@@ -26,7 +26,7 @@ public class UserDAO {
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "JarList(jarName VARCHAR(32) PRIMARY KEY, foldmethodName VARCHAR(32), cnt int UNSIGNED DEFAULT 0)");
             
-            stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList(no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(32), content VARCHAR(8192), paperCode int, ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (jarName) REFERENCES" + email + "JarList(jarName))");
+//            stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList(no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(32), content VARCHAR(8192), paperCode int, ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (jarName) REFERENCES" + email + "JarList(jarName))");
           
             return (count == 1) ? true : false;
             
