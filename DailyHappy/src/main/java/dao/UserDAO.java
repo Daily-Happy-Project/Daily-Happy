@@ -31,11 +31,11 @@ public class UserDAO {
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
             		+ "no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, "
-            		+ "name VARCHAR(32), "
+            		+ "jarName VARCHAR(32), "
             		+ "content VARCHAR(8192), "
             		+ "paperCode int, "
             		+ "ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
-            		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList(jarName))");
+            		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName))");
           
             return (count == 1) ? true : false;
             
