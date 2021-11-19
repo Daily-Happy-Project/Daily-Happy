@@ -6,7 +6,7 @@
 	
 	String email = (String)session.getAttribute("email");
 	String content = request.getParameter("content");
-	String paperName = request.getParameter("paperCode");
+	int paperName = Integer.parseInt(request.getParameter("paperCode"));
 	String jarName = request.getParameter("jarName");
 	
 	
