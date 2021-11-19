@@ -40,7 +40,24 @@
 body{
 	margin: 0;
 }
-.background-image{
+
+article{
+	width: 100%;
+}
+.main-wrap{
+	position: absolute;
+	top: 35%;
+	width: 100%;
+	z-index:2
+}
+#bottle-img-box{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background-color: #00000f;
+
+}
+.background-image{2
 	background-image: 
   		url('https://mdn.mozillademos.org/files/7693/catfront.png');
   	background-color: #0fffff;
@@ -61,7 +78,7 @@ body{
 	width: 100%;
 	height: 35px;
 	background-color: #00ffff;
-	z-index: 2;
+	z-index: 3;
 }
 .store-button{
 	position: absolute;
@@ -79,7 +96,7 @@ body{
 </style>
 </head>
 <body>
-	<section>
+	<section align="center">
 
 		<article>
 			<div>스크린샷 공유</div>
@@ -89,7 +106,9 @@ body{
 			<div><%//접은 학종이 카운트 %></div>
 		</article>
 		<article>
-			<div onclick="#팝업 창 생성"><%//유리병 이미지 %></div>
+			<div class="main-wrap">
+				<div id="bottle-img-box" onclick="#팝업 창 생성"><%//유리병 이미지 %></div>
+			</div>
 		</article>
 		<article>
 			<div>◀</div>
