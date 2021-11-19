@@ -2,11 +2,14 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.naming.NamingException;
 
 import util.ConnectionPool;
+import util.UserObj;
 
 public class JarDAO {
 
@@ -30,6 +33,31 @@ public class JarDAO {
             if (conn != null) conn.close();
         }
     }
+
 	
+	public ArrayList<UserObj> getJarList() throws NamingException, SQLException {
+    	Connection conn=ConnectionPool.get();
+    	PreparedStatement stmt=null;
+    	ResultSet rs=null;
+    	try {
+    		String sql="SELECT jarName, goalnum, cnt FROM user ORDER BY name DESC";
+    		stmt=conn.prepareStatement(sql);
+    		rs=stmt.executeQuery();
+    		
+    		ArrayList<UserObj> users=new ArrayList<UserObj>();
+    		while(rs.next()) {
+    			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getString("memberType")));
+    		}
+    		
+    		return users;
+    	} finally {
+    		if(rs!=null) 
+		    	rs.close();
+		    if(stmt!=null) 
+		    	stmt.close();
+		    if(conn!=null) 
+		    	conn.close();
+    	}
+    }
 	
 }

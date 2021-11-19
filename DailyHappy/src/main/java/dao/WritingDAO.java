@@ -7,7 +7,7 @@ import util.*;
 public class WritingDAO {
 	
 	// insert writing
-	public boolean insert(String email, String content, String paperCode, String jarName) throws NamingException, SQLException {
+	public boolean insert(String email, String content, int paperCode, String jarName) throws NamingException, SQLException {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
 		try {
@@ -16,7 +16,7 @@ public class WritingDAO {
 			String sql = "INSERT INTO " + email + "WritingList(content, paperCode, jarName) VALUES(?, ?, ?)";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, content);
-			stmt.setString(2, paperCode);
+			stmt.setInt(2, paperCode);
 			stmt.setString(3, jarName);
 			int count = stmt.executeUpdate();
 			return (count == 1) ? true : false;
@@ -43,7 +43,7 @@ public class WritingDAO {
              
 		     rs = stmt.executeQuery();
              
-		     // Å×ÀÌºí Ä®·³ ¼ö ¼¼±â Ãß°¡. ³¡³ª¸é view »èÁ¦
+		     // ï¿½ï¿½ï¿½Ìºï¿½ Ä®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ view ï¿½ï¿½ï¿½ï¿½
 		     sql = "select count(*) from jarview";
 		     rs = stmt.executeQuery(sql);
              
