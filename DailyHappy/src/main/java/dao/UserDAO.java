@@ -27,6 +27,7 @@ public class UserDAO {
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "JarList("
             		+ "jarName VARCHAR(32) PRIMARY KEY, "
             		+ "foldmethodName VARCHAR(32), "
+            		+ "cnt int UNSIGNED DEFAULT 0, "
             		+ "goalnum int UNSIGNED DEFAULT 0)");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
@@ -162,6 +163,14 @@ public class UserDAO {
 		    if(conn!=null) 
 		    	conn.close();
     	}
+    }
+    
+    
+    public String splitemail(String email) {
+    	String splitUid[] = email.split("@");
+        email=splitUid[0];
+        
+        return email;
     }
     
 

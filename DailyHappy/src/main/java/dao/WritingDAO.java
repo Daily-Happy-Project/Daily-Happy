@@ -1,9 +1,13 @@
 package dao;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Random;
 
 import javax.naming.NamingException;
-import util.*;
+
+import util.ConnectionPool;
 public class WritingDAO {
 	
 	// insert writing
@@ -11,14 +15,20 @@ public class WritingDAO {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
 		try {
-			String splitUid[] = email.split("@");
-            email=splitUid[0];
+			
+			email = new UserDAO().splitemail(email);
+            
 			String sql = "INSERT INTO " + email + "WritingList(content, paperCode, jarName) VALUES(?, ?, ?)";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, content);
 			stmt.setInt(2, paperCode);
 			stmt.setString(3, jarName);
-			int count = stmt.executeUpdate();
+			stmt.executeUpdate();
+			
+			sql = "UPDATE " + email + "jarlist set cnt=cnt+1 where jarName= \"" + jarName + "\"";
+			
+			int count = stmt.executeUpdate(sql);
+			
 			return (count == 1) ? true : false;
 		} finally {
 			if (stmt != null) stmt.close(); 
@@ -28,32 +38,17 @@ public class WritingDAO {
 	}
 	
 	//
-	public int randomNo(String email, String jarName) throws NamingException, SQLException {
+	public int writingNo(String email, String jarName) throws NamingException, SQLException {
 		Connection conn=ConnectionPool.get();
 		PreparedStatement stmt=null;
 		ResultSet rs=null;
-		int maxNo=0;
-		int ranNo=0;
     	try {
-    		 String splitUid[] = email.split("@");
-             email=splitUid[0];
-             
-    		 String sql = "CREATE VIEW jarview SELECT * FROM "+ email +"WritingList where jarName="+jarName;
+    		 email = new UserDAO().splitemail(email);
+             String sql = "select cnt from " + email + "jarlist where jarName=\"" + jarName + "\"";
 		     stmt = conn.prepareStatement(sql);
+             int writingNo = stmt.executeUpdate(sql);
              
-		     rs = stmt.executeQuery();
-             
-		     // ���̺� Į�� �� ���� �߰�. ������ view ����
-		     sql = "select count(*) from jarview";
-		     rs = stmt.executeQuery(sql);
-             
-		     maxNo = rs.getInt("count");
-		     
-             Random random = new Random();
-             ranNo = random.nextInt(maxNo+1);
-             
-             
-             return ranNo;
+             return writingNo;
     	} finally {
     		    if(rs!=null) rs.close();
     		    if(stmt!=null) stmt.close();
@@ -62,21 +57,32 @@ public class WritingDAO {
 	}
 	
     // view content
-    public boolean content(int ranNo) throws NamingException, SQLException{
+    public boolean content(String email, String jarName) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
     	ResultSet rs=null;
+    	int ranNo=0;
 
     	try {
-    		 String sql = "SELECT content, name, ts FROM jarView WHERE no = ?";
-		     stmt = conn.prepareStatement(sql);
-    		 stmt.setInt(1, ranNo);
+    		
+    	     ranNo = new WritingDAO().writingNo(email, jarName);
+		     ranNo = new Random().nextInt(ranNo+1);
+   		 
+		     // create view
+    		 String sql = "CREATE VIEW jarview SELECT * FROM "+ email +"WritingList where jarName= \"" + jarName + "\"";
+		     stmt = conn.prepareStatement(sql); 
+		     stmt.executeQuery();
+		     
+		     // select contents
+    		 sql = "SELECT content, name, ts FROM jarView WHERE no = ?";
+		     stmt.executeQuery(sql);
+		     stmt.setInt(1, ranNo);
              rs = stmt.executeQuery();
+             
+             // delete view
+             stmt.executeQuery("DELETE VIEW jarview ");
+             
              return rs.next();
-//             String content = rs.getString("content");
-//             String name= rs.getString("name");
-//             Date ts = rs.getDate("ts");
-//                          
     	} finally {
     		    if(rs!=null) rs.close();
     		    if(stmt!=null) stmt.close();
@@ -85,17 +91,22 @@ public class WritingDAO {
     }
     
     // delete content
-    public boolean delete(int no) throws NamingException, SQLException {
-        Connection conn = null;
+    public boolean delete(int no, String jarName, String email) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
-            String sql = "DELETE FROM feed WHERE no = ?";
+        	
+        	email = new UserDAO().splitemail(email);
+            String sql = "DELETE FROM" + email + "writinglist WHERE no = ?";
             
-            conn = ConnectionPool.get();
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, no);
+            stmt.executeUpdate();
+			
+			sql = "UPDATE " + email + "jarlist set cnt=cnt-1 where jarName= \"" + jarName + "\"";
             
-            int count = stmt.executeUpdate();
+            int count = stmt.executeUpdate(sql);
+            
             return (count > 0) ? true : false;
         } finally {
             if (stmt != null) stmt.close();
@@ -103,4 +114,6 @@ public class WritingDAO {
             
         }
     }
+    
+    
 }
