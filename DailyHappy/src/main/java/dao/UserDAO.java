@@ -37,9 +37,13 @@ public class UserDAO {
             		+ "paperCode int, "
             		+ "ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
             		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName))");
+            
+            stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "Item("
+            		+ "email VARCHAR(128) PRIMARY KEY, "
+            		+ "itemcode int, "
+            		+ "FOREIGN KEY (jarName) REFERENCES item (itemcode))");
           
             return (count == 1) ? true : false;
-            
             
         } finally {
             if (stmt != null) stmt.close(); 

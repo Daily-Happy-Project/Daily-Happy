@@ -35,9 +35,10 @@ CREATE TABLE IF NOT EXISTS USERNAME+JarList(
 
 
 -- user item --
-CREATE TABLE IF NOT EXIST userItem(
+CREATE TABLE IF NOT EXIST USERNAME+Item(
 	email VARCHAR(128) PRIMARY KEY,         -- user email --
-	itemcode int NOT NULL					-- item code --
+	FOREIGN KEY (itemcode)					-- item code --
+	
 );
 
 
@@ -45,6 +46,7 @@ CREATE TABLE IF NOT EXIST userItem(
 CREATE TABLE IF NOT EXISTS item(
 	itemcode int PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
+	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, foldmethod, theme, jar) -- 
 	price INT NOT NULL,					-- item price --
 	info VARCHAR(1024) NOT NULL,		-- item information --
 	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
