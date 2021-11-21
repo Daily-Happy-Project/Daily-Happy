@@ -8,7 +8,7 @@
 
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
+		//response.sendRedirect("loginView.jsp");
 		//insert into user(email,name,pw) values('d@d','이민진','1111');
 		//test string: 
 			uemail = "d@d";
