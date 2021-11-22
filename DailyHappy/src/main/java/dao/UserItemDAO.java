@@ -84,9 +84,28 @@ public class UserItemDAO {
 		
 		
 	// random Paper
-		public int randomPaper(String email) throws NamingException, SQLException {
+		public String randomPaper(String email) throws NamingException, SQLException {
 			Connection conn = ConnectionPool.get();
 			PreparedStatement stmt = null;
+			try {
+				email = new UserDAO().splitemail(email);
+				String sql = "CREATE VIEW userpaper "
+						+ "SELECT " + email + "item.itemcode, item.itemcode, item.img1"
+						+ "FROM " + email + "item, item "
+						+ "where "+ email+ "item.itemcode=item.itemcode "
+						+ "and item.itemtype=\"paper\"";
+				stmt = conn.prepareStatement(sql);
+				stmt.executeUpdate();
+				
+				sql = "SELECT img1 FROM userpaper ORDER BY rand() LIMIT 1";
+				stmt.executeUpdate(sql);
+				
+				return sql;			
+				
+			} finally {
+	            if (stmt != null) stmt.close(); 
+	            if (conn != null) conn.close();
+			}
 			
 		}
 	
