@@ -30,13 +30,15 @@ CREATE TABLE IF NOT EXISTS USERNAME+writing(
 CREATE TABLE IF NOT EXISTS USERNAME+JarList(
     jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
     foldmethodName VARCHAR(32),                -- fold method --
-    cnt int UNSIGNED AUTO_INCREMENT            -- count --
+    cnt int UNSIGNED,      					   -- count --
+    goalnum int UNSIGNED DEFAULT 0			   -- godl number --
 );--
 
 
 -- user item --
 CREATE TABLE IF NOT EXIST USERNAME+Item(
 	email VARCHAR(128) PRIMARY KEY,         -- user email --
+	FOREIGN KEY (itemcode)					-- item code --
 	FOREIGN KEY (itemcode)					-- item code --
 	
 );

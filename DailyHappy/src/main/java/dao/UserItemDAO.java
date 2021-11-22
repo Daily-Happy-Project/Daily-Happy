@@ -12,24 +12,20 @@ import util.ConnectionPool;
 public class UserItemDAO {
 	
 	// insert writing
-		public boolean insert(String email, String content, int paperCode, String jarName) throws NamingException, SQLException {
+		public boolean insert(String email, int itemcode) throws NamingException, SQLException {
 			Connection conn = ConnectionPool.get();
 			PreparedStatement stmt = null;
 			try {
 				
 				email = new UserDAO().splitemail(email);
 	            
-				String sql = "INSERT INTO " + email + "WritingList(content, paperCode, jarName) VALUES(?, ?, ?)";
+				String sql = "INSERT INTO " + email + "item(email, itemcode) VALUES(?, ?)";
 				stmt = conn.prepareStatement(sql);
-				stmt.setString(1, content);
-				stmt.setInt(2, paperCode);
-				stmt.setString(3, jarName);
+				stmt.setString(1, email);
+				stmt.setInt(2, itemcode);
 				stmt.executeUpdate();
 				
-				sql = "UPDATE " + email + "jarlist set cnt=cnt+1 where jarName= \"" + jarName + "\"";
-				
 				int count = stmt.executeUpdate(sql);
-				
 				return (count == 1) ? true : false;
 			} finally {
 				if (stmt != null) stmt.close(); 
@@ -39,7 +35,7 @@ public class UserItemDAO {
 		}	
 	
 	
-	// item lookup
+	// item lookup. type byeol lo check
 		public boolean exists(String email, String itemtype) throws NamingException, SQLException {
 	        Connection conn = ConnectionPool.get();
 	        PreparedStatement stmt = null;
