@@ -7,7 +7,7 @@
 <%
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		response.sendRedirect("loginView.html");
+		response.sendRedirect("loginView.jsp");
 		//test string: 
 		//uemail = "d@d";
 	}

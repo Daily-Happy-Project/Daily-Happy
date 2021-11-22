@@ -17,7 +17,7 @@
 <script type="text/javascript">
 	setTimeout(function() {
 		  location.href="../views/loginView.jsp";
-		}, 3000);
+		}, 2000);
 
 </script>
 </body>
