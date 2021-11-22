@@ -74,9 +74,9 @@ public class WritingDAO {
 		     stmt.executeQuery();
 		     
 		     // select contents
-    		 sql = "SELECT content, name, ts FROM jarView WHERE no = ?";
-		     stmt.executeQuery(sql);
-		     stmt.setInt(1, ranNo);
+    		 sql = "SELECT content, name, ts FROM jarView order by rand() limit 1";
+//		     stmt.executeQuery(sql);
+//		     stmt.setInt(1, ranNo);
              rs = stmt.executeQuery();
              
              // delete view
