@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>로그인</title>  
-
-
 <!--
 <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/allStyle.css"/>
 <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/loginStyle.css"/>
@@ -16,7 +16,23 @@
 <link rel="stylesheet" href="../resources/css/loginStyle.css"/>
 <link rel="stylesheet" href="../resources/css/formStyle.css"/>
 </head>
-
+<%
+//쿠키가져오기
+	Cookie[] cookies = request.getCookies();
+	if(cookies != null){
+	    for(Cookie tempCookie : cookies){
+	        if(tempCookie.getName().equals("email")){
+	            //email 쿠키가 있으면 세션에 저장 후 메인뷰로 이동.
+	            session.setAttribute("email", tempCookie.getName());
+	            response.sendRedirect("../views/mainView.jsp");
+	            return;
+	        }
+	        else{
+	        	//쿠키 없으면 로그인뷰 그대로
+	        }
+	    }
+	}
+%>
 <body>
    <div class="container" align="center">
         <div class="login-logo">로고<br></div>
@@ -28,6 +44,7 @@
 
             <input type="email" class="input-text" name="email" placeholder="E-mail"/><br>
             <input type="password" class="input-text" name="pw" placeholder="비밀번호"/><br>
+            자동 로그인<input type = "checkbox" class="input-text" name="loginChk" value = "true"><br>
             <input type="submit" class="button" value="로그인"/>
             
         </form>
