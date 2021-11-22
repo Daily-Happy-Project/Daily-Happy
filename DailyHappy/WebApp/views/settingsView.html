@@ -28,7 +28,9 @@
     <body>
         <header>
             <h2 class="title">환경설정</h2>
-            <div class="x-button">x</div>
+            <div class="x-button">
+            <a href="javascript:history.back()">x</a>
+			</div>
             <hr class = "dotted-line2">
         </header>
         <section align="center">
@@ -41,14 +43,14 @@
                     <span>글자크기</span>
                     <a>◀</a><span>보통</span><a>▶</a>    <!--작게 보통 크게 아주크게-->
                 </article>
-                <article class="box">
-                    <div onclick="#도움말페이지">도움말</div>
+                <article>
+                    <a class="box" href="helpView.html"><div>도움말</div></a>
                 </article>
-                <article class="box">
-                    <div onclick="#개발자정보페이지">개발자 정보</div>
+                <article>
+                    <a class="box" href="dInfoView.html"><div>개발자 정보</div></a>
                 </article>
-                <article onclick="#저작권정보페이지" class="box">
-                    <div>저작권 정보</div>
+                <article>
+                    <a class="box" href="copyrightView.html"><div>저작권 정보</div></a>
                 </article>
                 <article>
                     <a class="box" href="uManageView.jsp"><div>회원 관리</div></a>
