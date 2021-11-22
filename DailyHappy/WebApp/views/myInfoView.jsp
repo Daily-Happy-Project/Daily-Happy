@@ -5,19 +5,15 @@
 <%@ page import="dao.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
+		response.sendRedirect("loginView.html");
 		//test string: 
-			uemail = "d@d";
+		//uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
 	ArrayList<UserObj> list = (new UserDAO()).myInfo(uemail);
 	
-	/* String uname = 
-	String uid = 
-	String ucoin =  */
 %>
 <!DOCTYPE html>
 <html>
@@ -119,7 +115,8 @@
 				</tr>
 			</table>
 			<div id="info-logo">로고</div><br>
-			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a></a>
+			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a>
+			<a id="delete-user" href="selfDel.jsp">계정 삭제</a>
 		</article>
 	</section>
 </body>
