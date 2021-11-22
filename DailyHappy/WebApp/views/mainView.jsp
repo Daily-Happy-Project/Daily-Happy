@@ -8,10 +8,10 @@
 
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		//response.sendRedirect("loginView.jsp");
+		response.sendRedirect("loginView.jsp");
 		//insert into user(email,name,pw) values('d@d','이민진','1111');
 		//test string: 
-			uemail = "d@d";
+		//uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
 	//ArrayList<JarObj> list = (new JarDAO()).getJarList();

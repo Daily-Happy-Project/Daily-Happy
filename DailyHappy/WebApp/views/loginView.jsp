@@ -18,14 +18,12 @@
 </head>
 <%
 //쿠키가져오기
+	String str = "";
 	Cookie[] cookies = request.getCookies();
 	if(cookies != null){
 	    for(Cookie tempCookie : cookies){
 	        if(tempCookie.getName().equals("email")){
-	            //email 쿠키가 있으면 세션에 저장 후 메인뷰로 이동.
-	            session.setAttribute("email", tempCookie.getName());
-	            response.sendRedirect("../views/mainView.jsp");
-	            return;
+	            str = tempCookie.getValue();
 	        }
 	        else{
 	        	//쿠키 없으면 로그인뷰 그대로
@@ -42,9 +40,9 @@
     
         <form class="form-style" name="loginform" method="post" action="../jsp/login.jsp">
 
-            <input type="email" class="input-text" name="email" placeholder="E-mail"/><br>
+            <% out.print("<input type=\"email\" class=\"input-text\" name=\"email\" placeholder=\"E-mail\" value=\""+str+"\"/>"); %><br>
             <input type="password" class="input-text" name="pw" placeholder="비밀번호"/><br>
-            자동 로그인<input type = "checkbox" class="input-text" name="loginChk" value = "true"><br>
+            자동 로그인<input type = "checkbox" class="input-text" name="loginChk" value = "true" checked><br>
             <input type="submit" class="button" value="로그인"/>
             
         </form>

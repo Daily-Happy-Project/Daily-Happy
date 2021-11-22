@@ -23,7 +23,7 @@ else{
         cookie.setPath("/");
         response.addCookie(cookie);
     }
-	out.print("로그인 되었습니다: "+uemail);
-	out.print("<a href=\"../views/mainView.jsp\">메인화면 가기</a>");
+    response.sendRedirect("../views/mainView.jsp");
+	
 }
 %>
