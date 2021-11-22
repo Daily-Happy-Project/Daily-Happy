@@ -39,7 +39,6 @@ CREATE TABLE IF NOT EXISTS USERNAME+JarList(
 CREATE TABLE IF NOT EXIST USERNAME+Item(
 	email VARCHAR(128) PRIMARY KEY,         -- user email --
 	FOREIGN KEY (itemcode)					-- item code --
-	FOREIGN KEY (itemcode)					-- item code --
 	
 );
 
