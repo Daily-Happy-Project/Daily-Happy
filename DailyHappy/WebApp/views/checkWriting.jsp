@@ -14,6 +14,14 @@
 	<title>작성글 랜덤 확인</title>
 </head>
 <body>
-
+	<header>
+		<div class="x-button" style="float:right">x</div>
+	</header>
+	<article>
+		<div class="checkWriting" style="text-align:center">
+			<img src="#이미지" />
+		</div>
+	</article>
+	
 </body>
 </html>
