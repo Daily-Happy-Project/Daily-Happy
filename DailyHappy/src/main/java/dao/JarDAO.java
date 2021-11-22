@@ -60,4 +60,24 @@ public class JarDAO {
     	}
     }
 	
+
+	 // delete jar table
+	    public boolean deleteJarTable(String email) throws NamingException, SQLException {
+	        Connection conn = ConnectionPool.get();
+	        PreparedStatement stmt = null;
+	        try {
+	        	
+	        	email = new UserDAO().splitemail(email);
+	            String sql = "DROP TABLE " + email + "jarlist";
+	            stmt = conn.prepareStatement(sql);
+	            int count = stmt.executeUpdate();
+				
+	            return (count > 0) ? true : false;
+	        } finally {
+	            if (stmt != null) stmt.close();
+	            if (conn != null) conn.close();
+	            
+	        }
+	    }
+	
 }

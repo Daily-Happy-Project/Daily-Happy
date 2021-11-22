@@ -37,9 +37,13 @@ public class UserDAO {
             		+ "paperCode int, "
             		+ "ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
             		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName))");
+            
+            stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "Item("
+            		+ "email VARCHAR(128) PRIMARY KEY, "
+            		+ "itemcode int, "
+            		+ "FOREIGN KEY (jarName) REFERENCES item (itemcode))");
           
             return (count == 1) ? true : false;
-            
             
         } finally {
             if (stmt != null) stmt.close(); 
@@ -174,7 +178,21 @@ public class UserDAO {
     }
     
 
-    //�깉 �쑀由щ퀝 
+    public ResultSet memberType(String email) throws NamingException, SQLException{
+    	Connection conn = ConnectionPool.get();
+    	PreparedStatement stmt = null;
+    	ResultSet rs = null;
+    	try {
+    		email = new UserDAO().splitemail(email);
+    		String sql = "SELECT memberType FROM user WHERE=\"" + email + "\"";
+    		stmt = conn.prepareStatement(sql);
+    		rs = stmt.executeQuery();
+    		
+    		return rs;
+    	} finally {
+			
+		}
+    }
 
     
     
