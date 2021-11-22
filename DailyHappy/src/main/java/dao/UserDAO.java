@@ -178,7 +178,21 @@ public class UserDAO {
     }
     
 
-    //�깉 �쑀由щ퀝 
+    public ResultSet memberType(String email) throws NamingException, SQLException{
+    	Connection conn = ConnectionPool.get();
+    	PreparedStatement stmt = null;
+    	ResultSet rs = null;
+    	try {
+    		email = new UserDAO().splitemail(email);
+    		String sql = "SELECT memberType FROM user WHERE=\"" + email + "\"";
+    		stmt = conn.prepareStatement(sql);
+    		rs = stmt.executeQuery();
+    		
+    		return rs;
+    	} finally {
+			
+		}
+    }
 
     
     
