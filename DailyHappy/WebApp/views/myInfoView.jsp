@@ -60,13 +60,23 @@
 	    color: #fff;
 	    background-color: #000; 
 	}
-	#info-logo{
-		display: inline-block;
-	    margin-top: 40px;
-	    margin-bottom: 20px;
-	    width:80px;
-	    height:80px;
-	    background-color: aqua;
+	.container{
+		display: flax;
+		width: 100%;
+	}
+	.logo-wrap{
+	    display: flax;
+	    width: 5em;
+	    margin-top: 2em;
+	    margin-bottom: 0em;
+	}
+	.logo{
+		over-fit: cover;
+		width: 100%;
+		height: auto;
+	}
+	#delete-user{
+		
 	}
 </style>
 </head>
@@ -77,8 +87,8 @@
 		<div class="x-button">x</div>
 		<hr class = "dotted-line1">
 	</header>
-	<section>
-		<article align="center">
+	<section >
+		<div align="center" class="container">
 			<table align="center">
 				<tr>
 					<td class = "info-table-line1">별명</td>
@@ -114,10 +124,10 @@
 					</div></td>
 				</tr>
 			</table>
-			<div id="info-logo">로고</div><br>
-			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a>
+			<div class="logo-wrap"><img class="logo" src="../resources/images/color-logo2.png"/><br></div><br>
+			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a><br>
 			<a id="delete-user" href="selfDel.jsp">계정 삭제</a>
-		</article>
+		</dev>
 	</section>
 </body>
 </html>
