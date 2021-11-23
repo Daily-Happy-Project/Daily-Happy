@@ -12,7 +12,7 @@
 <title>하루, 행복</title>
 <style type="text/css">
 #index-wrap{
-	margin-top: 20em;
+	margin-top: 13em;
 }
 </style>
 </head>
@@ -22,7 +22,7 @@
 <div id="appname">하루, 행복</div>
 </div>
 <script type="text/javascript">
-	#setTimeout(function() {
+	setTimeout(function() {
 		  location.href="../views/loginView.jsp";
 		}, 2000);
 

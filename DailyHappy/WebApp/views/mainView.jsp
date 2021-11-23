@@ -124,9 +124,8 @@ article{
 }
 .background-image{
 	display: inline-block;
-	background-image: 
-  		url('#');
-  	background-color: #FEFBF3;
+  	background-image: url('../resources/images/pink-round-theme.png');
+  	background-color: #FFF2E2;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -150,7 +149,7 @@ article{
 	max-width: 400px;
 	height: 110px;
 }
-#paper-img-box:hover{
+.paperimg:hover{
 	cursor: pointer;
 }
 .paperimg{
@@ -176,8 +175,8 @@ article{
 		<article>
 			<div class="main-wrap">
 				<%
-					String strJ = "<div id=\"bottle-img-box\" onclick=\"popup 생성\">";
-					strJ += "<img src=\"../resources/images/normal-3.png\" class=\"jarimg\" alt=\"유리병 이미지\"/>";
+					String strJ = "<div id=\"bottle-img-box\">";
+					strJ += "<img src=\"../resources/images/normal-3.png\" class=\"jarimg\" alt=\"유리병 이미지\" onclick=\"GotoCheck();\"/>";
 					strJ +="</div>";
 					out.print(strJ);
 				%><%//유리병 이미지 %>
@@ -189,30 +188,34 @@ article{
 		</article>
 		<article>
 			<div id="paper-wrap">
-				<div id="paper-img-box" onclick="GotoWrite();">
 				<%
-					String strP = "<div id=\"paper-img-box\" onclick=\"GotoWrite();\">";
-					strP += "<img src=\"../resources/images/gra-paper-r.png\" class=\"paperimg\" alt=\"새 글 작성\"/>";
+					String strP = "<div id=\"paper-img-box\">";
+					strP += "<img src=\"../resources/images/gra-paper-r.png\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
 					strP +="</div>";
 					out.print(strP);
 				%><%//유리병 이미지 %>
-				</div>
 			</div>
 		</article>
 		<article class="bg-image-wrap">
-			<div class="background-image">배경화면</div>
+			<div class="background-image"></div>
+		</article>
+		<article>
+			<div class="table"></div>
 		</article>
 	</section>
 
 	<nav><%@include file="bottomNavi.html"%></nav> 
 	
 	<script type="text/javascript">
+<%
+	String nowJar = "nowJ"; //임시값. 화살표 누를때마다 nowJar이 가리키는 값이 바뀌도록.
+	session.setAttribute("nowJar", nowJar);
+%>
+		function GotoCheck(){
+			location.href="checkWriting.jsp"
+		}
 		function GotoWrite(){
-			<% 
-			String strtmp = "nowB";	//임시 값
-			session.setAttribute("nowBottle", strtmp);
-			%>
-			location.href="writingView.jsp";
+			location.href="writingView.jsp"
 		}
 	</script>
 </body>
