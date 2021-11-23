@@ -12,7 +12,7 @@
 <title>하루, 행복</title>
 <style type="text/css">
 #index-wrap{
-	margin-top: 30%;
+	margin-top: 20em;
 }
 </style>
 </head>

@@ -63,6 +63,7 @@ article{
 	position: absolute;
 	top: 10%;
 	z-index: 5;
+	font-size: 30pt;
 	width: 100%;
 	display: flax;
 	
@@ -83,7 +84,7 @@ article{
 	position: absolute;
 	bottom: 5.5em;
 	width: 100%;
-	z-index:3;
+	z-index:2;
 	display: flex;
 	
 }
@@ -124,8 +125,8 @@ article{
 .background-image{
 	display: inline-block;
 	background-image: 
-  		url('../resources/images/pink-round-theme.png');
-  	background-color: #FFF2E2;
+  		url('#');
+  	background-color: #FEFBF3;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -140,7 +141,7 @@ article{
 	position: fixed;
 	bottom:0px;
 	width: 100%;
-	z-index: 3;
+	z-index: 2;
 	display: flex;
 }
 #paper-img-box{
@@ -157,17 +158,6 @@ article{
 	max-width: 250px;
 	min-width: 200px;
 	margin-bottom: -50%;
-}
-
-
-.table{
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	height: 10em;
-	background-color: #FFC7C7;
-	z-index: 2;
 }
 
 </style>
@@ -205,15 +195,12 @@ article{
 					strP += "<img src=\"../resources/images/gra-paper-r.png\" class=\"paperimg\" alt=\"새 글 작성\"/>";
 					strP +="</div>";
 					out.print(strP);
-				%><%//학종이 이미지 %>
+				%><%//유리병 이미지 %>
 				</div>
 			</div>
 		</article>
 		<article class="bg-image-wrap">
-			<div class="background-image"></div>
-		</article>
-		<article>
-			<div class="table"></div>
+			<div class="background-image">배경화면</div>
 		</article>
 	</section>
 
