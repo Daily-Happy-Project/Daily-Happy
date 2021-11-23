@@ -22,10 +22,10 @@ public class UserItemDAO {
 				String sql = "INSERT INTO " + email + "item(itemcode) VALUES(?)";
 				stmt = conn.prepareStatement(sql);
 				stmt.setInt(1, itemcode);
-				stmt.executeUpdate();
 				
 				int count = stmt.executeUpdate(sql);
 				return (count == 1) ? true : false;
+				
 			} finally {
 				if (stmt != null) stmt.close(); 
 				if (conn != null) conn.close();
