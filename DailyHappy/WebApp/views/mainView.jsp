@@ -23,9 +23,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>메인</title>
+<title>하루, 행복 - 메인화면</title>
 
 <style type="text/css">
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
 	margin: 0;
 }
@@ -35,9 +41,9 @@ article{
 }
 .scr-wrap{
 	position: fixed;
-	top: 15%;
+	top: 10%;
 	left: 10px;
-	z-index: 3;
+	z-index: 6;
 	width: 40px;
 	height: 40px;
 	border-radius: 100px;
@@ -53,12 +59,26 @@ article{
 	width: 60%;
 	margin: 0 auto;
 }
-#cnt{
+#cnt-wrap{
 	position: absolute;
 	top: 10%;
+	z-index: 5;
 	font-size: 30pt;
-	z-index: 3;
 	width: 100%;
+	display: flax;
+	
+}
+#cnt{
+	width: 30%;
+	margin: 0 auto;
+	font-size: 40pt;
+	padding: 0.5em 0em 0.5em 0em;
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 20px;
+	color: #ffffff;
+	-webkit-text-stroke: 2px #AAAAAA;
+	font-family: 'GongGothicMedium';
+	
 }
 .main-wrap{
 	position: absolute;
@@ -85,7 +105,10 @@ article{
     bottom: 40%;
     padding: 5%;
     font-size: 20pt;
+   	
     z-index: 4;
+    color: #AAAAAA;
+    -webkit-text-stroke: 10px #AAAAAA;
 }
 #left-bottle{
 	left: 0;
@@ -127,28 +150,16 @@ article{
 	max-width: 400px;
 	height: 110px;
 }
+#paper-img-box:hover{
+	cursor: pointer;
+}
 .paperimg{
 	width: 100%;
 	max-width: 250px;
 	min-width: 200px;
 	margin-bottom: -50%;
 }
-.navi{
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	height: 3em;
-	background-color: #9D9D9D;
-	z-index: 3;
-}
-.menu{
-	position: inline-block;
-	text-align: center;
-	float:left;
-	width: 25%;
-	height: 100%;
-}
+
 </style>
 <!-- count() -->
 </head>
@@ -159,7 +170,7 @@ article{
 			<div class="scr"><img class="scr-icon" src="../resources/images/camera.png" alt="스크린샷 공유"><%//스크린샷 공유 %></div>
 			
 		</article>
-		<article>
+		<article id="cnt-wrap">
 			<div id="cnt">00<%//접은 학종이 카운트 %></div>
 		</article>
 		<article>
@@ -173,8 +184,8 @@ article{
 			</div>
 		</article>
 		<article>
-			<div id="left-bottle">◁</div>
-			<div id="right-bottle">▷</div>
+			<div id="left-bottle">〈</div>
+			<div id="right-bottle">〉</div>
 		</article>
 		<article>
 			<div id="paper-wrap">
@@ -193,12 +204,7 @@ article{
 		</article>
 	</section>
 
-	<navi class="navi">
-		<div class="menu">상점</div>
-		<div class="menu"><a href="#유리병 관리 페이지">유</a></div>
-		<div class="menu"><a href="myInfoView.jsp">내정보</a></div>
-		<div class="menu"><a href="settingsView.html">환경설정</a></div>
-	</navi>
+	<nav><%@include file="bottomNavi.html"%></nav> 
 	
 	<script type="text/javascript">
 		function GotoWrite(){
