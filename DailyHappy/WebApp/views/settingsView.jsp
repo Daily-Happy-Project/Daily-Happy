@@ -51,13 +51,13 @@
                     <a>◀</a><span>보통</span><a>▶</a>    <!--작게 보통 크게 아주크게-->
                 </article>
                 <article>
-                    <a class="box" href="helpView.html"><div>도움말</div></a>
+                    <a class="box" href="helpView.jsp"><div>도움말</div></a>
                 </article>
                 <article>
-                    <a class="box" href="dInfoView.html"><div>개발자 정보</div></a>
+                    <a class="box" href="dInfoView.jsp"><div>개발자 정보</div></a>
                 </article>
                 <article>
-                    <a class="box" href="copyrightView.html"><div>저작권 정보</div></a>
+                    <a class="box" href="copyrightView.jsp"><div>저작권 정보</div></a>
                 </article>
                 <article>
                     <a class="box" href="uManageView.jsp"><div>회원 관리</div></a>
