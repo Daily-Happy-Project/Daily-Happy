@@ -57,37 +57,57 @@ public class WritingDAO {
 	}
 	
     // view content
-    public boolean content(String email, String jarName) throws NamingException, SQLException{
+    public ResultSet content(String email, String jarName) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
-    	PreparedStatement stmt=null;
-    	ResultSet rs=null;
-    	int ranNo=0;
 
     	try {
-    		
+        	 PreparedStatement stmt=null;
+        	 ResultSet rs=null;
+        	 int ranNo=0;
+        	
     	     ranNo = new WritingDAO().writingNo(email, jarName);
 		     ranNo = new Random().nextInt(ranNo+1);
+		     System.out.println(ranNo);
+		     
+		     email = new UserDAO().splitemail(email);
    		 
 		     // create view
-    		 String sql = "CREATE VIEW jarview SELECT * FROM "+ email +"WritingList where jarName= \"" + jarName + "\"";
+    		 String sql = "CREATE VIEW " + email + "jarview SELECT * FROM "+ email +"WritingList where jarName= \"" + jarName + "\"";
 		     stmt = conn.prepareStatement(sql); 
-		     stmt.executeQuery();
+		     stmt.executeUpdate();
 		     
 		     // select contents
     		 sql = "SELECT content, name, ts FROM jarView order by rand() limit 1";
-//		     stmt.executeQuery(sql);
-//		     stmt.setInt(1, ranNo);
-             rs = stmt.executeQuery();
              
-             // delete view
-             stmt.executeQuery("DELETE VIEW jarview ");
+             return stmt.executeQuery(sql);
              
-             return rs.next();
     	} finally {
-    		    if(rs!=null) rs.close();
-    		    if(stmt!=null) stmt.close();
+    			if(rs!=null) rs.close();
+    			if(stmt!=null) stmt.close();
     		    if(conn!=null) conn.close();
     	}
+    }
+    
+    
+    public boolean deletejarView(String email) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        try {
+        	
+        	email = new UserDAO().splitemail(email);
+            String sql = "DROP TABLE " + email + "jarView ";
+            
+            stmt = conn.prepareStatement(sql);
+            stmt.executeUpdate();
+			
+            int count = stmt.executeUpdate(sql);
+            
+            return (count > 0) ? true : false;
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+            
+        }
     }
     
     // delete content
