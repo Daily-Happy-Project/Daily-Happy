@@ -35,16 +35,23 @@ article{
 }
 .scr-wrap{
 	position: fixed;
-	top: 30px;
+	top: 15%;
 	left: 10px;
 	z-index: 3;
-	width: 30px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+	background-color: #AAAAAA;
+	display: flax;
 }
 .scr{
-	float:left;
+	position: absolute;
 	width: 100%;
-	height: 30px;
-	background-color: #9D9D9D;
+	margin: 0.5em auto;
+}
+.scr-icon{
+	width: 60%;
+	margin: 0 auto;
 }
 #cnt{
 	position: absolute;
@@ -149,7 +156,7 @@ article{
 	<section align="center">
 
 		<article class="scr-wrap">
-			<div class="scr">공유<%//스크린샷 공유 %></div>
+			<div class="scr"><img class="scr-icon" src="../resources/images/camera.png" alt="스크린샷 공유"><%//스크린샷 공유 %></div>
 			
 		</article>
 		<article>
