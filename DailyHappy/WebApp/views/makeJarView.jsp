@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
@@ -11,6 +12,7 @@
 		response.sendRedirect("loginView.jsp");
 	}
 	session.setAttribute("email", uemail);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -61,6 +63,7 @@
     background-color: #9D9D9D;
 	}
 
+
 	input[type=checkbox] {
     display:none;
 	}
@@ -75,6 +78,7 @@ label
 label img{
 	width: 100%;
 }
+
 </style>
 </head>
 <body>
@@ -84,6 +88,7 @@ label img{
 	</header>
 	<section>
 		<article align="center">
+
 			<form method="post" action="test.jsp">
 			<table align="center">
 				<tr>
@@ -99,6 +104,7 @@ label img{
 					<td>&nbsp;&nbsp;</td>
 					<td class = "table-line2">
 						<div class = "box">
+
 <%
 						ArrayList<UserItemObj> list = (new UserItemDAO()).getUserItemList(uemail, "jar");
 						String jarstr = "";

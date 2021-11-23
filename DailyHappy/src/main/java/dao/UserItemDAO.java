@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import javax.naming.NamingException;
 
 import util.ConnectionPool;
+
 import util.UserItemObj;
+
 import util.UserObj;
 
 public class UserItemDAO {
@@ -49,6 +51,32 @@ public class UserItemDAO {
 	    		ArrayList<UserItemObj> uItems=new ArrayList<UserItemObj>();
 	    		while(rs.next()) {
 	    			uItems.add(new UserItemObj(rs.getInt("itemcode"), rs.getString("itemName"), rs.getString("img1")));
+	    		}
+	    		
+	    		return uItems;
+	    	} finally {
+	    		if(rs!=null) 
+			    	rs.close();
+			    if(stmt!=null) 
+			    	stmt.close();
+			    if(conn!=null) 
+			    	conn.close();
+	    	}
+	    }
+		// item lookup. type byeol lo check (make new jar)
+	    public ArrayList<UserItemObj> getUserItemList(String email, String itemtype) throws NamingException, SQLException {
+	    	Connection conn=ConnectionPool.get();
+	    	PreparedStatement stmt=null;
+	    	ResultSet rs=null;
+	    	try {
+	    		email = new UserDAO().splitemail(email);
+	    		String sql = "SELECT email FROM "+ email + "Item WHERE itemtype = "+ itemtype;
+	    		stmt=conn.prepareStatement(sql);
+	    		rs=stmt.executeQuery();
+	    		
+	    		ArrayList<UserItemObj> uItems=new ArrayList<UserItemObj>();
+	    		while(rs.next()) {
+	    			uItems.add(new UserItemObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getString("memberType")));
 	    		}
 	    		
 	    		return uItems;
