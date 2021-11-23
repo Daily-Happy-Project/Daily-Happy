@@ -1,11 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("utf-8"); %>
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>환경설정</title>
         
         <link rel="stylesheet" href="css/headerStyle.css"/>
         <style type="text/css">
+        	.box:visited{
+        		color: #000000;
+        	}
             .button-container{
                 display: inline-block;
                 width: 200px;
@@ -28,10 +35,7 @@
     <body>
         <header>
             <h2 class="title">환경설정</h2>
-            <div class="x-button">
-            <a href="javascript:history.back()">x</a>
-			</div>
-            <hr class = "dotted-line2">
+		<%@include file="topNavi.html"%>
         </header>
         <section align="center">
            <div class="button-container">
@@ -57,7 +61,7 @@
                 </article>
             </div>
         </section>
-        
+        <footer align="center"><%@include file="footer.html"%></footer>
         <script>
             //소리 켜기/끄기
             //폰트 크기

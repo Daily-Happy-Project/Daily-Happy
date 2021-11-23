@@ -27,6 +27,7 @@
 <style>
 	table{
 		margin-top: 30px;
+		margin-bottom: 30px;
 	}
 	.info-table-line1{
 		text-align: right;
@@ -64,17 +65,7 @@
 		display: flax;
 		width: 100%;
 	}
-	.logo-wrap{
-	    display: flax;
-	    width: 5em;
-	    margin-top: 2em;
-	    margin-bottom: 0em;
-	}
-	.logo{
-		over-fit: cover;
-		width: 100%;
-		height: auto;
-	}
+
 	#delete-user{
 		
 	}
@@ -84,8 +75,7 @@
 
 	<header>
 		<h2 class="title">내 정보</h2>
-		<div class="x-button">x</div>
-		<hr class = "dotted-line1">
+		<%@include file="topNavi.html"%>
 	</header>
 	<section >
 		<div align="center" class="container">
@@ -124,10 +114,11 @@
 					</div></td>
 				</tr>
 			</table>
-			<div class="logo-wrap"><img class="logo" src="../resources/images/color-logo2.png"/><br></div><br>
+			
 			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a><br>
 			<a id="delete-user" href="selfDel.jsp">계정 삭제</a>
-		</dev>
+		</div>
 	</section>
+	<footer align="center"><%@include file="footer.html"%></footer>
 </body>
 </html>

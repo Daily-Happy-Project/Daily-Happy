@@ -10,12 +10,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>하루, 행복</title>
+<style type="text/css">
+#index-wrap{
+	margin-top: 30%;
+}
+</style>
 </head>
-
 <body>
-<div align="center">로고</div>
+<div id="index-wrap"align="center">
+<footer align="center"><%@include file="footer.html"%></footer>
+<div id="appname">하루, 행복</div>
+</div>
 <script type="text/javascript">
-	setTimeout(function() {
+	#setTimeout(function() {
 		  location.href="../views/loginView.jsp";
 		}, 2000);
 
