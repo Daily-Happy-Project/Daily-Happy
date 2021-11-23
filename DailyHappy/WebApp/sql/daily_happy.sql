@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXIST USERNAME+Item(
 
 -- store item --
 CREATE TABLE IF NOT EXISTS item(
-	itemcode int UNSIGNED DEFAULT 0 AUTO_INCREMENT PRIMARY KEY,			-- item code --
+	itemcode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
 	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldmethod, theme) -- 
 	price INT NOT NULL,					-- item price --
@@ -57,3 +57,4 @@ CREATE TABLE IF NOT EXISTS item(
 	img3 VARCHAR(1024),					-- item image3 --
 	img4 VARCHAR(1024)					-- item image4 --
 );
+--> alter table item alter column itemcode set default 0;

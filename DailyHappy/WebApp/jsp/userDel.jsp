@@ -15,14 +15,19 @@
 <body>
 <% 
 	String userList[] = request.getParameterValues("delUser");
+	
 	int loc = 0;
 	if (userList.length > 1){
 		loc = 1;
 	}
 	UserDAO dao = new UserDAO();
 	
+	
 	for(String user : userList){
-		dao.delete(user);	
+		dao.delete(user);
+		new WritingDAO().deleteWritingTable(user);
+		new JarDAO().deleteJarTable(user);
+		new UserItemDAO().deleteItemTable(user);
 	}
 %>
 
