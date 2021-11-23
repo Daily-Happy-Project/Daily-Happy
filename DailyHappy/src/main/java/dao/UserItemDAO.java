@@ -1,10 +1,6 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
+import java.sql.*;
 import javax.naming.NamingException;
 
 import util.ConnectionPool;
@@ -14,14 +10,18 @@ public class UserItemDAO {
 	// insert writing
 		public boolean insert(String email, int itemcode) throws NamingException, SQLException {
 			Connection conn = ConnectionPool.get();
-			PreparedStatement stmt = null;
+			Statement stmt = conn.createStatement();
 			try {
 				
 				email = new UserDAO().splitemail(email);
 	            
+<<<<<<< HEAD
 				String sql = "INSERT INTO " + email + "item(itemcode) VALUES(?)";
 				stmt = conn.prepareStatement(sql);
 				stmt.setInt(1, itemcode);
+=======
+				String sql = "INSERT INTO " + email + "item(itemcode) VALUES("+itemcode+")";
+>>>>>>> 56c02d4b794a7912e9ee2ef9377ae91cc8587e7a
 				
 				int count = stmt.executeUpdate(sql);
 				return (count == 1) ? true : false;
