@@ -23,6 +23,5 @@
 		str+="<div class=\"ts" + rs.getString("ts") + "</div>";
 				
 		str+="</div>";
-	}	
-	
+	}
 %>
