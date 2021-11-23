@@ -37,7 +37,7 @@ public class UserItemDAO {
 	        try {
 	        	email = new UserDAO().splitemail(email);
 	        	
-	            String sql = "SELECT email FROM "+ email + "Item WHERE itemtype = ?";
+	            String sql = "SELECT code itemtype FROM "+ email + "Item WHERE itemtype = ?";
 	            stmt = conn.prepareStatement(sql);
 	            stmt.setString(1, itemtype);
 	            rs = stmt.executeQuery();
