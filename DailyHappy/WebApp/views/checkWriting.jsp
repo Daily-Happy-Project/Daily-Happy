@@ -8,9 +8,9 @@
 <%
 	String uemail=request.getParameter("email");
 	String ujarName=request.getParameter("jarName");
+	int no=Integer.parseInt(request.getParameter("no"));
 
 	WritingDAO dao=new WritingDAO();
-//	session.setAttribute("email", uemail);
 	if(dao.content(uemail, ujarName)) {
 	uemail=new UserDAO().splitemail(uemail);
 	new WritingDAO().content(uemail, ujarName);
@@ -37,11 +37,17 @@
 	<article>
 		<div class="checkWriting" style="text-align:center">
 			<img src="#이미지" />
+			<% 
+				out.print((new WritingDAO().content(uemail, ujarName)));
+			%>
 		</div>
 	</article>
 	<!-- 공유 이미지 -->
 	<article>
-		<input type="submit" value="글 삭제하기">
+		<input type="submit" value="글 삭제하기" onclick="del" />
+		<%
+			out.print((new WritingDAO().delete(no, ujarName, uemail)));
+		%>
 	</article>
 </body>
 </html>
