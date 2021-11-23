@@ -12,7 +12,7 @@
 	WritingDAO dao = new WritingDAO();
 	
 	dao.content(uemail, ujarName);
-	ResultSet rs = dao.content2();
+	ResultSet rs = dao.content(uemail, ujarName);
 	dao.deletejarView(uemail);
 	
 	String str="";
