@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>환경설정</title>
+        <title>하루, 행복 - 내 유리병 관리</title>
         
         <link rel="stylesheet" href="css/headerStyle.css"/>
         <style type="text/css">
@@ -37,30 +37,17 @@
     </head>
     <body>
         <header>
-            <h2 class="title">환경설정</h2>
+            <h2 class="title">내 유리병 관리</h2>
 		<%@include file="topNavi.html"%>
         </header>
         <section align="center">
            <div class="button-container">
-                <article class="box">
-                    <span>♫소리♫</span>
-                    <a>◀</a><span>켜기</span><a>▶</a>
-                </article>            
-                <article class="box">
-                    <span>글자크기</span>
-                    <a>◀</a><span>보통</span><a>▶</a>    <!--작게 보통 크게 아주크게-->
-                </article>
                 <article>
-                    <a class="box" href="helpView.jsp">도움말</a>
+                    <a class="box" href="makeJarView.jsp"><div>새로 만들기</div></a>
                 </article>
+                <!-- 유저 유리병 이름 목록 토글 바 형태로 출력. 선택 시 각 유리병 세부 내역 확인 및 수정, 삭제 가능 페이지로 이동 -->
                 <article>
-                    <a class="box" href="dInfoView.jsp">개발자 정보</a>
-                </article>
-                <article>
-                    <a class="box" href="copyrightView.jsp">저작권 정보</a>
-                </article>
-                <article>
-                    <a class="box" href="uManageView.jsp">회원 관리</a>
+
                 </article>
             </div>
         </section>

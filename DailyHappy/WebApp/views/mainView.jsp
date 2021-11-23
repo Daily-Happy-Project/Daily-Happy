@@ -9,9 +9,6 @@
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
 		response.sendRedirect("loginView.jsp");
-		//insert into user(email,name,pw) values('d@d','이민진','1111');
-		//test string: 
-		//uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
 	//ArrayList<JarObj> list = (new JarDAO()).getJarList();
@@ -84,7 +81,7 @@ article{
 	position: absolute;
 	bottom: 5.5em;
 	width: 100%;
-	z-index:2;
+	z-index:3;
 	display: flex;
 	
 }
@@ -105,7 +102,6 @@ article{
     bottom: 40%;
     padding: 5%;
     font-size: 20pt;
-   	
     z-index: 4;
     color: #AAAAAA;
     -webkit-text-stroke: 10px #AAAAAA;
@@ -140,7 +136,7 @@ article{
 	position: fixed;
 	bottom:0px;
 	width: 100%;
-	z-index: 2;
+	z-index: 3;
 	display: flex;
 }
 #paper-img-box{
@@ -158,7 +154,15 @@ article{
 	min-width: 200px;
 	margin-bottom: -50%;
 }
-
+.table{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 10em;
+	background-color: #FFC7C7;
+	z-index: 2;
+}
 </style>
 <!-- count() -->
 </head>
