@@ -19,10 +19,9 @@ public class UserItemDAO {
 				
 				email = new UserDAO().splitemail(email);
 	            
-				String sql = "INSERT INTO " + email + "item(email, itemcode) VALUES(?, ?)";
+				String sql = "INSERT INTO " + email + "item(itemcode) VALUES(?)";
 				stmt = conn.prepareStatement(sql);
-				stmt.setString(1, email);
-				stmt.setInt(2, itemcode);
+				stmt.setInt(1, itemcode);
 				stmt.executeUpdate();
 				
 				int count = stmt.executeUpdate(sql);

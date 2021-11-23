@@ -31,13 +31,15 @@ CREATE TABLE IF NOT EXISTS USERNAME+JarList(
     jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
     foldmethodName VARCHAR(32),                -- fold method --
     cnt int UNSIGNED,      					   -- count --
-    goalnum int UNSIGNED DEFAULT 0			   -- godl number --
-);--
+    goalnum int UNSIGNED DEFAULT 0			   -- goal number --
+);
 
 
 -- user item --
 CREATE TABLE IF NOT EXIST USERNAME+Item(
-	email VARCHAR(128) PRIMARY KEY,         -- user email --
+--	email VARCHAR(128) PRIMARY KEY,         -- user email --
+	itemcode PRIMARY KEY
+	apply boolean default 0,				-- apply item --
 	FOREIGN KEY (itemcode)					-- item code --
 	
 );
@@ -45,15 +47,13 @@ CREATE TABLE IF NOT EXIST USERNAME+Item(
 
 -- store item --
 CREATE TABLE IF NOT EXISTS item(
-	itemcode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
+	itemcode int UNSIGNED DEFAULT 0 AUTO_INCREMENT PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
 	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldmethod, theme) -- 
 	price INT NOT NULL,					-- item price --
 	info VARCHAR(1024) NOT NULL,		-- item information --
 	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
-	img2 VARCHAR(1024),					-- item image2--
+	img2 VARCHAR(1024),					-- item image2 --
 	img3 VARCHAR(1024),					-- item image3 --
 	img4 VARCHAR(1024)					-- item image4 --
 );
-
-
