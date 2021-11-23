@@ -41,7 +41,7 @@
 	</article>
 	<!-- 공유 이미지 -->
 	<article>
-		<input type="submit" value="휴지통">
+		<input type="submit" value="글 삭제하기">
 	</article>
 </body>
 </html>
