@@ -59,10 +59,10 @@ public class WritingDAO {
     // view content
     public ResultSet content(String email, String jarName) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
-
+    	PreparedStatement stmt=null;
+    	ResultSet rs=null;
+   	
     	try {
-        	 PreparedStatement stmt=null;
-        	 ResultSet rs=null;
         	 int ranNo=0;
         	
     	     ranNo = new WritingDAO().writingNo(email, jarName);

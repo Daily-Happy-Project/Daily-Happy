@@ -9,8 +9,11 @@
 <%
 	String uemail=request.getParameter("email");
 	String ujarName=(String)session.getAttribute("nowJar");
+	WritingDAO dao = new WritingDAO();
 	
-	ResultSet rs = new WritingDAO().content(uemail, ujarName);
+	dao.content(uemail, ujarName);
+	ResultSet rs = dao.content2();
+	dao.deletejarView(uemail);
 	
 	String str="";
 	while(rs.next()){
@@ -20,29 +23,6 @@
 		str+="<div class=\"ts" + rs.getString("ts") + "</div>";
 				
 		str+="</div>";
-		
 	}	
 	
 %>
-
-<%-- <%
-
-			String str = "<form method=\"get\" action=\"../jsp/userDel.jsp\">";
-			str += "<table align=center>";
-			str += "<tr><th>이름</th><th>이메일</th><th>보유코인</th><th>회원유형</th><th>삭제<th>";
-			str += "<tr colspan=5><hr></tr>";
-			for (UserObj user : list) {
-			str += "<tr>";
-			str += "<td>" + user.getName() + "</td>";
-			str += "<td>" + user.getEmail() + "</td>";
-			str += "<td>" + user.getCoin() + "</td>";
-			str += "<td>" + user.getMemberType() + "</td>";
-			str += "<td><input type=\"checkbox\" name=\"delUser\" value=\""+ user.getEmail() +"\"></td>";
-			str += "</tr>";
-			}
-			str += "<tr><td colspan=5><input type=\"submit\" value=\"선택한 계정 삭제\"></td></tr>";
-			str += "</table>";
-			str += "</form>";
-		out.print(str);
-		%> --%>
-
