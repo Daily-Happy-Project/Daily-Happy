@@ -11,12 +11,14 @@
 <head>
 <meta charset="UTF-8">
 <title>회원관리</title>
-<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
+
+<style type="text/css">
+ table{
+ 	border-top: none;
+ }
+</style>
 </head>
 <body>
-<script type="text/javascript">
- 
-</script>
 <%
 /* 	String umember = (String)session.getAttribute("memberType");
 	if (umember != "K") {
@@ -33,11 +35,10 @@
 	session.setAttribute("memberType", umember); */
 	ArrayList<UserObj> list = (new UserDAO()).getUserList();
 %>
-	<header>
-		<h2 class="title">회원 관리</h2>
-		<div class="x-button">x</div>
-		<hr class = "dotted-line1">
-	</header>
+        <header>
+            <h2 class="title">회원 관리</h2>
+		<%@include file="topNavi.html"%>
+        </header>
 	<article>
 		<%
 			String str = "<form method=\"get\" action=\"../jsp/userDel.jsp\">";
