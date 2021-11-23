@@ -50,14 +50,14 @@ article{
 	position: absolute;
 	top: 10%;
 	font-size: 30pt;
-	z-index: 3;
+	z-index: 5;
 	width: 100%;
 }
 .main-wrap{
 	position: absolute;
 	bottom: 5.5em;
 	width: 100%;
-	z-index:2;
+	z-index:3;
 	display: flex;
 	
 }
@@ -95,8 +95,8 @@ article{
 .background-image{
 	display: inline-block;
 	background-image: 
-  		url('#');
-  	background-color: #FEFBF3;
+  		url('../resources/images/pink-round-theme.png');
+  	background-color: #FFF2E2;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -111,7 +111,7 @@ article{
 	position: fixed;
 	bottom:0px;
 	width: 100%;
-	z-index: 2;
+	z-index: 3;
 	display: flex;
 }
 #paper-img-box{
@@ -126,21 +126,41 @@ article{
 	min-width: 200px;
 	margin-bottom: -50%;
 }
+
+
+.table{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 10em;
+	background-color: #FFC7C7;
+	z-index: 2;
+}
 .navi{
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
 	height: 3em;
-	background-color: #9D9D9D;
-	z-index: 3;
+	background-color: #F6F6F6;
+	z-index: 4;
 }
-.menu{
-	position: inline-block;
-	text-align: center;
+.menu-wrap{
 	float:left;
+	text-align: center;
 	width: 25%;
 	height: 100%;
+}
+.menu{
+	width: 100%;
+	height: 100%;
+	display: flex;
+
+}
+.menu-icon{
+	margin: 0.5em auto;
+	height: 60%;
 }
 </style>
 <!-- count() -->
@@ -177,20 +197,23 @@ article{
 					strP += "<img src=\"../resources/images/gra-paper-r.png\" class=\"paperimg\" alt=\"새 글 작성\"/>";
 					strP +="</div>";
 					out.print(strP);
-				%><%//유리병 이미지 %>
+				%><%//학종이 이미지 %>
 				</div>
 			</div>
 		</article>
 		<article class="bg-image-wrap">
-			<div class="background-image">배경화면</div>
+			<div class="background-image"></div>
+		</article>
+		<article>
+			<div class="table"></div>
 		</article>
 	</section>
 
 	<navi class="navi">
-		<div class="menu">상점</div>
-		<div class="menu"><a href="#유리병 관리 페이지">유</a></div>
-		<div class="menu"><a href="myInfoView.jsp">내정보</a></div>
-		<div class="menu"><a href="settingsView.html">환경설정</a></div>
+		<div class="menu-wrap"><a class="menu" href="#"><img class="menu-icon" src="../resources/images/shop.png" alt="상점"></a></div>
+		<div class="menu-wrap"><a class="menu" href="#유리병 관리 페이지"><img class="menu-icon" src="../resources/images/jar.png" alt="유리병 관리"></a></div>
+		<div class="menu-wrap"><a class="menu" href="myInfoView.jsp"><img class="menu-icon" src="../resources/images/user.png" alt="내 정보"></a></div>
+		<div class="menu-wrap"><a class="menu" href="settingsView.html"><img class="menu-icon" src="../resources/images/settings.png" alt="환경설정"></a></div>
 	</navi>
 	
 	<script type="text/javascript">
