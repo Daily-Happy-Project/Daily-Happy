@@ -59,28 +59,31 @@ public class WritingDAO {
     // view content
     public ResultSet content(String email, String jarName) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
-    	PreparedStatement stmt=null;
-    	ResultSet rs=null;
-    	int ranNo=0;
 
     	try {
+        	 PreparedStatement stmt=null;
+        	 ResultSet rs=null;
+        	 int ranNo=0;
+        	
     	     ranNo = new WritingDAO().writingNo(email, jarName);
 		     ranNo = new Random().nextInt(ranNo+1);
+		     System.out.println(ranNo);
 		     
 		     email = new UserDAO().splitemail(email);
    		 
 		     // create view
     		 String sql = "CREATE VIEW " + email + "jarview SELECT * FROM "+ email +"WritingList where jarName= \"" + jarName + "\"";
 		     stmt = conn.prepareStatement(sql); 
-		     stmt.executeQuery();
+		     stmt.executeUpdate();
 		     
 		     // select contents
     		 sql = "SELECT content, name, ts FROM jarView order by rand() limit 1";
              
              return stmt.executeQuery(sql);
+             
     	} finally {
-    		    if(rs!=null) rs.close();
-    		    if(stmt!=null) stmt.close();
+    			if(rs!=null) rs.close();
+    			if(stmt!=null) stmt.close();
     		    if(conn!=null) conn.close();
     	}
     }

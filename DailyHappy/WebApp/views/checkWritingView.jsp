@@ -10,7 +10,7 @@
 	String uemail=request.getParameter("email");
 	String ujarName=(String)session.getAttribute("nowJar");
 	
-	ResultSet rs = (new WritingDAO()).content(uemail, ujarName);
+	ResultSet rs = new WritingDAO().content(uemail, ujarName);
 	
 	String str="";
 	while(rs.next()){
@@ -21,9 +21,7 @@
 				
 		str+="</div>";
 		
-	}
-
-	
+	}	
 	
 %>
 
