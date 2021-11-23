@@ -20,8 +20,8 @@
 	   uidao.insert(uemail, 1);
 	   uidao.insert(uemail, 2);
 	   uidao.insert(uemail, 3);			   
-		
-	   out.print("회원 가입이 완료되었습니다.");
+	
+	   out.print("회원 가입이 완료되었습니다^^");
 	   out.print("<a href=\"../views/loginView.jsp\">로그인</a>");
    }
    
