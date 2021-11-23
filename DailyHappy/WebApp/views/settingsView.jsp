@@ -30,6 +30,9 @@
                 border-radius: 8px;
                 
             }
+            
+            a:link {color: black; text-decoration: none;}
+            
         </style>
     </head>
     <body>
