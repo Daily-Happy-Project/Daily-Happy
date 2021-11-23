@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS user(
 
 
 -- writing table --
-CREATE TABLE IF NOT EXISTS USERNAME+writing(                     
-    no INT UNSIGNED AUTO_INCREMENT,
-    name VARCHAR(32),                           -- writer name --
+CREATE TABLE IF NOT EXISTS USERNAME+writingList(                     
+    no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    jarName VARCHAR(32),                           -- writer name --
     content VARCHAR(8192),                      -- content --
     paperCode int,            					-- paper code --
     ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP      -- writing time--
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS USERNAME+writing(
 );
 
 
--- savedJar
+-- Jar List
 CREATE TABLE IF NOT EXISTS USERNAME+JarList(
     jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
     foldmethodName VARCHAR(32),                -- fold method --
@@ -45,9 +45,9 @@ CREATE TABLE IF NOT EXIST USERNAME+Item(
 
 -- store item --
 CREATE TABLE IF NOT EXISTS item(
-	itemcode int PRIMARY KEY,			-- item code --
+	itemcode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
-	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, foldmethod, theme, jar) -- 
+	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldmethod, theme) -- 
 	price INT NOT NULL,					-- item price --
 	info VARCHAR(1024) NOT NULL,		-- item information --
 	img1 VARCHAR(1024) NOT NULL,		-- item image1 --

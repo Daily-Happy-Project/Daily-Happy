@@ -12,15 +12,15 @@ import util.ConnectionPool;
 public class ItemDAO {
 	
 	// insert paper, theme, foldmethod
-	public boolean insert(int itemcode, String itemName, String itemtype, int price, String info, String img1) throws NamingException, SQLException {
+	public boolean insert(String itemName, String itemType, int price, String info, String img1) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
-            String sql = "INSERT INTO item(itemcode, itemName, price, info, img1) "
+            String sql = "INSERT INTO item(itemName, itemType, price, info, img1) "
             		+ "VALUES(?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, itemcode);
-            stmt.setString(2, itemName);
+            stmt.setString(1, itemName);
+            stmt.setString(2, itemType);
             stmt.setInt(3, price);
             stmt.setString(4,  info);
             stmt.setString(5, img1);
@@ -36,15 +36,15 @@ public class ItemDAO {
 	
 	
 	// insert jar
-	public boolean insert(int itemcode, String itemName, String itemtype, int price, String info, String img1, String img2, String img3, String img4) throws NamingException, SQLException {
+	public boolean insert(String itemName, String itemType, int price, String info, String img1, String img2, String img3, String img4) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
-            String sql = "INSERT INTO item(itemcode, itemName, price, info, img1, img2, img3, img4) "
-            		+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO item(itemName, itemType, price, info, img1, img2, img3, img4) "
+            		+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, itemcode);
-            stmt.setString(2, itemName);
+            stmt.setString(1, itemName);
+            stmt.setString(2, itemType);
             stmt.setInt(3, price);
             stmt.setString(4,  info);
             stmt.setString(5, img1);
