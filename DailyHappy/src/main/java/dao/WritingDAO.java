@@ -25,7 +25,8 @@ public class WritingDAO {
 			stmt.setString(3, jarName);
 			stmt.executeUpdate();
 			
-			sql = "UPDATE " + email + "jarlist set cnt=cnt+1, coin=coin+1 where jarName= \"" + jarName + "\"";
+			sql = "UPDATE " + email + "JarList set cnt=cnt+1 where jarName= \"" + jarName + "\"";
+			sql = "UPDATE user set coin=coin+1 where email= \"" + email + "\"";
 			
 			int count = stmt.executeUpdate(sql);
 			
