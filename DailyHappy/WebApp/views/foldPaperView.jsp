@@ -4,9 +4,9 @@
     
 <%
 
-/* 	String email = (String)session.getAttribute("email");
+/* /* /* /* /* /* /* 	String email = (String)session.getAttribute("email");
 	email = new UserDAO().splitemail(email);
-	String paperimg = new UserItemDAO().randomPaper(email);  */
+	String paperimg = new UserItemDAO().randomPaper(email);  */ */ */ */ */ */ */
 
 %>
     
