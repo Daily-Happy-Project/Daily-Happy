@@ -1,18 +1,99 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!Doctype html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>회원가입</title>
+                <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         
         <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/allStyle.css"/>
-        <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/signupStyle.css"/>
+        <link rel="stylesheet" href="../resources/css/signupStyle.css"/>
         <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/formStyle.css"/>
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		
+		<style type="text/css">
+/*signupStyle.css*/
+			#alert-correct{
+			    font-size: 8pt;
+			}
+			
+			#alert-incorrect{
+			    color: #d92742; 
+			    font-weight: bold;
+			    font-size: 8pt;
+			}
+			
+			#pw-char{
+			    color: #d92742;
+			    font-weight: bold;
+			    font-size: 8pt;
+			}
+/*formStyle.css*/
+			.form-header{
+			    margin : 0 auto;
+			    padding-bottom: 20px;
+			    color: #9d9d9d;
+			}
+			.form-style{
+			    width: 50%;
+			    max-width: 18em;
+			    min-width: 12em;
+			}
+			
+			.input-text{
+			    width: 100%;
+			    height: 2em;
+			    padding: 1.0em 0.125em 0em 0.125em;
+			    font-size: 0.8em;
+			    background-color: rgba(0,0,0,0);
+			    border-top: 0px; 
+			    border-bottom: 2px solid #9d9d9d;
+			    border-left: 0px;
+			    border-right: 0px;
+			}
+			    
+			.button {
+			    font-size: 1.0em;
+			    display: block;
+				margin: 10px;
+			    padding-top: 10px;
+			    padding-bottom: 10px;
+				width: 150px;
+				text-decoration: none;
+			    text-align: center;
+				border-radius: 4px;
+			    border: 0px;
+			    color: #9d9d9d;
+			    background-color: rgba(0,0,0,0);
+			    box-shadow: #9D9D9D 0 0px 0px 2px inset;
+			}
+			
+			.button:hover {
+			    color: rgba(255, 255, 255, 0.85);
+			    box-shadow: #9D9D9D 0 0px 0px 40px inset;
+			    cursor: pointer;
+			}
+			
+			.disabled-button {
+			    font-size: 1.0em;
+			    display: block;
+				margin: 10px;
+			    padding-top: 10px;
+			    padding-bottom: 10px;
+				width: 150px;
+				text-decoration: none;
+			    text-align: center;
+				border-radius: 4px;
+			    border: 0px;
+			    color: rgba(0,0,0,0.2);
+			    background-color: rgba(157,157,157,0.8);
+			}						
+		</style>
     </head>
     <body>
       <div class="container" align="center">
-           <div class="signup-logo">로고</div>
+           <%@include file="footer.html"%>
            <h2 class="form-header">회원가입</h2>
            
             <form class="form-style" name="signupform" method="post" action="../jsp/signup.jsp">
@@ -22,7 +103,7 @@
                 <input type="password" class="input-text pwcheck" id="pw" name="pw" placeholder="비밀번호 (4~15자 이내의 영문,숫자 조합)" maxlength="15" minlength="4" onkeyup="pwCharCheck(this)" onkeydown="pwCharCheck(this)"/><br>
                 <input type="password" class="input-text pwcheck" id="pwcorrect" name="pwcorrect" placeholder="비밀번호 확인"/><br>
                 <span id="alert-correct" style="display: none;">비밀번호가 일치합니다.</span>
-                <span id="alert-incorrect" style="display: none;">비밀번호가 일치하지 않습니다. 다시 확인해주세요.</span>
+                <span id="alert-incorrect" style="display: none;">비밀번호가 일치하지 않습니다.<br>다시 확인해주세요.</span>
                 <span id="pw-char" style="display: none;">비밀번호는 특수문자를 제외한 15자 이내의 영문, 숫자만 가능합니다.</span>
                 <br>
 

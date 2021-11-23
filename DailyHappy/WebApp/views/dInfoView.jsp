@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("utf-8"); %>
 <!doctype html>
 <html>
     <head>
@@ -20,28 +23,24 @@
         </style>
     </head>
     <body>
-      <header>
-            <h2 class="title">개발자 정보</h2>
-            <div class="x-button">
-            <a href="javascript:history.back()">x</a>
-            </div>
-            <hr class = "dotted-line2">
-        </header>
+		<header>
+		<h2 class="title">개발자 정보</h2>
+		<%@include file="topNavi.html"%>
+		</header>
        <article align="center">
            <div class="wrap">
-            <div id="d-info-container">
-                삼육대학교 컴퓨터·메카트로닉스 공학부<br>
-                팀 ZIZIZU<br><br>
-                &#60;Zi존간Zi공주 명단&#62;<br>
-                콩 공주<br>
-                맛 공주<br>
-                쥑 공주<br>
-                <br>
-                문의는 princesszizonganzi@gmail.com으로 연락 바랍니다.<br>
-                <br>
-                ⓒZIZIZU
-                
-            </div>
+            	<div id="d-info-container">
+	               	삼육대학교 컴퓨터·메카트로닉스 공학부<br>
+	               	팀 ZIZIZU<br><br>
+	                &#60;Zi존간Zi공주 명단&#62;<br>
+					콩 공주<br>
+					맛 공주<br>
+					쥑 공주<br>
+	                <br>
+					문의는 princesszizonganzi@gmail.com으로 연락 바랍니다.<br>
+	                <br><br>
+					Copyright 2021. princesszizonganzi(ZIZIZU) all rights reserved.   
+           		</div>
            </div>
         </article>
     </body>

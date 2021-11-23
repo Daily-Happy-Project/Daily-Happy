@@ -77,7 +77,7 @@
             
         </form><br>
 	        아직 계정이 없으신가요?
-	    <a href="signupView.html" class="button">회원가입</a>
+	    <a href="signupView.jsp" class="button">회원가입</a>
 	    <!--계정 찾기 기능 추가?-->
    </div>
 

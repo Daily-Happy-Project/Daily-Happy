@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +11,10 @@
 </style>
 </head>
 <body>
-<header>
+	<header>
 	<h2 class="title">저작권 정보</h2>
-	<div class="x-button">
-	<a href="javascript:history.back()">x</a>
-	</div>
-	<hr class = "dotted-line2">
-</header>
+<%@include file="topNavi.html"%>
+	</header>
 
 <div style="text-align:center">Copyright 2021. princesszizonganzi(ZIZIZU) all rights reserved.</div>
 </body>

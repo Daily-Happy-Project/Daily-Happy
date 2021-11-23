@@ -15,6 +15,7 @@
 <style type="text/css">
  table{
  	border-top: none;
+ 	text-align: center;
  }
 </style>
 </head>
@@ -42,9 +43,9 @@
 	<article>
 		<%
 			String str = "<form method=\"get\" action=\"../jsp/userDel.jsp\">";
-			str += "<table align=center>";
+			str += "<table align=\"center\">";
 			str += "<tr><th>이름</th><th>이메일</th><th>보유코인</th><th>회원유형</th><th>삭제<th>";
-			str += "<tr colspan=5><hr></tr>";
+			str += "<tr><td colspan=5><hr></td></tr>";
 			for (UserObj user : list) {
 			str += "<tr>";
 			str += "<td>" + user.getName() + "</td>";

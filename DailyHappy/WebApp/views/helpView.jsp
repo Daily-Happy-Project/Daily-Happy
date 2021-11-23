@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
     <head>
@@ -6,8 +8,6 @@
         
         <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
         <style type="text/css">
-
-            
             #slide-container{
                 display: inline-block;
                 position: relative;
@@ -55,13 +55,10 @@
         </style>
     </head>
     <body>
-        <header>
-            <h2 class="title">도움말</h2>
-            <div class="x-button">
-            <a href="javascript:history.back()">x</a>
-			</div>
-            <hr class = "dotted-line2">
-        </header>
+		<header>
+			<h2 class="title">도움말</h2>
+			<%@include file="topNavi.html"%>
+		</header>
         <nav align="center">
             <span id="prev" onclick="plusSlides(-1)">◀</span>
             <span id="next" onclick="plusSlides(1)">▶</span>
