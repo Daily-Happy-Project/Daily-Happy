@@ -44,7 +44,7 @@ article{
 	float:left;
 	width: 100%;
 	height: 30px;
-	background-color: gray;
+	background-color: #9D9D9D;
 }
 #cnt{
 	position: absolute;
@@ -55,22 +55,27 @@ article{
 }
 .main-wrap{
 	position: absolute;
-	top: 30%;
+	bottom: 5.5em;
 	width: 100%;
-	z-index:2
+	z-index:2;
+	display: flex;
+	
 }
 #bottle-img-box{
-	display: inline-block;
+	margin: 0 auto;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	width: 100%;
+}
+.jarimg{
 	width: 60%;
-	max-width: 400px;
-	height: 150px;
-	background-color: #000000;
-
+	max-width: 250px;
+	min-width: 200px;
 }
 #left-bottle, #right-bottle{
 	cursor: pointer;
     position: absolute;
-    top: 40%;
+    bottom: 40%;
     padding: 5%;
     font-size: 20pt;
     z-index: 4;
@@ -91,7 +96,7 @@ article{
 	display: inline-block;
 	background-image: 
   		url('#');
-  	background-color: #00ff00;
+  	background-color: #FEFBF3;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -107,21 +112,27 @@ article{
 	bottom:0px;
 	width: 100%;
 	z-index: 2;
+	display: flex;
 }
 #paper-img-box{
- 	display: inline-block;
-	width: 60%;
+	margin: 0 auto;
+	width: 100%;
 	max-width: 400px;
 	height: 110px;
-	background-color: #ffffff;
+}
+.paperimg{
+	width: 100%;
+	max-width: 250px;
+	min-width: 200px;
+	margin-bottom: -50%;
 }
 .navi{
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-	height: 35px;
-	background-color: #00ffff;
+	height: 3em;
+	background-color: #9D9D9D;
 	z-index: 3;
 }
 .menu{
@@ -146,7 +157,12 @@ article{
 		</article>
 		<article>
 			<div class="main-wrap">
-				<div id="bottle-img-box" onclick="#팝업 창 생성"><%//유리병 이미지 %></div>
+				<%
+					String strJ = "<div id=\"bottle-img-box\" onclick=\"popup 생성\">";
+					strJ += "<img src=\"../resources/images/normal-3.png\" class=\"jarimg\" alt=\"유리병 이미지\"/>";
+					strJ +="</div>";
+					out.print(strJ);
+				%><%//유리병 이미지 %>
 			</div>
 		</article>
 		<article>
@@ -156,7 +172,12 @@ article{
 		<article>
 			<div id="paper-wrap">
 				<div id="paper-img-box" onclick="GotoWrite();">
-				<%//학종이: 소지 학종이 중 랜덤으로 보여진다 %>
+				<%
+					String strP = "<div id=\"paper-img-box\" onclick=\"GotoWrite();\">";
+					strP += "<img src=\"../resources/images/gra-paper-r.png\" class=\"paperimg\" alt=\"새 글 작성\"/>";
+					strP +="</div>";
+					out.print(strP);
+				%><%//유리병 이미지 %>
 				</div>
 			</div>
 		</article>
@@ -175,8 +196,8 @@ article{
 	<script type="text/javascript">
 		function GotoWrite(){
 			<% 
-			String str = "nowB";	//임시 값
-			session.setAttribute("nowBottle", str);
+			String strtmp = "nowB";	//임시 값
+			session.setAttribute("nowBottle", strtmp);
 			%>
 			location.href="writingView.jsp";
 		}
