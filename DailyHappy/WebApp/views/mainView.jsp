@@ -212,7 +212,7 @@ article{
 	session.setAttribute("nowJar", nowJar);
 %>
 		function GotoCheck(){
-			location.href="checkWriting.jsp"
+			location.href="checkWritingView.jsp"
 		}
 		function GotoWrite(){
 			location.href="writingView.jsp"
