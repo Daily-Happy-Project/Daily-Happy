@@ -8,7 +8,7 @@
 <%
 	String uemail=request.getParameter("email");
 	String ujarName=request.getParameter("jarName");
-	int no=Integer.parseInt(request.getParameter("no"));
+//	int paperCode = Integer.parseInt(request.getParameter("paperCode").trim());
 
 	WritingDAO dao=new WritingDAO();
 	if(dao.content(uemail, ujarName)) {
@@ -46,7 +46,7 @@
 	<article>
 		<input type="submit" value="글 삭제하기" onclick="del" />
 		<%
-			out.print((new WritingDAO().delete(no, ujarName, uemail)));
+//			out.print((new WritingDAO().delete(paperCode, ujarName, uemail)));
 		%>
 	</article>
 </body>
