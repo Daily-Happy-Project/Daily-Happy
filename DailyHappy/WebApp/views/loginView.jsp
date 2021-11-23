@@ -17,11 +17,7 @@
 <link rel="stylesheet" href="../resources/css/formStyle.css"/>
 
 <style type="text/css">
-body{
-	/*background-color: #FEFBF3;*/
-    width: 100%;
-    font-size:1em;
-    }
+
 .container{
 	display: flax;
 	width: 100%;
