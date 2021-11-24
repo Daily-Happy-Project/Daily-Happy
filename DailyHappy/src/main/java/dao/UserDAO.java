@@ -123,13 +123,13 @@ public class UserDAO {
     	PreparedStatement stmt=null;
     	ResultSet rs = null;
     	try {
-    		 String sql = "SELECT name, email, coin FROM user WHERE email = ?";
+    		 String sql = "SELECT name, email, coin, memberType FROM user WHERE email = ?";
 		     stmt = conn.prepareStatement(sql);
     		 stmt.setString(1, email);
     		 rs=stmt.executeQuery();
     		 ArrayList<UserObj> users=new ArrayList<UserObj>();
      		while(rs.next()) {
-     			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin")));
+     			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getNString("memberType")));
      		}
      		
      		return users;

@@ -7,10 +7,12 @@
 <%
 
 	String uemail = (String)session.getAttribute("email");
+	String umember = (String)session.getAttribute("memberType");
 	if (uemail == null) {
 		response.sendRedirect("loginView.jsp");
 	}
 	session.setAttribute("email", uemail);
+	session.setAttribute("membeTyper", umember);
 	//ArrayList<JarObj> list = (new JarDAO()).getJarList();
 
 %>
