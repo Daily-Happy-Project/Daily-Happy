@@ -21,19 +21,27 @@
 </head>
 <body>
 <%
-/* 	String umember = (String)session.getAttribute("memberType");
-	if (umember != "K") {
-		%>
-		<script type="text/javascript">
-			alert("접근 권한이 없습니다!");
-			history.back();
-		</script>
-		<%
+	String uemail = (String)session.getAttribute("email");
+	String umember = (String)session.getAttribute("memberType");
+	if (uemail == null) {
+		response.sendRedirect("loginView.jsp");
+	}
+	String managerType = "K";
+	if (!umember.equals(managerType)) {
+
+		String goback = "<script type=\"text/javascript\">";
+		goback += "alert(\"접근 권한이 없습니다! 나의 회원 등급: "+umember+"\");";
+		goback += "history.back();";
+		goback += "</script>";
+		out.print(goback);
+
 		return;
 		//test string: 
 		//uemail = "d@d";
 	}
-	session.setAttribute("memberType", umember); */
+	session.setAttribute("email", uemail);
+	session.setAttribute("memberType", umember);
+
 	ArrayList<UserObj> list = (new UserDAO()).getUserList();
 %>
         <header>
