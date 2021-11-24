@@ -13,7 +13,7 @@
 	
 	dao.content(uemail, ujarName);
 	ResultSet rs = dao.content(uemail, ujarName);
-	dao.deletejarView(uemail);
+	dao.deleteJarView(uemail);
 	
 	String str="";
 	while(rs.next()){
