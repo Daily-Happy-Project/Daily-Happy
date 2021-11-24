@@ -46,7 +46,7 @@ public class WritingDAO {
 		ResultSet rs=null;
     	try {
     		 email = new UserDAO().splitemail(email);
-             String sql = "select cnt from " + email + "jarlist where jarName=\"" + jarName + "\"";
+             String sql = "select cnt from " + email + "Jarlist where jarName=\"" + jarName + "\"";
 		     stmt = conn.prepareStatement(sql);
              int writingNo = stmt.executeUpdate(sql);
              
@@ -74,12 +74,12 @@ public class WritingDAO {
 		     email = new UserDAO().splitemail(email);
    		 
 		     // create view
-    		 String sql = "CREATE VIEW " + email + "jarview SELECT * FROM "+ email +"WritingList where jarName= \"" + jarName + "\"";
+    		 String sql = "CREATE VIEW " + email + "JarView SELECT * FROM "+ email +"WritingList where jarName= \"" + jarName + "\"";
 		     stmt = conn.prepareStatement(sql); 
 		     stmt.executeUpdate();
 		     
 		     // select contents
-    		 sql = "SELECT content, name, ts FROM jarView order by rand() limit 1";
+    		 sql = "SELECT content, name, ts FROM " + email + "JarView order by rand() limit 1";
              
              return stmt.executeQuery(sql);
              
@@ -91,13 +91,13 @@ public class WritingDAO {
     }
     
     
-    public boolean deletejarView(String email) throws NamingException, SQLException {
+    public boolean deleteJarView(String email) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
         	
         	email = new UserDAO().splitemail(email);
-            String sql = "DROP TABLE " + email + "jarView ";
+            String sql = "DROP TABLE " + email + "JarView ";
             
             stmt = conn.prepareStatement(sql);
             stmt.executeUpdate();
@@ -119,13 +119,13 @@ public class WritingDAO {
         try {
         	
         	email = new UserDAO().splitemail(email);
-            String sql = "DELETE FROM" + email + "writinglist WHERE no = ?";
+            String sql = "DELETE FROM" + email + "WritingList WHERE no = ?";
             
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, no);
             stmt.executeUpdate();
 			
-			sql = "UPDATE " + email + "jarlist set cnt=cnt-1 where jarName= \"" + jarName + "\"";
+			sql = "UPDATE " + email + "JarList set cnt=cnt-1 where jarName= \"" + jarName + "\"";
             
             int count = stmt.executeUpdate(sql);
             
@@ -144,7 +144,7 @@ public class WritingDAO {
         try {
         	
         	email = new UserDAO().splitemail(email);
-            String sql = "DROP TABLE " + email + "writinglist";
+            String sql = "DROP TABLE " + email + "WritingList";
             stmt = conn.prepareStatement(sql);
             int count = stmt.executeUpdate();
 			

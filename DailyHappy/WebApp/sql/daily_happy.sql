@@ -29,9 +29,9 @@ CREATE TABLE IF NOT EXISTS USERNAME+writingList(
 -- Jar List
 CREATE TABLE IF NOT EXISTS USERNAME+JarList(
     jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
-    foldmethodName VARCHAR(32),                -- fold method --
+    foldMethodName VARCHAR(32),                -- fold method --
     cnt int UNSIGNED,      					   -- count --
-    goalnum int UNSIGNED DEFAULT 0			   -- goal number --
+    goalNum int UNSIGNED DEFAULT 0			   -- goal number --
 );
 
 
@@ -47,9 +47,9 @@ CREATE TABLE IF NOT EXIST USERNAME+Item(
 
 -- store item --
 CREATE TABLE IF NOT EXISTS item(
-	itemcode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
+	itemCode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) NOT NULL,		-- item name --
-	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldmethod, theme) -- 
+	itemType VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldMethod, theme) -- 
 	price INT NOT NULL,					-- item price --
 	info VARCHAR(1024) NOT NULL,		-- item information --
 	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
