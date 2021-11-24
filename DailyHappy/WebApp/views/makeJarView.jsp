@@ -21,7 +21,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>새 유리병 만들기</title>
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <style>
 	table{
@@ -102,7 +102,7 @@ label img{
 	<section>
 		<article align="center">
 
-			<form method="post" action="newJar.jsp">
+			<form method="post" action="../jsp/newJar.jsp">
 			<table align="center">
 				<tr>
 					<td class = "table-line1">병 이름</td>
@@ -125,13 +125,14 @@ label img{
 						int cnt = 0;
 						for(UserItemObj uItem : jList ){
 							cnt++;
+							int jarCode = uItem.getItemCode();
 							String name = uItem.getItemName();
 							String img = uItem.getImg();
 							jarstr += "<label class=\"l"+ cnt +"\" for=\"no"+ cnt +"\">";
-							jarstr += "<input type=\"radio\" class=\"chkImg\" id=\"no"+ cnt +"\" name=\"Jshape\" value=\""+ name + "\">";
+							jarstr += "<input type=\"radio\" class=\"chkImg\" id=\"no"+ cnt +"\" name=\"jarCode\" value=\""+ jarCode + "\">";
 							jarstr += "<img src=\""+ img +"\"</label>";
-							//script += "$(function(){$(\".no"+uItem.getItemCode()+"\").css({"+"\"background\": \"url(\'" + uItem.getImg() + "\') no-repeat\"}); });";
 						}
+						
 						out.print(jarstr);
 						script += "</script>";
 						out.print(script);
@@ -174,7 +175,7 @@ label img{
 				<tr>
 					<td class = "table-line1">목표치</td>
 					<td>&nbsp;&nbsp;</td>
-					<td class = "table-line2"><div class = "box"><input type="number" min="1" max="365"></div></td>
+					<td class = "table-line2"><div class = "box"><input type="number" name="GoalNum" min="1" max="365"></div></td>
 				</tr>
 				<tr>
 					<td colspan="3"><div class = "empty"></div></td>

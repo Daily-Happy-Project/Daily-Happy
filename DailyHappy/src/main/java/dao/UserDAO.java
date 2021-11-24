@@ -26,9 +26,11 @@ public class UserDAO {
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "JarList("
             		+ "jarName VARCHAR(32) PRIMARY KEY, "
+            		+ "jarCode int, "
             		+ "foldMethodName VARCHAR(32), "
             		+ "cnt int UNSIGNED DEFAULT 0, "
-            		+ "goalNum int UNSIGNED DEFAULT 0)");
+            		+ "goalNum int UNSIGNED DEFAULT 0,"
+            		+ "FOREIGN KEY (jarCode) REFERENCES item (itemCode))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
             		+ "no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, "
