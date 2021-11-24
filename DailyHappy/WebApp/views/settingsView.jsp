@@ -44,7 +44,8 @@
            <div class="button-container">
                 <article class="box">
                     <span>♫소리♫</span>
-                    <a>◀</a><span>켜기</span><a>▶</a>
+                    <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio>
+                   	<button id="on" onclick="control(event)">◀</button><span>on/off</span><button id="off" onclick="control(event)">▶</button>
                 </article>            
                 <article class="box">
                     <span>글자크기</span>
@@ -67,6 +68,16 @@
         <footer align="center"><%@include file="footer.html"%></footer>
         <script>
             //소리 켜기/끄기
+            var audio=document.getElementById("audio");
+            function control(e) {
+            	var id=e.target.id;
+            	if(id=="on") {
+            		audio.play();
+            	}
+            	else if(id=="off") {
+            		audio.pause();
+            	}
+            }
             //폰트 크기
         </script>
     </body>
