@@ -12,7 +12,7 @@
 		response.sendRedirect("loginView.jsp");
 	}
 	session.setAttribute("email", uemail);
-	session.setAttribute("membeTyper", umember);
+	session.setAttribute("memberType", umember);
 	//ArrayList<JarObj> list = (new JarDAO()).getJarList();
 
 %>
