@@ -26,10 +26,14 @@ public class UserDAO {
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "JarList("
             		+ "jarName VARCHAR(32) PRIMARY KEY, "
-            		+ "jarCode int, "
+            		+ "jarItemCode int, "
             		+ "foldMethodName VARCHAR(32), "
             		+ "cnt int UNSIGNED DEFAULT 0, "
             		+ "goalNum int UNSIGNED DEFAULT 0,"
+            		+ "jarImg1 VARCHAR(1024), "
+            		+ "jarImg2 VARCHAR(1024), "
+            		+ "jarImg3 VARCHAR(1024), "
+            		+ "jarImg4 VARCHAR(1024), "
             		+ "FOREIGN KEY (jarCode) REFERENCES item (itemCode))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
