@@ -11,7 +11,8 @@
 request.setCharacterEncoding("utf-8");
 
 out.print(request.getParameter("Jname")+"<br>");
-out.print(request.getParameter("Jshape"));
+out.print(request.getParameter("Jshape")+"<br>");
+out.print(request.getParameter("Pshape")+"<br>");
 %>
 </body>
 </html>

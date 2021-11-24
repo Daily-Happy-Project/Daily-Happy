@@ -38,13 +38,13 @@
 	}
 	.box{
 		width: 100%;
-		padding-top: 5px;
-		padding-bottom: 4px;
+		padding: 5px 5px 5px 5px;
 		outline: 2.5px solid #9D9D9D;
   		border-radius: 5px;
   		overflow: auto;
   		white-space:nowrap;
 	}
+
 	.empty{
 		height: 20px;
 	}
@@ -64,22 +64,35 @@
 	}
 
 
-	input[type=checkbox] {
+	input[type=radio] {
     display:none;
+	}
+	
+	:checked + label:before{
+	 border: 5px solid #bcbcbc;
+	 width: 100%;
+	 height: 100%;
+	 background-color: #9D9D9D;
 	}
 
 label
 {
     height: 100%;
     width: 50px;
-    display:inline-block;
-    padding: 0 0 0 0px;
+    padding: 0 0 0 0;
+    display: inline-block;
+	cursor: pointer;
 }
+.l1{
+	float: left;
+}
+
 label img{
 	width: 100%;
 }
 
 </style>
+
 </head>
 <body>
 	<header>
@@ -89,7 +102,7 @@ label img{
 	<section>
 		<article align="center">
 
-			<form method="post" action="test.jsp">
+			<form method="post" action="newJar.jsp">
 			<table align="center">
 				<tr>
 					<td class = "table-line1">병 이름</td>
@@ -106,15 +119,16 @@ label img{
 						<div class = "box">
 
 <%
-						ArrayList<UserItemObj> list = (new UserItemDAO()).getUserItemList(uemail, "jar");
+						ArrayList<UserItemObj> jList = (new UserItemDAO()).getUserItemList(uemail, "jar");
 						String jarstr = "";
 						String script = "<script type=\"text/javascript\">";
-						for(UserItemObj uItem : list ){
-							int code = uItem.getItemCode();
+						int cnt = 0;
+						for(UserItemObj uItem : jList ){
+							cnt++;
 							String name = uItem.getItemName();
 							String img = uItem.getImg();
-							jarstr += "<label id=\"l"+ code +"\" for=\"no"+code+"\">";
-							jarstr += "<input type=\"checkbox\" class=\"chkImg\" id=\"no"+ code +"\" name=\"Jshape\" value=\""+ name + "\">";
+							jarstr += "<label class=\"l"+ cnt +"\" for=\"no"+ cnt +"\">";
+							jarstr += "<input type=\"radio\" class=\"chkImg\" id=\"no"+ cnt +"\" name=\"Jshape\" value=\""+ name + "\">";
 							jarstr += "<img src=\""+ img +"\"</label>";
 							//script += "$(function(){$(\".no"+uItem.getItemCode()+"\").css({"+"\"background\": \"url(\'" + uItem.getImg() + "\') no-repeat\"}); });";
 						}
@@ -131,7 +145,28 @@ label img{
 				<tr>
 					<td class = "table-line1">도안</td>
 					<td>&nbsp;&nbsp;</td>
-					<td class = "table-line2"><div class = "box">#보유 코인 db</div></td>
+					<td class = "table-line2">
+						<div class = "box">
+<%
+						ArrayList<UserItemObj> pList = (new UserItemDAO()).getUserItemList(uemail, "foldMethod");
+						String pstr = "";
+						script = "<script type=\"text/javascript\">";
+						cnt = 0;
+						for(UserItemObj uItem : pList ){
+							cnt++;
+							String name = uItem.getItemName();
+							String img = uItem.getImg();
+							pstr += "<label class=\"l"+ cnt +"\" for=\"no-"+cnt +"\">";
+							pstr += "<input type=\"radio\" class=\"chkImg\" id=\"no-"+ cnt +"\" name=\"Pshape\" value=\""+ name + "\">";
+							pstr += "<img src=\""+ img +"\"</label>";
+							//script += "$(function(){$(\".no"+uItem.getItemCode()+"\").css({"+"\"background\": \"url(\'" + uItem.getImg() + "\') no-repeat\"}); });";
+						}
+						out.print(pstr);
+						script += "</script>";
+						out.print(script);
+%>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td colspan="3"><div class = "empty"></div></td>
@@ -149,5 +184,12 @@ label img{
 			</form>
 		</article>
 	</section>
+	
+	<script type="text/javascript">
+	$(function(){
+		$('#no1').prop('checked',true);
+		$('#no-1').prop('checked',true);
+	});
+	</script>
 </body>
 </html>
