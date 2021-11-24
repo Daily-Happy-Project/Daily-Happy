@@ -22,7 +22,7 @@ public class UserItemDAO {
 				email = new UserDAO().splitemail(email);
 
 
-				String sql = "INSERT INTO " + email + "item(itemCode) VALUES("+itemCode+")";
+				String sql = "INSERT INTO " + email + "Item(itemCode) VALUES("+itemCode+")";
 				
 				int count = stmt.executeUpdate(sql);
 				return (count == 1) ? true : false;
@@ -43,7 +43,7 @@ public class UserItemDAO {
 	    	try {
 	    		email = new UserDAO().splitemail(email);
 	    		String sql = "SELECT a.itemcode, itemName, img1 ";
-	    		sql += "FROM "+ email + "item a join item b on (a.itemCode = b.itemCode) "; 
+	    		sql += "FROM "+ email + "Item a join item b on (a.itemCode = b.itemCode) "; 
 	    		sql += "where itemType = \""+ itemType + "\"";
 	    		stmt=conn.prepareStatement(sql);
 	    		rs=stmt.executeQuery();

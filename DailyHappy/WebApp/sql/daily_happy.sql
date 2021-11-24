@@ -38,9 +38,9 @@ CREATE TABLE IF NOT EXISTS USERNAME+JarList(
 -- user item --
 CREATE TABLE IF NOT EXIST USERNAME+Item(
 --	email VARCHAR(128) PRIMARY KEY,         -- user email --
-	itemcode PRIMARY KEY
+	itemCode PRIMARY KEY
 	apply boolean default 0,				-- apply item --
-	FOREIGN KEY (itemcode)					-- item code --
+	FOREIGN KEY (itemCode)					-- item code --
 	
 );
 
@@ -57,4 +57,3 @@ CREATE TABLE IF NOT EXISTS item(
 	img3 VARCHAR(1024),					-- item image3 --
 	img4 VARCHAR(1024)					-- item image4 --
 );
---> alter table item alter column itemcode set default 0;

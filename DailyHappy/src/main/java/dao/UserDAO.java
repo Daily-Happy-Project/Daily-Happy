@@ -39,8 +39,7 @@ public class UserDAO {
             		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "Item("
-//            		+ "email VARCHAR(128) PRIMARY KEY, "
-            		+ "itemCode int UNSIGNED PRIMARY KEY, "
+            		+ "itemCode int PRIMARY KEY, "
             		+ "apply tinyint(1) DEFAULT 0,"
             		+ "FOREIGN KEY (itemCode) REFERENCES item (itemCode))");
           
@@ -115,7 +114,8 @@ public class UserDAO {
 		    	conn.close();
 		}
 }
-	    
+	
+    
     
     //my info 
     public ArrayList<UserObj> myInfo(String email) throws NamingException, SQLException{
