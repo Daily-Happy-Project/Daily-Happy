@@ -14,15 +14,15 @@ import util.JarObj;
 public class JarDAO {
 
 	//add new jar
-	public boolean insert(String email, String jarName, String foldMethodName, int goalNum) throws NamingException, SQLException {
+	public boolean insert(String email, String jarName, int jarCode, String foldMethodName, int goalNum) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
         	email = new UserDAO().splitemail(email);
-            String sql = "INSERT INTO user(email, jarName, foldMethodName, goalNum) VALUES(?, ?, ?, ?)";
+            String sql = "INSERT INTO " + email +"JarList(jarName, jarCode, foldMethodName, goalNum) VALUES(?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, email);
-            stmt.setString(2, jarName);
+            stmt.setString(1, jarName);
+            stmt.setInt(2, jarCode);
             stmt.setString(3, foldMethodName);
             stmt.setInt(4, goalNum);
             
