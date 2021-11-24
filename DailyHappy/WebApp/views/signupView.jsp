@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>회원가입</title>
-                <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
         
         <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/allStyle.css"/>
         <link rel="stylesheet" href="../resources/css/signupStyle.css"/>

@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import javax.naming.NamingException;
 
 import util.ConnectionPool;
+
+import util.UserItemObj;
+
 import util.UserObj;
 
 public class UserItemDAO {
@@ -32,24 +35,33 @@ public class UserItemDAO {
 		}	
 	
 	
-	// item lookup. type byeol lo check
-		public boolean exists(String email, String itemtype) throws NamingException, SQLException {
-	        Connection conn = ConnectionPool.get();
-	        PreparedStatement stmt = null;
-	        ResultSet rs = null;
-	        try {
-	        	email = new UserDAO().splitemail(email);
-	        	
-	            String sql = "SELECT code itemtype FROM "+ email + "Item WHERE itemtype = ?";
-	            stmt = conn.prepareStatement(sql);
-	            stmt.setString(1, itemtype);
-	            rs = stmt.executeQuery();
-	            return rs.next();
-	        } finally {
-	            if (rs != null) rs.close(); 
-	            if (stmt != null) stmt.close(); 
-	            if (conn != null) conn.close();
-	        }
+		// item lookup. type byeol lo check (make new jar)
+	    public ArrayList<UserItemObj> getUserItemList(String email, String itemtype) throws NamingException, SQLException {
+	    	Connection conn=ConnectionPool.get();
+	    	PreparedStatement stmt=null;
+	    	ResultSet rs=null;
+	    	try {
+	    		email = new UserDAO().splitemail(email);
+	    		String sql = "SELECT a.itemcode, itemName, img1 ";
+	    		sql += "FROM "+ email + "item a join item b on (a.itemcode = b.itemcode) "; 
+	    		sql += "where itemtype = \""+ itemtype + "\"";
+	    		stmt=conn.prepareStatement(sql);
+	    		rs=stmt.executeQuery();
+	    		
+	    		ArrayList<UserItemObj> uItems=new ArrayList<UserItemObj>();
+	    		while(rs.next()) {
+	    			uItems.add(new UserItemObj(rs.getInt("itemcode"), rs.getString("itemName"), rs.getString("img1")));
+	    		}
+	    		
+	    		return uItems;
+	    	} finally {
+	    		if(rs!=null) 
+			    	rs.close();
+			    if(stmt!=null) 
+			    	stmt.close();
+			    if(conn!=null) 
+			    	conn.close();
+	    	}
 	    }
 		// item lookup. type byeol lo check (make new jar)
 	    public ArrayList<UserItemObj> getUserItemList(String email, String itemtype) throws NamingException, SQLException {

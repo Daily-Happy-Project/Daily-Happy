@@ -1,11 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ page import="dao.UserDAO"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="util.*"%>
+<%@ page import="dao.*"%>
+
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-	/* String uname = 
-	String uid = 
-	String ucoin =  */
+	String uemail = (String)session.getAttribute("email");
+	if (uemail == null) {
+		response.sendRedirect("loginView.jsp");
+	}
+	session.setAttribute("email", uemail);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -13,6 +20,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>새 유리병 만들기</title>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <style>
 	table{
@@ -33,7 +42,7 @@
 		padding-bottom: 4px;
 		outline: 2.5px solid #9D9D9D;
   		border-radius: 5px;
-  		overflow: scroll;
+  		overflow: auto;
   		white-space:nowrap;
 	}
 	.empty{
@@ -54,6 +63,22 @@
     background-color: #9D9D9D;
 	}
 
+
+	input[type=checkbox] {
+    display:none;
+	}
+
+label
+{
+    height: 100%;
+    width: 50px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+label img{
+	width: 100%;
+}
+
 </style>
 </head>
 <body>
@@ -63,7 +88,8 @@
 	</header>
 	<section>
 		<article align="center">
-			<form>
+
+			<form method="post" action="test.jsp">
 			<table align="center">
 				<tr>
 					<td class = "table-line1">병 이름</td>
@@ -78,12 +104,23 @@
 					<td>&nbsp;&nbsp;</td>
 					<td class = "table-line2">
 						<div class = "box">
-							#유리병 이미지 선택
+
 <%
+						ArrayList<UserItemObj> list = (new UserItemDAO()).getUserItemList(uemail, "jar");
 						String jarstr = "";
-						for( : ){
-							
+						String script = "<script type=\"text/javascript\">";
+						for(UserItemObj uItem : list ){
+							int code = uItem.getItemCode();
+							String name = uItem.getItemName();
+							String img = uItem.getImg();
+							jarstr += "<label id=\"l"+ code +"\" for=\"no"+code+"\">";
+							jarstr += "<input type=\"checkbox\" class=\"chkImg\" id=\"no"+ code +"\" name=\"Jshape\" value=\""+ name + "\">";
+							jarstr += "<img src=\""+ img +"\"</label>";
+							//script += "$(function(){$(\".no"+uItem.getItemCode()+"\").css({"+"\"background\": \"url(\'" + uItem.getImg() + "\') no-repeat\"}); });";
 						}
+						out.print(jarstr);
+						script += "</script>";
+						out.print(script);
 %>
 						</div>
 					</td>

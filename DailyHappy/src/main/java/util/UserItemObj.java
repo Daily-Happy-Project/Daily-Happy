@@ -2,15 +2,18 @@ package util;
 
 public class UserItemObj {
 	private int itemCode;
-	private boolean apply;
+	private String itemName;
+	private String img1;
 	
-	public UserItemObj(int itemCode, boolean apply) {
+	public UserItemObj(int itemCode, String itemName, String img1) {
 		this.itemCode=itemCode;
-		this.apply=apply;
+		this.itemName=itemName;
+		this.img1=img1;
 	}	
 	
 	public int getItemCode() {return this.itemCode;}
-	public boolean getApply() {return this.apply;}
+	public String getItemName() {return this.itemName;}
+	public String getImg() {return this.img1;}
 	
 }
 
