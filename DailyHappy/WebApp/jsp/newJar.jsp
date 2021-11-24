@@ -16,4 +16,5 @@
 	/* new UserItemDAO().insert(email, jarCode); */
 	
 	out.print("새 유리병 추가가 완료되었습니다.");
+	
 %>
