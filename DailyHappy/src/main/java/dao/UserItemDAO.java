@@ -14,7 +14,7 @@ import util.UserObj;
 public class UserItemDAO {
 	
 	// insert writing
-		public boolean insert(String email, int itemcode) throws NamingException, SQLException {
+		public boolean insert(String email, int itemCode) throws NamingException, SQLException {
 			Connection conn = ConnectionPool.get();
 			Statement stmt = conn.createStatement();
 			try {
@@ -22,7 +22,7 @@ public class UserItemDAO {
 				email = new UserDAO().splitemail(email);
 
 
-				String sql = "INSERT INTO " + email + "item(itemcode) VALUES("+itemcode+")";
+				String sql = "INSERT INTO " + email + "item(itemCode) VALUES("+itemCode+")";
 				
 				int count = stmt.executeUpdate(sql);
 				return (count == 1) ? true : false;
@@ -36,21 +36,21 @@ public class UserItemDAO {
 	
 	
 		// item lookup. type byeol lo check (make new jar)
-	    public ArrayList<UserItemObj> getUserItemList(String email, String itemtype) throws NamingException, SQLException {
+	    public ArrayList<UserItemObj> getUserItemList(String email, String itemType) throws NamingException, SQLException {
 	    	Connection conn=ConnectionPool.get();
 	    	PreparedStatement stmt=null;
 	    	ResultSet rs=null;
 	    	try {
 	    		email = new UserDAO().splitemail(email);
 	    		String sql = "SELECT a.itemcode, itemName, img1 ";
-	    		sql += "FROM "+ email + "item a join item b on (a.itemcode = b.itemcode) "; 
-	    		sql += "where itemtype = \""+ itemtype + "\"";
+	    		sql += "FROM "+ email + "item a join item b on (a.itemCode = b.itemCode) "; 
+	    		sql += "where itemType = \""+ itemType + "\"";
 	    		stmt=conn.prepareStatement(sql);
 	    		rs=stmt.executeQuery();
 	    		
 	    		ArrayList<UserItemObj> uItems=new ArrayList<UserItemObj>();
 	    		while(rs.next()) {
-	    			uItems.add(new UserItemObj(rs.getInt("itemcode"), rs.getString("itemName"), rs.getString("img1")));
+	    			uItems.add(new UserItemObj(rs.getInt("itemCode"), rs.getString("itemName"), rs.getString("img1")));
 	    		}
 	    		
 	    		return uItems;
@@ -63,45 +63,20 @@ public class UserItemDAO {
 			    	conn.close();
 	    	}
 	    }
-		// item lookup. type byeol lo check (make new jar)
-	    public ArrayList<UserItemObj> getUserItemList(String email, String itemtype) throws NamingException, SQLException {
-	    	Connection conn=ConnectionPool.get();
-	    	PreparedStatement stmt=null;
-	    	ResultSet rs=null;
-	    	try {
-	    		email = new UserDAO().splitemail(email);
-	    		String sql = "SELECT email FROM "+ email + "Item WHERE itemtype = "+ itemtype;
-	    		stmt=conn.prepareStatement(sql);
-	    		rs=stmt.executeQuery();
-	    		
-	    		ArrayList<UserItemObj> uItems=new ArrayList<UserItemObj>();
-	    		while(rs.next()) {
-	    			uItems.add(new UserItemObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getString("memberType")));
-	    		}
-	    		
-	    		return uItems;
-	    	} finally {
-	    		if(rs!=null) 
-			    	rs.close();
-			    if(stmt!=null) 
-			    	stmt.close();
-			    if(conn!=null) 
-			    	conn.close();
-	    	}
-	    }
+
 	
 		
 	
 	// delete item
-		public boolean delete(String email, int itemcode) throws NamingException, SQLException {
+		public boolean delete(String email, int itemCode) throws NamingException, SQLException {
 	        Connection conn = ConnectionPool.get();
 	        PreparedStatement stmt = null;
 	        try {
 	        	email = new UserDAO().splitemail(email);
 	        	
-	            String sql = "DELETE email FROM "+ email + "Item WHERE itemcode = ?";
+	            String sql = "DELETE email FROM "+ email + "Item WHERE itemCode = ?";
 	            stmt = conn.prepareStatement(sql);
-	            stmt.setInt(1, itemcode);
+	            stmt.setInt(1, itemCode);
 	            stmt.executeQuery(sql);
 	            
 	            int count = stmt.executeUpdate(sql);
@@ -121,10 +96,10 @@ public class UserItemDAO {
 			try {
 				email = new UserDAO().splitemail(email);
 				String sql = "CREATE VIEW userpaper "
-						+ "SELECT " + email + "item.itemcode, item.itemcode, item.img1"
-						+ "FROM " + email + "item, item "
-						+ "where "+ email+ "item.itemcode=item.itemcode "
-						+ "and item.itemtype=\"paper\"";
+						+ "SELECT " + email + "Item.itemCode, item.itemCode, item.img1"
+						+ "FROM " + email + "Item, item "
+						+ "where "+ email+ "Item.itemCode=item.itemCode "
+						+ "and item.itemType=\"paper\"";
 				stmt = conn.prepareStatement(sql);
 				stmt.executeUpdate();
 				
@@ -148,7 +123,7 @@ public class UserItemDAO {
 	        try {
 	        	
 	        	email = new UserDAO().splitemail(email);
-	            String sql = "DROP TABLE " + email + "item";
+	            String sql = "DROP TABLE " + email + "Item";
 	            stmt = conn.prepareStatement(sql);
 	            int count = stmt.executeUpdate();
 				

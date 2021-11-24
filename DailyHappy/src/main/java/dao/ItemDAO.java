@@ -63,14 +63,14 @@ public class ItemDAO {
 	
 	
 	// lookup item
-	public boolean exists(int itemtype) throws NamingException, SQLException {
+	public boolean exists(int itemType) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String sql = "SELECT itemcode FROM item WHERE itemtype = ?";
+            String sql = "SELECT itemCode FROM item WHERE itemType = ?";
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, itemtype);
+            stmt.setInt(1, itemType);
             rs = stmt.executeQuery();
             return rs.next();
         } finally {
@@ -82,14 +82,14 @@ public class ItemDAO {
 	
 	
 	// delete item
-	public boolean delete(int itemcode) throws NamingException, SQLException {
+	public boolean delete(int itemCode) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
             String sql = "DELETE FROM item WHERE itemcode = ?";
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, itemcode);
+            stmt.setInt(1, itemCode);
             rs = stmt.executeQuery();
             return rs.next();
         } finally {
