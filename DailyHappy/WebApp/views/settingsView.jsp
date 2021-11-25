@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+<%@ include file="soundOnOff.jsp" %>
 <!doctype html>
 <html>
     <head>
@@ -8,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>환경설정</title>
         
+       <!-- <script src="soundOnOff.js"></script> -->
         <link rel="stylesheet" href="css/headerStyle.css"/>
         <style type="text/css">
         	.box:visited{
@@ -44,8 +46,8 @@
            <div class="button-container">
                 <article class="box">
                     <span>♫소리♫</span>
-                    <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio>
-                   	<button id="on" onclick="control(event)">◀</button><span>on/off</span><button id="off" onclick="control(event)">▶</button>
+                    <!--<audio loop id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
+                   	<button id="on" type="button" onclick="on()">◀</button><span>on/off</span><button id="off" type="button" onclick="off()">▶</button>
                 </article>            
                 <article class="box">
                     <span>글자크기</span>
@@ -68,16 +70,8 @@
         <footer align="center"><%@include file="footer.html"%></footer>
         <script>
             //소리 켜기/끄기
-            var audio=document.getElementById("audio");
-            function control(e) {
-            	var id=e.target.id;
-            	if(id=="on") {
-            		audio.play();
-            	}
-            	else if(id=="off") {
-            		audio.pause();
-            	}
-            }
+			//soundOnOff.jsp
+			//var audio=document.getElementById("audio");
             //폰트 크기
         </script>
     </body>
