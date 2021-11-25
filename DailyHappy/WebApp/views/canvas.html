@@ -5,20 +5,6 @@
 <title>스크린샷</title>
 </head>
 <body>
-<div id="screenshot" style="padding: 10px">
-</div>
-<div id="img"></div>
 
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-<script>
-	$(function() {
-		$("#save").click(function() {
-			html2canvas($('#screenshot').get(0)).then(function(canvas) {
-				document.getElementById('img').appendChild(canvas)
-			});
-		});
-	});
-</script>
 </body>
 </html>
