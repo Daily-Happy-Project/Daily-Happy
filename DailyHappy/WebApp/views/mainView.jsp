@@ -22,10 +22,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <title>하루, 행복 - 메인화면</title>
 
-<!-- <script src="soundOnOff.js"></script> -->
 
 <style type="text/css">
 @font-face {
@@ -168,16 +169,66 @@ article{
 	background-color: #FFC7C7;
 	z-index: 2;
 }
+
+#screenshot_background {
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0px;
+	left:0px;
+	display:block;
+	opacity:0.3;
+	text-align:center;
+	box-sizing:border-box;
+	z-index:2147483647;
+	border-color:black;
+	border-style:solid;
+}
+
+#screenshot:before, #screenshot:after {
+	border:none !important;
+	content:"" !important;
+	height:100% !important;
+	position:absolute !important;
+	width:100% !important;
+}
+
+#screenshot:before {
+	border-right:1px solid white !important;
+	border-bottom:1px solid white !important;
+	left:-100% !important;
+	top:-100% !important;
+}
+
+#screenshot:after {
+	border-top:1px solid white !important;
+	border-left:1px solid white !important;
+	left:0 !important;
+	top:0 !important;
+}
+
+#screenshot {
+	height:100% !important;
+	position:fixed !important;
+	width:100% !important;
+	z-index:2147483648 !important;
+}
+
+body.edit_cursor {
+	cursor: crosshair;
+}
+
 </style>
 <!-- count() -->
 </head>
 <body>
+<div id="screenshot">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
 	<section align="center">
 
 		<article class="scr-wrap">
-			<div class="scr"><button type="button" id="save" onclick="location.href='canvas.html'"><img class="scr-icon" src="../resources/images/camera.png" alt="스크린샷 공유"></button><%//스크린샷 공유 %></div>
-			
+			<div class="scr" style="width:80%;"><button type="button" id="edit"><img class="scr-icon" src="../resources/images/camera.png" alt="스크린샷 공유"></button></div>
+			<a id="target" style="display:none"></a>
 		</article>
 		<article id="cnt-wrap">
 			<div id="cnt">00<%//접은 학종이 카운트 %></div>
@@ -216,6 +267,8 @@ article{
 
 	<nav><%@include file="bottomNavi.html"%></nav> 
 	
+	</div>
+	
 	<script type="text/javascript">
 <%
 	String nowJar = "nowJ"; //임시값. 화살표 누를때마다 nowJar이 가리키는 값이 바뀌도록.
@@ -228,6 +281,97 @@ article{
 			location.href="writingView.jsp"
 		}
 		
+		window.onload=function() {
+			document.getElementById("edit").addEventListener("click", function(e) {
+				document.querySelector("body").classList.add("edit_cursor");
+				screenshot(e);
+			});
+		}
+		
+		function screenshot(e) {
+			var startX, startY;
+			var height=window.innerHeight;
+			var width=window.innerWidth;
+			
+			var $screenBg=document.createElement("div");
+			$screenBg.id="screenshot_background";
+			$screenBg.style.borderWidth="0 0 "+height+"px 0";
+			
+			var $screenshot=document.createElement("div");
+			$screenshot.id="screenshot";
+			
+			document.querySelector("body").appendChild($screenBg);
+			document.querySelector("body").appendChild($screenshot);
+			
+			var selectArea=false;
+			var body=document.querySelector('body');
+			
+			var mousedown=function(e) {
+				e.preventDefault();
+				selectArea=true;
+				startX=e.clientX;
+				startY=e.clientY;
+				body.removeEventListener("mousedown", mousedown);
+			}
+			
+			body.addEventListener("mousedown", mousedown);
+			
+			var mouseup=function(e) {
+				selectArea=false;
+				body.removeEventListener("mousemove", mousemove);
+				$screenshot.parentNode.removeChild($screenshot);
+				$screenBg.parentNode.removeChild($screenBg);
+				var x=e.clientX;
+				var y=e.clientY;
+				var top=Math.min(y, startY);
+				var left=Math.min(x, startX);
+				var width=Math.max(x, startX)-left;
+				var height=Math.max(y, startY)-top;
+				html2canvas(document.body).then(
+					function(canvas) {
+						var img=canvas.getContext('2d').getImageData(left, top, width, height);
+						var c=document.createElement("canvas");
+						c.width=width;
+						c.height=height;
+						c.getContext('2d').putImageData(img, 0, 0);
+						save(c);
+					}		
+				);
+				body.removeEventListener("mouseup", mouseup);
+				
+				document.querySelector("body").classList.remove("edit_cursor");
+			}
+			body.addEventListener("mouseup", mouseup);
+			
+			function mousemove(e) {
+				var x=e.clientX;
+				var y=e.clientY;
+				$screenshot.style.left=x;
+				$screenshot.style.top=y;
+				if(selectArea) {
+					var top=Math.min(y, startY);
+					var right=width-Math.max(x, startX);
+					var bottom=height-Math.max(y, startY);
+					var left=Math.min(x, startX);
+					$screenBg.style.borderWidth=top+'px'+right+'px'+bottom+'px'+left+'px';
+				}
+			}
+			body.addEventListener("mousemove", mousemove);
+			
+			function save(canvas) {
+				if(navigator.msSaveBlob) {
+					var blob=canvas.msToBlob();
+					return navigator.msSaveBlob(blob, '파일명.jpg');
+				}
+				else {
+					var el=document.getElementById("target");
+					el.href=canvas.toDataURL("image/jpeg");
+					el.download='파일명.jpg';
+					el.click();
+				}
+			}
+			
+		}
 		
 	</script>
 </body>
