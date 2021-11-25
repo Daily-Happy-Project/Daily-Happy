@@ -21,8 +21,38 @@
 <title>하루, 행복 - 행복을 적어보세요</title>
 
 <style type="text/css">
+	article{
+		width: 100%;
+		display: flex;
+	}
+	#p-form-wrap{
+		width: 90%;
+		max-width: 300px;
+		min-width: 200px; 
+		margin: 50px auto;
+		
+	}
+	#p-text-wrap{
+		width: 100%;
+    	word-break:break-all;
+    	background-image: url('../resources/images/gra-paper-y.png');
+    	-webkit-background-size: contain;
+	   	-moz-background-size: contain;
+	   	-o-background-size: contain;
+		background-size: 100%;
+		background-position: contain;
+		background-repeat: no-repeat;
+		
+    	
+	}
 	#p-text{
 		font-size: 16pt;
+		resize: none;
+		border: none;
+	 	background-color: transparent;
+		width: 90%;
+		height: 90%;
+		
 	}
 </style>
 </head>
@@ -34,15 +64,21 @@
 		<%@include file="topNavi.html"%>
 	</header>
 	<article align="center">
+	<div id="p-form-wrap">
 		<form method="post" action="../jsp/writing.jsp">
-			<textarea id="p-text" name="content" rows="8" cols="24" placeholder="오늘은 어떤 행복이 당신을 찾아왔나요?"></textarea><br>
+		<div id="p-text-wrap">
+			<textarea id="p-text" name="content" rows="12" cols="12" placeholder="오늘은 어떤 행복이 당신을 찾아왔나요?"></textarea>
+		</div>
+			
 			<!-- 하단은 임시로 넣어둔 예제이다. -->
 			<input type="radio" name="paperCode" value="1" checked/>학종이 코드1
 			<input type="radio" name="paperCode" value="2"/>학종이 코드2
-			<input type="text" name="jarName" value="djar" style="visibility:hidden;"/><br>
+			<input type="text" name="jarName" value="이름입니다" style="visibility:hidden;"/><br>
 			<input type="submit">
-			
+				
 		</form>
+	</div> 
+		
 	</article>
 	
 </body>
