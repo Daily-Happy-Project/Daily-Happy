@@ -176,7 +176,7 @@ article{
 	<section align="center">
 
 		<article class="scr-wrap">
-			<div class="scr"><img class="scr-icon" src="../resources/images/camera.png" alt="스크린샷 공유"><%//스크린샷 공유 %></div>
+			<div class="scr"><img class="scr-icon" src="../resources/images/camera.png" alt="스크린샷 공유"><a href="canvas.html"></a><%//스크린샷 공유 %></div>
 			
 		</article>
 		<article id="cnt-wrap">
