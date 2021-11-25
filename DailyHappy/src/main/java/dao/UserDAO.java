@@ -34,7 +34,7 @@ public class UserDAO {
             		+ "jarImg2 VARCHAR(1024), "
             		+ "jarImg3 VARCHAR(1024), "
             		+ "jarImg4 VARCHAR(1024), "
-            		+ "FOREIGN KEY (jarCode) REFERENCES item (itemCode))");
+            		+ "FOREIGN KEY (jarItemCode) REFERENCES item (itemCode))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
             		+ "no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, "

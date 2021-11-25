@@ -19,7 +19,7 @@ public class JarDAO {
         PreparedStatement stmt = null;
         try {
         	email = new UserDAO().splitemail(email);
-            String sql = "INSERT INTO " + email +"JarList(jarName, jarCode, foldMethodName, goalNum) VALUES(?, ?, ?, ?)";
+            String sql = "INSERT INTO " + email +"JarList(jarName, jarItemCode, foldMethodName, goalNum) VALUES(?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, jarName);
             stmt.setInt(2, jarCode);
