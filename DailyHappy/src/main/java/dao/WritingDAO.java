@@ -15,7 +15,7 @@ public class WritingDAO {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
 		try {
-			
+			String realEmail = email;
 			email = new UserDAO().splitemail(email);
             
 			String sql = "INSERT INTO " + email + "WritingList(content, paperCode, jarName) VALUES(?, ?, ?)";
@@ -28,8 +28,7 @@ public class WritingDAO {
 			sql = "UPDATE " + email + "JarList set cnt=cnt+1 where jarName= \"" + jarName + "\"";
 			stmt.executeUpdate(sql);
 			
-			sql = "UPDATE user set coin=coin+1 where email= \"" + email + "\"";
-			
+			sql = "UPDATE user set coin=coin+1 where email= \"" + realEmail + "\"";
 			int count = stmt.executeUpdate(sql);
 			
 			return (count == 1) ? true : false;

@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
     pw VARCHAR(32),								-- user password --
-    coin int,                               	-- user owned coin  --
+    coin int DEFAULT 0,                         -- user owned coin  --
     memberType char DEFAULT 'M',                -- member type. member='M' manager='K' -- 
     userThemeCode int  							-- apply theme --   
 );
