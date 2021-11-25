@@ -4,21 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>soundOnOff</title>
+<title>환경설정</title>
 </head>
 <body>
+<audio loop id="audio" src="../resources/media/bensound-memories.mp3"></audio>
+
 <script>
-	//소리 켜기/끄기
-	var audio=document.getElementById("audio");
-	function control(e) {
-		var id=e.target.id;
-		if(id=="on") {
-			audio.play();
-		}
-		else if(id=="off") {
-			audio.pause();
-		}
-	}
+var audio=document.getElementById("audio");
+function on() {
+	audio.play();
+}
+
+function off() {
+	audio.pause();
+}
 </script>
 </body>
 </html>

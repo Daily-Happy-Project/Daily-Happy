@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="util.*"%>
 <%@ page import="dao.*"%>
+<%@ include file="soundOnOff.jsp" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 
@@ -23,6 +24,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>하루, 행복 - 메인화면</title>
+
+<!-- <script src="soundOnOff.js"></script> -->
 
 <style type="text/css">
 @font-face {
@@ -169,7 +172,7 @@ article{
 <!-- count() -->
 </head>
 <body>
-<audio autoplay id="audio" src="../resources/media/bensound-memories.mp3"></audio>
+<!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
 	<section align="center">
 
 		<article class="scr-wrap">
@@ -224,6 +227,8 @@ article{
 		function GotoWrite(){
 			location.href="writingView.jsp"
 		}
+		
+		
 	</script>
 </body>
 </html>
