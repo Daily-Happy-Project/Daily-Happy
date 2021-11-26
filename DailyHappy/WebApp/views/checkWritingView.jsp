@@ -6,22 +6,37 @@
 <%@ page import="dao.*"%>
 
 <% request.setCharacterEncoding("utf-8"); %>
+
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>작성글 확인</title>
+</head>
+
+<body>
+
 <%
-	String uemail=request.getParameter("email");
+	String uemail=(String)session.getAttribute("email");
 	String ujarName=(String)session.getAttribute("nowJar");
 	WritingDAO dao = new WritingDAO();
 	
-	dao.content(uemail, ujarName);
-	ResultSet rs = dao.content(uemail, ujarName);
-	dao.deleteJarView(uemail);
+	
+	ArrayList<WritingObj> wObj = dao.content(uemail, ujarName);
+	
 	
 	String str="";
-	while(rs.next()){
+	for(WritingObj obj : wObj){
+		String content = obj.getContent();
+		Date ts = obj.getTs();
 		str+="<div class=\"writing\">";
-		str+="<div class=\"contnet" + rs.getString("content") + "</div>";
-		str+="<div class=\"name" + rs.getString("name") + "</div>";
-		str+="<div class=\"ts" + rs.getString("ts") + "</div>";
-				
+		str+="<div class=\"contnet" + content + "</div>";
+		str+="<div class=\"name" + uemail + "</div>";
+		str+="<div class=\"ts" + ts + "</div>";
 		str+="</div>";
 	}
+	
+/*  	dao.deleteJarView(uemail); */
 %>
+
+</body>
