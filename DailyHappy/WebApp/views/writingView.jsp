@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="dao.*" %>
+<%@ page import="util.*" %>
+<%@ page import="java.util.*" %>
 
 <%
 
@@ -10,7 +13,6 @@
 	}
 	session.setAttribute("email", uemail);
 	session.setAttribute("memberType", umember);
-	//ArrayList<JarObj> list = (new JarDAO()).getJarList();
 
 %>
 <!DOCTYPE html>
@@ -70,12 +72,30 @@
 			<textarea id="p-text" name="content" rows="12" cols="12" placeholder="오늘은 어떤 행복이 당신을 찾아왔나요?"></textarea>
 		</div>
 			
-			<!-- 하단은 임시로 넣어둔 예제이다. -->
-			<input type="radio" name="paperCode" value="1" checked/>학종이 코드1
-			<input type="radio" name="paperCode" value="2"/>학종이 코드2
-			<input type="text" name="jarName" value="이름입니다" style="visibility:hidden;"/><br>
-			<input type="submit">
-				
+			
+
+<%
+			ArrayList<UserItemObj> pList = (new UserItemDAO()).getUserItemList(uemail, "paper");
+			String pstr = "";
+			String script = "<script type=\"text/javascript\">";
+			int cnt = 0;
+			for(UserItemObj uItem : pList ){
+				cnt++;
+				String name = uItem.getItemName();
+				String img = uItem.getImg();
+				int paperCode = uItem.getItemCode();
+				pstr += "<label class=\"l"+ cnt +"\" for=\"no-"+cnt +"\">";
+				pstr += "<input type=\"radio\" class=\"chkImg\" id=\"no-"+ cnt +"\" name=\"paperCode\" value=\""+ paperCode + "\">";
+				pstr += name;
+				//pstr += "<img src=\""+ img +"\"</label>";
+				//script += "$(function(){$(\".no"+uItem.getItemCode()+"\").css({"+"\"background\": \"url(\'" + uItem.getImg() + "\') no-repeat\"}); });";
+			}
+			out.print(pstr);
+			script += "</script><br>";
+			out.print(script);
+%>
+			
+			<input type="submit">				
 		</form>
 	</div> 
 		
