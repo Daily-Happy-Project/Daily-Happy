@@ -3,7 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="util.*"%>
 <%@ page import="dao.*"%>
-<%@ include file="soundOnOff.jsp" %>
+
 <% request.setCharacterEncoding("utf-8"); %>
 <%
 
@@ -44,48 +44,59 @@ article{
 }
 .scr-wrap{
 	position: fixed;
-	top: 10%;
+	bottom: 80%;
 	left: 10px;
 	z-index: 6;
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	border-radius: 100px;
-	background-color: #AAAAAA;
+	background-color: #ba7574;
 	display: flax;
+	cursor: pointer;
 }
 .scr{
-	position: absolute;
 	width: 100%;
-	margin: 0.5em auto;
+	margin: 5px auto;
 }
 .scr-icon{
-	width: 60%;
-	margin: 0 auto;
+	width: 100%;
+	margin: auto;
+}
+#edit{
+	-webkit-appearance: none;
+  	-moz-appearance: none;
+  	appearance: none;
+  	margin: 0px;
+  	padding: 0px;
+  	border: none;
+  	background-color: rgba(0,0,0,0);
+  	
 }
 #cnt-wrap{
 	position: absolute;
-	top: 10%;
+	bottom: 75%;
 	z-index: 5;
 	font-size: 30pt;
 	width: 100%;
 	display: flax;
-	
+
 }
 #cnt{
 	width: 30%;
+	min-width: 2em;
 	margin: 0 auto;
-	font-size: 40pt;
-	padding: 0.5em 0em 0.5em 0em;
-	background-color: rgba(0,0,0,0.2);
+	font-size: 45pt;
+	padding: 0.1em 0em 0.1em 0em;
+	background-color: rgba(195, 56, 55, 0.65);
 	border-radius: 20px;
 	color: #ffffff;
-	-webkit-text-stroke: 2px #AAAAAA;
+	/*-webkit-text-stroke: 2px #c33837;*/
 	font-family: 'GongGothicMedium';
 	
 }
 .main-wrap{
 	position: absolute;
-	bottom: 5.5em;
+	bottom: 7.5em;
 	width: 100%;
 	z-index:3;
 	display: flex;
@@ -107,10 +118,10 @@ article{
     position: absolute;
     bottom: 40%;
     padding: 5%;
-    font-size: 20pt;
+    font-size: 30pt;
     z-index: 4;
-    color: #AAAAAA;
-    -webkit-text-stroke: 10px #AAAAAA;
+    color: #c33837;
+    -webkit-text-stroke: 3px #c33837;
 }
 #left-bottle{
 	left: 0;
@@ -135,8 +146,6 @@ article{
     background-position: center;
     width: 100%;
 	height: 100%;
-
-
 }
 #paper-wrap{
 	position: fixed;
@@ -159,18 +168,20 @@ article{
 	max-width: 250px;
 	min-width: 200px;
 	margin-bottom: -50%;
+	box-shadow: 8px -8px 0 0 #d29e9d;
 }
 .table{
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-	height: 10em;
+	height: 12em;
 	background-color: #FFC7C7;
 	z-index: 2;
 }
 
 #screenshot_background {
+
 	width:100%;
 	height:100%;
 	position:fixed;
@@ -181,11 +192,9 @@ article{
 	text-align:center;
 	box-sizing:border-box;
 	z-index:2147483647;
-	border-color:black;
-	border-style:solid;
 }
 
-#screenshot:before, #screenshot:after {
+#screen-wrap:before, #screen-wrap:after {
 	border:none !important;
 	content:"" !important;
 	height:100% !important;
@@ -193,21 +202,21 @@ article{
 	width:100% !important;
 }
 
-#screenshot:before {
+#screen-wrap:before {
 	border-right:1px solid white !important;
 	border-bottom:1px solid white !important;
 	left:-100% !important;
 	top:-100% !important;
 }
 
-#screenshot:after {
+#screen-wrap:after {
 	border-top:1px solid white !important;
 	border-left:1px solid white !important;
 	left:0 !important;
 	top:0 !important;
 }
 
-#screenshot {
+#screen-wrap {
 	height:100% !important;
 	position:fixed !important;
 	width:100% !important;
@@ -216,58 +225,60 @@ article{
 
 body.edit_cursor {
 	cursor: crosshair;
-}
+} 
 
 </style>
 <!-- count() -->
 </head>
 <body>
-<div id="screenshot">
+<%@ include file="soundOnOff.jsp" %>
+<div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
-	<section align="center">
+<section align="center">
 
-		<article class="scr-wrap">
-			<div class="scr" style="width:80%;"><button type="button" id="edit"><img class="scr-icon" src="../resources/images/camera.png" alt="스크린샷 공유"></button></div>
-			<a id="target" style="display:none"></a>
-		</article>
-		<article id="cnt-wrap">
-			<div id="cnt">00<%//접은 학종이 카운트 %></div>
-		</article>
-		<article>
-			<div class="main-wrap">
-				<%
-					String strJ = "<div id=\"bottle-img-box\">";
-					strJ += "<img src=\"../resources/images/normal-3.png\" class=\"jarimg\" alt=\"유리병 이미지\" onclick=\"GotoCheck();\"/>";
-					strJ +="</div>";
-					out.print(strJ);
-				%><%//유리병 이미지 %>
-			</div>
-		</article>
-		<article>
-			<div id="left-bottle">〈</div>
-			<div id="right-bottle">〉</div>
-		</article>
-		<article>
-			<div id="paper-wrap">
-				<%
-					String strP = "<div id=\"paper-img-box\">";
-					strP += "<img src=\"../resources/images/gra-paper-r.png\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
-					strP +="</div>";
-					out.print(strP);
-				%><%//유리병 이미지 %>
-			</div>
-		</article>
-		<article class="bg-image-wrap">
-			<div class="background-image"></div>
-		</article>
-		<article>
-			<div class="table"></div>
-		</article>
-	</section>
+	<article class="scr-wrap" align="center">
+		<div class="scr" style="width:80%;"><button type="button" id="edit"><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
+		<a id="target" style="display:none"></a>
+		
+	</article>
+	<article id="cnt-wrap" >
+		<div id="cnt">01<%//접은 학종이 카운트 %></div>
+	</article>
+	<article>
+		<div class="main-wrap">
+			<%
+				String strJ = "<div id=\"bottle-img-box\">";
+				strJ += "<img src=\"../resources/images/normal-3.png\" class=\"jarimg\" alt=\"유리병 이미지\" onclick=\"GotoCheck();\"/>";
+				strJ +="</div>";
+				out.print(strJ);
+			%><%//유리병 이미지 %>
+		</div>
+	</article>
+	<article>
+		<div id="left-bottle">〈</div>
+		<div id="right-bottle">〉</div>
+	</article>
+	<article>
+		<div id="paper-wrap">
+			<%
+				String strP = "<div id=\"paper-img-box\">";
+				strP += "<img src=\"../resources/images/gra-paper-y.png\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
+				strP +="</div>";
+				out.print(strP);
+			%><%//유리병 이미지 %>
+		</div>
+	</article>
+	<article class="bg-image-wrap">
+		<div class="background-image"></div>
+	</article>
+	<article>
+		<div class="table"></div>
+	</article>
+</section>
 
 	<nav><%@include file="bottomNavi.html"%></nav> 
+</div>
 	
-	</div>
 	
 	<script type="text/javascript">
 <%
@@ -298,7 +309,7 @@ body.edit_cursor {
 			$screenBg.style.borderWidth="0 0 "+height+"px 0";
 			
 			var $screenshot=document.createElement("div");
-			$screenshot.id="screenshot";
+			$screenshot.id="screen-wrap";
 			
 			document.querySelector("body").appendChild($screenBg);
 			document.querySelector("body").appendChild($screenshot);
