@@ -73,7 +73,7 @@
 	
 	<header>
 	    <h2 class="title">작성 글 확인</h2>    
-		<%@include file="topNavi.html"%>
+		<%@include file="header.html"%>
 	</header>
 	
 	<div id="wrap">	

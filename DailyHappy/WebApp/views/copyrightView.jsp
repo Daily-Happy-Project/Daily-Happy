@@ -13,7 +13,7 @@
 <body>
 	<header>
 	<h2 class="title">저작권 정보</h2>
-<%@include file="topNavi.html"%>
+<%@include file="header.html"%>
 	</header>
 
 <div style="text-align:center">Copyright 2021. princesszizonganzi(ZIZIZU) all rights reserved.</div>

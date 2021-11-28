@@ -75,8 +75,9 @@
 
 	<header>
 		<h2 class="title">내 정보</h2>
-		<%@include file="topNavi.html"%>
+		<%@include file="header.html"%>
 	</header>
+	<nav><%@include file="bottomNavi.html"%></nav>
 	<section >
 		<div align="center" class="container">
 			<table align="center">

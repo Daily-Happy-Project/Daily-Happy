@@ -25,7 +25,7 @@
     <body>
 		<header>
 		<h2 class="title">개발자 정보</h2>
-		<%@include file="topNavi.html"%>
+		<%@include file="header.html"%>
 		</header>
        <article align="center">
            <div class="wrap">

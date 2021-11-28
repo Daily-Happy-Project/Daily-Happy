@@ -57,7 +57,7 @@
     <body>
 		<header>
 			<h2 class="title">도움말</h2>
-			<%@include file="topNavi.html"%>
+			<%@include file="header.html"%>
 		</header>
         <nav align="center">
             <span id="prev" onclick="plusSlides(-1)">◀</span>
