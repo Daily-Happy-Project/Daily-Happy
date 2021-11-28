@@ -83,7 +83,7 @@ public class WritingDAO {
     		 
     		 ArrayList<WritingObj> wObj=new ArrayList<WritingObj>();
     		 while(rs.next()) {
-    			 wObj.add(new WritingObj(rs.getString("content"), rs.getDate("ts")));
+    			 wObj.add(new WritingObj(rs.getString("content"), rs.getTimestamp("ts")));
     		 }
     		 
              return wObj;
