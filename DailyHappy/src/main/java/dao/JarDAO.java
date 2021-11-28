@@ -43,7 +43,7 @@ public class JarDAO {
     	ResultSet rs=null;
     	try {
     		email = new UserDAO().splitemail(email); 
-    		String sql="SELECT jarName, goalNum, cnt FROM " + email + "jarList";
+    		String sql="SELECT jarName, goalNum, cnt FROM " + email + "JarList";
     		stmt=conn.prepareStatement(sql);
     		rs=stmt.executeQuery();
     		
@@ -69,7 +69,7 @@ public class JarDAO {
 	        PreparedStatement stmt = null;
 	        try {
 	        	email = new UserDAO().splitemail(email);
-	            String sql = "DELETE FROM " + email + "jarList where jarName=\"" + jarName + "\"";
+	            String sql = "DELETE FROM " + email + "JarList where jarName=\"" + jarName + "\"";
 	            stmt = conn.prepareStatement(sql);
 	            int count = stmt.executeUpdate();
 	            
@@ -90,7 +90,7 @@ public class JarDAO {
 	        try {
 	        	
 	        	email = new UserDAO().splitemail(email);
-	            String sql = "DROP TABLE " + email + "jarList";
+	            String sql = "DROP TABLE " + email + "JarList";
 	            stmt = conn.prepareStatement(sql);
 	            int count = stmt.executeUpdate();
 				
