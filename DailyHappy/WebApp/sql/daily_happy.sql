@@ -29,15 +29,18 @@ CREATE TABLE IF NOT EXISTS USERNAME+writingList(
 -- Jar List
 CREATE TABLE IF NOT EXISTS USERNAME+JarList(
     jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
+    jarItemCode int,						   -- jar item code --
     foldMethodName VARCHAR(32),                -- fold method --
-    cnt int UNSIGNED,      					   -- count --
+    cnt int UNSIGNED DEFAULT 0,      		   -- count --
     goalNum int UNSIGNED DEFAULT 0			   -- goal number --
-);
+    jarImgName VARCHAR(32)			,		   -- jar image name --
+	FOREIGN KEY (jarItemCode) REFERENCES item (itemCode),
+	FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName)
+);	
 
 
 -- user item --
 CREATE TABLE IF NOT EXIST USERNAME+Item(
---	email VARCHAR(128) PRIMARY KEY,         -- user email --
 	itemCode PRIMARY KEY
 	apply boolean default 0,				-- apply item --
 	FOREIGN KEY (itemCode)					-- item code --
@@ -56,4 +59,14 @@ CREATE TABLE IF NOT EXISTS item(
 	img2 VARCHAR(1024),					-- item image2 --
 	img3 VARCHAR(1024),					-- item image3 --
 	img4 VARCHAR(1024)					-- item image4 --
+);
+
+
+-- jar image by fold method --
+CREATE TABLE IF NOT EXISTS jarImg(
+	imgName VARCHAR(128) NOT NULL PRIMARY KEY,		-- item name --
+	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
+	img2 VARCHAR(1024) NOT NULL,		-- item image2 --
+	img3 VARCHAR(1024) NOT NULL,		-- item image3 --
+	img4 VARCHAR(1024) NOT NULL			-- item image4 --
 );
