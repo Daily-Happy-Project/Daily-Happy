@@ -1,13 +1,14 @@
 package util;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class WritingObj {
 	private String jarName, content;
 	private int no, paperCode;
-	private Date ts;
+	private Timestamp ts;
 	
-	public WritingObj(String jarName, String content, int no, int paperCode, Date ts) {
+	public WritingObj(String jarName, String content, int no, int paperCode, Timestamp ts) {
 		this.jarName=jarName;
 		this.content=content;
 		this.no=no;
@@ -15,7 +16,7 @@ public class WritingObj {
 		this.ts=ts;
 	}
 	
-	public WritingObj(String content, Date ts) {
+	public WritingObj(String content, Timestamp ts) {
 		this.content=content;
 		this.ts=ts;
 	}
@@ -25,6 +26,6 @@ public class WritingObj {
 	public String getContent() {return this.content;}
 	public int getNo() {return this.no;}
 	public int getPaperCode() {return this.paperCode;}
-	public Date getTs() {return this.ts;}
+	public Timestamp getTs() {return this.ts;}
 
 }
