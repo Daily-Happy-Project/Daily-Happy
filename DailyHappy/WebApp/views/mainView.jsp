@@ -152,7 +152,7 @@ article{
 	max-width: 250px;
 	min-width: 200px;
 	margin-bottom: -50%;
-	box-shadow: 8px -8px 0 0 #d29e9d;
+	box-shadow: 8px -8px 0 0 rgba(94,96,115,0.3);
 }
 .table{
 	position: fixed;
@@ -175,7 +175,7 @@ article{
 	opacity:0.3;
 	text-align:center;
 	box-sizing:border-box;
-	z-index:2147483647;
+	z-index:47;
 }
 
 #screen-wrap:before, #screen-wrap:after {
@@ -204,7 +204,7 @@ article{
 	height:100% !important;
 	position:fixed !important;
 	width:100% !important;
-	z-index:2147483648 !important;
+	z-index:48 !important;
 }
 
 body.edit_cursor {
@@ -216,11 +216,12 @@ body.edit_cursor {
 </head>
 <body>
 <%@ include file="soundOnOff.jsp" %>
-<nav><%@include file="bottomNavi.html"%></nav>
+<%@include file="bottomNavi.html"%>
+<%@include file="bgStyle.jsp"%>
 <div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
+<div class="container">
 <section align="center">
-
 	<article class="scr-wrap" align="center">
 		<div class="scr" style="width:80%;"><button type="button" id="edit"><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
 		<a id="target" style="display:none"></a>
@@ -253,12 +254,12 @@ body.edit_cursor {
 			%><%//유리병 이미지 %>
 		</div>
 	</article>
-	<%@include file="bg.jsp"%>
+	
 	<article>
 		<div class="table"></div>
 	</article>
 </section>
-
+</div>
 	 
 </div>
 	
