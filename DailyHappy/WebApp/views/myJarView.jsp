@@ -38,7 +38,7 @@
     <body>
         <header>
             <h2 class="title">내 유리병 관리</h2>
-		<%@include file="topNavi.html"%>
+		<%@include file="header.html"%>
         </header>
         <section align="center">
            <div class="button-container">

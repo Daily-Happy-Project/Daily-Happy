@@ -26,13 +26,14 @@
 	article{
 		width: 100%;
 		display: flex;
+		
 	}
 	#p-form-wrap{
 		width: 90%;
 		max-width: 300px;
 		min-width: 200px; 
 		margin: 50px auto;
-		
+		z-index: 2;
 	}
 	#p-text-wrap{
 		width: 100%;
@@ -63,7 +64,7 @@
 <!-- 글 내용, 학종이 이미지 코드, 유리병 이름 넘겨줘야 함!-->
 	<header>
 	    <h2 class="title">학종이에 글 적기</h2>
-		<%@include file="topNavi.html"%>
+		<%@include file="header.html"%>
 	</header>
 	<article align="center">
 	<div id="p-form-wrap">
@@ -71,8 +72,6 @@
 		<div id="p-text-wrap">
 			<textarea id="p-text" name="content" rows="12" cols="12" placeholder="오늘은 어떤 행복이 당신을 찾아왔나요?"></textarea>
 		</div>
-			
-			
 
 <%
 			ArrayList<UserItemObj> pList = (new UserItemDAO()).getUserItemList(uemail, "paper");
@@ -100,6 +99,6 @@
 	</div> 
 		
 	</article>
-	
+	<%@include file="bg.jsp"%>
 </body>
 </html>

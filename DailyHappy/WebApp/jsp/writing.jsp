@@ -17,7 +17,7 @@
 <body>
 	<header>
 	    <h2 class="title">학종이에 글 적기</h2>
-		<%@include file="../views/topNavi.html"%>
+		<%@include file="../views/header.html"%>
 	</header>
 	
 	<article align="center">

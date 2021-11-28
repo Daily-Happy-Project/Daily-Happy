@@ -97,7 +97,7 @@ label img{
 <body>
 	<header>
 	    <h2 class="title">새 유리병 만들기</h2>
-		<%@include file="topNavi.html"%>
+		<%@include file="header.html"%>
 	</header>
 	<section>
 		<article align="center">

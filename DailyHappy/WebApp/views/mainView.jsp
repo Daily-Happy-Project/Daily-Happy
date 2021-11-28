@@ -129,24 +129,8 @@ article{
 #right-bottle {
 	right: 0;
 }
-.bg-image-wrap{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: 1;
-}
-.background-image{
-	display: inline-block;
-  	background-image: url('../resources/images/pink-round-theme.png');
-  	background-color: #FFF2E2;
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-	height: 100%;
-}
+
+
 #paper-wrap{
 	position: fixed;
 	bottom:0px;
@@ -232,6 +216,7 @@ body.edit_cursor {
 </head>
 <body>
 <%@ include file="soundOnOff.jsp" %>
+<nav><%@include file="bottomNavi.html"%></nav>
 <div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
 <section align="center">
@@ -268,15 +253,13 @@ body.edit_cursor {
 			%><%//유리병 이미지 %>
 		</div>
 	</article>
-	<article class="bg-image-wrap">
-		<div class="background-image"></div>
-	</article>
+	<%@include file="bg.jsp"%>
 	<article>
 		<div class="table"></div>
 	</article>
 </section>
 
-	<nav><%@include file="bottomNavi.html"%></nav> 
+	 
 </div>
 	
 	

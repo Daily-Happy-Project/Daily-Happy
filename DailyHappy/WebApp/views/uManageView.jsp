@@ -46,7 +46,7 @@
 %>
         <header>
             <h2 class="title">회원 관리</h2>
-		<%@include file="topNavi.html"%>
+		<%@include file="header.html"%>
         </header>
 	<article>
 		<%
