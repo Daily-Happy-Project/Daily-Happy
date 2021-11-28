@@ -24,6 +24,8 @@
 
 <style type="text/css">
 	article{
+		position: absolute;
+		top: 8em;
 		width: 100%;
 		display: flex;
 		
@@ -32,11 +34,13 @@
 		width: 90%;
 		max-width: 300px;
 		min-width: 200px; 
-		margin: 50px auto;
+		margin: 0 auto;
+		padding-bottom: 4em;
 		z-index: 2;
 	}
 	#p-text-wrap{
 		width: 100%;
+		margin: 50px auto;
     	word-break:break-all;
     	background-image: url('../resources/images/gra-paper-y.png');
     	-webkit-background-size: contain;
@@ -45,7 +49,7 @@
 		background-size: 100%;
 		background-position: contain;
 		background-repeat: no-repeat;
-		
+		box-shadow: 8px -8px 0 0 rgba(94,96,115,0.3);
     	
 	}
 	#p-text{
@@ -62,43 +66,25 @@
 <body>
 
 <!-- 글 내용, 학종이 이미지 코드, 유리병 이름 넘겨줘야 함!-->
-	<header>
-	    <h2 class="title">학종이에 글 적기</h2>
-		<%@include file="header.html"%>
-	</header>
+
+	<%@include file="bottomNavi.html"%>
+	<%@include file="bgStyle.jsp"%>
+<div class="container">
 	<article align="center">
 	<div id="p-form-wrap">
 		<form method="post" action="../jsp/writing.jsp">
-		<div id="p-text-wrap">
-			<textarea id="p-text" name="content" rows="12" cols="12" placeholder="오늘은 어떤 행복이 당신을 찾아왔나요?"></textarea>
-		</div>
-
-<%
-			ArrayList<UserItemObj> pList = (new UserItemDAO()).getUserItemList(uemail, "paper");
-			String pstr = "";
-			String script = "<script type=\"text/javascript\">";
-			int cnt = 0;
-			for(UserItemObj uItem : pList ){
-				cnt++;
-				String name = uItem.getItemName();
-				String img = uItem.getImg();
-				int paperCode = uItem.getItemCode();
-				pstr += "<label class=\"l"+ cnt +"\" for=\"no-"+cnt +"\">";
-				pstr += "<input type=\"radio\" class=\"chkImg\" id=\"no-"+ cnt +"\" name=\"paperCode\" value=\""+ paperCode + "\">";
-				pstr += name;
-				//pstr += "<img src=\""+ img +"\"</label>";
-				//script += "$(function(){$(\".no"+uItem.getItemCode()+"\").css({"+"\"background\": \"url(\'" + uItem.getImg() + "\') no-repeat\"}); });";
-			}
-			out.print(pstr);
-			script += "</script><br>";
-			out.print(script);
-%>
-			
-			<input type="submit">				
+			<div id="p-text-wrap">
+				<textarea id="p-text" name="content" rows="12" cols="12" placeholder="오늘은 어떤 행복이 당신을 찾아왔나요?"></textarea>
+			</div>
+			<div id="p-name">
+				<input type="text" name="pname" value="" disabled/>
+			</div>
+			<input type="submit" value="접어보자!">				
 		</form>
 	</div> 
-		
+		<!-- 토글바 만들어서 토글바에서 선택한 것이 disabled 값을 바꾸도록 자바스크립트 -->
 	</article>
-	<%@include file="bg.jsp"%>
+	
+</div>
 </body>
 </html>

@@ -43,6 +43,7 @@
             <h2 class="title">환경설정</h2>
 		<%@include file="header.html"%>
         </header>
+        <nav><%@include file="bottomNavi.html"%></nav>
         <section align="center">
            <div class="button-container">
                 <article class="box">

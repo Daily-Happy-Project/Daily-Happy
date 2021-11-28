@@ -4,6 +4,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>도움말</title>
         
         <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
@@ -59,6 +60,7 @@
 			<h2 class="title">도움말</h2>
 			<%@include file="header.html"%>
 		</header>
+		<%@include file="bottomNavi.html"%>
         <nav align="center">
             <span id="prev" onclick="plusSlides(-1)">◀</span>
             <span id="next" onclick="plusSlides(1)">▶</span>

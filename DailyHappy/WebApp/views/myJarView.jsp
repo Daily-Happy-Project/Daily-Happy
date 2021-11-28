@@ -40,6 +40,7 @@
             <h2 class="title">내 유리병 관리</h2>
 		<%@include file="header.html"%>
         </header>
+        <nav><%@include file="bottomNavi.html"%></nav>
         <section align="center">
            <div class="button-container">
                 <article>

@@ -5,6 +5,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>개발자 정보</title>
         
         <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
@@ -27,6 +28,7 @@
 		<h2 class="title">개발자 정보</h2>
 		<%@include file="header.html"%>
 		</header>
+		<%@include file="bottomNavi.html"%>
        <article align="center">
            <div class="wrap">
             	<div id="d-info-container">
