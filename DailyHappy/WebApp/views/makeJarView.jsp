@@ -130,7 +130,7 @@ label img{
 							String name = uItem.getItemName();
 							String img = uItem.getImg();
 							jarstr += "<label class=\"l"+ cnt +"\" for=\"no"+ cnt +"\">";
-							jarstr += "<input type=\"radio\" class=\"chkImg\" id=\"no"+ cnt +"\" name=\"jarCode\" value=\""+ jarCode + "\">";
+							jarstr += "<input type=\"radio\" class=\"chkImg\" id=\"no"+ cnt +"\" name=\"Jshape\" value=\""+ name + "\">";
 							jarstr += "<img src=\""+ img +"\"</label>";
 						}
 						
@@ -159,7 +159,7 @@ label img{
 							String name = uItem.getItemName();
 							String img = uItem.getImg();
 							pstr += "<label class=\"l"+ cnt +"\" for=\"no-"+cnt +"\">";
-							pstr += "<input type=\"radio\" class=\"chkImg\" id=\"no-"+ cnt +"\" name=\"Pshape\" value=\""+ name + "\">";
+							pstr += "<input type=\"radio\" class=\"chkImg\" id=\"no-"+ cnt +"\" name=\"Fshape\" value=\""+ name + "\">";
 							pstr += "<img src=\""+ img +"\"</label>";
 							//script += "$(function(){$(\".no"+uItem.getItemCode()+"\").css({"+"\"background\": \"url(\'" + uItem.getImg() + "\') no-repeat\"}); });";
 						}
