@@ -11,15 +11,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>하루, 행복</title>
 <style type="text/css">
+@font-face {
+    font-family: 'Uiyeun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	margin: 0;
+	width: 100%;
+}
 #index-wrap{
-	margin-top: 13em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+#index{
+	padding-bottom: 10vh;
+}
+#appname{
+	font-family: 'Uiyeun';
+	font-size: 2em;
 }
 </style>
 </head>
 <body>
 <div id="index-wrap"align="center">
+<div id="index">
 <footer align="center"><%@include file="footer.html"%></footer>
 <div id="appname">하루, 행복</div>
+</div>
 </div>
 <script type="text/javascript">
 	setTimeout(function() {

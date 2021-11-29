@@ -50,7 +50,6 @@
 	#logout-button{
 		display: inline-block;
 		font-size: 1.0em;
-		
 	    padding-top: 10px;
 	    padding-bottom: 10px;
 		width: 150px;

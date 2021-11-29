@@ -217,7 +217,7 @@ body.edit_cursor {
 <body>
 <%@ include file="soundOnOff.jsp" %>
 <%@include file="bottomNavi.html"%>
-<%@include file="bgStyle.jsp"%>
+
 <div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
 <div class="container">
@@ -260,7 +260,7 @@ body.edit_cursor {
 	</article>
 </section>
 </div>
-	 
+<%@include file="bgStyle.jsp"%>
 </div>
 	
 	

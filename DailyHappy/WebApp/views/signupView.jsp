@@ -13,6 +13,32 @@
         <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/formStyle.css"/>
 		
 		<style type="text/css">
+		@font-face {
+		    font-family: 'Uiyeun';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		body{
+			margin: 0;
+		}
+		.container{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.logo-wrap{
+		    height: 12vh;
+		    max-width: 200px;
+		}
+		.logo{
+			margin: 0 auto;
+			over-fit: cover;
+			width: auto;
+			height: 100%;
+		}
 /*signupStyle.css*/
 			#alert-correct{
 			    font-size: 8pt;
@@ -29,23 +55,33 @@
 			    font-weight: bold;
 			    font-size: 8pt;
 			}
+			#signup{
+				margin-top: 5vh;
+			}
 /*formStyle.css*/
 			.form-header{
 			    margin : 0 auto;
-			    padding-bottom: 20px;
+			    padding: 0;
 			    color: #9d9d9d;
+			    font-family: 'Uiyeun';
+			    font-size: 10vw;
+			    text-align: center;
+			}
+			@media screen and (min-width: 500px) {
+			  .form-header{
+			  	font-size: 50px;
+			  }
 			}
 			.form-style{
-			    width: 50%;
-			    max-width: 18em;
-			    min-width: 12em;
+				width: 60vw;
+				margin-bottom: 8vh;
 			}
 			
 			.input-text{
 			    width: 100%;
 			    height: 2em;
 			    padding: 1.0em 0.125em 0em 0.125em;
-			    font-size: 0.8em;
+			    font-size: 1em;
 			    background-color: rgba(0,0,0,0);
 			    border-top: 0px; 
 			    border-bottom: 2px solid #9d9d9d;
@@ -93,7 +129,7 @@
     </head>
     <body>
       <div class="container" align="center">
-           <%@include file="footer.html"%>
+           <div class="logo-wrap"><img class="logo" src="../resources/images/color-logo2.png"/><br></div>
            <h2 class="form-header">회원가입</h2>
            
             <form class="form-style" name="signupform" method="post" action="../jsp/signup.jsp">

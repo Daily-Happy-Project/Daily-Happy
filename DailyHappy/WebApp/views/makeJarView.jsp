@@ -1,17 +1,18 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="dao.*" %>
+<%@ page import="util.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="util.*"%>
-<%@ page import="dao.*"%>
 
-<% request.setCharacterEncoding("utf-8"); %>
 <%
+
 	String uemail = (String)session.getAttribute("email");
+	String umember = (String)session.getAttribute("memberType");
 	if (uemail == null) {
 		response.sendRedirect("loginView.jsp");
 	}
 	session.setAttribute("email", uemail);
+	session.setAttribute("memberType", umember);
 
 %>
 <!DOCTYPE html>
