@@ -14,17 +14,18 @@ import util.JarObj;
 public class JarDAO {
 
 	//add new jar
-	public boolean insert(String email, String jarName, int jarCode, String foldMethodName, int goalNum) throws NamingException, SQLException {
+	public boolean insert(String email, String jarName, String Jshape, String Fshape, int goalNum, String jarImgName) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
         	email = new UserDAO().splitemail(email);
-            String sql = "INSERT INTO " + email +"JarList(jarName, jarItemCode, foldMethodName, goalNum) VALUES(?, ?, ?, ?)";
+            String sql = "INSERT INTO " + email +"JarList(jarName, jarItemName, foldMethodName, goalNum, jarImgName) VALUES(?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, jarName);
-            stmt.setInt(2, jarCode);
-            stmt.setString(3, foldMethodName);
+            stmt.setString(2, Jshape);
+            stmt.setString(3, Fshape);
             stmt.setInt(4, goalNum);
+            stmt.setString(5, jarImgName);
             
             int count = stmt.executeUpdate();
             return (count == 1) ? true : false;
@@ -43,13 +44,13 @@ public class JarDAO {
     	ResultSet rs=null;
     	try {
     		email = new UserDAO().splitemail(email); 
-    		String sql="SELECT jarName, goalNum, cnt FROM " + email + "JarList";
+    		String sql="SELECT jarName, jarImgName, goalNum, cnt FROM " + email + "JarList";
     		stmt=conn.prepareStatement(sql);
     		rs=stmt.executeQuery();
     		
     		ArrayList<JarObj> jars=new ArrayList<JarObj>();
     		while(rs.next()) {
-    			jars.add(new JarObj(rs.getString("jarName"), rs.getInt("goalNum"), rs.getInt("cnt")));
+    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("goalNum"), rs.getInt("cnt")));
     		}
     		
     		return jars;
@@ -63,43 +64,88 @@ public class JarDAO {
     	}
     }
 	
+    
 	//delete jar
-		public boolean delete(String email, String jarName) throws NamingException, SQLException {
-	        Connection conn = ConnectionPool.get();
-	        PreparedStatement stmt = null;
-	        try {
-	        	email = new UserDAO().splitemail(email);
-	            String sql = "DELETE FROM " + email + "JarList where jarName=\"" + jarName + "\"";
-	            stmt = conn.prepareStatement(sql);
-	            int count = stmt.executeUpdate();
-	            
-	            return (count == 1) ? true : false;
-	            
-	        } finally {
-	            if (stmt != null) stmt.close(); 
-	            if (conn != null) conn.close();
-	        }
-	    }
-	
+	public boolean delete(String email, String jarName) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        try {
+        	email = new UserDAO().splitemail(email);
+            String sql = "DELETE FROM " + email + "JarList where jarName=\"" + jarName + "\"";
+            stmt = conn.prepareStatement(sql);
+            int count = stmt.executeUpdate();
+            
+            return (count == 1) ? true : false;
+            
+        } finally {
+            if (stmt != null) stmt.close(); 
+            if (conn != null) conn.close();
+        }
+    }
 	
 
 	 // delete jar table
-	    public boolean deleteJarTable(String email) throws NamingException, SQLException {
-	        Connection conn = ConnectionPool.get();
-	        PreparedStatement stmt = null;
-	        try {
-	        	
-	        	email = new UserDAO().splitemail(email);
-	            String sql = "DROP TABLE " + email + "JarList";
-	            stmt = conn.prepareStatement(sql);
-	            int count = stmt.executeUpdate();
-				
-	            return (count > 0) ? true : false;
-	        } finally {
-	            if (stmt != null) stmt.close();
-	            if (conn != null) conn.close();
-	            
-	        }
-	    }
-	
+    public boolean deleteJarTable(String email) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        try {
+        	email = new UserDAO().splitemail(email);
+            String sql = "DROP TABLE " + email + "JarList";
+            stmt = conn.prepareStatement(sql);
+            int count = stmt.executeUpdate();
+			
+            return (count > 0) ? true : false;
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+    
+    
+    // main jar Img
+    public String mainJarImg(String jarImgName, int goalNum, int cnt) throws NamingException, SQLException {
+    	Connection conn = ConnectionPool.get();
+    	PreparedStatement stmt = null;
+    	ResultSet rs = null;
+    	try {
+    		String sql = "";
+    		String img = "";
+    		stmt = conn.prepareStatement(sql);
+    		if (cnt==0) {
+    			sql = "SELECT img1 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+    			rs = stmt.executeQuery(sql);
+        		while(rs.next()) {
+        			img = rs.getString("img1");
+        		}
+    		}
+    		else if((cnt>0) && (cnt<=goalNum*(1/3))) {
+    			sql = "SELECT img2 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+    			rs = stmt.executeQuery(sql);
+        		while(rs.next()) {
+        			img = rs.getString("img2");
+        		}
+    		}
+    		else if((cnt>goalNum*(1/3)) && (cnt<=goalNum*(2/3))) {
+    			sql = "SELECT img3 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+    			rs = stmt.executeQuery(sql);
+        		while(rs.next()) {
+        			img = rs.getString("img3");
+        		}
+    		}
+    		else if(cnt>goalNum*(2/3)) {
+    			sql = "SELECT img4 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+    			rs = stmt.executeQuery(sql);
+        		while(rs.next()) {
+        			img = rs.getString("img4");
+        		}
+    		}
+    		return img;    		
+    	} finally {
+    		if (rs != null) rs.close();
+    		if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+		}
+    }
+    
+    
 }

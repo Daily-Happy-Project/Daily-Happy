@@ -40,14 +40,14 @@
 		background-repeat: no-repeat;
 		box-shadow: 8px -8px 0 0 rgba(94,96,115,0.3);
     }
-/* 	.text{
+	.text{
 		font-size: 16pt;
 		resize: none;
 		border: none;
 	 	background-color: transparent;
 		width: 90%;
 		height: 90%;
-	} */
+	}
 	
 </style>
 </head>
@@ -69,12 +69,7 @@
 	    <h2 class="title">작성 글 확인</h2>    
 		<%@include file="header.html"%>
 	</header>
-	
-	<div id="wrap">	
-	<div class="x-button">
-		<a href="../jsp/checkWriting.jsp">x</a>
-	</div>
-	
+		
 	
 	<article align="center">
 	<div id="wrap">
@@ -86,19 +81,20 @@
 				String content = obj.getContent();
 				Timestamp stamp = obj.getTs();
 				int paperCode = obj.getPaperCode();
+				String name = new UserDAO().getName((String)session.getAttribute("email"));
 				str+="<div class=\"writing\">";
 				/* str+="<p class=\"text\">" + content + "</p>";
 				str+="<div class=\"text\" </div>" + "작성자 : " + email;
 				str+="<div class=\"text\" </div>" + "작성시간 : " + stamp; */
 				
 				str+="<textarea class=\"text\" rows=\"8\" cols=\"12\" placeholder=\"" + content + "\" disabled></textarea>";
-				str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성자 : " + email + "\" disabled></textarea>";
+				str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성자 : " + name + "\" disabled></textarea>";
 				str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성시간 : " + stamp + "\" disabled></textarea>";
 
 				str+="</div>";
 				out.print(str); }
 		%>
-		</div>
+		</div>	
 	</div>
 	</article>
 	
