@@ -1,0 +1,2340 @@
+[33mcommit 1ec0714c30ac0f8dc13323bc0ef237fe9cfad1a1[m[33m ([m[1;36mHEAD -> [m[1;32mchaeyeon[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 709bfa4 56b1f49
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 30 00:22:15 2021 +0900
+
+    Merge pull request #126 from Daily-Happy-Project/ssuna
+    
+    웰컴 파일 변경
+
+[33mcommit 709bfa41d1eeace7f996d1b2f1d148ce10a3dc66[m
+Merge: cd4d0f5 f44f26a
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 30 00:22:00 2021 +0900
+
+    Merge pull request #125 from Daily-Happy-Project/chaeyeon
+    
+    makeJarView.jsp 수정
+
+[33mcommit 56b1f49d99f654f6ca0d6949cdfe6ab1f5a78eb6[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 30 00:21:24 2021 +0900
+
+    웰컴 파일 변경
+
+[33mcommit cd4d0f501fbb82443ca31d635054701cd14a66ae[m
+Merge: 75cda9a 9e76dcc
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 30 00:20:06 2021 +0900
+
+    Merge pull request #124 from Daily-Happy-Project/chaeyeon
+    
+    mainJarImg() 글갯수별 유리병 이미지 가져오기
+
+[33mcommit f44f26a08eeb2a22ffaad586d1a2a6ac69e723f3[m[33m ([m[1;31morigin/chaeyeon[m[33m)[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 30 00:19:59 2021 +0900
+
+    makeJarView.jsp 수정
+
+[33mcommit 9e76dcc87a2b0903d8686cb1d68cf18217c4028d[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 30 00:10:35 2021 +0900
+
+    mainJarImg() 글갯수별 유리병 이미지 가져오기
+
+[33mcommit 75cda9a1138178dbc2663f60273f54b9076a15cf[m
+Merge: 10fdd16 0f0ce44
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 29 23:36:29 2021 +0900
+
+    Merge pull request #123 from Daily-Happy-Project/mj2
+    
+    writingView front
+
+[33mcommit 0f0ce44c6ed8614f9e53f04a0344ff70dd89ee4c[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Mon Nov 29 23:35:20 2021 +0900
+
+    writingView front
+
+[33mcommit 10fdd16d14d6142a3a785cba8c37349cdec55607[m
+Merge: e8107f2 ceb9958
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 29 13:31:33 2021 +0900
+
+    Merge pull request #122 from Daily-Happy-Project/chaeyeon
+    
+    도안별 유리병 이미지 저장 수정 중
+
+[33mcommit ceb9958b29a5f73849bba05272df40460555f783[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 29 06:16:16 2021 +0900
+
+    도안별 유리병 이미지 저장 수정 중
+
+[33mcommit e8107f2b7e0955c8a78082394d14951a0ed323bb[m
+Merge: e89236a 8d94aed
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Mon Nov 29 04:19:21 2021 +0900
+
+    Merge pull request #121 from Daily-Happy-Project/mj2
+    
+    nav edit
+
+[33mcommit e89236a7c6b7c521865f3f23d287f816a641199c[m
+Merge: 7dc8faf eac3050
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Mon Nov 29 04:19:11 2021 +0900
+
+    Merge pull request #120 from Daily-Happy-Project/chaeyeon
+    
+    jarDAO 대소문자 수정
+
+[33mcommit 8d94aedcee08ce8a5fa8daeaf528628f04f9ae77[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Mon Nov 29 04:03:41 2021 +0900
+
+    nav edit
+
+[33mcommit eac305079a4b4cd9b2136b7effa89be3647e518d[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 29 02:54:21 2021 +0900
+
+    jarDAO 대소문자 수정
+
+[33mcommit 7dc8faf24890e0266ddccc958a36f649c60cb66f[m
+Merge: 9ea8234 bf70afb
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Mon Nov 29 02:31:56 2021 +0900
+
+    Merge pull request #119 from Daily-Happy-Project/mj2
+    
+    topNavi --> header
+
+[33mcommit bf70afb832d3fd6e3098f330fffd449bb002c8a0[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Mon Nov 29 02:31:03 2021 +0900
+
+    topNavi --> header
+
+[33mcommit 9ea823408eb127b6095f6b8bda61c2592513e263[m
+Merge: 3d0a6e6 1c8c7b1
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sun Nov 28 13:56:01 2021 +0900
+
+    Merge pull request #118 from Daily-Happy-Project/ssuna
+    
+    Ssuna
+
+[33mcommit 1c8c7b1647be36281bcbeae519f2c85d811ac63f[m
+Merge: 750ace8 3d0a6e6
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sun Nov 28 13:55:33 2021 +0900
+
+    충돌 방지
+
+[33mcommit 750ace8b10b43a9f5f230a98d2eb0efe7ee4b967[m
+Merge: 69020be 11be7e8
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sun Nov 28 13:54:48 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into ssuna
+
+[33mcommit 3d0a6e6d75f37ff886f3bc3f11b28453ceffa73c[m
+Merge: 11be7e8 69020be
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sun Nov 28 13:54:34 2021 +0900
+
+    Merge pull request #117 from Daily-Happy-Project/ssuna
+    
+    메인뷰 충돌방지
+
+[33mcommit 69020be00eb0fa8abd967160d6548309ade28de3[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sun Nov 28 13:54:00 2021 +0900
+
+    메인뷰 충돌방지
+
+[33mcommit 11be7e8b445c303e4a85cc48ee4fdf2ca21247c3[m
+Merge: 3d7bf78 7312ef7
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sun Nov 28 13:51:14 2021 +0900
+
+    Merge pull request #116 from Daily-Happy-Project/mj2
+    
+    메인 ui 조정, 학종이 테두리 제거
+
+[33mcommit 3d7bf78215da8da2b5b3fdaacc95341f0a0e08e4[m
+Merge: 8ba963c 2ec031c
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sun Nov 28 13:51:04 2021 +0900
+
+    Merge pull request #115 from Daily-Happy-Project/chaeyeon
+    
+    글 확인 대강 수정
+
+[33mcommit 7312ef7b26caeeb858384ea15cb234bcc5aff9f6[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sun Nov 28 04:40:21 2021 +0900
+
+    메인 ui 조정, 학종이 테두리 제거
+
+[33mcommit 2ec031ce4062376045389e02bfc6dbdad45e7a24[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sun Nov 28 04:12:07 2021 +0900
+
+    글 확인 대강 수정
+
+[33mcommit 8ba963ccc1ea97e5a9aeadbda87ba71979cf8dde[m
+Merge: d535d74 5c9ebfa
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sun Nov 28 02:26:59 2021 +0900
+
+    Merge pull request #114 from Daily-Happy-Project/ssuna
+    
+    회원가입 후 화면 alert 띄우고 로그인창으로 이동
+
+[33mcommit 5c9ebfa5d456325218a8bba3c36544c0c6315d47[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sun Nov 28 02:15:37 2021 +0900
+
+    회원가입 후 화면 alert 띄우고 로그인창으로 이동
+
+[33mcommit d535d74fec7bf1e87c067091ce7f206085b876d7[m
+Merge: 10abcf8 1ac54ea
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 27 11:15:45 2021 +0900
+
+    Merge pull request #113 from Daily-Happy-Project/chaeyeon
+    
+    writingView 수정
+
+[33mcommit 1ac54ea135f14e22a2826120454684f7a9f467f2[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 27 05:22:44 2021 +0900
+
+    글 확인 대충 수정
+
+[33mcommit c8fe08493862779cbb8e62005f5775c4084db948[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 27 01:59:45 2021 +0900
+
+    writingView 수정
+
+[33mcommit 10abcf8793a1191725f9f40ced11bbca219b7a61[m
+Merge: aa68a88 f5e458c
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 26 03:00:25 2021 +0900
+
+    Merge pull request #112 from Daily-Happy-Project/ssuna
+    
+    메인뷰 스크린샷 구현
+
+[33mcommit f5e458c56052181ea4c4e0d3529e6cf4ff2f15fb[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 26 02:59:26 2021 +0900
+
+    메인뷰 스크린샷 구현
+
+[33mcommit aa68a887fd1a9776ece9f256e4749062c39e9120[m
+Merge: a028e4e 1867f25
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 26 01:57:13 2021 +0900
+
+    Merge pull request #111 from Daily-Happy-Project/ssuna
+    
+    스크린샷 수정
+
+[33mcommit 1867f25b7f4874c2d2920c8ae09ca40dc04320cd[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 26 01:56:47 2021 +0900
+
+    스크린샷 수정
+
+[33mcommit a028e4eb12a0dd42ed381ec1c10515da054c94c0[m
+Merge: 6eadfd1 91c4fd5
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 26 01:42:45 2021 +0900
+
+    Merge pull request #110 from Daily-Happy-Project/chaeyeon
+    
+    WritingDAO, SQL user테이블  coin칼럼 기본값 0으로 수정
+
+[33mcommit 91c4fd53207805262f2d76bd447e1480e85e6afa[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 26 01:41:01 2021 +0900
+
+    WritingDAO, SQL user테이블  coin칼럼 기본값 0으로 수정
+
+[33mcommit 6eadfd113636a339c5aeda3e3fd770622eb50869[m
+Merge: 1d3514e 93ba2ae
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 26 01:39:35 2021 +0900
+
+    Merge pull request #109 from Daily-Happy-Project/ssuna
+    
+    스크린샷 구현중
+
+[33mcommit 93ba2aedf5c698f655e1fdac1e0923d76d77d67e[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 26 01:38:56 2021 +0900
+
+    스크린샷 구현중
+
+[33mcommit 1d3514edb9caa848af5214a8fc6b87ed46b1d607[m
+Merge: 836d6f1 e05cb17
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 26 01:08:14 2021 +0900
+
+    Merge pull request #108 from Daily-Happy-Project/ssuna
+    
+    bgm 구현중
+
+[33mcommit e05cb1742b7390216621339e23588a7b6372238d[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 26 01:07:29 2021 +0900
+
+    bgm 구현중
+
+[33mcommit 836d6f1c95e2cfc09f9137d586df784c71a2a0e8[m
+Merge: 30c8f75 8093a25
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 25 20:27:30 2021 +0900
+
+    Merge pull request #107 from Daily-Happy-Project/chaeyeon
+    
+    회원가입 오류 수정
+
+[33mcommit 8093a25b17699b72c068d22959c6c7a423e5bd61[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Thu Nov 25 20:25:57 2021 +0900
+
+    회원가입 오류 수정
+
+[33mcommit 30c8f75681b3988f2a424423e51d4d67d5622174[m
+Merge: 8367ffb 7134672
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 25 16:15:37 2021 +0900
+
+    Merge pull request #106 from Daily-Happy-Project/mj2
+    
+    writingView css2
+
+[33mcommit 713467242a47618026be7f7bb66fce315d27acb6[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Thu Nov 25 05:03:04 2021 +0900
+
+    writingView css
+
+[33mcommit 8367ffb91e58a126596a588d7caaa46882456b8d[m
+Merge: 343b9e6 7740a3e
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Thu Nov 25 04:35:50 2021 +0900
+
+    Merge pull request #105 from Daily-Happy-Project/chaeyeon
+    
+    일단 커밋
+
+[33mcommit 7740a3ee119ff29732c72b9910c1a939142d0f7d[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Thu Nov 25 04:35:17 2021 +0900
+
+    일단 커밋
+
+[33mcommit 343b9e6198999ad8b936febce8fcdaad39effd45[m
+Merge: 3dd730a cd08666
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Thu Nov 25 03:47:48 2021 +0900
+
+    Merge pull request #104 from Daily-Happy-Project/chaeyeon
+    
+    새유리병 만들기 완성 ^^
+
+[33mcommit cd08666aa84a74719f0ec1024767c234483b1cca[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Thu Nov 25 03:47:10 2021 +0900
+
+    새유리병 만들기 완성 ^^
+
+[33mcommit 3dd730a09191bf133ba3395712684cab92667035[m
+Merge: 9f85a37 e54a19f
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 25 02:46:05 2021 +0900
+
+    Merge pull request #103 from Daily-Happy-Project/ssuna
+    
+    오디오 추가, 메인뷰 자동재생
+
+[33mcommit e54a19f47df0274dfddef8ed3bfbc43e1769641a[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 25 02:45:33 2021 +0900
+
+    오디오 추가, 메인뷰 자동재생
+
+[33mcommit 9f85a37f4cf0fc5bb8798a995ea2a47156160689[m
+Merge: ba67d0c 94f310a
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 25 02:43:31 2021 +0900
+
+    Merge pull request #102 from Daily-Happy-Project/mj2
+    
+    writingView css
+
+[33mcommit 94f310a248fbd0a0bcdb6117998ebacffd5e981b[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Thu Nov 25 02:42:15 2021 +0900
+
+    writingView css
+
+[33mcommit ba67d0c26d78255660585f0e13d8f9ed96e0cdd6[m
+Merge: d6088d7 2a795bb
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 25 02:21:38 2021 +0900
+
+    Merge pull request #101 from Daily-Happy-Project/mj2
+    
+    관리자 페이지 접근 권한 수정
+
+[33mcommit 2a795bbc09046ac27ab17d5414e3f8716012badd[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Thu Nov 25 02:04:53 2021 +0900
+
+    관리자 페이지 접근 권한 수정
+
+[33mcommit d6088d7b362d384e28f1f6328c1bff2be2be9a69[m
+Merge: 3f04c56 9f52e64
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Thu Nov 25 01:22:18 2021 +0900
+
+    Merge pull request #100 from Daily-Happy-Project/mj2
+    
+    유리병 생성 뷰 완성
+
+[33mcommit 9f52e6499d8d4e23c691ec9c720861cde9ea79e1[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Thu Nov 25 01:16:12 2021 +0900
+
+    유리병 생성 뷰 완성
+
+[33mcommit 3f04c56647c0c18726cddeb49e0efe1fc5741f07[m
+Merge: 9a5ffbf 8c0e78c
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 25 01:14:26 2021 +0900
+
+    Merge pull request #99 from Daily-Happy-Project/chaeyeon
+    
+    UserDAO, SQL 수정;
+
+[33mcommit 8c0e78c5631af814e2a5b388e1df2914f8ed23aa[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Thu Nov 25 01:10:35 2021 +0900
+
+    UserDAO, SQL 수정;
+
+[33mcommit 9a5ffbfc90d8d06a5f309c455f43474b82cbda0d[m
+Merge: a8014af 7a9ac89
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 24 17:55:42 2021 +0900
+
+    Merge pull request #98 from Daily-Happy-Project/chaeyeon
+    
+    dao 대소문자 수정
+
+[33mcommit 7a9ac890d6d3ef5dcce138ff78c9677da2c8f236[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 24 14:29:15 2021 +0900
+
+    dao 대소문자 수정
+
+[33mcommit a8014af7d7c435acecda897fca2f3bf2e93259b7[m
+Merge: b94d745 2daaf0e
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 24 11:39:24 2021 +0900
+
+    Merge pull request #97 from Daily-Happy-Project/mj2
+    
+    Mj2
+
+[33mcommit 2daaf0ef125a63b75f126c1f2358eb3715aaf2d9[m
+Merge: a79dcfa b94d745
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Wed Nov 24 05:57:01 2021 +0900
+
+    Merge branch 'main' into mj2
+
+[33mcommit a79dcfa0bdcd8984dd8fb528f3c87532c1201d7b[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Wed Nov 24 05:53:07 2021 +0900
+
+    보유 유리병 중 선택하여 값 넘기도록 함
+
+[33mcommit b94d74573301ee39d36900f86076c4400d69b949[m
+Merge: 2001340 25f2200
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Wed Nov 24 03:45:37 2021 +0900
+
+    Merge pull request #96 from Daily-Happy-Project/mj2
+    
+    useritemdao 수정
+
+[33mcommit 505685b811b0899d5ebf3bfa035ec9278146e8ac[m
+Merge: 25f2200 2001340
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Wed Nov 24 03:43:57 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into mj2
+
+[33mcommit 25f2200b67e35b2fb1bdbe8c37836aea1ca8a57a[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Wed Nov 24 03:43:17 2021 +0900
+
+    useritemdao 수정
+
+[33mcommit 2001340800b2b02936d6077bc70a9ebc0d448ff6[m
+Merge: 144974b ee8f6cf
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Wed Nov 24 03:40:01 2021 +0900
+
+    Merge pull request #95 from Daily-Happy-Project/chaeyeon
+    
+    UserItemObj.java 추가
+
+[33mcommit ee8f6cf86bf1cadf4ed3c4eb19b299a08bbc5cd3[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 24 03:39:33 2021 +0900
+
+    UserItemObj.java 추가
+
+[33mcommit 144974be26823178fb4c4588d5c396fef5a0ee02[m
+Merge: 49a1eb9 971aafd
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Wed Nov 24 02:30:25 2021 +0900
+
+    Merge pull request #94 from Daily-Happy-Project/chaeyeon
+    
+    UserItemDAO 다시 추가
+
+[33mcommit 971aafdf5df89fd2a29d5ab8b8e062dcdbe77bbf[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 24 02:29:21 2021 +0900
+
+    UserItemDAO 다시 추가
+
+[33mcommit 49a1eb96530b95078817a9ddf0070827c5aeba71[m
+Merge: 69b3b2b dc0d99a
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Wed Nov 24 02:23:27 2021 +0900
+
+    Merge pull request #93 from Daily-Happy-Project/chaeyeon
+    
+    Chaeyeon
+
+[33mcommit dc0d99a1795cfd16d64ec48cb30a66f0d9b657e5[m
+Merge: 11cd732 69b3b2b
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 24 02:22:43 2021 +0900
+
+    일단 커밋
+
+[33mcommit 11cd7325109bcc8c11d9f78d30c9b4a21ff5a61a[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 24 01:55:53 2021 +0900
+
+    다시 커밋
+
+[33mcommit 793f83ac9b9a02ced20979984221d515edb43a25[m
+Merge: 9ee0328 56c02d4
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 24 01:53:14 2021 +0900
+
+    일단 커밋
+
+[33mcommit 69b3b2bc4359675b676fc0fcef4bc9a3f3fdfcb7[m
+Merge: 8217faa 8dad376
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 24 01:42:58 2021 +0900
+
+    Merge pull request #92 from Daily-Happy-Project/ssuna
+    
+    WritingDAO sql문 수정
+
+[33mcommit 8dad376539befcff9d5ae546ecda65c404e1c859[m[33m ([m[1;31morigin/ssuna[m[33m)[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Wed Nov 24 01:42:19 2021 +0900
+
+    WritingDAO sql문 수정
+
+[33mcommit 8217faa0ef653b4ee82fef8e42205db8ca0179fd[m
+Merge: 6c6a44f 47c24f6
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 24 01:01:34 2021 +0900
+
+    Merge pull request #91 from Daily-Happy-Project/ssuna
+    
+    checkWriting.jsp 15줄 수정
+
+[33mcommit 47c24f6d436852be35dc8f72762de02088546367[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Wed Nov 24 01:01:13 2021 +0900
+
+    checkWriting.jsp 15줄 수정
+
+[33mcommit 6c6a44fcb2e6b3eb18ba08414ebb2d83ea24c5fd[m
+Merge: 56c02d4 1eb15e8
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 24 00:57:24 2021 +0900
+
+    Merge pull request #90 from Daily-Happy-Project/chaeyeon
+    
+    일단 커밋
+
+[33mcommit 1eb15e884455f100c34ec82b8e8cd4364ceefdc5[m
+Merge: 9ee0328 56c02d4
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Wed Nov 24 00:57:10 2021 +0900
+
+    Merge branch 'main' into chaeyeon
+
+[33mcommit 9ee032817cd3d3d39123caecf5b6ce4809f4a2b1[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 24 00:55:31 2021 +0900
+
+    일단 커밋
+
+[33mcommit 56c02d4b794a7912e9ee2ef9377ae91cc8587e7a[m
+Merge: 87a5edf cd39faa
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 24 00:14:10 2021 +0900
+
+    Merge pull request #89 from Daily-Happy-Project/mj2
+    
+    useritemdao 버그 수정
+
+[33mcommit cd39faab7112e073e803eefdaa7b324a5ffc8f87[m[33m ([m[1;31morigin/mj2[m[33m)[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Wed Nov 24 00:13:38 2021 +0900
+
+    useritemdao 버그 수정
+
+[33mcommit 87a5edf3361c023fc8dbc3e119a5b0cf69eb45f3[m
+Merge: b725813 083fc44
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Tue Nov 23 23:43:29 2021 +0900
+
+    Merge pull request #88 from Daily-Happy-Project/chaeyeon
+    
+    Chaeyeon
+
+[33mcommit 083fc44d077cf5e2bfd8fb0f1d6a1e70046cfbfc[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 23 23:42:21 2021 +0900
+
+    일단 커밋
+
+[33mcommit 14edad942957b1b0cfb85b942fc8cffefa24843d[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 23 23:25:13 2021 +0900
+
+    uManageView에서 회원삭제 시 회원 아이템, 유리병 목록, 글목록 같이 삭제
+
+[33mcommit b7258134115d509017d067389628024fe620f415[m
+Merge: 80ac4b5 71c79e7
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 22:02:32 2021 +0900
+
+    Merge pull request #87 from Daily-Happy-Project/chaeyeon
+    
+    mainview 유리병 누르면 checkWritingView.jsp로 이동
+
+[33mcommit 71c79e71f68fef84b9656fc049aac65bb92d64e2[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 23 22:00:48 2021 +0900
+
+    mainview 유리병 누르면 checkWritingView.jsp로 이동
+
+[33mcommit 80ac4b5083ad7e7b93b1202f802b33602183e8ab[m
+Merge: d0cb45f 41f49ea
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 21:43:21 2021 +0900
+
+    Merge pull request #86 from Daily-Happy-Project/mj2
+    
+    페이지 이동
+
+[33mcommit 41f49ea8bebb163967d6ce253199fbfa3c980b74[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 21:42:04 2021 +0900
+
+    페이지 이동
+
+[33mcommit d0cb45ff13de492efc7b376b8ade6c0b73577857[m
+Merge: 2212228 51adfb4
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 21:15:24 2021 +0900
+
+    Merge pull request #85 from Daily-Happy-Project/mj2
+    
+    ui 수정
+
+[33mcommit 51adfb409cebb310432439a21dde4ec851be4be1[m
+Merge: 86026e1 2212228
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 20:21:05 2021 +0900
+
+    깃 에러 남
+
+[33mcommit 86026e197cb90726301bb2d975953dfed530db60[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 20:00:29 2021 +0900
+
+    ui 수정
+
+[33mcommit 22122281cc55903d06c8551d25e5007c420caab0[m
+Merge: fabb856 6eca234
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 18:44:30 2021 +0900
+
+    Merge pull request #84 from Daily-Happy-Project/chaeyeon
+    
+    일단 커밋
+
+[33mcommit 6eca2349658f50264b51322315cd1114c52ffbf4[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 23 18:43:11 2021 +0900
+
+    일단 커밋
+
+[33mcommit fabb8562b5f29a8f35fd97c4a9cf1a0c4e5de88b[m
+Merge: a350984 0f50a24
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 17:20:20 2021 +0900
+
+    Merge pull request #83 from Daily-Happy-Project/ssuna
+    
+    작성글 확인 페이지 구현중
+
+[33mcommit 0f50a240bbd4c4cf5928a46a5e9ec78548403266[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 23 17:19:50 2021 +0900
+
+    작성글 확인 페이지 구현중
+
+[33mcommit a35098447e90dacab6abc669e4d6cec4a1b53c7c[m
+Merge: 266e17a 6b5580a
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 17:18:43 2021 +0900
+
+    Merge pull request #82 from Daily-Happy-Project/mj2
+    
+    images add2
+
+[33mcommit 6b5580a4d9996f7343481d3f394d74a83289e240[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 17:17:05 2021 +0900
+
+    images add2
+
+[33mcommit 266e17a2e0036961821464a4485a9a586c169f72[m
+Merge: 5408c4b 9de2820
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 16:59:07 2021 +0900
+
+    Merge pull request #81 from Daily-Happy-Project/ssuna
+    
+    작성글 확인.jsp
+
+[33mcommit 9de282075997301c781531b9e9e1d7eab0f6b4e7[m
+Merge: 1721cef 4aa3c88
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 23 16:58:28 2021 +0900
+
+    작성글 확인.jsp
+
+[33mcommit 5408c4be9dc0b917a499b4da70678fef60e53acd[m
+Merge: bea5403 dbb7a7d
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 16:57:53 2021 +0900
+
+    Merge pull request #80 from Daily-Happy-Project/revert-78-ssuna
+    
+    Revert "작성글 확인 페이지 구현"
+
+[33mcommit dbb7a7d714df99aeb7da4db685118dda06d6da87[m[33m ([m[1;31morigin/revert-78-ssuna[m[33m)[m
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 16:57:44 2021 +0900
+
+    Revert "작성글 확인 페이지 구현"
+
+[33mcommit bea54033bbc96d9e7513cc2994dbd4cf97006944[m
+Merge: 6fc3910 79f845e
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 16:57:27 2021 +0900
+
+    Merge pull request #79 from Daily-Happy-Project/revert-77-mj2
+    
+    Revert "images add2"
+
+[33mcommit 79f845e8afa679de52b18976cd7e41571d91a814[m[33m ([m[1;31morigin/revert-77-mj2[m[33m)[m
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 16:57:16 2021 +0900
+
+    Revert "images add2"
+
+[33mcommit 6fc39109fb8b89f40a2e8f22998d6ad89b81a2a7[m
+Merge: 4aa3c88 1721cef
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 16:56:20 2021 +0900
+
+    Merge pull request #78 from Daily-Happy-Project/ssuna
+    
+    작성글 확인 페이지 구현
+
+[33mcommit 4aa3c882b9addc53272e889cb13af62a8f4206df[m
+Merge: dcbca23 a0fc1b5
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 16:54:37 2021 +0900
+
+    Merge pull request #77 from Daily-Happy-Project/mj2
+    
+    images add2
+
+[33mcommit a0fc1b5595c0f12a255256a50af5565048616459[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 16:53:49 2021 +0900
+
+    images add2
+
+[33mcommit 1721cefaddac900d933e3197897668b988cd5b22[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 23 16:06:00 2021 +0900
+
+    작성글 확인 페이지 구현
+
+[33mcommit dcbca239f35c9f78817bc0e3c6f35575244db8a9[m
+Merge: 668f3ad ed0b374
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 15:27:33 2021 +0900
+
+    Merge pull request #76 from Daily-Happy-Project/chaeyeon
+    
+    writingDAO coin 수정. SQL item 테이블 수정. signup.jsp 수정. store.jsp -> item…
+
+[33mcommit ed0b374e0ecf961ca698a3d5fbc4b7eae55438e8[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 23 14:52:30 2021 +0900
+
+    writingDAO coin 수정. SQL item 테이블 수정. signup.jsp 수정. store.jsp -> item.jsp 로 변경
+
+[33mcommit 668f3ad86a4c9b5b077112133e601608a89b1ee3[m
+Merge: 61cff65 550412d
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 14:23:16 2021 +0900
+
+    Merge pull request #75 from Daily-Happy-Project/mj2
+    
+    images add
+
+[33mcommit 550412d1fa586ac98b75877df5c6759bd0df7f0b[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 13:52:15 2021 +0900
+
+    images add
+
+[33mcommit 61cff65f92ebe1f872815a59d08df1cc3164acf0[m
+Merge: d30e052 84b6926
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 13:37:30 2021 +0900
+
+    Merge pull request #74 from Daily-Happy-Project/mj2
+    
+    Mj2
+
+[33mcommit 84b69260a735acc64297d9129f30f68c8bf3131a[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 07:52:37 2021 +0900
+
+    myinfo 로고 삽입
+
+[33mcommit 0f5c7779c28babea61e9efb8f6afb6ffb2ceb320[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 23 07:37:40 2021 +0900
+
+    임시 이미지 삽입, css 수정
+
+[33mcommit d30e0522834f1e0717963cc0f0ce8c9ce142f7e3[m
+Merge: 572e5a4 e3eecee
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 02:12:30 2021 +0900
+
+    Merge pull request #73 from Daily-Happy-Project/ssuna
+    
+    환경설정 추가 및 뒤로가기 추가
+
+[33mcommit e3eeceec6918c8bb29f46ccc00f1de8baed8d23d[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 23 02:11:44 2021 +0900
+
+    환경설정 추가 및 뒤로가기 추가
+
+[33mcommit 572e5a40043bbfae23a35a7a4495f5ee402447ed[m
+Merge: 0da18b2 57a9ec1
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 00:48:52 2021 +0900
+
+    Merge pull request #72 from Daily-Happy-Project/ssuna
+    
+    작성글 확인 jsp 추가
+
+[33mcommit 57a9ec1d3838e39c17a0e649592fccfe7df1be60[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 23 00:48:17 2021 +0900
+
+    작성글 확인 jsp 추가
+
+[33mcommit 0da18b2dde99dc6da609eda0bad66441b2632124[m
+Merge: 1e08fb4 e3e88f6
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 00:29:31 2021 +0900
+
+    Merge pull request #71 from Daily-Happy-Project/ssuna
+    
+    checkoutWriting.html 추가
+
+[33mcommit e3e88f6b329f0131a6ff808d4e2a57266f744849[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 23 00:29:06 2021 +0900
+
+    checkoutWriting.html 추가
+
+[33mcommit 1e08fb4f22e53aafe1923abab67e3f94b8a08bc2[m
+Merge: c98e00a 7a1cf98
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 23 00:15:07 2021 +0900
+
+    Merge pull request #70 from Daily-Happy-Project/chaeyeon
+    
+    SQL 수정
+
+[33mcommit 7a1cf98a3607276aaf6dff7fcea360e1a2e25366[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Tue Nov 23 00:13:38 2021 +0900
+
+    SQL 수정
+
+[33mcommit c98e00a5a2ed32c3fd32b752d216edb8b5995794[m
+Merge: 27d1515 a69cc3a
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 22 20:51:07 2021 +0900
+
+    Merge pull request #69 from Daily-Happy-Project/chaeyeon
+    
+    jarDAO, UserItemDAO, ItemDAO 추가, SQL 수정
+
+[33mcommit a69cc3ad8d0a4e60f0fdc27ca1b9dc6469669872[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 20:47:57 2021 +0900
+
+    jarDAO, UserItemDAO, ItemDAO 추가, SQL 수정
+
+[33mcommit 27d151506efccb4ea1abf6b5ea8dfc31910c65fb[m
+Merge: 2d27406 7a74c31
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 22 19:09:57 2021 +0900
+
+    Merge pull request #68 from Daily-Happy-Project/chaeyeon
+    
+    randomPaper(), content() 수정, userDAO insert() 수정
+
+[33mcommit 7a74c319d5bda44c2db0035e6c80bef1e3c6b6dd[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 19:05:59 2021 +0900
+
+    randomPaper(), content() 수정, userDAO insert() 수정
+
+[33mcommit 2d27406c73f723c3d441bc655b7805b50921e136[m
+Merge: f22c59e 62eaf1c
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 22 19:04:41 2021 +0900
+
+    Merge pull request #67 from Daily-Happy-Project/mj2
+    
+    계정 삭제
+
+[33mcommit 62eaf1c2eda002339545ec045eb25775da7397bc[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Mon Nov 22 18:37:49 2021 +0900
+
+    계정 삭제
+
+[33mcommit f22c59e6e20a55f8100ed4da635288a9b128762f[m
+Merge: 5bebf0e 6ceb940
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 22 16:41:18 2021 +0900
+
+    Merge pull request #66 from Daily-Happy-Project/chaeyeon
+    
+    Chaeyeon
+
+[33mcommit 6ceb9404a52338978f820df16763780b6291b72f[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 16:18:24 2021 +0900
+
+    userDAO memberType() 추가
+
+[33mcommit 50277f096fbf96bde472ccb15df428daa9a26ca6[m
+Merge: d12665c 5bebf0e
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 14:37:55 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit 5bebf0ebbc71a1ea6eeec783bca3c2380dbe84cd[m
+Merge: 53b61b0 315c513
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 22 13:08:36 2021 +0900
+
+    Merge pull request #65 from Daily-Happy-Project/ssuna
+    
+    signup.jsp 로그인 이동 경로 수정
+
+[33mcommit 315c51331ae2845ddaf265309621b708701d9fbe[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Mon Nov 22 13:08:15 2021 +0900
+
+    signup.jsp 로그인 이동 경로 수정
+
+[33mcommit 53b61b014aca8d2d84250abf4933e5144c590dac[m
+Merge: 58df70a 0cf4849
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 22 12:46:38 2021 +0900
+
+    Merge pull request #64 from Daily-Happy-Project/mj2
+    
+    indexView.jsp is welcome file
+
+[33mcommit 0cf4849a1ba3eee9213ac91aeafee4a729c58dfc[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Mon Nov 22 04:07:58 2021 +0900
+
+    indexView.jsp is welcome file
+
+[33mcommit d12665ce8e1481a74427020587d573df885b25d8[m
+Merge: 377f039 58df70a
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 02:31:56 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit 377f039f75ed3ab1c02d1573d0918ac01f53806a[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 02:30:02 2021 +0900
+
+    withdraw.jsp 추가. sql-item테이블 수정. 탈퇴 시 writing, jar 테이블 삭제. userit테이블 삭제. useritemDAO insert, delete, exists
+
+[33mcommit 58df70a2bc1732b6de4ddd16cfe4953c226a5d93[m
+Merge: 14ec5b8 a4faa3b
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 00:28:28 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit a4faa3b9d1b6fc7b3ef1eb89ae7686484f4124f5[m
+Merge: bcfaadc 93bd4d7
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Mon Nov 22 00:27:47 2021 +0900
+
+    Merge pull request #63 from Daily-Happy-Project/chaeyeon
+    
+    userDAO insert()에 cnt 칼럼 추가. writingDAO insert(), delete()에 cnt 변경되도록…
+
+[33mcommit 93bd4d7144e1ff67a055f742498609fbeeb259ee[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Mon Nov 22 00:26:32 2021 +0900
+
+    userDAO insert()에 cnt 칼럼 추가. writingDAO insert(), delete()에 cnt 변경되도록 수정. writingDAO randomNo()->writingNo()로 변경. content() 수정
+
+[33mcommit 14ec5b8a8e41fe02c69bd12ccb522597f057d5c1[m
+Merge: 725166b bcfaadc
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sun Nov 21 15:13:14 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit bcfaadc4fbc116ff52bf1193153621eee32991a0[m
+Merge: b7a9ca0 36a3b73
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sun Nov 21 15:01:20 2021 +0900
+
+    Merge pull request #62 from Daily-Happy-Project/ssuna
+    
+    context.xml, html css경로 수정
+
+[33mcommit 36a3b731957a01fcc62bb4a51b69e5c550f85702[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sun Nov 21 15:00:15 2021 +0900
+
+    context.xml, html css경로 수정
+
+[33mcommit 725166b4d35215bc9c7e55b3a27411a2a3b02bc1[m
+Merge: 4137e24 b7a9ca0
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 20 03:00:29 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit b7a9ca0389ab834663691ac157962449daf913eb[m
+Merge: dbd2631 49f9b52
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Sat Nov 20 03:00:13 2021 +0900
+
+    Merge pull request #61 from Daily-Happy-Project/mj2
+    
+    main 뼈대 작업중
+
+[33mcommit 49f9b521d53b101100d05849020717745580642d[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 20 02:59:09 2021 +0900
+
+    main 뼈대 작업중
+
+[33mcommit 4137e24b12a86495b0e79615ff3f99b6ea810479[m
+Merge: 824ab76 dbd2631
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 20 02:58:48 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit dbd2631d81bf0287c70d04b9ecb44b3e61963ab2[m
+Merge: 17ac615 e93ced6
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 20 02:58:20 2021 +0900
+
+    Merge pull request #60 from Daily-Happy-Project/chaeyeon
+    
+    jarDAO, writing.jsp 수정
+
+[33mcommit e93ced6cc0c50c15cb23c7baa09440a4eae5b23e[m
+Merge: 4124f6a 17ac615
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 20 02:58:13 2021 +0900
+
+    Merge branch 'main' into chaeyeon
+
+[33mcommit 4124f6a87cd22d85d0b1c298a3a7b33609ffbf35[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 20 02:56:41 2021 +0900
+
+    jarDAO, writing.jsp 수정
+
+[33mcommit 17ac615acdd71bc7cce7cfb0972ce0ab6fb262d4[m
+Merge: e7b4a93 b7fef0e
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Sat Nov 20 02:07:11 2021 +0900
+
+    Merge pull request #59 from Daily-Happy-Project/mj2
+    
+    writing 완성
+
+[33mcommit b7fef0eaa46355fb884662b440f63c621c02efe3[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 20 02:06:07 2021 +0900
+
+    writing 완성
+
+[33mcommit 824ab7622980be8717a2dd9bb93652319099191a[m
+Merge: df94924 e7b4a93
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 20 01:51:41 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit e7b4a93b98bdbfa7880308b007652ba67031dbb9[m
+Merge: 69fe045 5ac79d7
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 20 01:51:28 2021 +0900
+
+    Merge pull request #58 from Daily-Happy-Project/chaeyeon
+    
+    writingDAO, writing.jsp, writingView 수정
+
+[33mcommit 5ac79d7c5d793992c8a0e7514e590f347a627c2c[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 20 01:50:36 2021 +0900
+
+    writingDAO, writing.jsp, writingView 수정
+
+[33mcommit 69fe04590a067bbda8fcdf23023ebf310810a4c8[m
+Merge: cfcbbe0 92666e1
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Sat Nov 20 01:18:58 2021 +0900
+
+    Merge pull request #57 from Daily-Happy-Project/mj2
+    
+    Mj2
+
+[33mcommit 92666e1996b14f6c8fc88bbd6a98d242deaecd2c[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 20 01:16:36 2021 +0900
+
+    writting view 임시 작성
+
+[33mcommit da07ee9030ee17324f075475aea3471725b87254[m
+Merge: aa9d093 cfcbbe0
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 20 01:15:56 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into mj2
+
+[33mcommit cfcbbe0f9eee3894e131abd99a56d0926082d220[m
+Merge: eceec13 53bd73c
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 20 00:02:16 2021 +0900
+
+    Merge pull request #56 from Daily-Happy-Project/chaeyeon
+    
+    userDAO insert() 테이블 생성 완성^^
+
+[33mcommit df94924211049b1df5455b4cf425029aab6598bd[m
+Merge: a3711f4 eceec13
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 20 00:00:55 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 53bd73cc0e1e530dd69bd2c95d39300ba32f214a[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 20 00:00:42 2021 +0900
+
+    userDAO insert() 테이블 생성 완성^^
+
+[33mcommit eceec134d1249d06901d90da1c65c2222304d1a4[m
+Merge: 199056f c0d6e44
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 19 23:27:04 2021 +0900
+
+    Merge pull request #55 from Daily-Happy-Project/ssuna
+    
+    tomcat server path change /
+
+[33mcommit c0d6e447d7a0519659b7e92706b3e6c930777bab[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 19 23:25:41 2021 +0900
+
+    tomcat server path change /
+
+[33mcommit aa9d093205c1e576c7ca36d65aeabdfaa258984c[m
+Merge: 3b8cb40 199056f
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 19 18:39:02 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into mj2
+
+[33mcommit 3b8cb4003e2416644690d82a13cc76009313fdb3[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 19 18:38:52 2021 +0900
+
+    mainView 수정
+
+[33mcommit a3711f458e6ca9b30a3cd08d78a84c1023e0b422[m
+Merge: 8777ae7 199056f
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 19 18:36:19 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 199056f01ecf24d0a4f94b665d8f5e4f0fabde02[m
+Merge: c8faf6a f286783
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 19 18:36:05 2021 +0900
+
+    Merge pull request #54 from Daily-Happy-Project/ssuna
+    
+    server 내 context.xml 추가
+
+[33mcommit f28678328375b4ac5f4e41288978bdd05b85e5c4[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 19 18:35:40 2021 +0900
+
+    server 내 context.xml 추가
+
+[33mcommit 8777ae78758a1d0c5d191ebc36c322764edcfc0f[m
+Merge: aacfbb2 c8faf6a
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 19 17:24:19 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit c8faf6a37e3b1b18bd8028b26d5d9167b745ce5b[m
+Merge: 5541e0e f298d9e
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 19 17:23:04 2021 +0900
+
+    Merge pull request #53 from Daily-Happy-Project/mj2
+    
+    myInfo method change
+
+[33mcommit f298d9ee1895a3e2d33678d74f9822d42c583653[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 19 17:22:25 2021 +0900
+
+    myInfo method change
+
+[33mcommit aacfbb200401e6940a2547503a00d6390af76fbe[m
+Merge: f64ac1c 5541e0e
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 19 15:59:37 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 5541e0ed7636456bc2f4c8dd910b4f932d328162[m
+Merge: 92e0fbf 39bff92
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 19 15:59:02 2021 +0900
+
+    Merge pull request #52 from Daily-Happy-Project/chaeyeon
+    
+    Chaeyeon
+
+[33mcommit f64ac1c22581f5acc78a982544d07d53fb5defb7[m
+Merge: 317f3bc 92e0fbf
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 19 15:56:15 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 39bff92d74953d4f8018e97fd13ea119292f0551[m
+Merge: cf16522 92e0fbf
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 19 15:56:01 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit cf1652222908000d4df377041625253998aba37e[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 19 15:55:55 2021 +0900
+
+    signup.jsp id-> email 수정
+
+[33mcommit 92e0fbf8de7f1022181cc88fcfc2eb946973949b[m
+Merge: 8d8117b 5706b34
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Fri Nov 19 15:51:29 2021 +0900
+
+    Merge pull request #51 from Daily-Happy-Project/mj2
+    
+    Mj2
+
+[33mcommit 5706b348c6dc3decd8cdf9f99a3862981b09d2d9[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 19 15:45:45 2021 +0900
+
+    signupView id -> email name change
+
+[33mcommit 2a27e189d891e6eaac8015a6b8203995b9bb6131[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 19 15:44:27 2021 +0900
+
+    loginView id -> emali name change
+
+[33mcommit 8d8117bd157f62a89ce161d731e26f00c89da289[m
+Merge: 0a1f2cc de9d7f6
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 19 15:34:35 2021 +0900
+
+    Merge pull request #50 from Daily-Happy-Project/mj2
+    
+    로그아웃 버튼 활성화
+
+[33mcommit de9d7f68d7b051a9d2025eb1446605dfbde7005b[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 19 15:31:07 2021 +0900
+
+    로그아웃 버튼 활성화
+
+[33mcommit 0a1f2cc45a0f4fb2dc52f39bfd211dda729675c5[m
+Merge: 9823d13 46acbe2
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 18 22:41:16 2021 +0900
+
+    Merge pull request #49 from Daily-Happy-Project/ssuna
+    
+    signup.jsp 수정
+
+[33mcommit 46acbe23e8ef2aa39844e9cc49af09a0f7ea23d7[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 22:40:34 2021 +0900
+
+    signup.jsp 수정
+
+[33mcommit 317f3bcab89f99007413d32884f0f9c74abcedb8[m
+Merge: 1401ba0 9823d13
+Author: ycyeon <ickite428@gmail.com>
+Date:   Thu Nov 18 16:38:27 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 9823d1319f9eb1c5612a07fe90dcd2ebecb9f0c6[m
+Merge: 1138649 10922f3
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 18 16:38:01 2021 +0900
+
+    Merge pull request #48 from Daily-Happy-Project/mj2
+    
+    mysql connector add to lib
+
+[33mcommit 10922f3b57ecc77c15b635d6ddf6866b4e237953[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Thu Nov 18 16:37:15 2021 +0900
+
+    mysql connector add to lib
+
+[33mcommit 1401ba0100f6b4694b2e700b804c76b66d86592f[m
+Merge: e5b4d07 1138649
+Author: ycyeon <ickite428@gmail.com>
+Date:   Thu Nov 18 16:12:29 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 11386492684d06622d91d8bcdaaa07bf68dace4d[m
+Merge: 546f74c 5c7e484
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Thu Nov 18 16:12:12 2021 +0900
+
+    Merge pull request #47 from Daily-Happy-Project/chaeyeon
+    
+    sql추가, userDAO, signup.jsp
+
+[33mcommit 5c7e484b0ae73598eb3adbbabfa73d0a224e17de[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Thu Nov 18 16:11:44 2021 +0900
+
+    sql추가, userDAO, signup.jsp
+
+[33mcommit 546f74c8a4f2d5d1b7b12c1e9f3a3fc95e342aff[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 15:37:01 2021 +0900
+
+    Revert "signup.jsp sql 수정"
+    
+    This reverts commit cc57f01f767e47ed41af8727ee790eec4ba62732.
+
+[33mcommit e19f9e82b88c756dee69f612e915d31d3a2fb0ad[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 15:27:10 2021 +0900
+
+    Revert "css 적용 수정중"
+    
+    This reverts commit fd6d85205aa0d421ccfdd2827d47bd3b4c3ea9cd.
+
+[33mcommit 9dbb6de456ba489e13beb440ff32794e757e0298[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 15:26:44 2021 +0900
+
+    Revert "classpath 오류"
+    
+    This reverts commit 840b821c18499a3be9610b080a33bd651e751d20, reversing
+    changes made to fd6d85205aa0d421ccfdd2827d47bd3b4c3ea9cd.
+
+[33mcommit a90cb4a62cf9a799f2a7bd3a2cb71113984f7d04[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 15:25:44 2021 +0900
+
+    Revert "pom.xml 추가"
+    
+    This reverts commit 5d9ba45dca211a14f1d80f394de39a885a4c89c6.
+
+[33mcommit 2d9b16d811c8e56e798815cd8b0937aa8600c920[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 15:25:15 2021 +0900
+
+    Revert "mysql connector 추가"
+    
+    This reverts commit d4d660e646440fb1e00d74eeae84d38a3293cd48.
+
+[33mcommit 83ce7c9cdc97455a86e9708585d168d14f386f05[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 15:23:40 2021 +0900
+
+    Revert "경로 지정 오류 수정중"
+    
+    This reverts commit db1588e9446e53f2f42512d770546de955cf4e7b.
+
+[33mcommit a0d180423e82df5636ab19ec4a9dc4e34c8380af[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Thu Nov 18 15:19:20 2021 +0900
+
+    Revert "sql 수정, userDAO insert() 수정"
+    
+    This reverts commit 58c6175979f62106823b6a673e977cf5b90b4361.
+
+[33mcommit e5b4d071edc6cdd189ca4bc3a2936cf826d20ccd[m
+Merge: bd41fe8 147824a
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 17 18:50:33 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 147824aec1b3c042060aeae2824d9f52c7f1e894[m
+Merge: 045b3f8 58c6175
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 17 18:49:25 2021 +0900
+
+    Merge pull request #46 from Daily-Happy-Project/chaeyeon
+    
+    sql 수정, userDAO insert() 수정
+
+[33mcommit 58c6175979f62106823b6a673e977cf5b90b4361[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 17 18:47:28 2021 +0900
+
+    sql 수정, userDAO insert() 수정
+
+[33mcommit 045b3f8417866be837d10ee6229bff7dc627dad0[m
+Merge: a264b87 db1588e
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 17 17:14:02 2021 +0900
+
+    Merge pull request #45 from Daily-Happy-Project/seona
+    
+    경로 지정 오류 수정중
+
+[33mcommit db1588e9446e53f2f42512d770546de955cf4e7b[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Wed Nov 17 17:11:12 2021 +0900
+
+    경로 지정 오류 수정중
+
+[33mcommit a264b87b7a6b6fbb130a9b7fa3d4fd191f071ddd[m
+Merge: b63fe3e d4d660e
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 17 16:38:20 2021 +0900
+
+    Merge pull request #44 from Daily-Happy-Project/seona
+    
+    mysql connector 추가
+
+[33mcommit d4d660e646440fb1e00d74eeae84d38a3293cd48[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Wed Nov 17 16:37:53 2021 +0900
+
+    mysql connector 추가
+
+[33mcommit b63fe3eee68e0fafab07cd25795875235ce8ca6b[m
+Merge: 9be4100 5d9ba45
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 17 16:32:52 2021 +0900
+
+    Merge pull request #43 from Daily-Happy-Project/seona
+    
+    pom.xml 추가
+
+[33mcommit 5d9ba45dca211a14f1d80f394de39a885a4c89c6[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Wed Nov 17 16:32:16 2021 +0900
+
+    pom.xml 추가
+
+[33mcommit 9be4100b81038772443f114d2c02f5f556b3399c[m
+Merge: 6a915a5 840b821
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 17 16:23:15 2021 +0900
+
+    Merge pull request #42 from Daily-Happy-Project/seona
+    
+    Seona
+
+[33mcommit 840b821c18499a3be9610b080a33bd651e751d20[m
+Merge: fd6d852 6a915a5
+Author: princesssuna <1009suna@gmail.com>
+Date:   Wed Nov 17 16:18:17 2021 +0900
+
+    classpath 오류
+
+[33mcommit fd6d85205aa0d421ccfdd2827d47bd3b4c3ea9cd[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Wed Nov 17 16:15:51 2021 +0900
+
+    css 적용 수정중
+
+[33mcommit 6a915a5eb187afc9588b142748d52208e276edee[m
+Merge: bc69015 915205e
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 17 16:12:55 2021 +0900
+
+    Merge pull request #41 from Daily-Happy-Project/mj
+    
+    sql.jar
+
+[33mcommit 915205ebdc7afdf2a11d0a67b965547dc16fa0c1[m[33m ([m[1;31morigin/mj[m[33m)[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Wed Nov 17 16:11:47 2021 +0900
+
+    sql.jar
+
+[33mcommit bc6901596cbc9e87727251247b44b8778e216089[m
+Merge: 1f690b2 cc57f01
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 17 15:42:31 2021 +0900
+
+    Merge pull request #40 from Daily-Happy-Project/chaeyeon
+    
+    signup.jsp sql 수정
+
+[33mcommit bd41fe84661ebfe49b4c8c00f48a6939db47794b[m
+Merge: 535dfe8 1f690b2
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 17 15:42:01 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit cc57f01f767e47ed41af8727ee790eec4ba62732[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Wed Nov 17 15:40:12 2021 +0900
+
+    signup.jsp sql 수정
+
+[33mcommit 1f690b29de6c5ba79f2643c969c0e1b8eaff2996[m
+Merge: 64b9d23 0283d2f
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 13 11:33:00 2021 +0900
+
+    Merge pull request #39 from Daily-Happy-Project/chaeyeon
+    
+    signup.jsp 문자열 자르기 수정
+
+[33mcommit 0283d2fa363328d6266f6197ffb255f5e8c22eef[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 11:32:26 2021 +0900
+
+    signup.jsp 문자열 자르기 수정
+
+[33mcommit 535dfe8141eadd4c8d03e103db06d5fd27d92b6b[m
+Merge: a6e4a87 64b9d23
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 11:14:19 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 64b9d2357771022c2c89e1ec7c4f2fc6a8e4d9f3[m
+Merge: 0ab1217 a02a815
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 11:14:04 2021 +0900
+
+    Merge pull request #38 from Daily-Happy-Project/chaeyeon
+    
+    signup.jsp 수정
+
+[33mcommit a02a815538e776a1f32291d7645ec8b3aabf3812[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 11:13:30 2021 +0900
+
+    signup.jsp 수정
+
+[33mcommit 0ab1217288a061c6d3f9d9193148c27e89016248[m
+Merge: a186322 11bad41
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 13 11:10:25 2021 +0900
+
+    Merge pull request #37 from Daily-Happy-Project/chaeyeon
+    
+    Chaeyeon
+
+[33mcommit 11bad41d9a6e3689b58e2fbc7a400c014f98451b[m
+Merge: 0123042 a186322
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 11:09:46 2021 +0900
+
+    signup.jsp 수정
+
+[33mcommit 012304229199183379559eafd20ae03a16204014[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 11:06:52 2021 +0900
+
+    signup.jsp 수정
+
+[33mcommit a186322e6913bfe6a9d7ff8b66b183c483fd70bf[m
+Merge: 2df4d38 73f53c4
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 10:52:54 2021 +0900
+
+    Merge pull request #36 from Daily-Happy-Project/seona
+    
+    새 유리병 jsp 파일 추가
+
+[33mcommit 73f53c4a379a4803a1f3f6877aed48c4c560ab9d[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 10:51:56 2021 +0900
+
+    새 유리병 jsp 파일 추가
+
+[33mcommit 2df4d38b9fa812ef3d3858607bffa44984daaccb[m
+Merge: adb7c69 26c21b1
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 10:48:45 2021 +0900
+
+    Merge pull request #35 from Daily-Happy-Project/mj
+    
+    jsp 연결
+
+[33mcommit 26c21b122018c7a4a3c814cd4fc46311f4f07fab[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 13 10:47:56 2021 +0900
+
+    jsp 연결
+
+[33mcommit a6e4a87cfe6f405fe2ce892263827f7877628158[m
+Merge: 1cc3552 adb7c69
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 10:34:11 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit adb7c69e74172a9d4d69542399b164b20b903c89[m
+Merge: 74b3d86 517f617
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 13 10:33:52 2021 +0900
+
+    Merge pull request #34 from Daily-Happy-Project/chaeyeon
+    
+    signup.jsp 수정
+
+[33mcommit 517f617fa10a50be65af7e8b0cecb6efa352e03a[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 10:32:42 2021 +0900
+
+    signup.jsp 수정
+
+[33mcommit 1cc35526c173bf47bf90ccdfd5f8b4183efc93c5[m
+Merge: 140023c 74b3d86
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 10:27:45 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 74b3d869d61b5633b6be618d13ab50d10a362e69[m
+Merge: d47540c 111ab8c
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 13 10:27:28 2021 +0900
+
+    Merge pull request #33 from Daily-Happy-Project/chaeyeon
+    
+    signup.jsp
+
+[33mcommit 111ab8c418b70471dee4ef55b9231b67f2682434[m
+Merge: fc2f267 d47540c
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 10:26:32 2021 +0900
+
+    SQL 수정, signup.jsp 수정
+
+[33mcommit fc2f267a138ef715ece0ad7a3c3b03e3c6fa5585[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 09:54:40 2021 +0900
+
+    signup.jsp
+
+[33mcommit d47540cc1fea1f4f710555b0cf48112d30a7cfd1[m
+Merge: 83d6961 55629ad
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 09:10:28 2021 +0900
+
+    Merge pull request #30 from Daily-Happy-Project/mj
+    
+    회원관리 이름순 변경
+
+[33mcommit 55629ad479fbcdba62344a2c7d3cb2858aacd597[m
+Merge: 6516123 83d6961
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Sat Nov 13 09:09:59 2021 +0900
+
+    Merge branch 'main' into mj
+
+[33mcommit 83d6961d8ca309be75c5b5f6f6d404686cfea421[m
+Merge: 40cdcda 95835f4
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 09:00:36 2021 +0900
+
+    Merge pull request #32 from Daily-Happy-Project/seona
+    
+    UserDAO 수정
+
+[33mcommit 65161234194fd5829621dd360c7f194fce1e624f[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 13 09:00:27 2021 +0900
+
+    내정보 db 란
+
+[33mcommit 95835f428f62cb23584f834acd7ab0ea383006ad[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 08:59:37 2021 +0900
+
+    UserDAO 수정
+
+[33mcommit 140023ca1b9285705ac8d80566973f2d2be0ffa3[m
+Merge: 6cfe96c 40cdcda
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 08:40:42 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 40cdcdaf15b0317fc7fbddd48579d84800764db5[m
+Merge: 4ca1bb5 52ed578
+Author: ycyeon <52392720+ycyeon@users.noreply.github.com>
+Date:   Sat Nov 13 03:36:12 2021 +0900
+
+    Merge pull request #31 from Daily-Happy-Project/chaeyeon
+    
+    Chaeyeon
+
+[33mcommit 52ed578617aefa7eab6d3d497958fa96abc51e1f[m
+Merge: 176e5df 7a0aef9
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 03:34:21 2021 +0900
+
+    Merge branch 'chaeyeon' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit 176e5dff407ab6f6e30400692824f717308bb291[m
+Merge: 92e3a5e 4ca1bb5
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 03:32:33 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit 6cfe96c729c0ef0bdc2bd4cdd46ac9facab54d28[m
+Merge: 92e3a5e 4ca1bb5
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 03:20:11 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit 7a0aef9db5af86b2fd94c36ce7119227ea2c5d16[m
+Merge: 5b5ee75 4ca1bb5
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 03:20:02 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit 30158b1efc1e6ee1bd1f6eb644c322ada8983503[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 13 03:00:56 2021 +0900
+
+    회원관리 이름순 변경
+
+[33mcommit 4ca1bb5c1083ac9ce757b08050ad12bca5955bd5[m
+Merge: ed2daad 8aa3350
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 02:28:38 2021 +0900
+
+    Merge pull request #27 from Daily-Happy-Project/minjin
+    
+    mainView.jsp
+
+[33mcommit 8aa335064210bdbe0b5f9b4dbd00b01fe766fd4e[m[33m ([m[1;31morigin/minjin[m[33m)[m
+Merge: add868b ed2daad
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Sat Nov 13 02:28:16 2021 +0900
+
+    Merge branch 'main' into minjin
+
+[33mcommit 5b5ee753bc45605d2e09d9875ffbf3df006a8888[m
+Merge: fc21f62 ed2daad
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 02:25:37 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit ed2daade49ec6c4f8885b7206470cedc1063ebb5[m
+Merge: 977a50c cd7c452
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 02:25:28 2021 +0900
+
+    Merge pull request #29 from Daily-Happy-Project/seona
+    
+    JarDAO 추가
+
+[33mcommit 92e3a5e934dd0e9c813957bb26991156bb9540c3[m
+Merge: d450e69 977a50c
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 02:25:20 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into main
+
+[33mcommit d450e69233adfa78a3df9ff0995ffc081d0cfc46[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 02:25:07 2021 +0900
+
+    userDAO
+
+[33mcommit cd7c452867a4e20c8aacccb5d1d22377930cefe1[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 02:24:59 2021 +0900
+
+    JarDAO 추가
+
+[33mcommit 977a50c58cce9fbae30b257eff7564764fc1830f[m
+Merge: 09d0e9c 9e0ef01
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 02:22:03 2021 +0900
+
+    Merge pull request #28 from Daily-Happy-Project/seona
+    
+    Seona
+
+[33mcommit add868b6efd8d8a0f106312bb5b15797ac2219f7[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 13 02:15:14 2021 +0900
+
+    mainView.jsp
+
+[33mcommit 9e0ef01ef3255a8b4407bc1cef0b6b77b93f9e41[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 02:03:52 2021 +0900
+
+    JarDTO 추가
+
+[33mcommit d27da510f2c3fe5defa185c09c8e353f62014926[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 01:17:10 2021 +0900
+
+    mysql connector 추가
+
+[33mcommit fc21f62ee55280c61092a2ca4b6358708e9b4f44[m
+Merge: 82cf55a 09d0e9c
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 01:00:10 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit 09d0e9c94b58f1c7b29229c26f7df875fe7d6b90[m
+Merge: 5cf23b7 d93f321
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 00:59:28 2021 +0900
+
+    Merge pull request #26 from Daily-Happy-Project/minjin
+    
+    sql 오탈자 수정
+
+[33mcommit d93f321a5db7452d03ebfacbcda54bfdd6ad444a[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 13 00:57:43 2021 +0900
+
+    sql 오탈자 수정
+
+[33mcommit 82cf55af1776aa25850b9a66a42b21e8be317613[m
+Merge: 10432b1 5cf23b7
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 00:54:34 2021 +0900
+
+    Merge branch 'main' of https://github.com/Daily-Happy-Project/Daily-Happy into chaeyeon
+
+[33mcommit 5cf23b757b53fe87738bcae776cf63f676f68ce9[m
+Merge: 5147006 a651ea7
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 00:54:19 2021 +0900
+
+    Merge pull request #25 from Daily-Happy-Project/minjin
+    
+    회원관리 ui
+
+[33mcommit a651ea7881794f74b75939362c0ddf8089ebe41f[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Sat Nov 13 00:53:33 2021 +0900
+
+    회원관리 ui
+
+[33mcommit 10432b16cda980121aa7e637d2e82cec74e408cf[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 00:52:39 2021 +0900
+
+    SQL 수정~
+
+[33mcommit 5147006176f27e5cf11bf6f17f13369f46aa4f70[m
+Merge: d1c4b05 9ec2524
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 00:47:20 2021 +0900
+
+    Merge pull request #24 from Daily-Happy-Project/seona
+    
+    ConnectionPool 변경
+
+[33mcommit 9ec252464028814eceed6f378b11bfbe21f262db[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 00:46:44 2021 +0900
+
+    ConnectionPool 변경
+
+[33mcommit d1c4b054b8c5ebac296d515f02da5caed08df624[m
+Merge: 4360be9 e6f3177
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 00:45:04 2021 +0900
+
+    Merge pull request #23 from Daily-Happy-Project/seona
+    
+    context.xml jdbc 변경
+
+[33mcommit e6f3177d6615eae3110dccfcf870cdbc16be8413[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 00:44:08 2021 +0900
+
+    context.xml jdbc 변경
+
+[33mcommit 4360be941ea73fab97e594f45475a6c437ee8006[m
+Merge: 9c89514 e90f2dc
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 00:29:38 2021 +0900
+
+    Merge pull request #22 from Daily-Happy-Project/seona
+    
+    상점 수정
+
+[33mcommit e90f2dc66f6c710c873113314b9d1ea280c7d0b7[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Sat Nov 13 00:27:46 2021 +0900
+
+    StoreDAO 수정
+
+[33mcommit 9c895142e22e9839a6f9a3ef5634df99d7697bc5[m
+Merge: e02c5de 2093170
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Sat Nov 13 00:26:18 2021 +0900
+
+    Merge pull request #21 from Daily-Happy-Project/chaeyeon
+    
+    SQL user 테이블, useritem 테이블 수정
+
+[33mcommit 209317053750273ba967e1ab00197da1eb6859a8[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Sat Nov 13 00:24:57 2021 +0900
+
+    SQL user 테이블, useritem 테이블 수정
+
+[33mcommit 6d795ce584986d51c4fbf0be2ccb6845ab96cb88[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 12 23:09:43 2021 +0900
+
+    StoreDTO 수정
+
+[33mcommit e02c5de9c4c582d62fcfef2ee4ec0f0ebaaeefe2[m
+Merge: e19e911 c3db669
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 23:04:00 2021 +0900
+
+    Merge pull request #20 from Daily-Happy-Project/chaeyeon
+    
+    SQL item 테이블 수정
+
+[33mcommit c3db669a5dfb7af9a804005fac3baac686275ae7[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 12 23:03:06 2021 +0900
+
+    SQL item 테이블 수정
+
+[33mcommit e19e911fad560a447a698f2122ab14131a2e1408[m
+Merge: 437667f c1071c6
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 22:59:56 2021 +0900
+
+    Merge pull request #19 from Daily-Happy-Project/seona
+    
+    UserDAO 수정2
+
+[33mcommit c1071c664326266d65dd4ad7a383e812e0fcf4d2[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 12 22:59:22 2021 +0900
+
+    UserDAO 수정2
+
+[33mcommit 437667ff3906902aa70689930864b2a835ec8606[m
+Merge: a64da88 a25e955
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 22:58:15 2021 +0900
+
+    Merge pull request #18 from Daily-Happy-Project/minjin
+    
+    도움말, 개발자정보 ui
+
+[33mcommit a25e9551d91ff642820f35b9d9a8fda517d4af7f[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 12 22:57:17 2021 +0900
+
+    도움말, 개발자정보 ui
+
+[33mcommit a64da884cd6fcfaba2fd45780245cc7074e0fb54[m
+Merge: 1c0f026 b75e066
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 22:51:36 2021 +0900
+
+    Merge pull request #17 from Daily-Happy-Project/seona
+    
+    user 테이블에 대한 DAO 클래스 추가
+
+[33mcommit b75e066e42f7b2e13ff95b09b3f1a64a200c0f70[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 12 22:50:51 2021 +0900
+
+    user 테이블에 대한 DAO 클래스 추가
+
+[33mcommit 1c0f0264ed83693544309fd87c6d373a5ed498af[m
+Merge: f13b6d3 bfcedf0
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 21:31:40 2021 +0900
+
+    Merge pull request #16 from Daily-Happy-Project/seona
+    
+    maven project 추가
+
+[33mcommit bfcedf0beb2435814f852f75606e41c51aabc78e[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 12 21:31:11 2021 +0900
+
+    maven project 추가
+
+[33mcommit f13b6d3133b56e0006eb9c30fa29eae5c582d8ee[m
+Merge: 202cfab 4c2504c
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 18:29:11 2021 +0900
+
+    Merge pull request #14 from Daily-Happy-Project/chaeyeon
+    
+    FeedDAO, feed.jsp, SQL에 userItem 테이블 생성
+
+[33mcommit 202cfab15d8127a89ebd6c4118008b41269f5adb[m
+Merge: f3b2458 3d1b482
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 18:29:02 2021 +0900
+
+    Merge pull request #15 from Daily-Happy-Project/seona
+    
+    StoreVO 추가
+
+[33mcommit 3d1b482932c7120884bb4315d40ef2287cab6ff7[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 12 18:28:30 2021 +0900
+
+    StoreVO 추가
+
+[33mcommit 4c2504c0b3ba3f5edb6beefd60ed745907b45c86[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 12 18:28:18 2021 +0900
+
+    FeedDAO, feed.jsp, SQL에 userItem 테이블 생성
+
+[33mcommit f3b245882ab6d77c228eeda0c7b5f3115f8afce4[m
+Merge: 9a8a24f 16163da
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 18:26:47 2021 +0900
+
+    Merge pull request #13 from Daily-Happy-Project/minjin
+    
+    환경설정 ui 제작중
+
+[33mcommit 16163da72e375674957fbbeb4c9cd2dcd7936654[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Fri Nov 12 18:25:59 2021 +0900
+
+    환경설정 ui 제작중
+
+[33mcommit 9a8a24f40a88060ee7db452b3bc69acd622b2074[m
+Merge: 1d8f4d3 d64dbe3
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 17:37:15 2021 +0900
+
+    Merge pull request #12 from Daily-Happy-Project/seona
+    
+    UserDAO myInfo 수정
+
+[33mcommit d64dbe33c6f158c66087f49f3bc7ee017bbbe272[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 12 17:36:06 2021 +0900
+
+    UserDAO myInfo 수정
+
+[33mcommit 1d8f4d33bb50996cdabb9a629575658b7f83c83a[m
+Merge: 9245802 20939ec
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 17:05:04 2021 +0900
+
+    Merge pull request #11 from Daily-Happy-Project/seona
+    
+    userDAO 수정, userVO 추가
+
+[33mcommit 20939eccb3b572274aa7c1258ba740791abfa905[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Fri Nov 12 17:04:28 2021 +0900
+
+    userDAO 수정, userVO 추가
+
+[33mcommit 9245802f7c6af0afa2bd717469625ef90f456671[m
+Merge: 1af0bc8 2b1a53d
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 16:51:17 2021 +0900
+
+    Merge pull request #10 from Daily-Happy-Project/chaeyeon
+    
+    SQL 수정
+
+[33mcommit 2b1a53d7561a83d3fc67365ca868d0004ca3e348[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 12 16:49:31 2021 +0900
+
+    SQL 수정
+
+[33mcommit 1af0bc8ea9fb0d958fcb511649256dae4d59af6d[m
+Merge: 9f82141 92e2dd2
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Fri Nov 12 16:29:03 2021 +0900
+
+    Merge pull request #9 from Daily-Happy-Project/chaeyeon
+    
+    SQL 생성문 추가
+
+[33mcommit 92e2dd204ff85220591c4784e01924ea25e023fb[m
+Author: ycyeon <ickite428@gmail.com>
+Date:   Fri Nov 12 16:28:00 2021 +0900
+
+    SQL 생성문 추가
+
+[33mcommit 9f8214122e3c10551ee920dc2d14f87cce273dd1[m
+Merge: 8507473 ee1d4bb
+Author: Lee MinJin <51518828+3tPepper@users.noreply.github.com>
+Date:   Thu Nov 11 20:28:47 2021 +0900
+
+    Merge pull request #8 from Daily-Happy-Project/minjin
+    
+    회원가입 폼 빈값체크 함수 구현
+
+[33mcommit ee1d4bb47e5bc897c1bef06b02560cb92eb80c9a[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Thu Nov 11 20:24:04 2021 +0900
+
+    회원가입 글자수제한 ok
+
+[33mcommit 2099865ee1997ac77c0afa06b49a60007e1976a4[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Thu Nov 11 02:46:26 2021 +0900
+
+    회원가입 폼 빈값체크 함수 구현
+
+[33mcommit 850747376ed09b5a0b1eaa23019bd5e201952f84[m
+Merge: 6497261 7dbe3ba
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Wed Nov 10 19:22:07 2021 +0900
+
+    Merge pull request #7 from Daily-Happy-Project/minjin
+    
+    Minjin
+
+[33mcommit 7dbe3bae097ca8474d5082bf968d2af90988c7cd[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Wed Nov 10 02:34:20 2021 +0900
+
+    회원가입 페이지 작업중. css 추가
+
+[33mcommit 349eff336e08def132fe93e7bc8b0dbebb1a2bc2[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Tue Nov 9 00:35:39 2021 +0900
+
+    로그인 기능 구현
+
+[33mcommit 649726120ef553044cc62fe89c062f45ebc2372a[m
+Merge: e1f46d3 848414d
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Tue Nov 9 00:03:28 2021 +0900
+
+    Merge pull request #6 from Daily-Happy-Project/seona
+    
+    UserDAO 로그인 추가
+
+[33mcommit 848414dfbf675b6c89fdb5d06a4494f89ebdb195[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Tue Nov 9 00:03:00 2021 +0900
+
+    UserDAO 로그인 추가
+
+[33mcommit e1f46d3d71aee409d6581f6a09370189d8dae638[m
+Merge: e79ec9f 6f2a01f
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 8 23:48:03 2021 +0900
+
+    Merge pull request #5 from Daily-Happy-Project/seona
+    
+    UserDAO 추가
+
+[33mcommit 6f2a01f653ede3c4b4a1e816c2a6abacd4e85d33[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Mon Nov 8 23:47:39 2021 +0900
+
+    UserDAO 추가
+
+[33mcommit e79ec9f25f7d3831e7a4efc0adff965bf678b8ee[m
+Merge: 231badc 84b88bb
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 8 23:26:04 2021 +0900
+
+    Merge pull request #4 from Daily-Happy-Project/seona
+    
+    커넥션 풀
+
+[33mcommit 84b88bb3e8e3fd616252b6a074c2edba6c7d440b[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Mon Nov 8 23:25:32 2021 +0900
+
+    커넥션 풀
+
+[33mcommit 231badc9c8765a20e794f064eb20857b15d84cc1[m
+Merge: a00d5de 9c2f175
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 8 23:19:53 2021 +0900
+
+    Merge pull request #3 from Daily-Happy-Project/seona
+    
+    jsp 추가
+
+[33mcommit 9c2f1759d22a22a8cc1a0af8b925ddade660126f[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Mon Nov 8 23:19:18 2021 +0900
+
+    jsp 추가
+
+[33mcommit a00d5de7559ad07aabb6b2f28c07b7313d449eb1[m
+Merge: 0a2b4dd afb7c4e
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 8 23:12:14 2021 +0900
+
+    Merge pull request #2 from Daily-Happy-Project/minjin
+    
+    loginView.html
+
+[33mcommit 0a2b4ddb4a567cede6d1ac84c90c76d2bd6e0c6a[m
+Merge: 5c844d8 e91d172
+Author: Seona Lee <66156026+princesssuna@users.noreply.github.com>
+Date:   Mon Nov 8 23:11:31 2021 +0900
+
+    Merge pull request #1 from Daily-Happy-Project/seona
+    
+    로그인 jsp 추가
+
+[33mcommit afb7c4e015421e76f7ac7fcaff4c672999c6cf4f[m
+Author: 3tPepper <3tpepperok@gmail.com>
+Date:   Mon Nov 8 23:11:23 2021 +0900
+
+    loginView.html
+
+[33mcommit e91d172282bb2986cea15ead15622e377f0ee180[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Mon Nov 8 23:07:06 2021 +0900
+
+    로그인 jsp 추가
+
+[33mcommit 5c844d8cefe9f3a47519fb0e93798bb4677293fa[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Mon Nov 8 22:40:11 2021 +0900
+
+    초기 설정
+
+[33mcommit 85a0734465a6fbd7c4324c7387622545de8b2fa3[m
+Author: princesssuna <1009suna@gmail.com>
+Date:   Mon Nov 8 22:27:30 2021 +0900
+
+    first commit

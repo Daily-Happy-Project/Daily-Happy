@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXIST USERNAME+Item(
 -- store item --
 CREATE TABLE IF NOT EXISTS item(
 	itemCode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
-	itemName VARCHAR(32) NOT NULL,		-- item name --
+	itemName VARCHAR(32) UNIQUE NOT NULL,		-- item name --
 	itemType VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldMethod, theme) -- 
 	price INT NOT NULL,					-- item price --
 	info VARCHAR(1024) NOT NULL,		-- item information --

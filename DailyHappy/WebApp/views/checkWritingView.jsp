@@ -48,6 +48,38 @@
 		width: 90%;
 		height: 90%;
 	}
+	#submit{
+		font-family: 'Uiyeun';
+		font-size: 3.8vh;
+		color: #000;
+		text-align: center;
+		border: none;
+		background-color:#FFC7C7; 
+		border-radius: 8px;
+		margin-top: 5vh;
+		margin-left: 1vh;
+		width: 100px;
+		height: 50px;
+		box-shadow: 6px -7px 0 0 rgba(94,96,115,0.3);
+	}
+	#delete{
+		font-family: 'Uiyeun';
+		font-size: 3.8vh;
+		color: #000;
+		text-align: center;
+		border: none;
+		background-color:#D8D8D8; 
+		border-radius: 8px;
+		margin-top: 5vh; 
+		width: 100px;
+		height: 50px;
+		box-shadow: 6px -7px 0 0 rgba(94,96,115,0.3);
+	}
+	/* #p-submit:hover{
+		background-color:#c33837;
+		color: #fff;
+		
+	} */
 	
 </style>
 </head>
@@ -94,11 +126,21 @@
 				str+="</div>";
 				out.print(str); }
 		%>
-		</div>	
+		</div>
+		<input id="submit" type="submit" value="공유">
+		<input id="delete" type="submit" value="글 삭제" onclick=\"delete();\"/>;
 	</div>
 	</article>
-	
-	
 	</div>
+	
+	
+
+		
+	<script type="text/javascript">
+		function deletete(){
+			location.href="../jsp/writingDel.jsp"
+		}
+	</script>
+		
 </body>
 </html>

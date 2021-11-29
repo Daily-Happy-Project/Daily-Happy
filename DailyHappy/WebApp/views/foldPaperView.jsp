@@ -4,9 +4,9 @@
     
 <%
 
-/* /* /* /* /* /* /* 	String email = (String)session.getAttribute("email");
+/* 	String email = (String)session.getAttribute("email");
 	email = new UserDAO().splitemail(email);
-	String paperimg = new UserItemDAO().randomPaper(email);  */ */ */ */ */ */ */
+	String paperimg = new UserItemDAO().randomPaper(email);  */
 
 %>
     
@@ -70,24 +70,4 @@
 
 </body>
 </html>
-
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-<%
-
-	String uemail = (String)session.getAttribute("email");
-	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
-		//insert into user(email,name,pw) values('d@d','이민진','1111');
-		//test string: 
-			uemail = "d@d";
-	}
-	session.setAttribute("email", uemail);
-	//ArrayList<UserObj> list = (new UserDAO()).getUserList();
-	
-	/* String uname = 
-	String uid = 
-	String ucoin =  */
-%> --%>
 
