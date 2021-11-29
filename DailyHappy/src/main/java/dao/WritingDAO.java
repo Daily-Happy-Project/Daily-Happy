@@ -62,33 +62,27 @@ public class WritingDAO {
     	}
 	}
 	
+    
     // view content
     public ArrayList<WritingObj> content(String email, String jarName) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
-    	PreparedStatement stmt2=null;
     	ResultSet rs=null;
     	try {
     		 email = new UserDAO().splitemail(email);
    		 
-		     // create view
-    		 String sql = "CREATE VIEW " + email + "JarView AS SELECT * FROM "+ email +"WritingList WHERE jarName=\"" + jarName + "\";";
-		     stmt = conn.prepareStatement(sql); 
-		     stmt.execute();
-		     
 		     // select contents
-    		 sql = "SELECT content, ts FROM " + email + "JarView order by rand() limit 1";
-    		 stmt2 = conn.prepareStatement(sql);
-    		 rs = stmt2.executeQuery();
+    		 String sql = "SELECT content, paperCode, ts FROM " + email + "WritingList WHERE jarName=\""+ jarName+ "\" ORDER BY rand() limit 1";
+    		 stmt = conn.prepareStatement(sql);
+    		 rs = stmt.executeQuery();
     		 
     		 ArrayList<WritingObj> wObj=new ArrayList<WritingObj>();
     		 while(rs.next()) {
-    			 wObj.add(new WritingObj(rs.getString("content"), rs.getTimestamp("ts")));
+    			 wObj.add(new WritingObj(rs.getString("content"), rs.getInt("paperCode"), rs.getTimestamp("ts")));
     		 }
     		 
              return wObj;
     	} finally {
-    			if(stmt2!=null) stmt.close();
     			if(stmt!=null) stmt.close();
     		    if(conn!=null) conn.close();
     	}
@@ -115,6 +109,7 @@ public class WritingDAO {
             
         }
     }
+    
     
     // delete content
     public boolean delete(int no, String jarName, String email) throws NamingException, SQLException {

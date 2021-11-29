@@ -30,11 +30,9 @@ public class UserDAO {
             		+ "foldMethodName VARCHAR(32), "
             		+ "cnt int UNSIGNED DEFAULT 0, "
             		+ "goalNum int UNSIGNED DEFAULT 0,"
-            		+ "jarImg1 VARCHAR(1024), "
-            		+ "jarImg2 VARCHAR(1024), "
-            		+ "jarImg3 VARCHAR(1024), "
-            		+ "jarImg4 VARCHAR(1024), "
-            		+ "FOREIGN KEY (jarItemCode) REFERENCES item (itemCode))");
+            		+ "jarImgName VARCHAR(128),"
+            		+ "FOREIGN KEY (jarItemCode) REFERENCES item (itemCode),"
+            		+ "FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
             		+ "no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, "

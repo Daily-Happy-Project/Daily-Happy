@@ -14,6 +14,8 @@
 <title>작성글 확인</title>
 <style type="text/css">
 	article{
+		position: absolute;
+		top: 8em;
 		width: 100%;
 		display: flex;
 	}
@@ -21,12 +23,13 @@
 		width: 90%;
 		max-width: 300px;
 		min-width: 200px; 
-		margin: 50px auto;
-		
-	}
-	
+		margin: 0 auto;
+		padding-bottom: 4em;
+		z-index: 2;
+	}	
 	#p-text-wrap{
 		width: 100%;
+		margin: 50px auto;
     	word-break:break-all;
     	background-image: url('../resources/images/gra-paper-y.png');
     	-webkit-background-size: contain;
@@ -35,25 +38,16 @@
 		background-size: 100%;
 		background-position: contain;
 		background-repeat: no-repeat;
-	}
-	
-	.writing{
-		font-size: 16pt;
-		resize: none;
-		border: none;
-	 	background-color: transparent;
-		width: 90%;
-		height: 90%;	
-	}
-	
-	#text{
+		box-shadow: 8px -8px 0 0 rgba(94,96,115,0.3);
+    }
+/* 	.text{
 		font-size: 16pt;
 		resize: none;
 		border: none;
 	 	background-color: transparent;
 		width: 90%;
 		height: 90%;
-	}
+	} */
 	
 </style>
 </head>
@@ -62,7 +56,7 @@
 
 
 <body>
-
+	<%@include file="bottomNavi.html"%>
 	<%
     String email=(String)session.getAttribute("email");
 	email = new UserDAO().splitemail(email);
@@ -83,6 +77,7 @@
 	
 	
 	<article align="center">
+	<div id="wrap">
 		<div id="p-text-wrap">	
 		<%
 			ArrayList<WritingObj> wObj = dao.content(email, jarName);
@@ -90,14 +85,21 @@
 			for(WritingObj obj : wObj){
 				String content = obj.getContent();
 				Timestamp stamp = obj.getTs();
+				int paperCode = obj.getPaperCode();
 				str+="<div class=\"writing\">";
-				str+="<p class=\"text\">" + content + "</p>";
+				/* str+="<p class=\"text\">" + content + "</p>";
 				str+="<div class=\"text\" </div>" + "작성자 : " + email;
-				str+="<div class=\"text\" </div>" + "작성시간 : " + stamp;
+				str+="<div class=\"text\" </div>" + "작성시간 : " + stamp; */
+				
+				str+="<textarea class=\"text\" rows=\"8\" cols=\"12\" placeholder=\"" + content + "\" disabled></textarea>";
+				str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성자 : " + email + "\" disabled></textarea>";
+				str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성시간 : " + stamp + "\" disabled></textarea>";
+
 				str+="</div>";
 				out.print(str); }
 		%>
 		</div>
+	</div>
 	</article>
 	
 	
