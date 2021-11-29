@@ -26,12 +26,12 @@ public class UserDAO {
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "JarList("
             		+ "jarName VARCHAR(32) PRIMARY KEY, "
-            		+ "jarItemCode int, "
+            		+ "jarItemName VARCHAR(32), "
             		+ "foldMethodName VARCHAR(32), "
             		+ "cnt int UNSIGNED DEFAULT 0, "
             		+ "goalNum int UNSIGNED DEFAULT 0,"
             		+ "jarImgName VARCHAR(128),"
-            		+ "FOREIGN KEY (jarItemCode) REFERENCES item (itemCode),"
+            		+ "FOREIGN KEY (jarItemName) REFERENCES item (itemName),"
             		+ "FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
@@ -198,6 +198,29 @@ public class UserDAO {
 			
 		}
     }
+    
+    
+    public String getName(String email) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String sql = "SELECT name FROM user WHERE email = ?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, email);
+            rs = stmt.executeQuery();
+            String name="";
+            while(rs.next()) {
+            	name = rs.getString("name");
+            }
+            return name;
+        } finally {
+            if (rs != null) rs.close(); 
+            if (stmt != null) stmt.close(); 
+            if (conn != null) conn.close();
+        }
+    }
+    
 
     
     
