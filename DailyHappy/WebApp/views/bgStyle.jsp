@@ -4,16 +4,16 @@ body {
 	margin: 0;
 }
 
-.container {
+.bg-container {
   width: 100%;
   height: 100%;
   text-align: center;
   position: absolute;
   top: 0;
-  z-index: 1;
+  z-index: -3;
   background-color: #fff;
 }
-.container::after {
+.bg-container::after {
 	content: "";
       background-image: url('../resources/images/pink-round-theme.png');
       background-size: cover;
@@ -26,3 +26,5 @@ body {
 
 }
 </style>
+
+<div class="bg-container"></div>
