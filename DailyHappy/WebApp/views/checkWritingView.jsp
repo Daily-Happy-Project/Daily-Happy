@@ -118,9 +118,6 @@
 						session.setAttribute("no", no);
 						String name = new UserDAO().getName((String)session.getAttribute("email"));
 						str+="<div class=\"writing\">";
-						/* str+="<p class=\"text\">" + content + "</p>";
-						str+="<div class=\"text\" </div>" + "작성자 : " + email;
-						str+="<div class=\"text\" </div>" + "작성시간 : " + stamp; */
 						
 						str+="<textarea class=\"text\" rows=\"8\" cols=\"12\" placeholder=\"" + content + "\" disabled></textarea>";
 						str+="<textarea class=\"text\" name=\"no\" rows=\"1\" cols=\"12\" placeholder=\"글번호 : " + no + "\" disabled></textarea>";
