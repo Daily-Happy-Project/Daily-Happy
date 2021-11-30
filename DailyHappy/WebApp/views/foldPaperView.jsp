@@ -4,32 +4,11 @@
     
 <%
 
-/* /* /* /* /* /* /* 	String email = (String)session.getAttribute("email");
+/* 	String email = (String)session.getAttribute("email");
 	email = new UserDAO().splitemail(email);
-	String paperimg = new UserItemDAO().randomPaper(email);  */ */ */ */ */ */ */
+	String paperimg = new UserItemDAO().randomPaper(email);  */
 
 %>
-    
-    
-    
-<%--<%
-
-	String uemail = (String)session.getAttribute("email");
-	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
-		//insert into user(email,name,pw) values('d@d','이민진','1111');
-		//test string: 
-			uemail = "d@d";
-	}
-	session.setAttribute("email", uemail);
-	//ArrayList<UserObj> list = (new UserDAO()).getUserList();
-	
-	/* String uname = 
-	String uid = 
-	String ucoin =  */
-%> --%> 
-
-
 
 <!DOCTYPE html>
 <html>
@@ -62,32 +41,12 @@
 		<div class="paper">
 		<img id="paperImg" src="paperImg">
 		</div>
-		<div>학종이를 터치!</div>
-	
-	
+		<div>학종이를 터치!</div>	
 	</section>
-
-
+	
+	글 작성이 완료되었습니다.
+	
+	
 </body>
 </html>
-
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-<%
-
-	String uemail = (String)session.getAttribute("email");
-	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
-		//insert into user(email,name,pw) values('d@d','이민진','1111');
-		//test string: 
-			uemail = "d@d";
-	}
-	session.setAttribute("email", uemail);
-	//ArrayList<UserObj> list = (new UserDAO()).getUserList();
-	
-	/* String uname = 
-	String uid = 
-	String ucoin =  */
-%> --%>
 

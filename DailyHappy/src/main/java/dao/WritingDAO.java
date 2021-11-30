@@ -72,13 +72,13 @@ public class WritingDAO {
     		 email = new UserDAO().splitemail(email);
    		 
 		     // select contents
-    		 String sql = "SELECT content, paperCode, ts FROM " + email + "WritingList WHERE jarName=\""+ jarName+ "\" ORDER BY rand() limit 1";
+    		 String sql = "SELECT no, content, paperCode, ts FROM " + email + "WritingList WHERE jarName=\""+ jarName+ "\" ORDER BY rand() limit 1";
     		 stmt = conn.prepareStatement(sql);
     		 rs = stmt.executeQuery();
     		 
     		 ArrayList<WritingObj> wObj=new ArrayList<WritingObj>();
     		 while(rs.next()) {
-    			 wObj.add(new WritingObj(rs.getString("content"), rs.getInt("paperCode"), rs.getTimestamp("ts")));
+    			 wObj.add(new WritingObj(rs.getInt("no"), rs.getString("content"), rs.getInt("paperCode"), rs.getTimestamp("ts")));
     		 }
     		 
              return wObj;
@@ -86,28 +86,6 @@ public class WritingDAO {
     			if(stmt!=null) stmt.close();
     		    if(conn!=null) conn.close();
     	}
-    }
-    
-    
-    public boolean deleteJarView(String email) throws NamingException, SQLException {
-        Connection conn = ConnectionPool.get();
-        PreparedStatement stmt = null;
-        try {
-        	
-        	email = new UserDAO().splitemail(email);
-            String sql = "DROP VIEW " + email + "JarView ";
-            
-            stmt = conn.prepareStatement(sql);
-            stmt.executeUpdate();
-			
-            int count = stmt.executeUpdate(sql);
-            
-            return (count > 0) ? true : false;
-        } finally {
-            if (stmt != null) stmt.close();
-            if (conn != null) conn.close();
-            
-        }
     }
     
     

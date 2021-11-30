@@ -16,7 +16,8 @@ public class WritingObj {
 		this.ts=ts;
 	}
 	
-	public WritingObj(String content, int paperCode, Timestamp ts) {
+	public WritingObj(int no, String content, int paperCode, Timestamp ts) {
+		this.no=no;
 		this.content=content;
 		this.paperCode=paperCode;
 		this.ts=ts;
