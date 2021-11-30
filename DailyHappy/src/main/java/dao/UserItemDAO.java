@@ -31,9 +31,6 @@ public class UserItemDAO {
 			if (stmt != null) stmt.close(); 
 			if (conn != null) conn.close();
 	
-		}
-	}	
-
 	
 
 	// item lookup. type byeol lo check (make new jar)
@@ -89,37 +86,14 @@ public class UserItemDAO {
 	    }
 		
 		
-		
-	// random Paper
-	/*
-	 * public String randomPaper(String email) throws NamingException, SQLException
-	 * { Connection conn = ConnectionPool.get(); PreparedStatement stmt = null; try
-	 * { email = new UserDAO().splitemail(email); String sql =
-	 * "CREATE VIEW userpaper " + "SELECT " + email +
-	 * "Item.itemCode, item.itemCode, item.img1" + "FROM " + email + "Item, item " +
-	 * "where "+ email+ "Item.itemCode=item.itemCode " +
-	 * "and item.itemType=\"paper\""; stmt = conn.prepareStatement(sql);
-	 * stmt.executeUpdate();
-	 * 
-	 * sql = "SELECT img1, FROM userpaper ORDER BY rand() LIMIT 1";
-	 * stmt.executeUpdate(sql);
-	 * 
-	 * return sql;
-	 * 
-	 * } finally { if (stmt != null) stmt.close(); if (conn != null) conn.close(); }
-	 * 
-	 * }
-	 */
-		
-		
-	// random Paper
+// random Paper
 	public ArrayList<UserItemObj> randomPaper(String email) throws NamingException, SQLException {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		try {
 			email = new UserDAO().splitemail(email);
-			String sql = "SELECT img1, itemCode FROM " + email + "item WHERE itemType=\"paper\"";
+			String sql = "SELECT img1, itemCode FROM " + email + "item WHERE itemType=\"paper\" Order by rand() limit 1";
 			stmt = conn.prepareStatement(sql);
 			rs = stmt.executeQuery();
 			
@@ -140,6 +114,8 @@ public class UserItemDAO {
 		}
 		
 	}
+		
+		
 		
 		
 		// delete jar table

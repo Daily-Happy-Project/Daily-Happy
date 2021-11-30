@@ -28,8 +28,7 @@
 		String email = (String)session.getAttribute("email");
 		String content = request.getParameter("content");
 		int paperCode = Integer.parseInt(request.getParameter("paperCode"));
-	 	/* String jarName = request.getParameter("jarName"); */
-		String jarName = (String)session.getAttribute("nowJar");
+	 	String jarName = request.getParameter("jarName");
 		
 		
 		WritingDAO dao = new WritingDAO();
