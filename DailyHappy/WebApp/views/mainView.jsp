@@ -14,8 +14,9 @@
 	}
 	session.setAttribute("email", uemail);
 	session.setAttribute("memberType", umember);
-	//ArrayList<JarObj> list = (new JarDAO()).getJarList();
+	ArrayList<UserItemObj> randP = (new UserItemDAO()).randomPaper(uemail);
 
+	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTO HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -96,7 +97,7 @@ article{
 }
 .main-wrap{
 	position: absolute;
-	bottom: 7.5em;
+	bottom: 30vh;
 	width: 100%;
 	z-index:3;
 	display: flex;
@@ -104,14 +105,11 @@ article{
 }
 #bottle-img-box{
 	margin: 0 auto;
-	padding-top: 2em;
-	padding-bottom: 2em;
-	width: 100%;
+	width: 60vw;
 }
 .jarimg{
-	width: 60%;
+	width: 60vw;
 	max-width: 250px;
-	min-width: 200px;
 }
 #left-bottle, #right-bottle{
 	cursor: pointer;
@@ -133,7 +131,7 @@ article{
 
 #paper-wrap{
 	position: fixed;
-	bottom:0px;
+	bottom:8vh;
 	width: 100%;
 	z-index: 3;
 	display: flex;
@@ -159,7 +157,7 @@ article{
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-	height: 12em;
+	height: 35vh;
 	background-color: #FFC7C7;
 	z-index: 2;
 }
@@ -247,11 +245,16 @@ body.edit_cursor {
 	<article>
 		<div id="paper-wrap">
 			<%
-				String strP = "<div id=\"paper-img-box\">";
-				strP += "<img src=\"../resources/images/gra-paper-y.png\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
-				strP +="</div>";
-				out.print(strP);
-			%><%//유리병 이미지 %>
+				for(UserItemObj uItem : randP){
+					int pItemCode = uItem.getItemCode();
+					String pImg = uItem.getImg();
+					String strP = "<div id=\"paper-img-box\">";
+					strP += "<img src=\""+ pImg +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
+					strP +="</div>";
+					out.print(strP);
+				}
+				
+			%>
 		</div>
 	</article>
 	
@@ -265,24 +268,23 @@ body.edit_cursor {
 	
 	
 	<script type="text/javascript">
-<%
-	String nowJar = "nowJ"; //임시값. 화살표 누를때마다 nowJar이 가리키는 값이 바뀌도록.
-	session.setAttribute("nowJar", nowJar);
-%>
 		function GotoCheck(){
 			location.href="checkWritingView.jsp"
 		}
+
 		function GotoWrite(){
 			location.href="writingView.jsp"
 		}
 		
+
+</script>
+<script type="text/javascript">	
 		window.onload=function() {
 			document.getElementById("edit").addEventListener("click", function(e) {
 				document.querySelector("body").classList.add("edit_cursor");
 				screenshot(e);
 			});
 		}
-		
 		function screenshot(e) {
 			var startX, startY;
 			var height=window.innerHeight;
