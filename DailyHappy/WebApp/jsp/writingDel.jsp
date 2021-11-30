@@ -16,7 +16,7 @@
 	String jarName = request.getParameter("jarName");
 	
 	
-	WritingDAO dao = new WritingDAO();
+	new WritingDAO().delete(no, jarName, email);
 
 %>
 	
