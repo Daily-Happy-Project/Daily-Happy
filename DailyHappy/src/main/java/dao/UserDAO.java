@@ -31,7 +31,7 @@ public class UserDAO {
             		+ "cnt int UNSIGNED DEFAULT 0, "
             		+ "goalNum int UNSIGNED DEFAULT 0,"
             		+ "jarImgName VARCHAR(128),"
-            		+ "FOREIGN KEY (jarItemName) REFERENCES item (itemName),"
+            		+ "FOREIGN KEY (jarItemName) REFERENCES item (itemName),"	
             		+ "FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
@@ -44,6 +44,7 @@ public class UserDAO {
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "Item("
             		+ "itemCode int PRIMARY KEY, "
+            		+ "itemType VARCHAR(32),"
             		+ "apply tinyint(1) DEFAULT 0,"
             		+ "FOREIGN KEY (itemCode) REFERENCES item (itemCode))");
           

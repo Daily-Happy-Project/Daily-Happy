@@ -14,7 +14,7 @@ import util.UserObj;
 public class UserItemDAO {
 	
 // insert writing
-	public boolean insert(String email, int itemCode) throws NamingException, SQLException {
+	public boolean insert(String email, int itemCode, String itemType) throws NamingException, SQLException {
 		Connection conn = ConnectionPool.get();
 		Statement stmt = conn.createStatement();
 		try {
@@ -22,7 +22,7 @@ public class UserItemDAO {
 			email = new UserDAO().splitemail(email);
 
 
-			String sql = "INSERT INTO " + email + "Item(itemCode) VALUES("+itemCode+")";
+			String sql = "INSERT INTO " + email + "Item(itemCode, itemType) VALUES(\"" + itemCode + "\",\"" + itemType + "\")";
 			
 			int count = stmt.executeUpdate(sql);
 			return (count == 1) ? true : false;
