@@ -30,7 +30,8 @@ public class UserItemDAO {
 		} finally {
 			if (stmt != null) stmt.close(); 
 			if (conn != null) conn.close();
-	
+			}
+		}
 	
 		// item lookup. type byeol lo check (make new jar)
 	    public ArrayList<UserItemObj> getUserItemList(String email, String itemType) throws NamingException, SQLException {
