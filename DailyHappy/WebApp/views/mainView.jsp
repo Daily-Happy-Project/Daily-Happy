@@ -14,7 +14,7 @@
 	}
 	session.setAttribute("email", uemail);
 	session.setAttribute("memberType", umember);
-	ArrayList<UserItemObj> randP = (new UserItemDAO()).randomPaper(uemail);
+	String randP = (new UserItemDAO()).randomPaper(uemail);
 
 	
 %>
@@ -245,14 +245,20 @@ body.edit_cursor {
 	<article>
 		<div id="paper-wrap">
 			<%
-				for(UserItemObj uItem : randP){
+				/* for(UserItemObj uItem : randP){
 					int pItemCode = uItem.getItemCode();
 					String pImg = uItem.getImg();
 					String strP = "<div id=\"paper-img-box\">";
 					strP += "<img src=\""+ pImg +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
 					strP +="</div>";
 					out.print(strP);
-				}
+				} */
+				
+				
+				String strP = "<div id=\"paper-img-box\">";
+				strP += "<img src=\""+ randP +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
+				strP +="</div>";
+				out.print(strP);
 				
 			%>
 		</div>

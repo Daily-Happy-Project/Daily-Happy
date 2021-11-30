@@ -88,27 +88,32 @@ public class UserItemDAO {
 		
 		
 // random Paper
-	public ArrayList<UserItemObj> randomPaper(String email) throws NamingException, SQLException {
+	public String randomPaper(String email) throws NamingException, SQLException {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
+		ResultSet rs2 = null;
 		try {
 			email = new UserDAO().splitemail(email);
-			String sql = "SELECT img1, itemCode FROM " + email + "item WHERE itemType=\"paper\" Order by rand() limit 1";
+			String sql = "SELECT itemCode FROM " + email + "Item WHERE itemType=\"paper\" ORDER BY rand() limit 1";
 			stmt = conn.prepareStatement(sql);
 			rs = stmt.executeQuery();
-			
-//			String img = rs.getString("img1");
-//			int itemCode = rs.getInt("itemCode");
-			ArrayList<UserItemObj> items = new ArrayList<UserItemObj>();
+			int itemCode=0;
+			String img1="";
 			while(rs.next()) {
-				items.add(new UserItemObj(rs.getInt("itemCode"), rs.getString("img1")));
+				itemCode=rs.getInt("itemCode");
 			}
 			
+			sql = "SELECT img1 FROM item WHERE itemCode=\"" + itemCode +"\"";
+			rs2 = stmt.executeQuery(sql);
+			while(rs2.next()) {
+				img1 = rs2.getString("img1");
+			}
 			
-			return items;			
+			return img1;			
 			
 		} finally {
+			if (rs2 != null) rs2.close();
 			if (rs != null) rs.close();
             if (stmt != null) stmt.close(); 
             if (conn != null) conn.close();
