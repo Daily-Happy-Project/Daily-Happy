@@ -45,7 +45,7 @@ public class UserItemDAO {
     		email = new UserDAO().splitemail(email);
     		String sql = "SELECT a.itemcode, itemName, img1 ";
     		sql += "FROM "+ email + "Item a join item b on (a.itemCode = b.itemCode) "; 
-    		sql += "where itemType = \""+ itemType + "\"";
+    		sql += "where b.itemType = \""+ itemType + "\"";
     		stmt=conn.prepareStatement(sql);
     		rs=stmt.executeQuery();
     		
