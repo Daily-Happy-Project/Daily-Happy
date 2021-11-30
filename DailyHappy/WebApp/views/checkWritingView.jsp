@@ -50,7 +50,7 @@
 	}
 	#submit{
 		font-family: 'Uiyeun';
-		font-size: 3.8vh;
+		font-size: 2.5vh;
 		color: #000;
 		text-align: center;
 		border: none;
@@ -64,7 +64,7 @@
 	}
 	#delete{
 		font-family: 'Uiyeun';
-		font-size: 3.8vh;
+		font-size: 2.5vh;
 		color: #000;
 		text-align: center;
 		border: none;
@@ -128,7 +128,7 @@
 		%>
 		</div>
 		<input id="submit" type="submit" value="공유">
-		<input id="delete" type="submit" value="글 삭제" onclick=\"delete();\"/>;
+		<input id="delete" type="submit" value="글 삭제" onclick="deleteWrite();"/>;
 	</div>
 	</article>
 	</div>
@@ -137,7 +137,7 @@
 
 		
 	<script type="text/javascript">
-		function deletete(){
+		function deleteWrite(){
 			location.href="../jsp/writingDel.jsp"
 		}
 	</script>

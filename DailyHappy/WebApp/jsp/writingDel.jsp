@@ -11,7 +11,7 @@
 		userID=(String) session.getAttribute("userID");
 	}
 
-	int no = session.getAttribute("no");
+	int no = Integer.parseInt(request.getParameter("no"));
 	String email = (String)session.getAttribute("email");
 	String jarName = request.getParameter("jarName");
 	
@@ -26,6 +26,6 @@
 <meta charset="UTF-8">
 </head>
 <body>
-
+글 삭제가 완료되었습니다.
 </body>
 </html>

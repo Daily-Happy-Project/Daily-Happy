@@ -10,6 +10,10 @@ public class UserItemObj {
 		this.itemName=itemName;
 		this.img1=img1;
 	}	
+	public UserItemObj(int itemCode, String img1) {
+		this.itemCode=itemCode;
+		this.img1=img1;
+	}
 	
 	public int getItemCode() {return this.itemCode;}
 	public String getItemName() {return this.itemName;}
