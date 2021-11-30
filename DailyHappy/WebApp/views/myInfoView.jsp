@@ -24,8 +24,16 @@
 
 <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
 
-<style>
+<style type="text/css">
+@font-face {
+    font-family: 'Uiyeun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 	table{
+		font-family: 'Uiyeun';
+		font-size: 5vh;
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
@@ -49,7 +57,8 @@
 	}
 	#logout-button{
 		display: inline-block;
-		font-size: 1.0em;
+		font-family: 'Uiyeun';
+		font-size: 2.0em;
 	    padding-top: 10px;
 	    padding-bottom: 10px;
 		width: 150px;
@@ -66,7 +75,8 @@
 	}
 
 	#delete-user{
-		
+		font-family: 'Uiyeun';
+		font-size: 4vh;
 	}
 </style>
 </head>

@@ -24,7 +24,17 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-<style>
+<style type="text/css">
+@font-face {
+    font-family: 'Uiyeun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+	form{
+		font-family: 'Uiyeun';
+		font-size: 5vh;
+	}
 	table{
 		margin-top: 30px;
 		color: #9D9D9D;
@@ -50,6 +60,7 @@
 		height: 20px;
 	}
 	#submit-button{
+	font-family: 'Uiyeun';
 	font-size: 1.0em;
     display: inline-block;
 	margin: 10px;
