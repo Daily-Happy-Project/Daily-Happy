@@ -105,30 +105,34 @@
 	
 	<article align="center">
 	<div id="wrap">
-		<div id="p-text-wrap">	
-		<%
-			ArrayList<WritingObj> wObj = dao.content(email, jarName);
-			String str="";
-			for(WritingObj obj : wObj){
-				String content = obj.getContent();
-				Timestamp stamp = obj.getTs();
-				int paperCode = obj.getPaperCode();
-				String name = new UserDAO().getName((String)session.getAttribute("email"));
-				str+="<div class=\"writing\">";
-				/* str+="<p class=\"text\">" + content + "</p>";
-				str+="<div class=\"text\" </div>" + "작성자 : " + email;
-				str+="<div class=\"text\" </div>" + "작성시간 : " + stamp; */
-				
-				str+="<textarea class=\"text\" rows=\"8\" cols=\"12\" placeholder=\"" + content + "\" disabled></textarea>";
-				str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성자 : " + name + "\" disabled></textarea>";
-				str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성시간 : " + stamp + "\" disabled></textarea>";
-
-				str+="</div>";
-				out.print(str); }
-		%>
-		</div>
-		<input id="submit" type="submit" value="공유">
-		<input id="delete" type="submit" value="글 삭제" onclick="deleteWrite();"/>;
+		<form method="post" action="../jsp/writingDel.jsp">	
+			<div id="p-text-wrap">
+				<%
+					ArrayList<WritingObj> wObj = dao.content(email, jarName);
+					String str="";
+					for(WritingObj obj : wObj){
+						String content = obj.getContent();
+						Timestamp stamp = obj.getTs();
+						int paperCode = obj.getPaperCode();
+						int no = obj.getNo();
+						String name = new UserDAO().getName((String)session.getAttribute("email"));
+						str+="<div class=\"writing\">";
+						/* str+="<p class=\"text\">" + content + "</p>";
+						str+="<div class=\"text\" </div>" + "작성자 : " + email;
+						str+="<div class=\"text\" </div>" + "작성시간 : " + stamp; */
+						
+						str+="<textarea class=\"text\" rows=\"8\" cols=\"12\" placeholder=\"" + content + "\" disabled></textarea>";
+						str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"글번호 : " + no + "\" disabled></textarea>";
+						str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성자 : " + name + "\" disabled></textarea>";
+						str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성시간 : " + stamp + "\" disabled></textarea>";
+		
+						str+="</div>";
+						out.print(str); }
+				%>
+			</div>
+		<input id="submit" type="button" value="공유">
+		<input id="delete" type="submit" value="글 삭제">;
+	</form>
 	</div>
 	</article>
 	</div>
