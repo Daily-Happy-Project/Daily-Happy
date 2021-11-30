@@ -96,7 +96,7 @@ public class WritingDAO {
         try {
         	
         	email = new UserDAO().splitemail(email);
-            String sql = "DELETE FROM" + email + "WritingList WHERE no = ?";
+            String sql = "DELETE FROM " + email + "WritingList WHERE no=?";
             
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, no);

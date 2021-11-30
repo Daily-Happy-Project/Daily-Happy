@@ -115,6 +115,7 @@
 						Timestamp stamp = obj.getTs();
 						int paperCode = obj.getPaperCode();
 						int no = obj.getNo();
+						session.setAttribute("no", no);
 						String name = new UserDAO().getName((String)session.getAttribute("email"));
 						str+="<div class=\"writing\">";
 						/* str+="<p class=\"text\">" + content + "</p>";
@@ -122,7 +123,7 @@
 						str+="<div class=\"text\" </div>" + "작성시간 : " + stamp; */
 						
 						str+="<textarea class=\"text\" rows=\"8\" cols=\"12\" placeholder=\"" + content + "\" disabled></textarea>";
-						str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"글번호 : " + no + "\" disabled></textarea>";
+						str+="<textarea class=\"text\" name=\"no\" rows=\"1\" cols=\"12\" placeholder=\"글번호 : " + no + "\" disabled></textarea>";
 						str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성자 : " + name + "\" disabled></textarea>";
 						str+="<textarea class=\"text\" rows=\"1\" cols=\"12\" placeholder=\"작성시간 : " + stamp + "\" disabled></textarea>";
 		
@@ -138,13 +139,6 @@
 	</div>
 	
 	
-
-		
-	<script type="text/javascript">
-		function deleteWrite(){
-			location.href="../jsp/writingDel.jsp"
-		}
-	</script>
 		
 </body>
 </html>

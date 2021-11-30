@@ -11,7 +11,8 @@
 		userID=(String) session.getAttribute("userID");
 	}
 
-	int no = Integer.parseInt(request.getParameter("no"));
+/* 	int no = Integer.parseInt(request.getParameter("no")); */
+	int no = (Integer)session.getAttribute("no");
 	String email = (String)session.getAttribute("email");
 	String jarName = request.getParameter("jarName");
 	
