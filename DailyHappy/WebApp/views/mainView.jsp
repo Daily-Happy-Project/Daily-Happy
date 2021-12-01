@@ -400,12 +400,14 @@ body.edit_cursor {
  			console.log(err);
  			});
  		}
+		
  			function drawImg(imgData) {
  			console.log(imgData);
  			return new Promise(function reslove() {
  			var canvas = document.getElementById('canvas');
  			var ctx = canvas.getContext('2d');
  			ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 			
  			var imageObj = new Image();
  			imageObj.onload = function () {
  			ctx.drawImage(imageObj, 10, 10);
@@ -413,6 +415,7 @@ body.edit_cursor {
  			imageObj.src = imgData;
  			}, function reject() { });
  		}
+ 			
  			function saveAs(uri, filename) {
  			var link = document.createElement('a');
  			if (typeof link.download === 'string') {
