@@ -250,7 +250,11 @@ body.edit_cursor {
 					String strP = "<div id=\"paper-img-box\">";
 					strP += "<img src=\""+ pImg +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
 					strP +="</div>";
+					String local = "<script type=\"text/javascript\">localStorage.setItem('nowPCode',"+pItemCode+");";
+					local += "localStorage.setItem(\'nowPImg\',\'"+pImg+"\');";
+					local += "</script>";
 					out.print(strP);
+					out.print(local);
 				} 
 				
 				
@@ -278,7 +282,7 @@ body.edit_cursor {
 		}
 
 		function GotoWrite(){
-			location.href="writingView.jsp"
+			location.href="writingView.jsp"	
 		}
 		
 
