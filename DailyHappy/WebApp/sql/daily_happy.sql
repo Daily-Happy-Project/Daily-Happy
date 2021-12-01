@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
     pw VARCHAR(32),								-- user password --
-    coin int,                               	-- user owned coin  --
+    coin int DEFAULT 0,                         -- user owned coin  --
     memberType char DEFAULT 'M',                -- member type. member='M' manager='K' -- 
     userThemeCode int  							-- apply theme --   
 );
@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS user(
 
 
 -- writing table --
-CREATE TABLE IF NOT EXISTS USERNAME+writing(                     
-    no INT UNSIGNED AUTO_INCREMENT,
-    name VARCHAR(32),                           -- writer name --
+CREATE TABLE IF NOT EXISTS USERNAME+writingList(                     
+    no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    jarName VARCHAR(32),                           -- writer name --
     content VARCHAR(8192),                      -- content --
     paperCode int,            					-- paper code --
     ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP      -- writing time--
@@ -26,33 +26,47 @@ CREATE TABLE IF NOT EXISTS USERNAME+writing(
 );
 
 
--- savedJar
+-- Jar List
 CREATE TABLE IF NOT EXISTS USERNAME+JarList(
     jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
-    foldmethodName VARCHAR(32),                -- fold method --
-    cnt int UNSIGNED AUTO_INCREMENT            -- count --
-);--
+    jarItemCode int,						   -- jar item code --
+    foldMethodName VARCHAR(32),                -- fold method --
+    cnt int UNSIGNED DEFAULT 0,      		   -- count --
+    goalNum int UNSIGNED DEFAULT 0			   -- goal number --
+    jarImgName VARCHAR(32)			,		   -- jar image name --
+	FOREIGN KEY (jarItemCode) REFERENCES item (itemCode),
+	FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName)
+);	
 
 
 -- user item --
 CREATE TABLE IF NOT EXIST USERNAME+Item(
-	email VARCHAR(128) PRIMARY KEY,         -- user email --
-	FOREIGN KEY (itemcode)					-- item code --
+	itemCode PRIMARY KEY
+	apply boolean default 0,				-- apply item --
+	FOREIGN KEY (itemCode)					-- item code --
 	
 );
 
 
 -- store item --
 CREATE TABLE IF NOT EXISTS item(
-	itemcode int PRIMARY KEY,			-- item code --
-	itemName VARCHAR(32) NOT NULL,		-- item name --
-	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, foldmethod, theme, jar) -- 
+	itemCode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
+	itemName VARCHAR(32) UNIQUE NOT NULL,		-- item name --
+	itemType VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldMethod, theme) -- 
 	price INT NOT NULL,					-- item price --
 	info VARCHAR(1024) NOT NULL,		-- item information --
 	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
-	img2 VARCHAR(1024),					-- item image2--
+	img2 VARCHAR(1024),					-- item image2 --
 	img3 VARCHAR(1024),					-- item image3 --
 	img4 VARCHAR(1024)					-- item image4 --
 );
 
 
+-- jar image by fold method --
+CREATE TABLE IF NOT EXISTS jarImg(
+	imgName VARCHAR(128) NOT NULL PRIMARY KEY,		-- item name --
+	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
+	img2 VARCHAR(1024) NOT NULL,		-- item image2 --
+	img3 VARCHAR(1024) NOT NULL,		-- item image3 --
+	img4 VARCHAR(1024) NOT NULL			-- item image4 --
+);

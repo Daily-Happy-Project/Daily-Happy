@@ -5,19 +5,15 @@
 <%@ page import="dao.*"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%
-
 	String uemail = (String)session.getAttribute("email");
 	if (uemail == null) {
-		//response.sendRedirect("loginView.html");
+		response.sendRedirect("loginView.jsp");
 		//test string: 
-			uemail = "d@d";
+		//uemail = "d@d";
 	}
 	session.setAttribute("email", uemail);
 	ArrayList<UserObj> list = (new UserDAO()).myInfo(uemail);
 	
-	/* String uname = 
-	String uid = 
-	String ucoin =  */
 %>
 <!DOCTYPE html>
 <html>
@@ -28,9 +24,18 @@
 
 <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
 
-<style>
+<style type="text/css">
+@font-face {
+    font-family: 'Uiyeun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 	table{
+		font-family: 'Uiyeun';
+		font-size: 5vh;
 		margin-top: 30px;
+		margin-bottom: 30px;
 	}
 	.info-table-line1{
 		text-align: right;
@@ -52,8 +57,8 @@
 	}
 	#logout-button{
 		display: inline-block;
-		font-size: 1.0em;
-		
+		font-family: 'Uiyeun';
+		font-size: 2.0em;
 	    padding-top: 10px;
 	    padding-bottom: 10px;
 		width: 150px;
@@ -64,13 +69,14 @@
 	    color: #fff;
 	    background-color: #000; 
 	}
-	#info-logo{
-		display: inline-block;
-	    margin-top: 40px;
-	    margin-bottom: 20px;
-	    width:80px;
-	    height:80px;
-	    background-color: aqua;
+	.container{
+		display: flax;
+		width: 100%;
+	}
+
+	#delete-user{
+		font-family: 'Uiyeun';
+		font-size: 4vh;
 	}
 </style>
 </head>
@@ -78,11 +84,11 @@
 
 	<header>
 		<h2 class="title">내 정보</h2>
-		<div class="x-button">x</div>
-		<hr class = "dotted-line1">
+		<%@include file="header.html"%>
 	</header>
-	<section>
-		<article align="center">
+	<nav><%@include file="bottomNavi.html"%></nav>
+	<section >
+		<div align="center" class="container">
 			<table align="center">
 				<tr>
 					<td class = "info-table-line1">별명</td>
@@ -118,9 +124,11 @@
 					</div></td>
 				</tr>
 			</table>
-			<div id="info-logo">로고</div><br>
-			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a></a>
-		</article>
+			
+			<a id="logout-button" href="../jsp/logout.jsp">로그아웃</a><br>
+			<a id="delete-user" href="selfDel.jsp">계정 삭제</a>
+		</div>
 	</section>
+	<footer align="center"><%@include file="footer.html"%></footer>
 </body>
 </html>

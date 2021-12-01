@@ -26,9 +26,13 @@ public class UserDAO {
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "JarList("
             		+ "jarName VARCHAR(32) PRIMARY KEY, "
-            		+ "foldmethodName VARCHAR(32), "
+            		+ "jarItemName VARCHAR(32), "
+            		+ "foldMethodName VARCHAR(32), "
             		+ "cnt int UNSIGNED DEFAULT 0, "
-            		+ "goalnum int UNSIGNED DEFAULT 0)");
+            		+ "goalNum int UNSIGNED DEFAULT 0,"
+            		+ "jarImgName VARCHAR(128),"
+            		+ "FOREIGN KEY (jarItemName) REFERENCES item (itemName),"	
+            		+ "FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "WritingList("
             		+ "no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, "
@@ -39,9 +43,10 @@ public class UserDAO {
             		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "Item("
-            		+ "email VARCHAR(128) PRIMARY KEY, "
-            		+ "itemcode int, "
-            		+ "FOREIGN KEY (jarName) REFERENCES item (itemcode))");
+            		+ "itemCode int UNSIGNED PRIMARY KEY, "
+            		+ "itemType VARCHAR(32),"
+            		+ "apply tinyint(1) DEFAULT 0,"
+            		+ "FOREIGN KEY (itemCode) REFERENCES item (itemCode))");
           
             return (count == 1) ? true : false;
             
@@ -114,7 +119,8 @@ public class UserDAO {
 		    	conn.close();
 		}
 }
-	    
+	
+    
     
     //my info 
     public ArrayList<UserObj> myInfo(String email) throws NamingException, SQLException{
@@ -122,13 +128,13 @@ public class UserDAO {
     	PreparedStatement stmt=null;
     	ResultSet rs = null;
     	try {
-    		 String sql = "SELECT name, email, coin FROM user WHERE email = ?";
+    		 String sql = "SELECT name, email, coin, memberType FROM user WHERE email = ?";
 		     stmt = conn.prepareStatement(sql);
     		 stmt.setString(1, email);
     		 rs=stmt.executeQuery();
     		 ArrayList<UserObj> users=new ArrayList<UserObj>();
      		while(rs.next()) {
-     			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin")));
+     			users.add(new UserObj(rs.getString("email"), rs.getString("name"), rs.getInt("coin"), rs.getNString("memberType")));
      		}
      		
      		return users;
@@ -193,6 +199,29 @@ public class UserDAO {
 			
 		}
     }
+    
+    
+    public String getName(String email) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String sql = "SELECT name FROM user WHERE email = ?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, email);
+            rs = stmt.executeQuery();
+            String name="";
+            while(rs.next()) {
+            	name = rs.getString("name");
+            }
+            return name;
+        } finally {
+            if (rs != null) rs.close(); 
+            if (stmt != null) stmt.close(); 
+            if (conn != null) conn.close();
+        }
+    }
+    
 
     
     

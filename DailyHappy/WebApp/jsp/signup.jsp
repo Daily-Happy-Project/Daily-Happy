@@ -1,5 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="utf-8" %>
-<%@ page import="dao.UserDAO" %>
+<%@ page import="dao.*" %>
 <%
 
    request.setCharacterEncoding("utf-8");
@@ -9,16 +9,47 @@
    String uname = request.getParameter("username");
    
    UserDAO dao = new UserDAO();
+   UserItemDAO uidao = new UserItemDAO();
+   
    if (dao.exists(uemail)) {
-   out.print("이미 가입한 회원입니다.");
-   return;
+	   
+%>
+<script>
+	alert("이미 가입한 회원입니.");
+	location.href='../views/loginView.jsp';
+</script>	   
+<%
+	   return;
    }
-   if (dao.insert(uemail, uname, upass)) {
-   out.print("회원 가입이 완료되었습니다.");
-   out.print("<a href=\"../views/loginView.jsp\">로그인</a>");
+   
+   else if (dao.insert(uemail, uname, upass)) {
+	   uidao.insert(uemail, 1, "jar");
+	   uidao.insert(uemail, 2, "paper");
+	   uidao.insert(uemail, 3, "foldMethod");
+	   uidao.insert(uemail, 4, "paper");
+	   uidao.insert(uemail, 5, "paper");
+	
+//	   out.print("회원 가입이 완료되었습니다^^");
+//	   out.print("<a href=\"../views/loginView.jsp\">로그인</a>");
+
+//		out.print("<script>alert('회원가입이 완료되었습니다.');</script>");
+//		out.println("<script>location.href='../views/loginView.jsp'; </script>");
+%>
+<script>
+	alert("회원 가입이 완료되었습니다.");
+	location.href='../views/loginView.jsp';
+</script>
+<%
    }
+   
    else {
-   out.print("회원 가입 처리 중 오류가 발생하였습니다.");
+	   
+%>
+<script>
+	alert("회원 가입 처리 중 오류가 발생하였습니다.");
+	location.href='../views/loginView.jsp';
+</script>
+<%
    }
-   out.print("<a href=\"../views/mainView.jsp\">메인화면 가기</a>");
+//   response.sendRedirect("../views/loginView.jsp");
 %>

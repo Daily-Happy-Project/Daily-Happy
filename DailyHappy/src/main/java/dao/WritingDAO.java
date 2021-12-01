@@ -1,13 +1,13 @@
 package dao;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Random;
+
+import java.sql.*;
+import java.util.ArrayList;
 
 import javax.naming.NamingException;
-
 import util.ConnectionPool;
+import util.WritingObj;
+
+
 public class WritingDAO {
 	
 	// insert writing
@@ -15,7 +15,7 @@ public class WritingDAO {
 		Connection conn = ConnectionPool.get();
 		PreparedStatement stmt = null;
 		try {
-			
+			String realEmail = email;
 			email = new UserDAO().splitemail(email);
             
 			String sql = "INSERT INTO " + email + "WritingList(content, paperCode, jarName) VALUES(?, ?, ?)";
@@ -25,8 +25,10 @@ public class WritingDAO {
 			stmt.setString(3, jarName);
 			stmt.executeUpdate();
 			
-			sql = "UPDATE " + email + "jarlist set cnt=cnt+1 where jarName= \"" + jarName + "\"";
+			sql = "UPDATE " + email + "JarList set cnt=cnt+1 where jarName= \"" + jarName + "\"";
+			stmt.executeUpdate(sql);
 			
+			sql = "UPDATE user set coin=coin+1 where email= \"" + realEmail + "\"";
 			int count = stmt.executeUpdate(sql);
 			
 			return (count == 1) ? true : false;
@@ -37,6 +39,7 @@ public class WritingDAO {
 		}
 	}
 	
+	
 	//
 	public int writingNo(String email, String jarName) throws NamingException, SQLException {
 		Connection conn=ConnectionPool.get();
@@ -44,9 +47,12 @@ public class WritingDAO {
 		ResultSet rs=null;
     	try {
     		 email = new UserDAO().splitemail(email);
-             String sql = "select cnt from " + email + "jarlist where jarName=\"" + jarName + "\"";
+             String sql = "select cnt from " + email + "Jarlist where jarName=\"" + jarName + "\"";
 		     stmt = conn.prepareStatement(sql);
-             int writingNo = stmt.executeUpdate(sql);
+             rs = stmt.executeQuery(sql);
+             rs.next();
+             int writingNo = rs.getInt("cnt");
+             
              
              return writingNo;
     	} finally {
@@ -56,39 +62,32 @@ public class WritingDAO {
     	}
 	}
 	
+    
     // view content
-    public boolean content(String email, String jarName) throws NamingException, SQLException{
+    public ArrayList<WritingObj> content(String email, String jarName) throws NamingException, SQLException{
     	Connection conn=ConnectionPool.get();
     	PreparedStatement stmt=null;
     	ResultSet rs=null;
-    	int ranNo=0;
-
     	try {
-    		
-    	     ranNo = new WritingDAO().writingNo(email, jarName);
-		     ranNo = new Random().nextInt(ranNo+1);
+    		 email = new UserDAO().splitemail(email);
    		 
-		     // create view
-    		 String sql = "CREATE VIEW jarview SELECT * FROM "+ email +"WritingList where jarName= \"" + jarName + "\"";
-		     stmt = conn.prepareStatement(sql); 
-		     stmt.executeQuery();
-		     
 		     // select contents
-    		 sql = "SELECT content, name, ts FROM jarView WHERE no = ?";
-		     stmt.executeQuery(sql);
-		     stmt.setInt(1, ranNo);
-             rs = stmt.executeQuery();
-             
-             // delete view
-             stmt.executeQuery("DELETE VIEW jarview ");
-             
-             return rs.next();
+    		 String sql = "SELECT no, content, paperCode, ts FROM " + email + "WritingList WHERE jarName=\""+ jarName+ "\" ORDER BY rand() limit 1";
+    		 stmt = conn.prepareStatement(sql);
+    		 rs = stmt.executeQuery();
+    		 
+    		 ArrayList<WritingObj> wObj=new ArrayList<WritingObj>();
+    		 while(rs.next()) {
+    			 wObj.add(new WritingObj(rs.getInt("no"), rs.getString("content"), rs.getInt("paperCode"), rs.getTimestamp("ts")));
+    		 }
+    		 
+             return wObj;
     	} finally {
-    		    if(rs!=null) rs.close();
-    		    if(stmt!=null) stmt.close();
+    			if(stmt!=null) stmt.close();
     		    if(conn!=null) conn.close();
     	}
     }
+    
     
     // delete content
     public boolean delete(int no, String jarName, String email) throws NamingException, SQLException {
@@ -97,13 +96,13 @@ public class WritingDAO {
         try {
         	
         	email = new UserDAO().splitemail(email);
-            String sql = "DELETE FROM" + email + "writinglist WHERE no = ?";
+            String sql = "DELETE FROM " + email + "WritingList WHERE no=?";
             
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, no);
             stmt.executeUpdate();
 			
-			sql = "UPDATE " + email + "jarlist set cnt=cnt-1 where jarName= \"" + jarName + "\"";
+			sql = "UPDATE " + email + "JarList set cnt=cnt-1 where jarName= \"" + jarName + "\"";
             
             int count = stmt.executeUpdate(sql);
             
@@ -122,7 +121,7 @@ public class WritingDAO {
         try {
         	
         	email = new UserDAO().splitemail(email);
-            String sql = "DROP TABLE " + email + "writinglist";
+            String sql = "DROP TABLE " + email + "WritingList";
             stmt = conn.prepareStatement(sql);
             int count = stmt.executeUpdate();
 			
