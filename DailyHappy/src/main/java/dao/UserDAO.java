@@ -40,13 +40,13 @@ public class UserDAO {
             		+ "content VARCHAR(8192), "
             		+ "paperCode int, "
             		+ "ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
-            		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName))");
+            		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName) ON DELETE CASCADE)");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "Item("
             		+ "itemCode int UNSIGNED PRIMARY KEY, "
             		+ "itemType VARCHAR(32),"
             		+ "apply tinyint(1) DEFAULT 0,"
-            		+ "FOREIGN KEY (itemCode) REFERENCES item (itemCode))");
+            		+ "FOREIGN KEY (itemCode) REFERENCES item (itemCode) ON DELETE CASCADE)");
           
             return (count == 1) ? true : false;
             

@@ -31,6 +31,9 @@
     font-weight: normal;
     font-style: normal;
 }
+	body{
+	background-color: #FFC7C7;
+	}
 	form{
 		font-family: 'Uiyeun';
 		font-size: 5vh;
@@ -204,5 +207,7 @@ label img{
 		$('#no-1').prop('checked',true);
 	});
 	</script>
+    <footer align="center"><%@include file="footer.html"%></footer>
+    <nav><%@include file="bottomNavi.html"%></nav>
 </body>
 </html>

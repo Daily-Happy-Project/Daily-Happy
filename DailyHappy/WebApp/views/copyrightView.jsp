@@ -18,6 +18,7 @@
 	</header>
 	<%@include file="bottomNavi.html"%>
 
-<div style="text-align:center">Copyright 2021. princesszizonganzi(ZIZIZU) all rights reserved.</div>
+	<div style="text-align:center">Copyright 2021. princesszizonganzi(ZIZIZU) all rights reserved.</div>
+	<footer align="center"><%@include file="footer.html"%></footer>
 </body>
 </html>
