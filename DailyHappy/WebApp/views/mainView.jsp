@@ -14,8 +14,6 @@
 	}
 	session.setAttribute("email", uemail);
 	session.setAttribute("memberType", umember);
-	String randP = (new UserItemDAO()).randomPaper(uemail);
-
 	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTO HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -245,20 +243,21 @@ body.edit_cursor {
 	<article>
 		<div id="paper-wrap">
 			<%
-				/* for(UserItemObj uItem : randP){
+			ArrayList<UserItemObj> randP = (new UserItemDAO()).randomPaper(uemail);
+				 for(UserItemObj uItem : randP){
 					int pItemCode = uItem.getItemCode();
 					String pImg = uItem.getImg();
 					String strP = "<div id=\"paper-img-box\">";
 					strP += "<img src=\""+ pImg +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
 					strP +="</div>";
 					out.print(strP);
-				} */
+				} 
 				
 				
-				String strP = "<div id=\"paper-img-box\">";
+/* 				String strP = "<div id=\"paper-img-box\">";
 				strP += "<img src=\""+ randP +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
 				strP +="</div>";
-				out.print(strP);
+				out.print(strP); */
 				
 			%>
 		</div>
