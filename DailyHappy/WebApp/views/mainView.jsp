@@ -189,7 +189,22 @@ article{
 				strJ += "<img src=\"../resources/images/normal-3.png\" class=\"jarimg\" alt=\"유리병 이미지\" onclick=\"GotoCheck();\"/>";
 				strJ +="</div>";
 				out.print(strJ);
-			%><%//유리병 이미지 %>
+			%>
+<%-- 			<%
+			ArrayList<JarObj> myJar = (new JarDAO()).getJarList(uemail);
+				 for(JarObj uJar : myJar){
+					int pItemCode = uJar.getItemCode();
+					String jImg = uJar.getJarImgName();
+					String strP = "<div id=\"paper-img-box\">";
+					strP += "<img src=\""+ jImg +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
+					strP +="</div>";
+					String local = "<script type=\"text/javascript\">localStorage.setItem('nowPCode',"+pItemCode+");";
+					local += "localStorage.setItem(\'nowPImg\',\'"+pImg+"\');";
+					local += "</script>";
+					out.print(strP);
+					out.print(local);
+				} 
+			%> --%>
 		</div>
 	</article>
 	<article>
@@ -212,13 +227,6 @@ article{
 					out.print(strP);
 					out.print(local);
 				} 
-				
-				
-/* 				String strP = "<div id=\"paper-img-box\">";
-				strP += "<img src=\""+ randP +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
-				strP +="</div>";
-				out.print(strP); */
-				
 			%>
 		</div>
 	</article>
