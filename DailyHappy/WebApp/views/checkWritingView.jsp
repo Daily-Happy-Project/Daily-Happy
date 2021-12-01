@@ -129,13 +129,20 @@
 				%>
 			</div>
 		<input id="submit" type="button" value="공유">
+			<a id="btnTwitter" href="javascript:shareTwitter();">트위터</a> <!-- 이미지 추가해야됨(인스타, 카카오톡, 페이스북) -->
 		<input id="delete" type="submit" value="글 삭제">;
 	</form>
 	</div>
 	</article>
 	</div>
 	
-	
+	<script>
+	function shareTwitter() {
+	    var sendText = "하루, 행복 공유";
+	    var sendUrl = "dailyhappy.kro.kr"; // 전달할 URL
+	    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+	}
+	</script>
 		
 </body>
 </html>
