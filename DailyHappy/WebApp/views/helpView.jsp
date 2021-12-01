@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>도움말</title>
         
-        <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
+        <!--<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>  -->
         <style type="text/css">
         	@font-face {
 			    font-family: 'Uiyeun';
@@ -15,66 +15,115 @@
 			    font-weight: normal;
 			    font-style: normal;
 			}
-			div {
+			body{
+				margin: 0;
+			}
+			.container{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 91vh;
+				width: 100vw;
+				background-color: #FFC7C7;
+			}
+			#padding-wrap{
+				margin: 0;
+				padding-bottom: 2vh;
+			}
+			#h-arrow-wrap{
+            	width: 100vw;
+            	display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				z-index: 9;
+				padding-top: 2vh;
+				padding-bottom: 5vh;
+            }
+			.wrap {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 				font-family: 'Uiyeun';
 				font-size: 4vh;
 			}
             #slide-container{
-                display: inline-block;
-                position: relative;
+				width: 60vw;
+				height: 100%;
+				max-width: 300px;
+            }
+            
+            #prev, #next{
+            	font-size: 5vh;
+            	cursor: pointer;
+            }
+            #prev{
+            	margin-right:2vw;
+            }
+            #next{
+            	margin-left:2vw;
             }
             
             .help-titles{
                 display: none;
+                margin: 0 auto;
             }
             /*image default hide*/
             .help-slides{
                 display: none;
                 width: 100%;
-                background-color: aqua;
+                
+            }
+            .help-slides img{
+            	width: 100%;
             }
             /*text default hide*/
             .help-texts{
                 display: none;
+                text-align: left;
+            }
 
-            }
-            
-            #prev, #next{
-                cursor: pointer;
-                position: absolute;
-                top: 250px;
-                padding: 16px;
-                font-size: 20pt;
-            }
-            #prev{
-                left: 0;
-            }
-            #next {
-                right: 0;
-            }
-            
             .help-container{
                 display: inline-block;
                 outline: 2.5px solid #000;
                 border-radius: 8px;
-                width: 80%;
-                margin-top: 20px;
+                width: 80vw;
+                height: 20vh;
+                overflow: auto;
+                padding: 2vh;
             }
+
+            
+            @media screen and (min-width: 400px) {
+				.help-container{
+	                display: inline-block;
+	                outline: 2.5px solid #000;
+	                border-radius: 8px;
+	                width: 80vw;
+	                height: 10vh;
+	                overflow: auto;
+	                padding: 2vh;
+	            }
+			}
 
             a:link {color: black; text-decoration: none;}
             
         </style>
     </head>
     <body>
+		<div class="container">
 		<header>
 			<h2 class="title">도움말</h2>
-			<%@include file="header.html"%>
+			<!--<%@include file="header.html"%>-->
 		</header>
-		<%@include file="bottomNavi.html"%>
-        <nav align="center">
-            <span id="prev" onclick="plusSlides(-1)">◀</span>
-            <span id="next" onclick="plusSlides(1)">▶</span>
-        </nav>
+
+			<%@include file="bottomNavi.html"%>
+
         <section class="wrap" align="center">
             <article>
                 <div id="help-title-container">
@@ -92,23 +141,27 @@
                     </div>
                 </div>
             </article>
-            <article>
+
+            <article id="padding-wrap">
+            	<div id = "h-arrow-wrap" align="center">
+            	<span id="prev" onclick="plusSlides(-1)">◀</span>
                 <div id="slide-container">
                     <div class="help-slides">
-                        <img src="../resources/images/helpView_main.png" width="200px" height="280px" alt="도움말1"/>
+                        <img src="../resources/images/helpView_main.png"  alt="도움말1"/>
                     </div>
                     <div class="help-slides">
-                        <img src="../resources/images/helpView_makeJar.png" width="200px" height="280px" alt="도움말2"/>
+                        <img src="../resources/images/helpView_makeJar.png"  alt="도움말2"/>
                     </div>                    
                     <div class="help-slides">
-                        <img src="../resources/images/helpView_writing.png" width="200px" height="280px" alt="도움말3"/>
+                        <img src="../resources/images/helpView_writing.png"  alt="도움말3"/>
                     </div>
                    <!--  <div class="help-slides">
                         <img src="../resources/images/helpView_myinfo.png" width="200px" height="280px" alt="도움말3"/>
                     </div> -->
                 </div>
-            </article>
-            <article>
+                <span id="next" onclick="plusSlides(1)">▶</span>
+                </div>
+
                 <!--도움말 설명-->
                 <div class="help-container">
                     <div class="help-texts">
@@ -145,6 +198,8 @@
                 </div>
             </article>
         </section>
+		</div>
+		
         
         <script type="text/javascript">
             var slideIndex = 1;
