@@ -44,13 +44,13 @@ public class JarDAO {
     	ResultSet rs=null;
     	try {
     		email = new UserDAO().splitemail(email); 
-    		String sql="SELECT jarName, jarImgName, goalNum, cnt FROM " + email + "JarList";
+    		String sql="SELECT jarName, jarItemName, foldMethodName, jarImgName, goalNum, cnt FROM " + email + "JarList";
     		stmt=conn.prepareStatement(sql);
     		rs=stmt.executeQuery();
     		
     		ArrayList<JarObj> jars=new ArrayList<JarObj>();
     		while(rs.next()) {
-    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("cnt"), rs.getInt("goalNum")));
+    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("cnt"), rs.getInt("goalNum"), rs.getString("jarItemName"), rs.getString("foldMethodName")));
     		}
     		
     		return jars;
