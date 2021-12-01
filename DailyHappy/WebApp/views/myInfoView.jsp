@@ -24,6 +24,7 @@
 
 <link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/headerStyle.css"/>
 
+<<<<<<< HEAD
 <style type="text/css">
 @font-face {
     font-family: 'Uiyeun';
@@ -34,6 +35,10 @@
 	table{
 		font-family: 'Uiyeun';
 		font-size: 5vh;
+=======
+<style>
+	table{
+>>>>>>> main
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
@@ -57,8 +62,13 @@
 	}
 	#logout-button{
 		display: inline-block;
+<<<<<<< HEAD
 		font-family: 'Uiyeun';
 		font-size: 2.0em;
+=======
+		font-size: 1.0em;
+		
+>>>>>>> main
 	    padding-top: 10px;
 	    padding-bottom: 10px;
 		width: 150px;
@@ -75,8 +85,12 @@
 	}
 
 	#delete-user{
+<<<<<<< HEAD
 		font-family: 'Uiyeun';
 		font-size: 4vh;
+=======
+		
+>>>>>>> main
 	}
 </style>
 </head>
@@ -84,9 +98,14 @@
 
 	<header>
 		<h2 class="title">내 정보</h2>
+<<<<<<< HEAD
 		<%@include file="header.html"%>
 	</header>
 	<nav><%@include file="bottomNavi.html"%></nav>
+=======
+		<%@include file="topNavi.html"%>
+	</header>
+>>>>>>> main
 	<section >
 		<div align="center" class="container">
 			<table align="center">

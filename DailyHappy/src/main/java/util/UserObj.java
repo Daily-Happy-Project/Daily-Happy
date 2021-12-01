@@ -4,6 +4,14 @@ public class UserObj {
 	private String email, name, memberType;
 	private int coin;
 	
+<<<<<<< HEAD
+=======
+	public UserObj(String email, String name, int coin) {
+		this.email=email;
+		this.name=name;
+		this.coin=coin;
+	}
+>>>>>>> main
 	public UserObj(String email, String name, int coin, String memberType) {
 		this.email=email;
 		this.name=name;

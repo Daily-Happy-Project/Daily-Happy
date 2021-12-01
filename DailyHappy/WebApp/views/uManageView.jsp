@@ -10,17 +10,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+=======
+>>>>>>> main
 <title>회원관리</title>
 
 <style type="text/css">
  table{
  	border-top: none;
+<<<<<<< HEAD
  	text-align: center;
+=======
+>>>>>>> main
  }
 </style>
 </head>
 <body>
+<<<<<<< HEAD
 <nav><%@include file="bottomNavi.html"%></nav>
 <%
 	String uemail = (String)session.getAttribute("email");
@@ -37,25 +44,50 @@
 		goback += "</script>";
 		out.print(goback);
 
+=======
+<%
+/* 	String umember = (String)session.getAttribute("memberType");
+	if (umember != "K") {
+		%>
+		<script type="text/javascript">
+			alert("접근 권한이 없습니다!");
+			history.back();
+		</script>
+		<%
+>>>>>>> main
 		return;
 		//test string: 
 		//uemail = "d@d";
 	}
+<<<<<<< HEAD
 	session.setAttribute("email", uemail);
 	session.setAttribute("memberType", umember);
 
+=======
+	session.setAttribute("memberType", umember); */
+>>>>>>> main
 	ArrayList<UserObj> list = (new UserDAO()).getUserList();
 %>
         <header>
             <h2 class="title">회원 관리</h2>
+<<<<<<< HEAD
 		<%@include file="header.html"%>
+=======
+		<%@include file="topNavi.html"%>
+>>>>>>> main
         </header>
 	<article>
 		<%
 			String str = "<form method=\"get\" action=\"../jsp/userDel.jsp\">";
+<<<<<<< HEAD
 			str += "<table align=\"center\">";
 			str += "<tr><th>이름</th><th>이메일</th><th>보유코인</th><th>회원유형</th><th>삭제<th>";
 			str += "<tr><td colspan=5><hr></td></tr>";
+=======
+			str += "<table align=center>";
+			str += "<tr><th>이름</th><th>이메일</th><th>보유코인</th><th>회원유형</th><th>삭제<th>";
+			str += "<tr colspan=5><hr></tr>";
+>>>>>>> main
 			for (UserObj user : list) {
 			str += "<tr>";
 			str += "<td>" + user.getName() + "</td>";

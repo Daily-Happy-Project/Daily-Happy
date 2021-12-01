@@ -8,7 +8,11 @@ CREATE TABLE IF NOT EXISTS user(
     email VARCHAR(128) PRIMARY KEY,         	-- user email --
     name VARCHAR(32),                       	-- user name --
     pw VARCHAR(32),								-- user password --
+<<<<<<< HEAD
     coin int DEFAULT 0,                         -- user owned coin  --
+=======
+    coin int,                               	-- user owned coin  --
+>>>>>>> main
     memberType char DEFAULT 'M',                -- member type. member='M' manager='K' -- 
     userThemeCode int  							-- apply theme --   
 );
@@ -29,6 +33,7 @@ CREATE TABLE IF NOT EXISTS USERNAME+writingList(
 -- Jar List
 CREATE TABLE IF NOT EXISTS USERNAME+JarList(
     jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
+<<<<<<< HEAD
     jarItemCode int,						   -- jar item code --
     foldMethodName VARCHAR(32),                -- fold method --
     cnt int UNSIGNED DEFAULT 0,      		   -- count --
@@ -37,22 +42,41 @@ CREATE TABLE IF NOT EXISTS USERNAME+JarList(
 	FOREIGN KEY (jarItemCode) REFERENCES item (itemCode),
 	FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName)
 );	
+=======
+    foldmethodName VARCHAR(32),                -- fold method --
+    cnt int UNSIGNED,      					   -- count --
+    goalnum int UNSIGNED DEFAULT 0			   -- goal number --
+);
+>>>>>>> main
 
 
 -- user item --
 CREATE TABLE IF NOT EXIST USERNAME+Item(
+<<<<<<< HEAD
 	itemCode PRIMARY KEY
 	apply boolean default 0,				-- apply item --
 	FOREIGN KEY (itemCode)					-- item code --
+=======
+--	email VARCHAR(128) PRIMARY KEY,         -- user email --
+	itemcode PRIMARY KEY
+	apply boolean default 0,				-- apply item --
+	FOREIGN KEY (itemcode)					-- item code --
+>>>>>>> main
 	
 );
 
 
 -- store item --
 CREATE TABLE IF NOT EXISTS item(
+<<<<<<< HEAD
 	itemCode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
 	itemName VARCHAR(32) UNIQUE NOT NULL,		-- item name --
 	itemType VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldMethod, theme) -- 
+=======
+	itemcode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
+	itemName VARCHAR(32) NOT NULL,		-- item name --
+	itemtype VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldmethod, theme) -- 
+>>>>>>> main
 	price INT NOT NULL,					-- item price --
 	info VARCHAR(1024) NOT NULL,		-- item information --
 	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
@@ -60,6 +84,7 @@ CREATE TABLE IF NOT EXISTS item(
 	img3 VARCHAR(1024),					-- item image3 --
 	img4 VARCHAR(1024)					-- item image4 --
 );
+<<<<<<< HEAD
 
 
 -- jar image by fold method --
@@ -70,3 +95,6 @@ CREATE TABLE IF NOT EXISTS jarImg(
 	img3 VARCHAR(1024) NOT NULL,		-- item image3 --
 	img4 VARCHAR(1024) NOT NULL			-- item image4 --
 );
+=======
+--> alter table item alter column itemcode set default 0;
+>>>>>>> main

@@ -1,7 +1,11 @@
 package util;
 
 public class JarObj {
+<<<<<<< HEAD
 	private String jarName, jarItemName, jarImgName, foldMethodName;
+=======
+	private String jarName, foldMethod;
+>>>>>>> main
 	private int cnt, goalNum;
 	
 	public JarObj(String jarName, int cnt, int goalNum) {
@@ -9,6 +13,7 @@ public class JarObj {
 		this.cnt=cnt;
 		this.goalNum=goalNum;
 	}
+<<<<<<< HEAD
 	public JarObj(String jarName, String jarImgName, int cnt, int goalNum) {
 		this.jarName=jarName;
 		this.jarImgName=jarImgName;
@@ -32,3 +37,17 @@ public class JarObj {
 	public int getGoalNum() {return this.goalNum;}
 }
 
+=======
+	public JarObj(String jarName, String foldMethod, int cnt, int goalNum) {
+		this.jarName=jarName;
+		this.foldMethod=foldMethod;
+		this.cnt=cnt;
+		this.goalNum=goalNum;
+	}
+	
+	public String getJarName() {return this.jarName;}
+	public String getFoldMethod() {return this.foldMethod;}
+	public int getCnt() {return this.cnt;}
+	public int getGoalNum() {return this.goalNum;}
+}
+>>>>>>> main

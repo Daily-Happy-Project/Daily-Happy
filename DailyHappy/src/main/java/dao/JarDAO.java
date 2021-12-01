@@ -14,11 +14,16 @@ import util.JarObj;
 public class JarDAO {
 
 	//add new jar
+<<<<<<< HEAD
 	public boolean insert(String email, String jarName, String Jshape, String Fshape, int goalNum, String jarImgName) throws NamingException, SQLException {
+=======
+	public boolean insert(String email, String jarName, String foldmethodName, int goalnum) throws NamingException, SQLException {
+>>>>>>> main
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
         	email = new UserDAO().splitemail(email);
+<<<<<<< HEAD
             String sql = "INSERT INTO " + email +"JarList(jarName, jarItemName, foldMethodName, goalNum, jarImgName) VALUES(?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, jarName);
@@ -26,6 +31,14 @@ public class JarDAO {
             stmt.setString(3, Fshape);
             stmt.setInt(4, goalNum);
             stmt.setString(5, jarImgName);
+=======
+            String sql = "INSERT INTO user(email, jarName, foldmethodName, goalnum) VALUES(?, ?, ?, ?)";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, email);
+            stmt.setString(2, jarName);
+            stmt.setString(3, foldmethodName);
+            stmt.setInt(4, goalnum);
+>>>>>>> main
             
             int count = stmt.executeUpdate();
             return (count == 1) ? true : false;
@@ -44,13 +57,21 @@ public class JarDAO {
     	ResultSet rs=null;
     	try {
     		email = new UserDAO().splitemail(email); 
+<<<<<<< HEAD
     		String sql="SELECT jarName, jarItemName, foldMethodName, jarImgName, goalNum, cnt FROM " + email + "JarList";
+=======
+    		String sql="SELECT jarName, goalNum, cnt FROM " + email + "jarList";
+>>>>>>> main
     		stmt=conn.prepareStatement(sql);
     		rs=stmt.executeQuery();
     		
     		ArrayList<JarObj> jars=new ArrayList<JarObj>();
     		while(rs.next()) {
+<<<<<<< HEAD
     			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("cnt"), rs.getInt("goalNum"), rs.getString("jarItemName"), rs.getString("foldMethodName")));
+=======
+    			jars.add(new JarObj(rs.getString("jarName"), rs.getInt("goalNum"), rs.getInt("cnt")));
+>>>>>>> main
     		}
     		
     		return jars;
@@ -64,6 +85,7 @@ public class JarDAO {
     	}
     }
 	
+<<<<<<< HEAD
     
 	//delete jar
 	public boolean delete(String email, String jarName) throws NamingException, SQLException {
@@ -150,3 +172,45 @@ public class JarDAO {
     
     
 }
+=======
+	//delete jar
+		public boolean delete(String email, String jarName) throws NamingException, SQLException {
+	        Connection conn = ConnectionPool.get();
+	        PreparedStatement stmt = null;
+	        try {
+	        	email = new UserDAO().splitemail(email);
+	            String sql = "DELETE FROM " + email + "jarList where jarName=\"" + jarName + "\"";
+	            stmt = conn.prepareStatement(sql);
+	            int count = stmt.executeUpdate();
+	            
+	            return (count == 1) ? true : false;
+	            
+	        } finally {
+	            if (stmt != null) stmt.close(); 
+	            if (conn != null) conn.close();
+	        }
+	    }
+	
+	
+
+	 // delete jar table
+	    public boolean deleteJarTable(String email) throws NamingException, SQLException {
+	        Connection conn = ConnectionPool.get();
+	        PreparedStatement stmt = null;
+	        try {
+	        	
+	        	email = new UserDAO().splitemail(email);
+	            String sql = "DROP TABLE " + email + "jarlist";
+	            stmt = conn.prepareStatement(sql);
+	            int count = stmt.executeUpdate();
+				
+	            return (count > 0) ? true : false;
+	        } finally {
+	            if (stmt != null) stmt.close();
+	            if (conn != null) conn.close();
+	            
+	        }
+	    }
+	
+}
+>>>>>>> main

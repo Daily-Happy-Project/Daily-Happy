@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="../resources/css/formStyle.css"/>
 
 <style type="text/css">
+<<<<<<< HEAD
 @font-face {
     font-family: 'Uiyeun';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
@@ -37,10 +38,22 @@ body{
 .logo-wrap{
     height: 12vh;
     max-width: 200px;
+=======
+
+.container{
+	display: flax;
+	width: 100%;
+}
+.logo-wrap{
+    display: flax;
+    width: 5em;
+    top: 2em;
+>>>>>>> main
 }
 .logo{
 	margin: 0 auto;
 	over-fit: cover;
+<<<<<<< HEAD
 	width: auto;
 	height: 100%;
 }
@@ -72,6 +85,20 @@ body{
     border-bottom: 2px solid #9d9d9d;
     border-left: 0px;
     border-right: 0px;
+=======
+	width: 100%;
+	height: auto;
+}
+.form-header{
+    margin : 0 auto;
+    padding-bottom: 20px;
+    color: #9d9d9d;
+}
+.form-style{
+    width: 50%;
+    max-width: 18em;
+    min-width: 12em;
+>>>>>>> main
 }
 </style>
 </head>
@@ -95,11 +122,17 @@ body{
         <div class="logo-wrap"><img class="logo" src="../resources/images/color-logo2.png"/><br></div>
         
         <h2 class="form-header">로그인</h2>
+<<<<<<< HEAD
 
+=======
+        <div class="login-page-line1"></div>
+        <!--<div class="login-page-line2"></div>-->
+>>>>>>> main
     
         <form class="form-style" name="loginform" method="post" action="../jsp/login.jsp">
 
             <% out.print("<input type=\"email\" class=\"input-text\" name=\"email\" placeholder=\"E-mail\" value=\""+str+"\"/>"); %><br>
+<<<<<<< HEAD
             <input type="password" class="input-text" name="pw" placeholder="비밀번호"/><br><br>
             
             <input type="submit" class="button" value="로그인"/>
@@ -110,6 +143,16 @@ body{
 	    
 	    <!--계정 찾기 기능 추가?-->
 
+=======
+            <input type="password" class="input-text" name="pw" placeholder="비밀번호"/><br>
+            자동 로그인<input type = "checkbox" name="loginChk" value = "true" checked><br>
+            <input type="submit" class="button" value="로그인"/>
+            
+        </form><br>
+	        아직 계정이 없으신가요?
+	    <a href="signupView.html" class="button">회원가입</a>
+	    <!--계정 찾기 기능 추가?-->
+>>>>>>> main
    </div>
 
 </body>

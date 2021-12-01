@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
     font-family: 'Uiyeun';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
@@ -7,3 +8,9 @@
 body{
 	margin: 0;
 }
+=======
+body{
+    width: 100%;
+    font-size: 1em;
+    }
+>>>>>>> main

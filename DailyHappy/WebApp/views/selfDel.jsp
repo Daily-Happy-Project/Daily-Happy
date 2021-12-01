@@ -19,6 +19,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>계정 삭제</title>
@@ -51,6 +52,19 @@
 </form>
 </div>
 </div>
+=======
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<title>계정 삭제</title>
+</head>
+<body>
+정말로 계정을 삭제하시겠습니까?<br>
+한 번 삭제된 계정은 복구할 수 없습니다.<br>
+<form method="get" id="delform" action="../jsp/userDel.jsp">
+	<% out.print("<input type=\"text\" name=\"delUser\" value=\""+ uemail +"\" readonly>"); %><br>
+	<input type="button" onclick="{window.location = document.referrer;}"value="취소"/>
+	<input type="submit"  value="삭제"/>
+</form>
+>>>>>>> main
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#delform").submit(function(){

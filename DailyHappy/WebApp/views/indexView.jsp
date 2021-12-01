@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>하루, 행복</title>
 <style type="text/css">
+<<<<<<< HEAD
 @font-face {
     font-family: 'Uiyeun';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
@@ -34,16 +35,26 @@ body{
 #appname{
 	font-family: 'Uiyeun';
 	font-size: 2em;
+=======
+#index-wrap{
+	margin-top: 13em;
+>>>>>>> main
 }
 </style>
 </head>
 <body>
 <div id="index-wrap"align="center">
+<<<<<<< HEAD
 <div id="index">
 <footer align="center"><%@include file="footer.html"%></footer>
 <div id="appname">하루, 행복</div>
 </div>
 </div>
+=======
+<footer align="center"><%@include file="footer.html"%></footer>
+<div id="appname">하루, 행복</div>
+</div>
+>>>>>>> main
 <script type="text/javascript">
 	setTimeout(function() {
 		  location.href="../views/loginView.jsp";

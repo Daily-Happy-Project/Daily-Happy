@@ -12,6 +12,7 @@
    UserItemDAO uidao = new UserItemDAO();
    
    if (dao.exists(uemail)) {
+<<<<<<< HEAD
 	   
 %>
 <script>
@@ -19,10 +20,14 @@
 	location.href='../views/loginView.jsp';
 </script>	   
 <%
+=======
+	   out.print("이미 가입한 회원입니다.");
+>>>>>>> main
 	   return;
    }
    
    else if (dao.insert(uemail, uname, upass)) {
+<<<<<<< HEAD
 	   uidao.insert(uemail, 1, "jar");
 	   uidao.insert(uemail, 2, "paper");
 	   uidao.insert(uemail, 3, "foldMethod");
@@ -53,3 +58,18 @@
    }
 //   response.sendRedirect("../views/loginView.jsp");
 %>
+=======
+	   uidao.insert(uemail, 1);
+	   uidao.insert(uemail, 2);
+	   uidao.insert(uemail, 3);			   
+	
+	   out.print("회원 가입이 완료되었습니다^^");
+	   out.print("<a href=\"../views/loginView.jsp\">로그인</a>");
+   }
+   
+   else {
+   	   out.print("회원 가입 처리 중 오류가 발생하였습니다.");
+   }
+   
+%>
+>>>>>>> main

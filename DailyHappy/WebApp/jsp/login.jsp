@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ page import="java.util.*" %>
@@ -10,15 +11,26 @@
 	
 %>
 <%
+=======
+<%@ page contentType="text/html" pageEncoding="utf-8" %>
+<%@ page import="dao.UserDAO" %>
+<%
+request.setCharacterEncoding("utf-8");
+
+>>>>>>> main
 String uemail = request.getParameter("email");
 String upw = request.getParameter("pw");
 String loginChk = request.getParameter("loginChk");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 UserDAO dao = new UserDAO();
 int code = dao.login(uemail, upw);
 if(code ==1){
 	out.print("아이디 없음");
+<<<<<<< HEAD
 }
 else if(code==2){
 	out.print("비밀번호 없음");
@@ -31,6 +43,14 @@ else{
 	}
 	
 	
+=======
+}
+else if(code==2){
+	out.print("비밀번호 없음");
+}
+else{
+	session.setAttribute("email", uemail);
+>>>>>>> main
 	if(loginChk != null){	//auto login
         Cookie cookie = new Cookie("email", uemail);
         cookie.setMaxAge(60);

@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@ page import="dao.*" %>
 <%@ page import="util.*" %>
 <%@ page import="java.util.*" %>
+=======
+>>>>>>> main
 
 <%
 
 	String uemail = (String)session.getAttribute("email");
+<<<<<<< HEAD
 	String umember = (String)session.getAttribute("memberType");
 	if (uemail == null) {
 		response.sendRedirect("loginView.jsp");
@@ -16,11 +20,28 @@
 	session.setAttribute("memberType", umember);
 
 %>
+=======
+	if (uemail == null) {
+		//response.sendRedirect("loginView.jsp");
+		//insert into user(email,name,pw) values('d@d','이민진','1111');
+		//test string: 
+			uemail = "d@d";
+	}
+	session.setAttribute("email", uemail);
+	//ArrayList<UserObj> list = (new UserDAO()).getUserList();
+	
+	/* String uname = 
+	String uid = 
+	String ucoin =  */
+%>
+
+>>>>>>> main
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <title>하루, 행복 - 행복을 적어보세요</title>
@@ -278,5 +299,20 @@ transition: all 0.4s;
         }
     })
 </script>
+=======
+<title>행복을 적어보세요</title>
+</head>
+<body>
+<!-- 글 내용, 학종이 이미지 코드, 유리병 이름 넘겨줘야 함!-->
+	<form method="post" action="../jsp/writing.jsp">
+		<textarea name="content" rows="12" cols="12">당신의 행복은 무엇인가요?</textarea>
+		<!-- 하단은 임시로 넣어둔 예제이다. -->
+		<input type="radio" name="paperCode" value="1" checked/>
+		<input type="radio" name="paperCode" value="2"/>
+		<input type="text" name="jarName" value="djar" style="visibility:hidden;"/>
+		<input type="submit">
+		
+	</form>
+>>>>>>> main
 </body>
 </html>
