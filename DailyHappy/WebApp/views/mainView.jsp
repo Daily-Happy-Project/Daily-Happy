@@ -22,6 +22,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <title>하루, 행복 - 메인화면</title>
@@ -216,10 +217,10 @@ body.edit_cursor {
 
 <div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
-<div class="container">
+<div class="container" id='container'>
 <section align="center">
 	<article class="scr-wrap" align="center">
-		<div class="scr" style="width:80%;"><button type="button" id="edit"><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
+		<div class="scr" style="width:80%;"><button type="button" id="edit" onclick=screenShot()><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
 		<a id="target" style="display:none"></a>
 		
 	</article>
@@ -296,7 +297,7 @@ body.edit_cursor {
 
 </script>
 <script type="text/javascript">	
-		window.onload=function() {
+/*		window.onload=function() {
 			document.getElementById("edit").addEventListener("click", function(e) {
 				document.querySelector("body").classList.add("edit_cursor");
 				screenshot(e);
@@ -386,7 +387,45 @@ body.edit_cursor {
 			}
 			
 		}
+		*/
 		
+		
+		function screenShot() {
+ 			html2canvas(document.body)
+ 			.then(
+ 			function (canvas) {
+ 			drawImg(canvas.toDataURL('image/png'));
+ 			saveAs(canvas.toDataURL(), 'daily-happy.png');
+ 			}).catch(function (err) {
+ 			console.log(err);
+ 			});
+ 		}
+ 			function drawImg(imgData) {
+ 			console.log(imgData);
+ 			return new Promise(function reslove() {
+ 			var canvas = document.getElementById('canvas');
+ 			var ctx = canvas.getContext('2d');
+ 			ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 			var imageObj = new Image();
+ 			imageObj.onload = function () {
+ 			ctx.drawImage(imageObj, 10, 10);
+ 			};
+ 			imageObj.src = imgData;
+ 			}, function reject() { });
+ 		}
+ 			function saveAs(uri, filename) {
+ 			var link = document.createElement('a');
+ 			if (typeof link.download === 'string') {
+ 			link.href = uri;
+ 			link.download = filename;
+ 			document.body.appendChild(link);
+ 			link.click();
+ 			document.body.removeChild(link);
+ 			} else {
+ 			window.open(uri);
+ 			}
+ 		}
+ 			
 	</script>
 </body>
 </html>
