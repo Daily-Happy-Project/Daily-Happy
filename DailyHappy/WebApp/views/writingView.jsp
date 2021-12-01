@@ -10,6 +10,7 @@
 	String umember = (String)session.getAttribute("memberType");
 	if (uemail == null) {
 		response.sendRedirect("loginView.jsp");
+		return;
 	}
 	session.setAttribute("email", uemail);
 	session.setAttribute("memberType", umember);
