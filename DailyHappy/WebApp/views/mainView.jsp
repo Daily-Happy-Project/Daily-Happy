@@ -22,6 +22,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <title>하루, 행복 - 메인화면</title>
@@ -160,52 +161,7 @@ article{
 	z-index: 2;
 }
 
-#screenshot_background {
 
-	width:100%;
-	height:100%;
-	position:fixed;
-	top:0px;
-	left:0px;
-	display:block;
-	opacity:0.3;
-	text-align:center;
-	box-sizing:border-box;
-	z-index:47;
-}
-
-#screen-wrap:before, #screen-wrap:after {
-	border:none !important;
-	content:"" !important;
-	height:100% !important;
-	position:absolute !important;
-	width:100% !important;
-}
-
-#screen-wrap:before {
-	border-right:1px solid white !important;
-	border-bottom:1px solid white !important;
-	left:-100% !important;
-	top:-100% !important;
-}
-
-#screen-wrap:after {
-	border-top:1px solid white !important;
-	border-left:1px solid white !important;
-	left:0 !important;
-	top:0 !important;
-}
-
-#screen-wrap {
-	height:100% !important;
-	position:fixed !important;
-	width:100% !important;
-	z-index:48 !important;
-}
-
-body.edit_cursor {
-	cursor: crosshair;
-} 
 
 </style>
 <!-- count() -->
@@ -216,10 +172,10 @@ body.edit_cursor {
 
 <div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
-<div class="container">
+<div class="container" id='container'>
 <section align="center">
 	<article class="scr-wrap" align="center">
-		<div class="scr" style="width:80%;"><button type="button" id="edit"><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
+		<div class="scr" style="width:80%;"><button type="button" id="edit" onclick=screenShot()><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
 		<a id="target" style="display:none"></a>
 		
 	</article>
@@ -289,6 +245,46 @@ body.edit_cursor {
 </script>
 <script type="text/javascript">	
 		
+function screenShot() {
+	html2canvas(document.body)
+	.then(
+	function (canvas) {
+	drawImg(canvas.toDataURL('image/png'));
+	saveAs(canvas.toDataURL(), 'daily-happy.png');
+	}).catch(function (err) {
+	console.log(err);
+	});
+}
+
+function drawImg(imgData) {
+	console.log(imgData);
+	return new Promise(function reslove() {
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	var imageObj = new Image();
+	imageObj.onload = function () {
+	ctx.drawImage(imageObj, 10, 10);
+	};
+	imageObj.src = imgData;
+
+	}, function reject() { });
+
+}
+	
+function saveAs(uri, filename) {
+	var link = document.createElement('a');
+	if (typeof link.download === 'string') {
+	link.href = uri;
+	link.download = filename;
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+	} else {
+	window.open(uri);
+	}
+}
 		
 	</script>
 </body>
