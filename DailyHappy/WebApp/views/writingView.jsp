@@ -251,8 +251,13 @@ transition: all 0.4s;
 	 })
 	 
 	 $(function(){ 
-		//랜덤 색종이 값 받아와서 image 변경하는 곳
+		 var code = localStorage.nowPCode;
+		 var img = localStorage.nowPImg;
+		$('#p-text-wrap').css({"background-image": "url("+img+")"});
+		$('#paper-code').attr('value', code);
+		
 	 });
+	
 	function pChoice(code, cnt){
 		var id = '#'+code;
 		var img = $(id).attr('src');
