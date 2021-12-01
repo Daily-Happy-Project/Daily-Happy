@@ -1,13 +1,11 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.*;
+import util.*;
 
 import javax.naming.NamingException;
 
-import util.ConnectionPool;
 
 public class ItemDAO {
 	
@@ -63,16 +61,20 @@ public class ItemDAO {
 	
 	
 	// lookup item
-	public boolean exists(int itemType) throws NamingException, SQLException {
+	public ArrayList<ItemObj> getItemList(int itemType) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String sql = "SELECT itemCode FROM item WHERE itemType = ?";
+            String sql = "SELECT itemCode, itemName, itemType, price, info, img1 FROM item WHERE itemType =\"" + itemType + "\"";
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, itemType);
             rs = stmt.executeQuery();
-            return rs.next();
+            ArrayList<ItemObj> items = new ArrayList<ItemObj>();
+            while(rs.next()) {
+            	items.add(new ItemObj(rs.get))
+            }
+            
+            return items;
         } finally {
             if (rs != null) rs.close();
             if (stmt != null) stmt.close();

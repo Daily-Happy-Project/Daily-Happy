@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import javax.naming.NamingException;
 
+import org.apache.tomcat.jni.User;
+
 import util.ConnectionPool;
 import util.JarObj;
 
@@ -146,6 +148,28 @@ public class JarDAO {
     		if (stmt != null) stmt.close();
             if (conn != null) conn.close();
 		}
+    }
+    
+    
+    // count jar amount
+    public int countJar(String email) throws NamingException, SQLException {
+    	Connection conn = ConnectionPool.get();
+    	PreparedStatement stmt = null;
+    	ResultSet rs = null;
+    	try {
+    		email = new UserDAO().splitemail(email);
+    		
+    		String sql = "SELECT count(*) as cnt FROM " + email + "JarList";
+    		stmt = conn.prepareStatement(sql);
+    		rs = stmt.executeQuery();
+    		int count = rs.getInt("cnt");
+    		
+    		return count;
+    	} finally {
+    		if (rs != null) rs.close();
+    		if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+    	}
     }
     
     
