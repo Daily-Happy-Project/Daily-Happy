@@ -15,6 +15,14 @@ public class JarObj {
 		this.cnt=cnt;
 		this.goalNum=goalNum;
 	}
+	public JarObj(String jarName, String jarImgName, int cnt, int goalNum, String jarItemName, String foldMethodName) {
+		this.jarName=jarName;
+		this.jarImgName=jarImgName;
+		this.cnt=cnt;
+		this.goalNum=goalNum;
+		this.jarItemName=jarItemName;
+		this.foldMethodName=foldMethodName;
+	}
 	
 	public String getJarName() {return this.jarName;}
 	public String getJarItemName() {return this.jarItemName;}

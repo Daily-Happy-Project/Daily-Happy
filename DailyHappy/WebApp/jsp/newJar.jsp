@@ -6,8 +6,6 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>새 유리병 만들기</title>
 </head>
 <body>
 <%
@@ -22,9 +20,17 @@
 	
 	
 	new JarDAO().insert(email, jarName, Jshape, Fshape, goalNum, jarImgName);
-	/* new UserItemDAO().insert(email, jarCode); */
-	
-	out.print("새 유리병 추가가 완료되었습니다.");
+%>
+
+
+<%	
+	String str = ("<script type=\"text/javascript\">");
+	str += ("alert(\"새 유리병 추가가 완료되었습니다.\");");
+	/* str += ("var loc ="+ loc +";"); */
+	/* str += ("if(loc==0){ window.location = \"../views/indexView.jsp\";}"); */
+	str += ("window.location = \"../views/myJarView.jsp\";");
+	str += ("else{ window.location = document.referrer;}");
+	out.print(str);
 	
 %>
 
