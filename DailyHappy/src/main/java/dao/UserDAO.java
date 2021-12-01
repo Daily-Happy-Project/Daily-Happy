@@ -43,7 +43,7 @@ public class UserDAO {
             		+ "FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName))");
             
             stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "Item("
-            		+ "itemCode int PRIMARY KEY, "
+            		+ "itemCode int UNSIGNED PRIMARY KEY, "
             		+ "itemType VARCHAR(32),"
             		+ "apply tinyint(1) DEFAULT 0,"
             		+ "FOREIGN KEY (itemCode) REFERENCES item (itemCode))");
