@@ -25,7 +25,9 @@
    else if (dao.insert(uemail, uname, upass)) {
 	   uidao.insert(uemail, 1, "jar");
 	   uidao.insert(uemail, 2, "paper");
-	   uidao.insert(uemail, 3, "foldMethod");			   
+	   uidao.insert(uemail, 3, "foldMethod");
+	   uidao.insert(uemail, 4, "paper");
+	   uidao.insert(uemail, 5, "paper");
 	
 //	   out.print("회원 가입이 완료되었습니다^^");
 //	   out.print("<a href=\"../views/loginView.jsp\">로그인</a>");
