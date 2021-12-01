@@ -92,6 +92,7 @@ public class UserItemDAO {
 		public ArrayList<UserItemObj> randomPaper(String email) throws NamingException, SQLException {
 			Connection conn = ConnectionPool.get();
 			PreparedStatement stmt = null;
+			PreparedStatement stmt2 = null;
 			ResultSet rs = null;
 			ResultSet rs2 = null;
 			try {
@@ -107,15 +108,17 @@ public class UserItemDAO {
 				
 				
 				sql = "SELECT img1, itemCode FROM item WHERE itemCode=\"" + itemCode +"\"";
+				stmt2 = conn.prepareStatement(sql);
 				rs2 = stmt.executeQuery(sql);
 				ArrayList<UserItemObj> items = new ArrayList<UserItemObj>();
 				while(rs2.next()) {
-					items.add(new UserItemObj(rs.getInt("itemCode"), rs.getString("img1")));
+					items.add(new UserItemObj(rs2.getInt("itemCode"), rs2.getString("img1")));
 				}
 				return items;			
 
 			} finally {
 				if (rs2 != null) rs2.close();
+				if (stmt2 != null) stmt2.close(); 
 				if (rs != null) rs.close();
 	            if (stmt != null) stmt.close(); 
 	            if (conn != null) conn.close();
