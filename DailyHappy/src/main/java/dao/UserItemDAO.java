@@ -93,21 +93,29 @@ public class UserItemDAO {
 			Connection conn = ConnectionPool.get();
 			PreparedStatement stmt = null;
 			ResultSet rs = null;
+			ResultSet rs2 = null;
 			try {
+				
 				email = new UserDAO().splitemail(email);
-				String sql = "SELECT img1, itemCode FROM " + email + "item WHERE itemType=\"paper\" Order by rand() limit 1";
+				String sql = "SELECT itemCode FROM " + email + "item WHERE itemType=\"paper\" Order by rand() limit 1";
 				stmt = conn.prepareStatement(sql);
 				rs = stmt.executeQuery();
-
-//				String img = rs.getString("img1");
-//				int itemCode = rs.getInt("itemCode");
+				int itemCode = 0;
+				while(rs.next()) { 
+					itemCode=rs.getInt("itemCode"); 
+					}
+				
+				
+				sql = "SELECT img1, itemCode FROM item WHERE itemCode=\"" + itemCode +"\"";
+				rs2 = stmt.executeQuery(sql);
 				ArrayList<UserItemObj> items = new ArrayList<UserItemObj>();
-				while(rs.next()) {
+				while(rs2.next()) {
 					items.add(new UserItemObj(rs.getInt("itemCode"), rs.getString("img1")));
 				}
 				return items;			
 
 			} finally {
+				if (rs2 != null) rs2.close();
 				if (rs != null) rs.close();
 	            if (stmt != null) stmt.close(); 
 	            if (conn != null) conn.close();
