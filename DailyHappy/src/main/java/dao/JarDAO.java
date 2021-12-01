@@ -50,7 +50,7 @@ public class JarDAO {
     		
     		ArrayList<JarObj> jars=new ArrayList<JarObj>();
     		while(rs.next()) {
-    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("goalNum"), rs.getInt("cnt")));
+    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("cnt"), rs.getInt("goalNum")));
     		}
     		
     		return jars;
@@ -110,35 +110,36 @@ public class JarDAO {
     	try {
     		String sql = "";
     		String img = "";
-    		stmt = conn.prepareStatement(sql);
+    		
     		if (cnt==0) {
     			sql = "SELECT img1 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+    			stmt = conn.prepareStatement(sql);
     			rs = stmt.executeQuery(sql);
-        		while(rs.next()) {
-        			img = rs.getString("img1");
-        		}
-    		}
-    		else if((cnt>0) && (cnt<=goalNum*(1/3))) {
+        		rs.next();
+        		img = rs.getString("img1");
+        	}
+			else if((cnt>0) && (cnt<=goalNum*0.333))  {
     			sql = "SELECT img2 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+    			stmt = conn.prepareStatement(sql);
     			rs = stmt.executeQuery(sql);
-        		while(rs.next()) {
-        			img = rs.getString("img2");
-        		}
+        		rs.next();
+        		img = rs.getString("img2");
     		}
-    		else if((cnt>goalNum*(1/3)) && (cnt<=goalNum*(2/3))) {
-    			sql = "SELECT img3 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
-    			rs = stmt.executeQuery(sql);
-        		while(rs.next()) {
-        			img = rs.getString("img3");
-        		}
-    		}
-    		else if(cnt>goalNum*(2/3)) {
-    			sql = "SELECT img4 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
-    			rs = stmt.executeQuery(sql);
-        		while(rs.next()) {
-        			img = rs.getString("img4");
-        		}
-    		}
+		    else if((cnt>(goalNum*(0.333))) && (cnt<=(goalNum*0.666))) { 
+			    sql = "SELECT img3 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+			    stmt = conn.prepareStatement(sql);
+			    rs = stmt.executeQuery(sql);
+			    rs.next();
+			    img = rs.getString("img3"); 
+			} 
+		    else if (cnt>(goalNum*0.666)) { 
+		    	sql = "SELECT img4 FROM jarImg WHERE imgName=\"" + jarImgName + "\"";
+		    	stmt = conn.prepareStatement(sql);
+		    	rs = stmt.executeQuery(sql);
+		    	rs.next(); 
+		    	img = rs.getString("img4"); 
+			}
+			 
     		return img;    		
     	} finally {
     		if (rs != null) rs.close();
