@@ -3,70 +3,119 @@ DEFAULT CHARACTER SET utf-8 COLLATE utf-8_general_ci;
 
 USE daily_happy;
 
--- user table --
+
+--		!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	--
+--		{{!!!!!!!DEFAULT TABLE!!!!!!!!}} --
+--		{{!!!!!!!HAVE TO CREATE!!!!!!!}} --
+--		!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	--
+
+
+
+-- [USER TABLE] --
 CREATE TABLE IF NOT EXISTS user(
-    email VARCHAR(128) PRIMARY KEY,         	-- user email --
-    name VARCHAR(32),                       	-- user name --
-    pw VARCHAR(32),								-- user password --
-    coin int DEFAULT 0,                         -- user owned coin  --
-    memberType char DEFAULT 'M',                -- member type. member='M' manager='K' -- 
-    userThemeCode int  							-- apply theme --   
+    email VARCHAR(128) PRIMARY KEY,         
+    name VARCHAR(32),                       
+    pw VARCHAR(32),			
+    coin int DEFAULT 0,                        
+    memberType char DEFAULT 'M',            
+    userThemeCode int  	
 );
 
 
 
--- writing table --
-CREATE TABLE IF NOT EXISTS USERNAME+writingList(                     
-    no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    jarName VARCHAR(32),                           -- writer name --
-    content VARCHAR(8192),                      -- content --
-    paperCode int,            					-- paper code --
-    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP      -- writing time--
-    FOREIGN KEY (jarName) 						-- USERNAMEjarList(jarName) --
-);
 
-
--- Jar List
-CREATE TABLE IF NOT EXISTS USERNAME+JarList(
-    jarName VARCHAR(32) PRIMARY KEY,           -- jar name --
-    jarItemCode int,						   -- jar item code --
-    foldMethodName VARCHAR(32),                -- fold method --
-    cnt int UNSIGNED DEFAULT 0,      		   -- count --
-    goalNum int UNSIGNED DEFAULT 0			   -- goal number --
-    jarImgName VARCHAR(32)			,		   -- jar image name --
-	FOREIGN KEY (jarItemCode) REFERENCES item (itemCode),
-	FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName)
-);	
-
-
--- user item --
-CREATE TABLE IF NOT EXIST USERNAME+Item(
-	itemCode PRIMARY KEY
-	apply boolean default 0,				-- apply item --
-	FOREIGN KEY (itemCode)					-- item code --
-	
-);
-
-
--- store item --
+-- [STORE ITEM TABLE]--
 CREATE TABLE IF NOT EXISTS item(
-	itemCode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,			-- item code --
-	itemName VARCHAR(32) UNIQUE NOT NULL,		-- item name --
-	itemType VARCHAR(32) NOT NULL,		-- item type (paper, jar, foldMethod, theme) -- 
-	price INT NOT NULL,					-- item price --
-	info VARCHAR(1024) NOT NULL,		-- item information --
-	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
-	img2 VARCHAR(1024),					-- item image2 --
-	img3 VARCHAR(1024),					-- item image3 --
-	img4 VARCHAR(1024)					-- item image4 --
+	itemCode int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	itemName VARCHAR(32) UNIQUE NOT NULL,
+	itemType VARCHAR(32) NOT NULL,
+	price INT NOT NULL,	
+	info VARCHAR(1024) NOT NULL,	
+	img1 VARCHAR(1024) NOT NULL,	
+	img2 VARCHAR(1024),					
+	img3 VARCHAR(1024),					
+	img4 VARCHAR(1024)					
 );
 
+-- [CREATE ITEM TABLE AFTER -> insert !soon seo dae ro!] -- 
+insert into item (itemName, itemType, price, info, img1) 
+values("기본 유리병", "jar", 100, "기본 유리병입니다.", "http://211.253.26.72/DailyHappy/resources/images/normal-0.png");
 
--- jar image by fold method --
+insert into item (itemName, itemType, price, info, img1) 
+values("빨간 그라데이션 색종이", "paper", 100, "빨간색 그라데이션 색종이입니다.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-r.png");
+
+insert into item (itemName, itemType, price, info, img1) 
+values("학", "foldMethod", 100, "학모양 도안입니다.", "http://211.253.26.72/DailyHappy/resources/images/color-logo2.png");
+
+insert into item (itemName, itemType, price, info, img1) 
+values("노랑 그라데이션 색종이", "paper", 100, "노란색 그라데이션 색종이입니다.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-y.png");
+
+insert into item (itemName, itemType, price, info, img1) 
+values("초록 그라데이션 색종이", "paper", 100, "초록색 그라데이션 색종이입니다.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-g.png");
+
+-- [!!!!!!!!!!!!!!SOON SEO DAE RO insert!!!!!!!!!!!!!!] --
+
+
+
+
+
+-- [JAR IMG BY TYPE TABLE] --
 CREATE TABLE IF NOT EXISTS jarImg(
-	imgName VARCHAR(128) NOT NULL PRIMARY KEY,		-- item name --
-	img1 VARCHAR(1024) NOT NULL,		-- item image1 --
-	img2 VARCHAR(1024) NOT NULL,		-- item image2 --
-	img3 VARCHAR(1024) NOT NULL,		-- item image3 --
-	img4 VARCHAR(1024) NOT NULL			-- item image4 --
+	imgName VARCHAR(128) NOT NULL PRIMARY KEY,	
+	img1 VARCHAR(1024) NOT NULL,		
+	img2 VARCHAR(1024) NOT NULL,		
+	img3 VARCHAR(1024) NOT NULL,		
+	img4 VARCHAR(1024) NOT NULL
 );
+
+-- [CREATE jarImg TABLE AFTER -> insert !soon seo dae ro!] --
+insert into jarImg values("기본 유리병학",
+	"http://211.253.26.72/DailyHappy/resources/images/normal-0.png", 
+	"http://211.253.26.72/DailyHappy/resources/images/normal-1.png",
+	"http://211.253.26.72/DailyHappy/resources/images/normal-2.png",
+	"http://211.253.26.72/DailyHappy/resources/images/normal-3.png");
+
+
+
+=====================================================================================================
+
+--		!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --
+--		{{!!!!!AUTO CREATE TABLE <WHEN YOU SIGN UP>!!!!!}} --
+--		!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! --
+
+
+
+-- [USER JAR LIST TABLE] --
+CREATE TABLE IF NOT EXISTS emailJarList(
+	jarName VARCHAR(32) PRIMARY KEY, 
+    jarItemName VARCHAR(32), 
+    foldMethodName VARCHAR(32), 
+    cnt int UNSIGNED DEFAULT 0, 
+    goalNum int UNSIGNED DEFAULT 0,
+    jarImgName VARCHAR(128),
+    FOREIGN KEY (jarItemName) REFERENCES item (itemName),
+    FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName));
+
+
+
+
+-- [USER WRITING LIST TABLE] --
+CREATE TABLE IF NOT EXISTS emailWritingList(
+	no INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+        jarName VARCHAR(32), 
+        content VARCHAR(8192), 
+        paperCode int,
+        ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (jarName) REFERENCES " + email + "JarList (jarName) ON DELETE CASCADE);
+
+
+
+
+-- [USER ITEM LIST TABLE] --
+CREATE TABLE IF NOT EXISTS emailItem(
+	itemCode int UNSIGNED PRIMARY KEY, 
+    itemType VARCHAR(32),
+    apply tinyint(1) DEFAULT 0,
+    FOREIGN KEY (itemCode) REFERENCES item (itemCode));
+
+

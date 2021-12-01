@@ -11,6 +11,8 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	
+	int loc = 0;
+	
 	String email = (String)session.getAttribute("email");
 	String jarName=request.getParameter("Jname");
 	String Jshape=request.getParameter("Jshape");
@@ -26,13 +28,13 @@
 <%	
 	String str = ("<script type=\"text/javascript\">");
 	str += ("alert(\"새 유리병 추가가 완료되었습니다.\");");
-	/* str += ("var loc ="+ loc +";"); */
-	/* str += ("if(loc==0){ window.location = \"../views/indexView.jsp\";}"); */
-	str += ("window.location = \"../views/myJarView.jsp\";");
+	str += ("var loc ="+ loc +";");
+	str += ("if(loc==0){ window.location = \"../views/myJarView.jsp\";}");
 	str += ("else{ window.location = document.referrer;}");
 	out.print(str);
 	
 %>
 
+</script>
 </body>
 </html>

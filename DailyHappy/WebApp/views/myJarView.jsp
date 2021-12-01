@@ -62,7 +62,7 @@
 				String email = (String)session.getAttribute("email");
 				ArrayList<JarObj> list = new JarDAO().getJarList(email);	
 			
-				String str = "<form method=\"get\" action=\"../jsp/userDel.jsp\">";
+				String str = "<form method=\"get\" action=\"../jsp/jarDel.jsp\">";
 				str += "<table align=\"center\">";
 				str += "<tr><th>이름&nbsp</th><th>모양&nbsp&nbsp</th><th>도안&nbsp&nbsp</th><th>작성 글 갯수&nbsp&nbsp</th><th>목표치&nbsp&nbsp</th><th>삭제</th>";
 				str += "<tr><td colspan=6><hr></td></tr>";

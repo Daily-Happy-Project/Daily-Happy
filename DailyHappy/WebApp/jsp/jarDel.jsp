@@ -11,6 +11,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style type="text/css">
+	body{
+	background-color: #FFC7C7;
+	}
+
+</style>
 </head>
 <body>
 <% 

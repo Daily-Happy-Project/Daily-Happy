@@ -45,5 +45,6 @@
            		</div>
            </div>
         </article>
+        <footer align="center"><%@include file="footer.html"%></footer>
     </body>
 </html>
