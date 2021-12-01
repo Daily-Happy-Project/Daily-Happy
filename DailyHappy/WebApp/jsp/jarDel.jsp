@@ -14,6 +14,7 @@
 </head>
 <body>
 <% 
+	String email=(String)session.getAttribute("email");
 	String jarList[] = request.getParameterValues("delJar");
 	
 	int loc = 0;
@@ -24,7 +25,7 @@
 	
 	
 	for(String jar : jarList){
-		dao.delete(email, jarName);
+		dao.delete(email, jar);
 	}
 %>
 

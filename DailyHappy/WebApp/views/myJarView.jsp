@@ -68,15 +68,15 @@
 				str += "<tr><td colspan=6><hr></td></tr>";
 				for (JarObj jar : list) {
 					str += "<tr>";
-					str += "<td>" + jar.getJarName() + "</td>";
-					str += "<td>" + jar.getJarItemName() + "</td>";
-					str += "<td>" + jar.getFoldMethodName() + "</td>";
-					str += "<td>" + jar.getCnt() + "</td>";
-					str += "<td>" + jar.getGoalNum() + "</td>";
-					str += "<td><input type=\"checkbox\" name=\"delJar\" value=\""+ jar.getJarName() +"\"></td>";
+					str += "<td width=\"20%\">" + jar.getJarName() + "</td>";
+					str += "<td width=\"15%\">" + jar.getJarItemName() + "</td>";
+					str += "<td width=\"15%\">" + jar.getFoldMethodName() + "</td>";
+					str += "<td width=\"15%\">" + jar.getCnt() + "</td>";
+					str += "<td width=\"20%\">" + jar.getGoalNum() + "</td>";
+					str += "<td width=\"15%\"><input type=\"checkbox\" name=\"delJar\" value=\""+ jar.getJarName() +"\"></td>";
 					str += "</tr>";
 				}
-				str += "<tr><td colspan=5><input type=\"submit\" value=\"선택한 유리병 삭제\"></td></tr>";
+				str += "<tr><td colspan=6><input type=\"submit\" value=\"선택한 유리병 삭제\"></td></tr>";
 				str += "</table>";
 				str += "</form>";
 				out.print(str);
