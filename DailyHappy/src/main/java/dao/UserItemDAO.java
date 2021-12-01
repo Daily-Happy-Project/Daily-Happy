@@ -98,7 +98,7 @@ public class UserItemDAO {
 			try {
 				
 				email = new UserDAO().splitemail(email);
-				String sql = "SELECT itemCode FROM " + email + "item WHERE itemType=\"paper\" Order by rand() limit 1";
+				String sql = "SELECT itemCode FROM " + email + "Item WHERE itemType=\"paper\" Order by rand() limit 1";
 				stmt = conn.prepareStatement(sql);
 				rs = stmt.executeQuery();
 				int itemCode = 0;
