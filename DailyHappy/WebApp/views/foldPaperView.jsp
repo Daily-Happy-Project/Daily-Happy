@@ -36,18 +36,25 @@
 		height: 100vh;
 		background-color: #FFC7C7;
 	}
-	.skip {
+	#skip {
 		position : fixed;
-		top : 20px;
+		top : 10vh;
 		right: 0%;	
 		width : 80px;
-		height: 30px;
-		background-color: #FAAEAE;
+		height: 5vh;
+		background-color: #AAAAAA;
+		text-align: center;
+		font-family: 'Uiyeun';
+		font-size: 5vh;
 	}
-	
+	a{
+		text-decoration: none;
+		color: inherit;
+	}
 	.foldImg{
 		width : 80vw;
 		max-width: 300px;
+		cursor: pointer;
 	}
 	.foldImg img{
 		width: 100%;
@@ -56,12 +63,19 @@
 	.hideImg{
 		display: none;
 	}
+	#f-text{
+		margin-top: 6vh;
+		font-family: 'Uiyeun';
+		font-size: 6vh;
+		color: #fff;
+		-webkit-text-stroke: 1px #000;
+	}
 
 </style>
 </head>
 <body>
 	<section class = "container" align="center">
-		<div class="skip"><a href="mainView.jsp">건너뛰기</a></div>
+		<div id="skip"><a href="mainView.jsp">건너뛰기</a></div>
 		<div class="foldImg">
 		<img id="fold-Img1" src="../resources/images/folding1.png">
 		</div>
@@ -74,12 +88,28 @@
 		<div class="foldImg">
 		<img id="fold-Img4" class="hideImg" src="../resources/images/folding4.png">
 		</div>
-		<div class="f-text">학종이를 터치!</div>	
+		<div id="f-text">학종이를 터치!</div>	
 	</section>
 	<script type="text/javascript">
 		var cnt = 1;
-		
-		
+		$('.foldImg').click(function() {
+			if(cnt==4){
+				location.href = "mainView.jsp";
+			}
+			var id = "#fold-Img"+cnt;
+			$(id).fadeOut(500, function(){
+			    $(id).addClass('hideImg');
+			    cnt++;
+			    if(cnt==4){
+			    	$('#f-text').text('완성!');
+			    }
+			    id = "#fold-Img"+cnt;
+			    $(id).removeClass('hideImg');
+			    $(id).fadeOut(0);
+			    $(id).fadeIn(500)
+			});
+
+		 })
 		
 	</script>
 	
