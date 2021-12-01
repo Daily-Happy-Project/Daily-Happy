@@ -34,16 +34,7 @@
 				margin: 0;
 				padding-bottom: 2vh;
 			}
-			#h-arrow-wrap{
-            	width: 100vw;
-            	display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				z-index: 9;
-				padding-top: 2vh;
-				padding-bottom: 5vh;
-            }
+
 			.wrap {
 				display: flex;
 				flex-direction: column;
@@ -68,7 +59,16 @@
             #next{
             	margin-left:2vw;
             }
-            
+            #h-arrow-wrap{
+            	width: 100vw;
+            	display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				z-index: 9;
+				padding-top: 2vh;
+				padding-bottom: 2vh;
+            }
             .help-titles{
                 display: none;
                 margin: 0 auto;
@@ -119,7 +119,7 @@
 		<div class="container">
 		<header>
 			<h2 class="title">도움말</h2>
-			<!--<%@include file="header.html"%>-->
+			<%@include file="header.html"%>
 		</header>
 
 			<%@include file="bottomNavi.html"%>
@@ -155,9 +155,9 @@
                     <div class="help-slides">
                         <img src="../resources/images/helpView_writing.png"  alt="도움말3"/>
                     </div>
-                   <!--  <div class="help-slides">
+                   <div class="help-slides">
                         <img src="../resources/images/helpView_myinfo.png" width="200px" height="280px" alt="도움말3"/>
-                    </div> -->
+                    </div>
                 </div>
                 <span id="next" onclick="plusSlides(1)">▶</span>
                 </div>
@@ -188,13 +188,13 @@
                     ③ 현재 글이 저장되는 유리병 <br>
                     ④ 클릭하여 글 작성 완료 <br>
                     </div>
-                    <!-- <div class="help-texts">
+                    <div class="help-texts">
                     ① 가입 시 입력한 별명. <br>
                     ② 가입 시 입력한 아이디 <br>
                     ③ 보유 코인. 글 작성 시 1코인 증가 <br>
                     ④ 클릭 시 로그아웃. 로그인화면으로 넘어감 <br>
                     ⑤ 클릭 시 계정이 삭제되고, 로그인화면으로 넘어감. <br>
-                    </div> -->
+                    </div>
                 </div>
             </article>
         </section>
