@@ -16,6 +16,18 @@
 	session.setAttribute("memberType", umember);
 	
 %>
+<%	//소지 유리병의 목록을 배열에 저장
+	ArrayList<JarObj> myJar = (new JarDAO()).getJarList(uemail);
+	JarDAO jDao = new JarDAO();
+	int listSize = myJar.size();
+	
+	String jName = "";
+	String jImgName = "";
+	int cnt = 0;
+	int goalNum = 0;
+	String jImg = "";
+	int jarcnt = jDao.countJar(uemail);
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTO HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,38 +36,42 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <title>하루, 행복 - 메인화면</title>
 
 
 <style type="text/css">
 @font-face {
-    font-family: 'GongGothicMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-family: 'Uiyeun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 body{
 	margin: 0;
 }
-
-article{
-	width: 100%;
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 91vh;
 }
 .scr-wrap{
 	position: fixed;
 	bottom: 80%;
-	left: 10px;
+	left: 15px;
 	z-index: 6;
 	width: 50px;
 	height: 50px;
 	border-radius: 100px;
 	background-color: #ba7574;
-	display: flax;
 	cursor: pointer;
 }
 .scr{
-	width: 100%;
+	width: 80%;
 	margin: 5px auto;
 }
 .scr-icon{
@@ -69,87 +85,89 @@ article{
   	margin: 0px;
   	padding: 0px;
   	border: none;
-  	background-color: rgba(0,0,0,0);
-  	
+  	background-color: rgba(0,0,0,0);	
 }
-#cnt-wrap{
-	position: absolute;
-	bottom: 75%;
+.cnt-wrap{
+	position: fixed;
+	bottom: 88vh;
 	z-index: 5;
 	font-size: 30pt;
 	width: 100%;
-	display: flax;
-
 }
-#cnt{
+.cnt{
 	width: 30%;
 	min-width: 2em;
 	margin: 0 auto;
 	font-size: 45pt;
-	padding: 0.1em 0em 0.1em 0em;
+	padding: 0.1em 0em;
 	background-color: rgba(195, 56, 55, 0.65);
-	border-radius: 20px;
+	border-radius: 0px 0px 20px 20px;
 	color: #ffffff;
 	/*-webkit-text-stroke: 2px #c33837;*/
 	font-family: 'GongGothicMedium';
-	
 }
-.main-wrap{
-	position: absolute;
-	bottom: 30vh;
-	width: 100%;
-	z-index:3;
-	display: flex;
-	
-}
+
 #bottle-img-box{
-	margin: 0 auto;
 	width: 60vw;
 }
-.jarimg{
-	width: 60vw;
-	max-width: 250px;
-}
+
 #left-bottle, #right-bottle{
 	cursor: pointer;
-    position: absolute;
-    bottom: 40%;
     padding: 5%;
     font-size: 30pt;
-    z-index: 4;
     color: #c33837;
     -webkit-text-stroke: 3px #c33837;
 }
-#left-bottle{
-	left: 0;
-}
-#right-bottle {
-	right: 0;
-}
-
-
 #paper-wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	position: fixed;
-	bottom:8vh;
+	top: 78vh;
 	width: 100%;
 	z-index: 3;
-	display: flex;
 }
 #paper-img-box{
-	margin: 0 auto;
-	width: 100%;
+	width: 70vw;
 	max-width: 400px;
-	height: 110px;
-}
-.paperimg:hover{
-	cursor: pointer;
+	min-width: 200px;
 }
 .paperimg{
 	width: 100%;
-	max-width: 250px;
-	min-width: 200px;
-	margin-bottom: -50%;
 	box-shadow: 8px -8px 0 0 rgba(94,96,115,0.3);
+	cursor: pointer;
+}
+.jar-arrow-wrap{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 100px;
+	width: 100vw;
+	height: 450px;
+
+}
+.jar-img-box{
+	width: 70vw;
+	max-width: 280px;
+	min-width: 100px;
+	z-index: 4;
+	margin: auto;
+}
+.jarimg{
+	width: 100%;
+	cursor: pointer;
+}
+#no0{
+	margin: auto;
+	cursor: pointer;
+	opacity: 0.3;
+}
+#no0 .jarimg{
+	width: 20vw;
+	max-width: 100px;
 }
 .table{
 	position: fixed;
@@ -160,7 +178,9 @@ article{
 	background-color: #FFC7C7;
 	z-index: 2;
 }
-
+.hide{
+	display: none;
+}
 
 
 </style>
@@ -172,47 +192,70 @@ article{
 
 <div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
-<div class="container" id='container'>
-<section align="center">
+
+<section align="center" class="container" id='container'>
 	<article class="scr-wrap" align="center">
-		<div class="scr" style="width:80%;"><button type="button" id="edit" onclick=screenShot()><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
+		<div class="scr"><button type="button" id="edit" onclick=screenShot()><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
 		<a id="target" style="display:none"></a>
-		
 	</article>
-	<article id="cnt-wrap" >
-		<div id="cnt">01<%//접은 학종이 카운트 %></div>
+	<article class="cnt-wrap">
+		<div class="cnt">00</div>
+		<%
+		if(jarcnt!=0){
+			 for(JarObj uJar : myJar){
+				cnt = uJar.getCnt();
+				String cntStr = "";
+				if(cnt < 10){
+					cntStr = "0"+cnt;
+				}
+				else{
+					cntStr = ""+cnt;
+				}
+				String nowcnt = "<div class=\"cnt\">";
+				nowcnt += cntStr;
+				nowcnt += "</div>";
+				out.print(nowcnt);
+			}
+		}
+		%>
 	</article>
-	<article>
-		<div class="main-wrap">
+	<article class="jar-name-wrap">
+		<div class="jar-name"></div>
+		<%
+		if(jarcnt!=0){
+			 for(JarObj uJar : myJar){
+				jName = uJar.getJarName();
+				String nowname = "<div class=\"jar-name\">";
+				nowname += jName;
+				nowname += "</div>";
+				out.print(nowname);
+			}
+		}
+		%>
+	</article>
+	<article class="jar-arrow-wrap">
+		<div id="left-bottle" onclick="plusSlides(-1)">〈</div>
+			<div class="jar-img-box" id="no0">
+				<a href="makeJarView.jsp"><img class="jarimg "src="../resources/images/add.png"/></a>
+			</div>
 			<%
-				String strJ = "<div id=\"bottle-img-box\">";
-				strJ += "<img src=\"../resources/images/normal-3.png\" class=\"jarimg\" alt=\"유리병 이미지\" onclick=\"GotoCheck();\"/>";
-				strJ +="</div>";
-				out.print(strJ);
+				if(jarcnt!=0){
+					 for(JarObj uJar : myJar){
+						jName = uJar.getJarName();
+						jImgName = uJar.getJarImgName();
+						cnt = uJar.getCnt();
+						goalNum = uJar.getGoalNum();
+						jImg = jDao.mainJarImg(jImgName, goalNum, cnt);
+						String imgBox = "<div class=\"jar-img-box\">";
+						imgBox += "<img src=\""+jImg+"\" class=\"jarimg\" alt=\"학종이 꺼내기\" onclick=\"GotoCheck();\">";
+						imgBox += "</div>";
+						out.print(imgBox);
+					}
+				}
 			%>
-<%-- 			<%
-			ArrayList<JarObj> myJar = (new JarDAO()).getJarList(uemail);
-				 for(JarObj uJar : myJar){
-					int pItemCode = uJar.getItemCode();
-					String jImg = uJar.getJarImgName();
-					String strP = "<div id=\"paper-img-box\">";
-					strP += "<img src=\""+ jImg +"\" class=\"paperimg\" alt=\"새 글 작성\" onclick=\"GotoWrite();\"/>";
-					strP +="</div>";
-					String local = "<script type=\"text/javascript\">localStorage.setItem('nowPCode',"+pItemCode+");";
-					local += "localStorage.setItem(\'nowPImg\',\'"+pImg+"\');";
-					local += "</script>";
-					out.print(strP);
-					out.print(local);
-				} 
-			%> --%>
-		</div>
+		 <div id="right-bottle" onclick="plusSlides(1)">〉</div>
 	</article>
-	<article>
-		<div id="left-bottle">〈</div>
-		<div id="right-bottle">〉</div>
-	</article>
-	<article>
-		<div id="paper-wrap">
+	<article id="paper-wrap">
 			<%
 			ArrayList<UserItemObj> randP = (new UserItemDAO()).randomPaper(uemail);
 				 for(UserItemObj uItem : randP){
@@ -228,29 +271,69 @@ article{
 					out.print(local);
 				} 
 			%>
-		</div>
 	</article>
 	
 	<article>
 		<div class="table"></div>
 	</article>
 </section>
-</div>
+
 <%@include file="bgStyle.jsp"%>
 </div>
 	
+<script type="text/javascript">
+	var slideIndex = 1;
+	var jarName = localStorage.nowJar;
+	var nowjName = "";
+
 	
-	<script type="text/javascript">
-		function GotoCheck(){
-			location.href="checkWritingView.jsp"
+	$(function(){
+		showSlides(slideIndex);
+		if(jarName != null){
+			while(jarName != nowjName){
+				plusSlides(1);
+			}
 		}
+	})
+	function plusSlides(n){
+	    showSlides(slideIndex += n);
+	};
+            
+	function showSlides(n){
+	    var cnts = document.getElementsByClassName("cnt");
+	    var jarNames = document.getElementsByClassName("jar-name");
+	    var imgs = document.getElementsByClassName("jar-img-box");
+	    
+	    if (n > imgs.length) {slideIndex = 1}
+	    if (n < 1) {slideIndex = imgs.length}
+	    for (i = 0; i < imgs.length; i++) {
+	        cnts[i].style.display = "none";
+	        jarNames[i].style.display = "none";
+	        imgs[i].style.display = "none";
+	    }
+	    cnts[slideIndex-1].style.display = "block";
+	    jarNames[slideIndex-1].style.display = "block";
+	    imgs[slideIndex-1].style.display = "block";
+	    nowjName = jarNames[slideIndex-1].innerText;
+	    localStorage.setItem('nowJar', nowjName); 
+	};
 
-		function GotoWrite(){
-			location.href="writingView.jsp"	
+	function GotoCheck(){
+		location.href="checkWritingView.jsp"
+	};
+
+	function GotoWrite(){
+		var zeroCheck = document.getElementById("no0").style.display
+		if(zeroCheck == "block"){
+			alert("앗! 아직 유리병이 없네요. 유리병을 먼저 추가해 주세요!");
 		}
-		
-
+		else{
+			location.href="writingView.jsp";	
+		}
+	};
 </script>
+
+
 <script type="text/javascript">	
 		
 function screenShot() {
@@ -262,7 +345,7 @@ function screenShot() {
 	}).catch(function (err) {
 	console.log(err);
 	});
-}
+};
 
 function drawImg(imgData) {
 	console.log(imgData);
@@ -279,7 +362,7 @@ function drawImg(imgData) {
 
 	}, function reject() { });
 
-}
+};
 	
 function saveAs(uri, filename) {
 	var link = document.createElement('a');
@@ -292,7 +375,7 @@ function saveAs(uri, filename) {
 	} else {
 	window.open(uri);
 	}
-}
+};
 		
 	</script>
 </body>

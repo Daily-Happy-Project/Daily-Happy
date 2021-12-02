@@ -156,7 +156,7 @@
                         <img src="../resources/images/helpView_writing.png"  alt="도움말3"/>
                     </div>
                    <div class="help-slides">
-                        <img src="../resources/images/helpView_myinfo.png" width="200px" height="280px" alt="도움말3"/>
+                        <img src="../resources/images/helpView_myinfo.png" alt="도움말4"/>
                     </div>
                 </div>
                 <span id="next" onclick="plusSlides(1)">▶</span>

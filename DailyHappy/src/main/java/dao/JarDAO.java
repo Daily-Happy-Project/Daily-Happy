@@ -162,6 +162,7 @@ public class JarDAO {
     		String sql = "SELECT count(*) as cnt FROM " + email + "JarList";
     		stmt = conn.prepareStatement(sql);
     		rs = stmt.executeQuery();
+    		rs.next();
     		int count = rs.getInt("cnt");
     		
     		return count;
