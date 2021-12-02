@@ -83,6 +83,27 @@ public class ItemDAO {
     }
 	
 	
+	
+	public String getItemImg(String itemCode) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String sql = "SELECT img1 FROM item WHERE itemCode =\"" + itemCode + "\"";
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            
+            String img = rs.getString("img1");
+            
+            return img;
+        } finally {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        }
+    }
+	
+	
 	// delete item
 	public boolean delete(int itemCode) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
