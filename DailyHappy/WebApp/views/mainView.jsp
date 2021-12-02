@@ -197,10 +197,10 @@ body{
 <%@ include file="soundOnOff.jsp" %>
 <%@include file="bottomNavi.html"%>
 
-<div id="screen-wrap" id='container'>
+<div id="screen-wrap">
 <!-- <audio id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
 
-<section align="center" class="container">
+<section align="center" class="container" id='container'>
 	<article class="scr-wrap" align="center">
 		<div class="scr"><button type="button" id="edit" onclick=screenShot()><img class="scr-icon" src="../resources/images/cameraW.png" alt="스크린샷"></button></div>
 		<a id="target" style="display:none"></a>
