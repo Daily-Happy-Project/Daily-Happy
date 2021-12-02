@@ -38,7 +38,8 @@
 			out.print("<a href=\"../views/foldPaperView.jsp\">종이 접기</a>"); */
 		}
 		else {
-			out.print("글 작성 중 오류가 발생하였습니다.");
+			out.print("글 작성 중 오류가 발생하였습니다.<br>");
+			out.print("<a href=\"../views/mainView.jsp\"메인화면으로 돌아가기</a>");
 		}
 		
 	%>

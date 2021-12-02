@@ -204,7 +204,7 @@ transition: all 0.4s;
 				<textarea id="p-text" name="content" rows="7" placeholder="오늘은 어떤 행복이 당신을 찾아왔나요?"></textarea>
 			</div>
 			<div id="j-name-wrap">
-				<input type="text" name="jarName" value="nowJar" disabled/>
+				<input type="text" id="j-name" name="jarName" value="nowJar"/>
 			</div>
 			<div id="paper-code-wrap">
 				<input type="text" id="paper-code" name="paperCode" value=""/>
@@ -253,8 +253,10 @@ transition: all 0.4s;
 	 $(function(){ 
 		 var code = localStorage.nowPCode;
 		 var img = localStorage.nowPImg;
+		 var jarName = localStorage.nowJar;
 		$('#p-text-wrap').css({"background-image": "url("+img+")"});
 		$('#paper-code').attr('value', code);
+		$('#j-name').attr('value', jarName);
 		
 	 });
 	
