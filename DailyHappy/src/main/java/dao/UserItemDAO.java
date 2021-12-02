@@ -145,5 +145,28 @@ public class UserItemDAO {
 	            
 	        }
 	    }
+	    
+	    
+	    
+	 // user coin
+	    public int userCoin(String email) throws NamingException, SQLException {
+	        Connection conn = ConnectionPool.get();
+	        PreparedStatement stmt = null;
+	        ResultSet rs = null;
+	        try {
+	        	
+	            String sql = "SELECT coin FROM user WHERE email=\"" + email + "\"";
+	            stmt = conn.prepareStatement(sql);
+	            rs = stmt.executeQuery();
+				rs.next();
+	            int coin = rs.getInt("coin");
+	            
+	            return coin;
+	        } finally {
+	            if (stmt != null) stmt.close();
+	            if (conn != null) conn.close();
+	            
+	        }
+	    }
 	
 }

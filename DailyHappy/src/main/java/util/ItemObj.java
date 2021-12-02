@@ -26,14 +26,14 @@ public class ItemObj {
 	}
 	
 	
-	public int itemCode() {return this.itemCode;}
-	public String itemName() {return this.itemName;}
-	public String itemType() {return this.itemType;}
-	public int price() {return this.price;}
-	public String info() {return this.info;}
-	public String img1() {return this.img1;}
-	public String img2() {return this.img2;}
-	public String img3() {return this.img3;}
-	public String img4() {return this.img4;}
+	public int getItemCode() {return this.itemCode;}
+	public String getItemName() {return this.itemName;}
+	public String getItemType() {return this.itemType;}
+	public int getPrice() {return this.price;}
+	public String getInfo() {return this.info;}
+	public String getImg1() {return this.img1;}
+	public String getImg2() {return this.img2;}
+	public String getImg3() {return this.img3;}
+	public String getImg4() {return this.img4;}
 	
 }
