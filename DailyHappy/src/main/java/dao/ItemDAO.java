@@ -84,7 +84,7 @@ public class ItemDAO {
 	
 	
 	
-	public String getItemImg(String itemCode) throws NamingException, SQLException {
+	public String getItemImg(int itemCode) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -92,7 +92,7 @@ public class ItemDAO {
             String sql = "SELECT img1 FROM item WHERE itemCode =\"" + itemCode + "\"";
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
-            
+            rs.next();
             String img = rs.getString("img1");
             
             return img;

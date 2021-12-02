@@ -12,6 +12,12 @@
        <!-- <script src="soundOnOff.js"></script> -->
         <link rel="stylesheet" href="css/headerStyle.css"/>
         <style type="text/css">
+        @font-face {
+		    font-family: 'Uiyeun';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
         	.box:visited{
         		color: #000000;
         	}
@@ -27,10 +33,12 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
                 margin-bottom: 25px;
- 
                 outline: 2.5px solid #000;
                 border-radius: 8px;
-                
+                font-family: 'Uiyeun';
+				font-size: 4vh;
+				color: #000;
+				text-align: center;
             }
             
             a:link {color: black; text-decoration: none;}

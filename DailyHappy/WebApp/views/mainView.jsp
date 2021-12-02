@@ -138,6 +138,12 @@ body{
 	box-shadow: 8px -8px 0 0 rgba(94,96,115,0.3);
 	cursor: pointer;
 }
+.jar-name{
+	font-family: 'Uiyeun';
+	font-size: 8vh;
+	color: #000;
+	text-align: center;
+}
 .jar-arrow-wrap{
 	display: flex;
 	flex-direction: row;
@@ -261,7 +267,7 @@ body{
 						String imgBox = "<div class=\"jar-img-box\">";
 
 						imgBox += "<input type=\"image\" src=\""+jImg+"\" class=\"jarimg\" name=\"Submit\" value=\"Submit\" alt=\"학종이 꺼내기\">";
-						imgBox += "<br><input type=\"text\" name=\"nowjar\" value=\""+jName+"\">";						
+						imgBox += "<br><input type=\"text\" name=\"nowjar\" value=\""+jName+"\" hidden>";						
 
 						imgBox += "</div>";
 
