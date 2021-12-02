@@ -92,7 +92,7 @@
 	<%
     String email=(String)session.getAttribute("email");
 	email = new UserDAO().splitemail(email);
-	String jarName=(String)session.getAttribute("nowJar");
+	String jarName=request.getParameter("nowjar");
 	WritingDAO dao = new WritingDAO();    	
 	%>
 	

@@ -156,6 +156,13 @@ body{
 	z-index: 4;
 	margin: auto;
 }
+.jar-box-form{
+	width: 70vw;
+	max-width: 280px;
+	min-width: 100px;
+	z-index: 4;
+	margin: auto;
+}
 .jarimg{
 	width: 100%;
 	cursor: pointer;
@@ -221,6 +228,7 @@ body{
 	</article>
 	<article class="jar-name-wrap">
 		<div class="jar-name"></div>
+		
 		<%
 		if(jarcnt!=0){
 			 for(JarObj uJar : myJar){
@@ -228,16 +236,20 @@ body{
 				String nowname = "<div class=\"jar-name\">";
 				nowname += jName;
 				nowname += "</div>";
+
 				out.print(nowname);
 			}
 		}
 		%>
+
 	</article>
 	<article class="jar-arrow-wrap">
 		<div id="left-bottle" onclick="plusSlides(-1)">〈</div>
+		<form class="jar-box-form" method="get" action="checkWritingView.jsp">
 			<div class="jar-img-box" id="no0">
 				<a href="makeJarView.jsp"><img class="jarimg "src="../resources/images/add.png"/></a>
 			</div>
+			
 			<%
 				if(jarcnt!=0){
 					 for(JarObj uJar : myJar){
@@ -247,12 +259,17 @@ body{
 						goalNum = uJar.getGoalNum();
 						jImg = jDao.mainJarImg(jImgName, goalNum, cnt);
 						String imgBox = "<div class=\"jar-img-box\">";
-						imgBox += "<img src=\""+jImg+"\" class=\"jarimg\" alt=\"학종이 꺼내기\" onclick=\"GotoCheck();\">";
+
+						imgBox += "<input type=\"image\" src=\""+jImg+"\" class=\"jarimg\" name=\"Submit\" value=\"Submit\" alt=\"학종이 꺼내기\">";
+						imgBox += "<br><input type=\"text\" name=\"nowjar\" value=\""+jName+"\">";						
+
 						imgBox += "</div>";
+
 						out.print(imgBox);
 					}
 				}
 			%>
+		</form>
 		 <div id="right-bottle" onclick="plusSlides(1)">〉</div>
 	</article>
 	<article id="paper-wrap">
