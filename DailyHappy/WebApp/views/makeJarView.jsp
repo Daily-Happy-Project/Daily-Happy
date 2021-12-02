@@ -58,7 +58,6 @@
   		overflow: auto;
   		white-space:nowrap;
 	}
-
 	.empty{
 		height: 20px;
 	}

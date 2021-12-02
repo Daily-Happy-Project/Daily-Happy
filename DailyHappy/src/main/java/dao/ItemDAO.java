@@ -61,7 +61,7 @@ public class ItemDAO {
 	
 	
 	// lookup item
-	public ArrayList<ItemObj> getItemList(int itemType) throws NamingException, SQLException {
+	public ArrayList<ItemObj> getItemList(String itemType) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -71,7 +71,7 @@ public class ItemDAO {
             rs = stmt.executeQuery();
             ArrayList<ItemObj> items = new ArrayList<ItemObj>();
             while(rs.next()) {
-            	items.add(new ItemObj(rs.get))
+            	items.add(new ItemObj(rs.getInt("itemCode"), rs.getString("itemName"), rs.getString("itemType"), rs.getInt("price"), rs.getString("info"), rs.getString("img1")));
             }
             
             return items;
