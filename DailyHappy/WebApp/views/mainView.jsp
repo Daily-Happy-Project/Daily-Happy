@@ -18,6 +18,12 @@
 %>
 <%	//소지 유리병의 목록을 배열에 저장
 	ArrayList<JarObj> myJar = (new JarDAO()).getJarList(uemail);
+	ArrayList<FriendObj> myFr= (new FriendDAO()).getFriendList(uemail);
+	for (FriendObj fri : myFr){
+		String friem = fri.getFriendEmail();
+		myJar.add(new FriendDAO().getFriendJarList(friem));		
+	}
+	
 	JarDAO jDao = new JarDAO();
 	int listSize = myJar.size();
 	

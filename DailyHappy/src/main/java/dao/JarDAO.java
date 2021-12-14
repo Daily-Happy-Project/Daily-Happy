@@ -16,18 +16,19 @@ import util.JarObj;
 public class JarDAO {
 
 	//add new jar
-	public boolean insert(String email, String jarName, String Jshape, String Fshape, int goalNum, String jarImgName) throws NamingException, SQLException {
+	public boolean insert(String email, String jarName, String Jshape, String Fshape, int goalNum, boolean shareState, String jarImgName) throws NamingException, SQLException {
         Connection conn = ConnectionPool.get();
         PreparedStatement stmt = null;
         try {
         	email = new UserDAO().splitemail(email);
-            String sql = "INSERT INTO " + email +"JarList(jarName, jarItemName, foldMethodName, goalNum, jarImgName) VALUES(?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO " + email +"JarList(jarName, jarItemName, foldMethodName, goalNum, shareState, jarImgName) VALUES(?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, jarName);
             stmt.setString(2, Jshape);
             stmt.setString(3, Fshape);
             stmt.setInt(4, goalNum);
-            stmt.setString(5, jarImgName);
+            stmt.setBoolean(5, shareState);
+            stmt.setString(6, jarImgName);
             
             int count = stmt.executeUpdate();
             return (count == 1) ? true : false;
@@ -46,13 +47,13 @@ public class JarDAO {
     	ResultSet rs=null;
     	try {
     		email = new UserDAO().splitemail(email); 
-    		String sql="SELECT jarName, jarItemName, foldMethodName, jarImgName, goalNum, cnt FROM " + email + "JarList";
+    		String sql="SELECT jarName, jarItemName, foldMethodName, jarImgName, goalNum, cnt, shareState FROM " + email + "JarList";
     		stmt=conn.prepareStatement(sql);
     		rs=stmt.executeQuery();
     		
     		ArrayList<JarObj> jars=new ArrayList<JarObj>();
     		while(rs.next()) {
-    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("cnt"), rs.getInt("goalNum"), rs.getString("jarItemName"), rs.getString("foldMethodName")));
+    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("cnt"), rs.getInt("goalNum"), rs.getString("jarItemName"), rs.getString("foldMethodName"), rs.getBoolean("shareState")));
     		}
     		
     		return jars;

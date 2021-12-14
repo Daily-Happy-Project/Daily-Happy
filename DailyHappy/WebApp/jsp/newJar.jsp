@@ -18,10 +18,11 @@
 	String Jshape=request.getParameter("Jshape");
 	String Fshape=request.getParameter("Fshape");
 	int goalNum=Integer.parseInt(request.getParameter("GoalNum"));
+	boolean shareState=Boolean.parseBoolean(request.getParameter("shareState"));
 	String jarImgName=Jshape+Fshape;
 	
 	
-	new JarDAO().insert(email, jarName, Jshape, Fshape, goalNum, jarImgName);
+	new JarDAO().insert(email, jarName, Jshape, Fshape, goalNum, shareState, jarImgName);
 %>
 
 
