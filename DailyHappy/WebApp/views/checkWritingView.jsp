@@ -115,7 +115,7 @@ body{
     String email=(String)session.getAttribute("email");
 	email = new UserDAO().splitemail(email);
 	String jarName=request.getParameter("nowjar");
-	WritingDAO dao = new WritingDAO();    	
+	WritingDAO dao = new WritingDAO();
 	%>
 		
 	
@@ -136,9 +136,11 @@ body{
 						str+="<div class=\"writing\">";
 						
 						str+="<textarea class=\"text\" id=\"content\" rows=\"4\" cols=\"12\">"+content+"</textarea>";
-						str+="<textarea class=\"text other-t\" name=\"no\" rows=\"1\" cols=\"12\"  hidden>글번호: "+no+"</textarea>";
+						str+="<textarea class=\"text other-t\" name=\"no\" rows=\"1\" cols=\"12\" style=\"display:none\">"+no+"</textarea>";
+						str+="<textarea class=\"text other-t\" name=\"jarName\"rows=\"1\" cols=\"12\" style=\"display:none\">" + jarName + "</textarea>";
 						str+="<textarea class=\"text other-t\" rows=\"1\" cols=\"12\">작성자: " + name + "</textarea>";
 						str+="<textarea class=\"text other-t\" rows=\"1\" cols=\"12\">작성일: " + stamp + "</textarea>";
+						
 		
 						str+="</div>";
 						out.print(str); 

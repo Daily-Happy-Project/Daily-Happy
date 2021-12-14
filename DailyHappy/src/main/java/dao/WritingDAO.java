@@ -103,16 +103,36 @@ public class WritingDAO {
             stmt.executeUpdate();
 			
 			sql = "UPDATE " + email + "JarList set cnt=cnt-1 where jarName= \"" + jarName + "\"";
-            
             int count = stmt.executeUpdate(sql);
             
-            return (count > 0) ? true : false;
+            return (count == 0) ? true : false;
         } finally {
             if (stmt != null) stmt.close();
             if (conn != null) conn.close();
             
         }
     }
+    
+    public boolean deleteCount(int no, String jarName, String email) throws NamingException, SQLException {
+        Connection conn = ConnectionPool.get();
+        PreparedStatement stmt = null;
+        try {
+        	
+        	email = new UserDAO().splitemail(email);
+            String sql = "UPDATE " + email + "JarList set cnt=cnt-1 where jarName= \"" + jarName + "\"";
+            
+            stmt = conn.prepareStatement(sql);
+            int count = stmt.executeUpdate();
+            
+            return (count == 0) ? true : false;
+        } finally {
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+            
+        }
+    }
+    
+    
     
  // delete writing table
     public boolean deleteWritingTable(String email) throws NamingException, SQLException {
