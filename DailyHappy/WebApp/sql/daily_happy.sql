@@ -39,19 +39,19 @@ CREATE TABLE IF NOT EXISTS item(
 
 -- [CREATE ITEM TABLE AFTER -> insert !soon seo dae ro!] -- 
 insert into item (itemName, itemType, price, info, img1) 
-values("�⺻ ������", "jar", 100, "�⺻ �������Դϴ�.", "http://211.253.26.72/DailyHappy/resources/images/normal-0.png");
+values("占썩본 占쏙옙占쏙옙占쏙옙", "jar", 100, "占썩본 占쏙옙占쏙옙占쏙옙占쌉니댐옙.", "http://211.253.26.72/DailyHappy/resources/images/normal-0.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("���� �׶��̼� ������", "paper", 100, "������ �׶��̼� �������Դϴ�.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-r.png");
+values("占쏙옙占쏙옙 占쌓띰옙占싱쇽옙 占쏙옙占쏙옙占쏙옙", "paper", 100, "占쏙옙占쏙옙占쏙옙 占쌓띰옙占싱쇽옙 占쏙옙占쏙옙占쏙옙占쌉니댐옙.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-r.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("��", "foldMethod", 100, "�и�� �����Դϴ�.", "http://211.253.26.72/DailyHappy/resources/images/color-logo2.png");
+values("占쏙옙", "foldMethod", 100, "占싻몌옙占� 占쏙옙占쏙옙占쌉니댐옙.", "http://211.253.26.72/DailyHappy/resources/images/color-logo2.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("��� �׶��̼� ������", "paper", 100, "����� �׶��̼� �������Դϴ�.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-y.png");
+values("占쏙옙占� 占쌓띰옙占싱쇽옙 占쏙옙占쏙옙占쏙옙", "paper", 100, "占쏙옙占쏙옙占� 占쌓띰옙占싱쇽옙 占쏙옙占쏙옙占쏙옙占쌉니댐옙.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-y.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("�ʷ� �׶��̼� ������", "paper", 100, "�ʷϻ� �׶��̼� �������Դϴ�.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-g.png");
+values("占십뤄옙 占쌓띰옙占싱쇽옙 占쏙옙占쏙옙占쏙옙", "paper", 100, "占십록삼옙 占쌓띰옙占싱쇽옙 占쏙옙占쏙옙占쏙옙占쌉니댐옙.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-g.png");
 
 -- [!!!!!!!!!!!!!!SOON SEO DAE RO insert!!!!!!!!!!!!!!] --
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS jarImg(
 );
 
 -- [CREATE jarImg TABLE AFTER -> insert !soon seo dae ro!] --
-insert into jarImg values("�⺻ ��������",
+insert into jarImg values("占썩본 占쏙옙占쏙옙占쏙옙占쏙옙",
 	"http://211.253.26.72/DailyHappy/resources/images/normal-0.png", 
 	"http://211.253.26.72/DailyHappy/resources/images/normal-1.png",
 	"http://211.253.26.72/DailyHappy/resources/images/normal-2.png",
@@ -92,11 +92,12 @@ CREATE TABLE IF NOT EXISTS emailJarList(
     foldMethodName VARCHAR(32), 
     cnt int UNSIGNED DEFAULT 0, 
     goalNum int UNSIGNED DEFAULT 0,
+    shareState boolean DEFAULT 0,
     jarImgName VARCHAR(128),
     FOREIGN KEY (jarItemName) REFERENCES item (itemName),
     FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName));
 
-
+--  ↑ shareState 0이면 공유 X, 1이면 공유 O --
 
 
 -- [USER WRITING LIST TABLE] --
@@ -117,8 +118,10 @@ CREATE TABLE IF NOT EXISTS emailItem(
     itemType VARCHAR(32),
     apply tinyint(1) DEFAULT 0,
     FOREIGN KEY (itemCode) REFERENCES item (itemCode));
+    
+    
 
-CREATE TABLE IF NOT EXISTS friend(
-	uemail VARCHAR(128),
-	fremail VARCHAR(128),
-	INDEX idx1(email));
+-- [USER FRIEND LIST TABLE]
+CREATE TABLE IF NOT EXISTS emailFriendList(
+	friendEmail VARCHAR(128) PRIMARY KEY,
+	FOREIGN KEY (friendEmail) REFERENCES user (email) ON DELETE CASCADE);

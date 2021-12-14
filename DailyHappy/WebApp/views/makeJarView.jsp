@@ -191,8 +191,14 @@ label img{
 					<td>&nbsp;&nbsp;</td>
 					<td class = "table-line2"><div class = "box"><input type="number" name="GoalNum" min="1" max="365"></div></td>
 				</tr>
+				
 				<tr>
 					<td colspan="3"><div class = "empty"></div></td>
+				</tr>
+				<tr>
+					<td class = "table-line1">공유여부</td>
+					<td>&nbsp;&nbsp;</td>
+					<td class = "table-line2"><div class = "box"><input type="radio" name="share" value=\"공유여부\"></div></td>
 				</tr>
 			</table>
 			<input type="submit" value="만들자!" id="submit-button"></div>
