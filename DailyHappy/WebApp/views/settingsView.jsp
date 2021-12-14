@@ -42,7 +42,9 @@
             }
             
             a:link {color: black; text-decoration: none;}
-            
+            #on, #off{
+            	cursor: pointer;
+            }
         </style>
     </head>
     <body>
@@ -57,7 +59,7 @@
                 <article class="box">
                     <span>♫소리♫</span>
                     <!--<audio loop id="audio" src="../resources/media/bensound-memories.mp3"></audio> -->
-                   	<button id="on" type="button" onclick="on()">◀</button><span>on/off</span><button id="off" type="button" onclick="off()">▶</button>
+                   	<span id="on" onclick="on()">◀</span><span>on/off</span><span id="off" type="button" onclick="off()">▶</span>
                 </article>            
                 <article class="box">
                     <span>글자크기</span>
@@ -70,7 +72,7 @@
                     <a class="box" href="dInfoView.jsp">개발자 정보</a>
                 </article>
                 <article>
-                    <a class="box" href="copyrightView.jsp">저작권 정보</a>
+                    <a class="box" href="copyrightView.jsp">라이선스</a>
                 </article>
                 <article>
                     <a class="box" href="uManageView.jsp">회원 관리</a>

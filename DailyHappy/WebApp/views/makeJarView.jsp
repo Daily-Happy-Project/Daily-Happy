@@ -33,30 +33,53 @@
 }
 	body{
 	background-color: #FFC7C7;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	}
+	
+	.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0px;
+	height: 91vh;
+	width: 100vw;
 	}
 	form{
 		font-family: 'Uiyeun';
 		font-size: 5vh;
 	}
 	table{
+		width: 90vw;
+		max-width: 400px;
 		margin-top: 30px;
-		color: #9D9D9D;
+		color: #000;
 	}
+
 	.table-line1{
 		text-align: right;
 	}
 	.table-line2{
-		width: 150px;
 		text-align: center;
 		
 	}
+	#jname-text{
+		border: none;
+		background-color: rgba(0,0,0,0);
+		font-family: 'Uiyeun';
+		font-size: 4vh;
+		width: 90%;
+	}
 	.box{
 		width: 100%;
-		padding: 5px 5px 5px 5px;
-		outline: 2.5px solid #9D9D9D;
+		outline: 2.5px solid #000;
   		border-radius: 5px;
   		overflow: auto;
   		white-space:nowrap;
+  		padding: 5px auto;
 	}
 	.empty{
 		height: 20px;
@@ -93,7 +116,7 @@ label
 {
     height: 100%;
     width: 50px;
-    padding: 0 0 0 0;
+    padding: 0;
     display: inline-block;
 	cursor: pointer;
 }
@@ -109,10 +132,12 @@ label img{
 
 </head>
 <body>
+<div class="container">
 	<header>
 	    <h2 class="title">새 유리병 만들기</h2>
 		<%@include file="header.html"%>
 	</header>
+	<nav><%@include file="bottomNavi.html"%></nav>
 	<section>
 		<article align="center">
 
@@ -121,7 +146,7 @@ label img{
 				<tr>
 					<td class = "table-line1">병 이름</td>
 					<td>&nbsp;&nbsp;</td>
-					<td class = "table-line2"><div class = "box"><input type="text" name="Jname"/></div></td>
+					<td class = "table-line2"><div class = "box"><input type="text" id="jname-text" name="Jname" placeholder="유리병 이름을 지어주세요!"/></div></td>
 				</tr>
 				<tr>
 					<td colspan="3"><div class = "empty"></div></td>
@@ -206,6 +231,9 @@ label img{
 			</form>
 		</article>
 	</section>
+
+</div>
+	
 	
 	<script type="text/javascript">
 	$(function(){
@@ -213,7 +241,6 @@ label img{
 		$('#no-1').prop('checked',true);
 	});
 	</script>
-    <footer align="center"><%@include file="footer.html"%></footer>
-    <nav><%@include file="bottomNavi.html"%></nav>
+
 </body>
 </html>

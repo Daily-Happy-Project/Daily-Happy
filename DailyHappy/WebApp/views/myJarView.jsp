@@ -33,6 +33,8 @@
                 width: 200px;
                 margin-top: 30px;
                 text-align: center;
+                font-family: 'Uiyeun';
+                font-size: 4vh;
             }
             .box{
             	display: inline-block;
