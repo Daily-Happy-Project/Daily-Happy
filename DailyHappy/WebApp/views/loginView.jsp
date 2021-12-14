@@ -113,9 +113,7 @@ body{
 			</a>
 			
 			<!-- 네이버 로그인 -->
-			<a id="naverIdLogin_loginButton" href="javascript:void(0)">
-				<button type="button"><img src="../resources/images/btnW_White.png"/></button>
-			</a>
+			<div id="naver_id_login"></div>
 					
         </form>
 	    
@@ -166,55 +164,27 @@ function kakaoLogout() {
   }  
 </script>
 
-<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
-<script>
-//네이버로그인
-var naverLogin = new naver.LoginWithNaverId(
-		{
-			clientId: "NAX_UJKJEGd7IGwfJSQC",
-			callbackUrl: "http://localhost:8005/views/mainView.jsp",
-			isPopup: false,
-			callbackHandle: true
-		}
-	);	
+<!-- 네이버 로그인 -->
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-naverLogin.init();
+<script type="text/javascript">
+	var naver_id_login = new naver_id_login("NAX_UJKJEGd7IGwfJSQC", "http://localhost:8005/views/mainView.jsp");
+	var state = naver_id_login.getUniqState();
+	naver_id_login.setButton("white", 2,40);
+	naver_id_login.setDomain("/mainView.jsp");
+	naver_id_login.setState(state);
+	naver_id_login.setPopup();
+	naver_id_login.init_naver_id_login();
+</script>
 
-window.addEventListener('load', function () {
-	naverLogin.getLoginStatus(function (status) {
-		if (status) {
-			var email = naverLogin.user.getEmail();
-    		
-			console.log(naverLogin.user); 
-    		
-            if( email == undefined || email == null) {
-				alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
-				naverLogin.reprompt();
-				return;
-			}
-		} else {
-			console.log("callback 처리에 실패하였습니다.");
-		}
-	});
-});
-
-
-var testPopUp;
-function openPopUp() {
-    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
-}
-function closePopUp(){
-    testPopUp.close();
-}
-
-function naverLogout() {
-	openPopUp();
-	setTimeout(function() {
-		closePopUp();
-		}, 1000);
+<script type="text/javascript">
+	function naverSignInCallback() {
+		alert(naver_id_login.getProfileData('email'));
+		alert(naver_id_login.getProfileData('nickname'));
+	}
 	
-	
-}
+	naver_id_login.get_naver_userprofile("naverSignInCallback()");
 </script>
 </body>
 </html>
