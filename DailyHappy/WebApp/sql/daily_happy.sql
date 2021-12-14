@@ -39,19 +39,19 @@ CREATE TABLE IF NOT EXISTS item(
 
 -- [CREATE ITEM TABLE AFTER -> insert !soon seo dae ro!] -- 
 insert into item (itemName, itemType, price, info, img1) 
-values("±âº» À¯¸®º´", "jar", 100, "±âº» À¯¸®º´ÀÔ´Ï´Ù.", "http://211.253.26.72/DailyHappy/resources/images/normal-0.png");
+values("ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "jar", 100, "ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.", "http://211.253.26.72/DailyHappy/resources/images/normal-0.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("»¡°£ ±×¶óµ¥ÀÌ¼Ç »öÁ¾ÀÌ", "paper", 100, "»¡°£»ö ±×¶óµ¥ÀÌ¼Ç »öÁ¾ÀÌÀÔ´Ï´Ù.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-r.png");
+values("ï¿½ï¿½ï¿½ï¿½ ï¿½×¶ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "paper", 100, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¶ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-r.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("ÇÐ", "foldMethod", 100, "ÇÐ¸ð¾ç µµ¾ÈÀÔ´Ï´Ù.", "http://211.253.26.72/DailyHappy/resources/images/color-logo2.png");
+values("ï¿½ï¿½", "foldMethod", 100, "ï¿½Ð¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.", "http://211.253.26.72/DailyHappy/resources/images/color-logo2.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("³ë¶û ±×¶óµ¥ÀÌ¼Ç »öÁ¾ÀÌ", "paper", 100, "³ë¶õ»ö ±×¶óµ¥ÀÌ¼Ç »öÁ¾ÀÌÀÔ´Ï´Ù.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-y.png");
+values("ï¿½ï¿½ï¿½ ï¿½×¶ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "paper", 100, "ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¶ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-y.png");
 
 insert into item (itemName, itemType, price, info, img1) 
-values("ÃÊ·Ï ±×¶óµ¥ÀÌ¼Ç »öÁ¾ÀÌ", "paper", 100, "ÃÊ·Ï»ö ±×¶óµ¥ÀÌ¼Ç »öÁ¾ÀÌÀÔ´Ï´Ù.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-g.png");
+values("ï¿½Ê·ï¿½ ï¿½×¶ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "paper", 100, "ï¿½Ê·Ï»ï¿½ ï¿½×¶ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.", "http://211.253.26.72/DailyHappy/resources/images/gra-paper-g.png");
 
 -- [!!!!!!!!!!!!!!SOON SEO DAE RO insert!!!!!!!!!!!!!!] --
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS jarImg(
 );
 
 -- [CREATE jarImg TABLE AFTER -> insert !soon seo dae ro!] --
-insert into jarImg values("±âº» À¯¸®º´ÇÐ",
+insert into jarImg values("ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
 	"http://211.253.26.72/DailyHappy/resources/images/normal-0.png", 
 	"http://211.253.26.72/DailyHappy/resources/images/normal-1.png",
 	"http://211.253.26.72/DailyHappy/resources/images/normal-2.png",
@@ -118,4 +118,7 @@ CREATE TABLE IF NOT EXISTS emailItem(
     apply tinyint(1) DEFAULT 0,
     FOREIGN KEY (itemCode) REFERENCES item (itemCode));
 
-
+CREATE TABLE IF NOT EXISTS friend(
+	uemail VARCHAR(128),
+	fremail VARCHAR(128),
+	INDEX idx1(email));
