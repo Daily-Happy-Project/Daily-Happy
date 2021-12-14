@@ -106,11 +106,115 @@ body{
             아이디 저장<input type = "checkbox" name="loginChk" value = "true" checked><br>
             <br>아직 계정이 없으신가요?
             <a href="signupView.jsp" class="button">회원가입</a>
+            
+            <!-- 카카오 로그인 -->
+            <a onclick="kakaoLogin();" href="javascript:void(0)">
+				<button type="button"><img src="../resources/images/kakao_login_medium.png"/></button>
+			</a>
+			
+			<!-- 네이버 로그인 -->
+			<a id="naverIdLogin_loginButton" href="javascript:void(0)">
+				<button type="button"><img src="../resources/images/btnW_White.png"/></button>
+			</a>
+					
         </form>
 	    
 	    <!--계정 찾기 기능 추가?-->
 
    </div>
 
+<!-- 카카오 로그인 자바스크립트 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('965f16dea7d025318b70ff765ca81441');
+console.log(Kakao.isInitialized());
+
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+  
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script>
+
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+<script>
+//네이버로그인
+var naverLogin = new naver.LoginWithNaverId(
+		{
+			clientId: "NAX_UJKJEGd7IGwfJSQC",
+			callbackUrl: "http://localhost:8005/views/mainView.jsp",
+			isPopup: false,
+			callbackHandle: true
+		}
+	);	
+
+naverLogin.init();
+
+window.addEventListener('load', function () {
+	naverLogin.getLoginStatus(function (status) {
+		if (status) {
+			var email = naverLogin.user.getEmail();
+    		
+			console.log(naverLogin.user); 
+    		
+            if( email == undefined || email == null) {
+				alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
+				naverLogin.reprompt();
+				return;
+			}
+		} else {
+			console.log("callback 처리에 실패하였습니다.");
+		}
+	});
+});
+
+
+var testPopUp;
+function openPopUp() {
+    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
+}
+function closePopUp(){
+    testPopUp.close();
+}
+
+function naverLogout() {
+	openPopUp();
+	setTimeout(function() {
+		closePopUp();
+		}, 1000);
+	
+	
+}
+</script>
 </body>
 </html>
