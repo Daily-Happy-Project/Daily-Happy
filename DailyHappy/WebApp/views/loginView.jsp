@@ -7,11 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>로그인</title>  
-<!--
-<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/allStyle.css"/>
-<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/loginStyle.css"/>
-<link rel="stylesheet" href="/DailyHappy/WebApp/resources/css/formStyle.css"/>
--->
+
 <link rel="stylesheet" href="../resources/css/allStyle.css"/>
 <link rel="stylesheet" href="../resources/css/loginStyle.css"/>
 <link rel="stylesheet" href="../resources/css/formStyle.css"/>
@@ -74,6 +70,17 @@ body{
     border-right: 0px;
 }
 </style>
+<style type="text/css">
+/*social login style*/
+	#social-login-wrap{
+		height: 40px;
+		width: 100%;
+	}
+	#social-login-wrap img, #naver_id_login{
+		height: 100%;
+		width: auto;
+	}
+</style>
 </head>
 <%
 //쿠키가져오기
@@ -106,15 +113,16 @@ body{
             아이디 저장<input type = "checkbox" name="loginChk" value = "true" checked><br>
             <br>아직 계정이 없으신가요?
             <a href="signupView.jsp" class="button">회원가입</a>
-            
+            <div id="social-login-wrap">
             <!-- 카카오 로그인 -->
             <a onclick="kakaoLogin();" href="javascript:void(0)">
-				<button type="button"><img src="../resources/images/kakao_login_medium.png"/></button>
+				<div><img src="../resources/images/kakao_login_medium.png"/></div>
 			</a>
 			
 			<!-- 네이버 로그인 -->
 			<div id="naver_id_login"></div>
-					
+            </div>
+		
         </form>
 	    
 	    <!--계정 찾기 기능 추가?-->
@@ -171,7 +179,7 @@ function kakaoLogout() {
 <script type="text/javascript">
 	var naver_id_login = new naver_id_login("NAX_UJKJEGd7IGwfJSQC", "http://localhost:8005/views/mainView.jsp");
 	var state = naver_id_login.getUniqState();
-	naver_id_login.setButton("white", 2,40);
+	naver_id_login.setButton("greem", 3,40);
 	naver_id_login.setDomain("/mainView.jsp");
 	naver_id_login.setState(state);
 	naver_id_login.setPopup();

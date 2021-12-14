@@ -132,7 +132,6 @@ hr{
 	padding: 3px 0px;
 	width: 40vw;
 	max-width: 200px;
-	background-color: #ffffff;
 	text-align: center;
 	margin-top:auto;
 	margin-left: 10px;
@@ -146,7 +145,7 @@ hr{
     color: #000;
     text-align:center;
     outline: 2.5px solid #000;
-    background-color: ;
+    background-color: #fff557;
  	border-radius: 5px;
 	margin: auto 0 0 auto;
 }
@@ -202,13 +201,38 @@ hr{
 	<nav>
 		<%@include file="bottomNavi.html"%>
 	</nav>
-	<section class="p-bgcolor">
-	
+	<section>
+		<article class = "item-section t-bgcolor" align="center">
+			<%
+			
+				ArrayList<ItemObj> themeList = (new ItemDAO()).getItemList("theme");
+				String str = "";
+				str += "<table class=\"item-table\" align=\"center\">";
+				for(ItemObj item : themeList ){
+					int itemCode = item.getItemCode();
+					String itemName = item.getItemName();
+					int price = item.getPrice();
+					String info = item.getInfo();
+					String img1 = item.getImg1();
+					str += "<tr class=\"item-wrap\"><td class=\"itemImg\">";
+					str += "<img class=\"itmImg\" src=\"" + img1 + "\"></td>";
+					str += "<td class=\"item-info-wrap\"><div class=\"item-name\">" + itemName + "</div>";
+					str += "<hr>";
+					str += "<div class=\"item-info\">"+info+"</div>";
+					str += "<div class=\"price\">" + price + " 코인</div>";
+
+					str += "</td></tr>";
+					str += "<tr><td><div class=\"blank\"></div></td></tr>";
+					}
+				str += "</table>";
+				out.print(str);
+			%>
+		</article>
 		<article class = "item-section p-bgcolor" align="center">
 			<%
 			
 				ArrayList<ItemObj> paperList = (new ItemDAO()).getItemList("paper");
-				String str = "";
+				str = "";
 				str += "<table class=\"item-table\" align=\"center\">";
 				for(ItemObj item : paperList ){
 					int itemCode = item.getItemCode();
@@ -225,7 +249,6 @@ hr{
 
 					str += "</td></tr>";
 					str += "<tr><td><div class=\"blank\"></div></td></tr>";
-					//str += "<tr><td class=\"info\" colspan=2>" + info + "</td></tr>";
 					}
 				str += "</table>";
 				out.print(str);
@@ -251,7 +274,6 @@ hr{
 
 					str += "</td></tr>";
 					str += "<tr><td><div class=\"blank\"></div></td></tr>";
-					//str += "<tr><td class=\"info\" colspan=2>" + info + "</td></tr>";
 					}
 				str += "</table>";
 				out.print(str);
@@ -277,7 +299,6 @@ hr{
 
 					str += "</td></tr>";
 					str += "<tr><td><div class=\"blank\"></div></td></tr>";
-					//str += "<tr><td class=\"info\" colspan=2>" + info + "</td></tr>";
 					}
 				str += "</table>";
 				out.print(str);
@@ -290,10 +311,19 @@ hr{
 	
 	<script type="text/javascript">
 		function Select(gap){
-			var select = '.'+$(gap).attr('class');
+			var selectC = '.'+$(gap).attr('class');
+			var select = $(gap).attr('class');
 			$('.item-section').addClass('hide');
-			$(select).removeClass('hide');
-		}
+			$(selectC).removeClass('hide');
+			$('section').attr('class',select);
+			$('#mycoin').attr('class',select);
+		};
+		$(function(){
+			$('.item-section').addClass('hide');
+			$('.t-bgcolor').removeClass('hide');
+			$('section').addClass('t-bgcolor');
+			$('#mycoin').addClass('t-bgcolor');
+		});
 	</script>
 </body>
 </html>
