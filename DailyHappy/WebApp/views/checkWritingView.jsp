@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<title>작성글 확인</title>
+<title>하루, 행복 - 작성글 확인</title>
 <style type="text/css">
 @font-face {
     font-family: 'Uiyeun';
@@ -34,14 +34,15 @@ body{
 
 }
 	#wrap{
-		width: 60vw;
-		max-width: 300px;
 		margin: 0 auto;
 		z-index: 5;
 		margin-top: 10vh;
 		margin-bottom: 10vh;
 	}	
 	#p-text-wrap{
+		display: inline-block;
+		width: 60vw;
+		max-width: 300px;
 		height: 60vw;
 		max-height: 300px;
 		margin: 0 auto;
@@ -54,6 +55,7 @@ body{
 		background-position: contain;
 		background-repeat: no-repeat;
 		box-shadow: 8px -8px 0 0 rgba(94,96,115,0.3);
+		overflow: auto;
     }
 	.text{
 		font-family: 'Uiyeun';
@@ -62,8 +64,7 @@ body{
 		resize: none;
 		border: none;
 	 	background-color: transparent;
-		width: 90%;
-		height: 90%;
+		width: 100%;
 	}
 	.other-t{
 		font-size: 4vh;
@@ -79,22 +80,22 @@ body{
 		border: none;
 		border-radius: 8px;
 		margin-top: 5vh;
-		margin-right: 5vh;
-		margin-left: 5vh;
-		width: 100px;
 		height: 50px;
+		width: 25vw;
+		max-width: 120px;
 		box-shadow: 6px -7px 0 0 rgba(94,96,115,0.3);
 	}
 	#submit{
-		background-color:#FFC7C7; 
+		background-color:#FFC7C7;
 	}
 	#delete{
-		background-color:#D8D8D8; 
+		background-color:#D8D8D8;  
 	}
 	#buttons{
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		justify-content: space-between;
 	}
 	/* #p-submit:hover{
 		background-color:#c33837;
@@ -119,8 +120,7 @@ body{
 	%>
 		
 	
-	<article align="center">
-	<div id="wrap">
+	<article id="wrap" align="center">
 		<form method="post" action="../jsp/writingDel.jsp">	
 			<div id="p-text-wrap">
 				<%
@@ -133,16 +133,14 @@ body{
 						int no = obj.getNo();
 						session.setAttribute("no", no);
 						String name = new UserDAO().getName((String)session.getAttribute("email"));
-						str+="<div class=\"writing\">";
-						
-						str+="<textarea class=\"text\" id=\"content\" rows=\"4\" cols=\"12\">"+content+"</textarea>";
+						str+="<div class=\"text\" id=\"content\">"+content+"</div>";
 						str+="<textarea class=\"text other-t\" name=\"no\" rows=\"1\" cols=\"12\" style=\"display:none\">"+no+"</textarea>";
 						str+="<textarea class=\"text other-t\" name=\"jarName\"rows=\"1\" cols=\"12\" style=\"display:none\">" + jarName + "</textarea>";
-						str+="<textarea class=\"text other-t\" rows=\"1\" cols=\"12\">작성자: " + name + "</textarea>";
-						str+="<textarea class=\"text other-t\" rows=\"1\" cols=\"12\">작성일: " + stamp + "</textarea>";
+						str+="<div class=\"text other-t\">작성자: " + name + "</div>";
+						str+="<div class=\"text other-t\">작성일: " + stamp + "</div>";
 						
 		
-						str+="</div>";
+
 						out.print(str); 
 						
 						ItemDAO iDao = new ItemDAO();
@@ -162,13 +160,10 @@ body{
 			<div id="buttons">
 			<input id="submit" type="button" value="공유">
 			<!-- <a id="btnTwitter" href="javascript:shareTwitter();">트위터</a> 이미지 추가해야됨(인스타, 카카오톡, 페이스북)
-		 --><input id="delete" type="submit" value="글 삭제">;
+		 --><input id="delete" type="submit" value="글 삭제">
 			</div>
-		
-	</form>
-	</div>
+		</form>
 	</article>
-	</div>
 	</div>
 	<%@include file="bgStyle.jsp"%>
 	<script>
