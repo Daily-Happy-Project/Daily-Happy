@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta charset="UTF-8">
+<title>친구 목록</title>
+</head>
+<body>
+<script src="js/jquery-3.5.1.min.js"></script> 
+<script src="js/core.js"></script>
+
+<div class="page-hdr">친구 목록</div> 
+	<div class="page-body">
+		<div class="page-mnu">
+			<div class="menu" onclick="goHome()">홈</div>
+			<div class="menu" onclick="goList()">내친구</div>
+		</div>
+		<div id="list" class="section"></div>
+		<div class="page-msg hide">추천할 친구가 없습니다.</div>
+		
+		
+<script>
+$(document).ready(function() {
+Page.init(start); });
+var myId = null; function start(uid) {
+myId = uid;
+AJAX.call("jsp/userList.jsp", null, function(data) {
+var list = JSON.parse(data.trim());
+show(list); });
+}
+function show(list) {
+var str = "", cnt = 0;
+for (var i=0; i<list.length; i++) {
+if (list[i].id == myId) continue;
+str += getFeedCode(list[i]);
+cnt++;
+}
+$("#list").append(str); 
+if (cnt == 0) {
+	$(".page-msg").removeClass("hide"); 
+	}
+	}
+	function getFeedCode(user) { 
+		var str = "<div class='feed'>"; 
+		str += "<div class='author'>"; 
+		if (user.images == null) {
+			str += "<div class='photo'></div>"; 
+		}
+		else {
+			var imgurl = "images/" + user.images[0];
+			str += "<div class='photo' style='background-image: url(\"" + imgurl + "\")'></div>";
+		}
+		str += "<div class='name'>" + user.name + "</div>";
+		str += "<div class='btn-add' onclick='addFriend(\"" + user.id + "\")'></div>";
+		str += "</div>";
+		str += "</div>";
+		
+		return str;
+	}
+	
+	function addFriend(uid) {
+		var params = {uemail: myId, fremail: uid}; 
+		AJAX.call("jsp/friendAdd.jsp", params, function(data) {
+		var code = data.trim(); 
+		
+		if (code == "EX") {
+			alert("이미 추가된 친구입니다."); 
+			}
+		else {
+			alert("친구 추가가 완료되었습니다.");
+			} 
+		});
+	}
+	
+	function goHome() { 
+		window.location.href = "mainView.jsp";
+	}
+	function goAdd() {
+		window.location.href = "friendAdd.html"; 
+	}
+	function goList(uemail) { 
+		window.location.href = "friend.html";
+	}
+	
+</script>
+</body>
+</html>
