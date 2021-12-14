@@ -10,10 +10,15 @@
 	String umember = (String)session.getAttribute("memberType");
 	if (uemail == null) {
 		response.sendRedirect("loginView.jsp");
+		return;
 	}
 	session.setAttribute("email", uemail);
 	session.setAttribute("memberType", umember);
 
+%>
+<%
+	String email = (String)session.getAttribute("email");
+	int coin = new UserItemDAO().userCoin(email);
 %>
 <!DOCTYPE html>
 <html>
@@ -31,123 +36,264 @@
     font-weight: normal;
     font-style: normal;
 }
-	body{
-		background-color: #FFC7C7;
-		margin-bottom: 90px;
-	}
-	p{
-		font-family: 'Uiyeun';
-		font-size: 4vh;
-		outline: 2.5px solid #ffffff;
-  		border-radius: 15px;
-  		padding: 5px 0px 5px 0px;
-  		margin-left: 15px;
-  		width: 40%;
-  		background-color: #ffffff;
-  		text-align: center;
-	}
-	form{
-		font-family: 'Uiyeun';
-		font-size: 4vh;
-	}
-	table{
-		margin-top: 1px;
-		width: 100%;
-		padding: 10px 10px 10px 10px;
-		outline: 2.5px solid #9D9D9D;
-  		border-radius: 5px;
-  		overflow: auto;
-  		white-space:nowrap;
-  		display: inline-block;
-  		background-color:#ffffff;
-	}
-	.itemImg{
-	    width: 30%;
-	    height: 100%
-	    border: 5px 5px 5px 5px;
-	    padding: 5px 5px 5px 5px;
-	}
-	.itmImg{
-		width:100%;
-		height:100%;
-	}
-	.name {
-		height: 70%;
-	    width: 40px;
-	    padding: 5px 5px 5px 5px;
-	    text-align:left;
-	}
-	.price {
-		height: 15px;
-	    width: 80px;
-	    color: #9D9D9D;
-	    text-align:center;
-	    outline: 2.5px solid #9D9D9D;
-  		border-radius: 10px;
-  		background-
-	}
-	.info {
-		height: 70%;
-	    width: 50px;
-	    padding: 5px 5px 5px 5px;
-	    text-align:left;
-	    color: #9b9b9b;
-	}
+body{
+	margin: 0;
+}
+header{
+	display: flex;
+	flex-direction: column;
+	height: 25vh;
+	width: 100vw;
+	font-family: 'Uiyeun';
+	font-size: 4vh;
+}
+section{
+	height: 66vh;
+	width: 100vw;
+	font-family: 'Uiyeun';
+	font-size: 4vh;
+}
+hr{
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5px;
+	border: none;
+	border-top: 1.5px solid #000;
+}
 
+.blank{
+	height: 10px;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0px;
+	height: 91vh;
+	width: 100vw;
+}
+.item-section{
+	margin: 0 auto;
+	width: 100vw;
+	height: 100%;
+	max-width: 500px;
+	overflow: auto;
+}
+.item-table{
+	width: 95%;
+	height: 100%;
+	margin: 10px 0;
+	padding: 10px 5px;
+	white-space:nowrap;
+	display: inline-block;
+	border-collapse:collapse;
+}
+.item-wrap{
+	width: 100%;
+	margin: 0px;
+	outline: 2.5px solid #000;
+	border-radius: 5px;
+	background-color: #fff;
+
+}
+.itemImg{
+    width: 30%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.itmImg{
+	width:100%;
+	height:100%;
+}
+.item-info-wrap{
+	display: flex;
+	width: 90%;
+	height: 100%;
+	flex-direction: column;
+	position: relative;
+	vertical-align: top;
+	text-align:left;
+	padding: 10px;
+}
+.item-name {
+    vertical-align: top;
+}
+.info {
+	height: 70%;
+    width: 50px;
+    text-align:left;
+    color: #9b9b9b;
+}
+
+#mycoin{
+	border-radius: 15px;
+	padding: 3px 0px;
+	width: 40vw;
+	max-width: 200px;
+	background-color: #ffffff;
+	text-align: center;
+	margin-top:auto;
+	margin-left: 10px;
+}
+
+
+
+.price{
+    width: 10vw;
+    min-width: 100px;
+    color: #000;
+    text-align:center;
+    outline: 2.5px solid #000;
+    background-color: ;
+ 	border-radius: 5px;
+	margin: auto 0 0 auto;
+}
+#select-section{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-family: 'Uiyeun';
+	font-size: 4vh;
+	margin-top:10px;
+
+}
+#select-section div{
+	width:25vw;
+	height: 5vh;
+	border-radius: 0px 10px 0px 0px;
+	cursor: pointer;
+}
+
+	
+
+.t-bgcolor{
+	background-color: #FFAAA7;
+}
+.p-bgcolor{
+	background-color: #FFD3B4;
+}
+.j-bgcolor{
+	background-color: #D5ECC2;
+}
+.f-bgcolor{
+	background-color: #98DDCA;
+}
+.hide{
+	display: none;
+}
 </style>
 
 </head>
 <body>
+	<div class="container" align = "center">
 	<header>
-	    <h2 class="title">상점</h2>
-		<%@include file="header.html"%>
-		<%
-			String email = (String)session.getAttribute("email");
-			int coin = new UserItemDAO().userCoin(email);
-			String st = "<p>보유 코인 :  " + coin + " 코인</p>";
-			out.print(st);
-		%>
-		
+
+		<div id="mycoin">보유 코인 : <%= coin %></div>
+
+		<div id="select-section">
+			<div class="t-bgcolor" onclick="Select(this)">테마</div>
+			<div class="p-bgcolor" onclick="Select(this)">학종이</div>
+			<div class="j-bgcolor" onclick="Select(this)">유리병</div>
+			<div class="f-bgcolor" onclick="Select(this)">도안</div>
+		</div>
 	</header>
-	<section>
-		<article align="center">
-			<form method="post" action="../jsp/newJar.jsp">
+	<nav>
+		<%@include file="bottomNavi.html"%>
+	</nav>
+	<section class="p-bgcolor">
+	
+		<article class = "item-section p-bgcolor" align="center">
 			<%
 			
 				ArrayList<ItemObj> paperList = (new ItemDAO()).getItemList("paper");
 				String str = "";
-				String script = "<script type=\"text/javascript\">";
+				str += "<table class=\"item-table\" align=\"center\">";
 				for(ItemObj item : paperList ){
 					int itemCode = item.getItemCode();
 					String itemName = item.getItemName();
 					int price = item.getPrice();
 					String info = item.getInfo();
 					String img1 = item.getImg1();
-					
-					str += "<table align=\"center\">";
-					str += "<tr><td class=\"itemImg\" rowspan=3 width=\"40%\">";
+					str += "<tr class=\"item-wrap\"><td class=\"itemImg\">";
 					str += "<img class=\"itmImg\" src=\"" + img1 + "\"></td>";
-					str += "<td><div class=\"name\">" + itemName + "</div></td>";
-					str += "<td class=\"price\">" + price + " 코인</td></tr>";
-					str += "<td colspan=2><hr></td>";
-					str += "<tr><td class=\"info\" colspan=2>" + info + "</td></tr>";
-					str += "</tr></table>";
-					out.print(str);
+					str += "<td class=\"item-info-wrap\"><div class=\"item-name\">" + itemName + "</div>";
+					str += "<hr>";
+					str += "<div class=\"item-info\">"+info+"</div>";
+					str += "<div class=\"price\">" + price + " 코인</div>";
+
+					str += "</td></tr>";
+					str += "<tr><td><div class=\"blank\"></div></td></tr>";
+					//str += "<tr><td class=\"info\" colspan=2>" + info + "</td></tr>";
 					}
-				script += "</script>";
-				out.print(script);
+				str += "</table>";
+				out.print(str);
 			%>
-			</form>
+		</article>
+		<article class = "item-section j-bgcolor" align="center">
+			<%
+				ArrayList<ItemObj> jarList = (new ItemDAO()).getItemList("jar");
+				str = "";
+				str += "<table class=\"item-table\" align=\"center\">";
+				for(ItemObj item : jarList ){
+					int itemCode = item.getItemCode();
+					String itemName = item.getItemName();
+					int price = item.getPrice();
+					String info = item.getInfo();
+					String img1 = item.getImg1();
+					str += "<tr class=\"item-wrap\"><td class=\"itemImg\">";
+					str += "<img class=\"itmImg\" src=\"" + img1 + "\"></td>";
+					str += "<td class=\"item-info-wrap\"><div class=\"item-name\">" + itemName + "</div>";
+					str += "<hr>";
+					str += "<div class=\"item-info\">"+info+"</div>";
+					str += "<div class=\"price\">" + price + " 코인</div>";
+
+					str += "</td></tr>";
+					str += "<tr><td><div class=\"blank\"></div></td></tr>";
+					//str += "<tr><td class=\"info\" colspan=2>" + info + "</td></tr>";
+					}
+				str += "</table>";
+				out.print(str);
+			%>
+		</article>
+		<article class = "item-section f-bgcolor" align="center">
+			<%
+				ArrayList<ItemObj> foldList = (new ItemDAO()).getItemList("foldMethod");
+				str = "";
+				str += "<table class=\"item-table\" align=\"center\">";
+				for(ItemObj item : foldList ){
+					int itemCode = item.getItemCode();
+					String itemName = item.getItemName();
+					int price = item.getPrice();
+					String info = item.getInfo();
+					String img1 = item.getImg1();
+					str += "<tr class=\"item-wrap\"><td class=\"itemImg\">";
+					str += "<img class=\"itmImg\" src=\"" + img1 + "\"></td>";
+					str += "<td class=\"item-info-wrap\"><div class=\"item-name\">" + itemName + "</div>";
+					str += "<hr>";
+					str += "<div class=\"item-info\">"+info+"</div>";
+					str += "<div class=\"price\">" + price + " 코인</div>";
+
+					str += "</td></tr>";
+					str += "<tr><td><div class=\"blank\"></div></td></tr>";
+					//str += "<tr><td class=\"info\" colspan=2>" + info + "</td></tr>";
+					}
+				str += "</table>";
+				out.print(str);
+			%>
 		</article>
 	</section>
+    <footer align="center"></footer>
+    <%@include file="bgStyle.jsp"%>
+	</div>
 	
-<!-- 	<script type="text/javascript">
-	$(function(){
-		$('#no1').prop('checked',true);
-		$('#no-1').prop('checked',true);
-	});
-	</script> -->
-    <footer align="center"><%@include file="footer.html"%></footer>
-    <nav><%@include file="bottomNavi.html"%></nav>
+	<script type="text/javascript">
+		function Select(gap){
+			var select = '.'+$(gap).attr('class');
+			$('.item-section').addClass('hide');
+			$(select).removeClass('hide');
+		}
+	</script>
 </body>
 </html>
