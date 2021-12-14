@@ -9,9 +9,10 @@
 	new UserDAO().delete(email);
 	new JarDAO().deleteJarTable(email);
 	new WritingDAO().deleteWritingTable(email);
+	new FriendDAO().deleteFriendTable(email);
 	
 	WritingDAO dao = new WritingDAO();
-	if (new UserDAO().delete(email) && new WritingDAO().deleteWritingTable(email) && new JarDAO().deleteJarTable(email) && new UserItemDAO().deleteItemTable(email)){
+	if (new UserDAO().delete(email) && new WritingDAO().deleteWritingTable(email) && new JarDAO().deleteJarTable(email) && new UserItemDAO().deleteItemTable(email) && new FriendDAO().deleteFriendTable(email) ){
 		out.print("탈퇴가 완료되었습니다.");
 	}
 	else {

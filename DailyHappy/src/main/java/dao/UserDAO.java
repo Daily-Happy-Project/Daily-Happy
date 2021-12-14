@@ -30,6 +30,7 @@ public class UserDAO {
             		+ "foldMethodName VARCHAR(32), "
             		+ "cnt int UNSIGNED DEFAULT 0, "
             		+ "goalNum int UNSIGNED DEFAULT 0,"
+            		+ "shareState boolean DEFAULT 0,"
             		+ "jarImgName VARCHAR(128),"
             		+ "FOREIGN KEY (jarItemName) REFERENCES item (itemName),"	
             		+ "FOREIGN KEY (jarImgName) REFERENCES jarImg (imgName))");
@@ -47,6 +48,10 @@ public class UserDAO {
             		+ "itemType VARCHAR(32),"
             		+ "apply tinyint(1) DEFAULT 0,"
             		+ "FOREIGN KEY (itemCode) REFERENCES item (itemCode) ON DELETE CASCADE)");
+            
+            stmt.execute("CREATE TABLE IF NOT EXISTS " + email + "FriendList("
+            		+ "friendEmail VARCHAR(128) PRIMARY KEY, "
+            		+ "FOREIGN KEY (friendEmail) REFERENCES user (email) ON DELETE CASCADE)");
           
             return (count == 1) ? true : false;
             
