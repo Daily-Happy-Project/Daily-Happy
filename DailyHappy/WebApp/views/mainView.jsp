@@ -99,8 +99,8 @@ body{
 }
 .cnt-wrap{
 	position: fixed;
-	bottom: 88vh;
-	z-index: 5;
+	top: 0; 
+	z-index: 9;
 	font-size: 30pt;
 	width: 100%;
 }
@@ -160,10 +160,10 @@ body{
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	top: 100px;
+	bottom: 20vh;
 	width: 100vw;
 	height: 450px;
-
+	z-index: 8;
 }
 .jar-img-box{
 	width: 70vw;
