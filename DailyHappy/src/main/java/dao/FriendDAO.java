@@ -71,7 +71,7 @@ public class FriendDAO {
     		
     		ArrayList<FriendObj> friend=new ArrayList<FriendObj>();
     		while(rs.next()) {
-    			friend.add(new FriendObj(rs.getString("email")));
+    			friend.add(new FriendObj(rs.getString("friendEmail")));
     		}
     		
     		return friend;
