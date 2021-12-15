@@ -2,10 +2,14 @@ package dao;
 
 import java.sql.*;
 import java.text.ParseException;
+import java.util.ArrayList;
 
 import javax.naming.NamingException;
 
 import util.ConnectionPool;
+import util.FriendObj;
+import util.JarObj;
+import util.UserObj;
 
 public class FriendDAO {
 	public String insert(String uemail, String fremail) throws NamingException, SQLException, ParseException { 
@@ -50,6 +54,40 @@ public class FriendDAO {
 				if (conn != null) conn.close(); 
 				}
 		}
+	
+	
+
+	
+	
+    public ArrayList<FriendObj> getFriendList(String email) throws NamingException, SQLException {
+    	Connection conn=ConnectionPool.get();
+    	PreparedStatement stmt=null;
+    	ResultSet rs=null;
+    	try {
+    		email = new UserDAO().splitemail(email);
+    		String sql = "SELECT friendEmail FROM "+ email + "FriendList";
+    		stmt=conn.prepareStatement(sql);
+    		rs=stmt.executeQuery();
+    		
+    		ArrayList<FriendObj> friend=new ArrayList<FriendObj>();
+    		while(rs.next()) {
+    			friend.add(new FriendObj(rs.getString("friendEmail")));
+    		}
+    		
+    		return friend;
+    	} finally {
+    		if(rs!=null) 
+		    	rs.close();
+		    if(stmt!=null) 
+		    	stmt.close();
+		    if(conn!=null) 
+		    	conn.close();
+    	}
+    }
+	
+	
+	
+	
 	
 	public String getList(String uemail) throws NamingException, SQLException, ParseException { 
 		Connection conn = ConnectionPool.get();
@@ -98,6 +136,35 @@ public class FriendDAO {
 						conn.close();
 			} 
 		}
+	
+	
+	//jar list
+    public ArrayList<JarObj> getFriendJarList(String email) throws NamingException, SQLException {
+    	Connection conn=ConnectionPool.get();
+    	PreparedStatement stmt=null;
+    	ResultSet rs=null;
+    	try {
+    		email = new UserDAO().splitemail(email); 
+    		String sql="SELECT jarName, jarItemName, foldMethodName, jarImgName, goalNum, cnt, shareState FROM " + email + "JarList WHERE shareState=1";
+    		stmt=conn.prepareStatement(sql);
+    		rs=stmt.executeQuery();
+    		
+    		ArrayList<JarObj> jars=new ArrayList<JarObj>();
+    		while(rs.next()) {
+    			jars.add(new JarObj(rs.getString("jarName"), rs.getString("jarImgName"), rs.getInt("cnt"), rs.getInt("goalNum"), rs.getString("jarItemName"), rs.getString("foldMethodName"), rs.getBoolean("shareState")));
+    		}
+    		
+    		return jars;
+    	} finally {
+    		if(rs!=null) 
+		    	rs.close();
+		    if(stmt!=null) 
+		    	stmt.close();
+		    if(conn!=null) 
+		    	conn.close();
+    	}
+    }
+	
 	
 	 // delete jar table
     public boolean deleteFriendTable(String email) throws NamingException, SQLException {

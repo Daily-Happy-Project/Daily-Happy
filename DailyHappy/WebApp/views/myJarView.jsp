@@ -66,19 +66,20 @@
 			
 				String str = "<form method=\"get\" action=\"../jsp/jarDel.jsp\">";
 				str += "<table align=\"center\">";
-				str += "<tr><th>이름&nbsp</th><th>모양&nbsp&nbsp</th><th>도안&nbsp&nbsp</th><th>작성 글 갯수&nbsp&nbsp</th><th>목표치&nbsp&nbsp</th><th>삭제</th>";
-				str += "<tr><td colspan=6><hr></td></tr>";
+				str += "<tr><th>이름&nbsp</th><th>모양&nbsp&nbsp</th><th>도안&nbsp&nbsp</th><th>작성 글 갯수&nbsp&nbsp</th><th>목표치&nbsp&nbsp</th><th>공유여부&nbsp&nbsp</th><th>삭제</th>";
+				str += "<tr><td colspan=7><hr></td></tr>";
 				for (JarObj jar : list) {
 					str += "<tr>";
 					str += "<td width=\"20%\">" + jar.getJarName() + "</td>";
 					str += "<td width=\"15%\">" + jar.getJarItemName() + "</td>";
-					str += "<td width=\"15%\">" + jar.getFoldMethodName() + "</td>";
-					str += "<td width=\"15%\">" + jar.getCnt() + "</td>";
+					str += "<td width=\"10%\">" + jar.getFoldMethodName() + "</td>";
+					str += "<td width=\"10%\">" + jar.getCnt() + "</td>";
 					str += "<td width=\"20%\">" + jar.getGoalNum() + "</td>";
+					str += "<td width=\"10%\">" + jar.getShareState() + "</td>";
 					str += "<td width=\"15%\"><input type=\"checkbox\" name=\"delJar\" value=\""+ jar.getJarName() +"\"></td>";
 					str += "</tr>";
 				}
-				str += "<tr><td colspan=6><input type=\"submit\" value=\"선택한 유리병 삭제\"></td></tr>";
+				str += "<tr><td colspan=7><input type=\"submit\" value=\"선택한 유리병 삭제\"></td></tr>";
 				str += "</table>";
 				str += "</form>";
 				out.print(str);

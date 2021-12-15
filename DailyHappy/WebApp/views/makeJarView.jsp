@@ -223,7 +223,8 @@ label img{
 				<tr>
 					<td class = "table-line1">공유여부</td>
 					<td>&nbsp;&nbsp;</td>
-					<td class = "table-line2"><div class = "box"><input type="radio" name="share" value=\"공유여부\"></div></td>
+					<td class = "table-line2"><div class = "box"><input type="checkbox" id="share" name="shareState" value="true"/>
+					</div></td>
 				</tr>
 			</table>
 			<input type="submit" value="만들자!" id="submit-button"></div>

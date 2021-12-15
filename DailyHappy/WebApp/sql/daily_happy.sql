@@ -32,10 +32,14 @@ CREATE TABLE IF NOT EXISTS item(
 	price INT NOT NULL,	
 	info VARCHAR(1024) NOT NULL,	
 	img1 VARCHAR(1024) NOT NULL,	
-	img2 VARCHAR(1024),					
-	img3 VARCHAR(1024),					
-	img4 VARCHAR(1024)					
+	tableColor VARCHAR(32),					
+	color1 VARCHAR(32),					
+	color2 VARCHAR(32)					
 );
+
+-- ↑↑↑↑[ 상점 아이템 타입명 ]↑↑↑↑ 색종이 : paper, 도안 : foldMethod, 유리병 : jar, 테마 : theme--
+
+
 
 -- [CREATE ITEM TABLE AFTER -> insert !soon seo dae ro!] -- 
 insert into item (itemName, itemType, price, info, img1) 
