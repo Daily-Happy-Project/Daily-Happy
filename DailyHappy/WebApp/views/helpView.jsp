@@ -16,20 +16,23 @@
 			    font-style: normal;
 			}
 			body{
-				margin: 0;
+			background-color: #FFC7C7;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
 			}
+			
 			.container{
-				position: absolute;
-				top: 0px;
-				right: 0px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				height: 91vh;
-				width: 100vw;
-				background-color: #FFC7C7;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 0px;
+			height: 91vh;
+			width: 100vw;
 			}
+			
 			#padding-wrap{
 				margin: 0;
 				padding-bottom: 2vh;
@@ -42,6 +45,7 @@
 				align-items: center;
 				font-family: 'Uiyeun';
 				font-size: 4vh;
+				overflow: auto;
 			}
             #slide-container{
 				width: 60vw;

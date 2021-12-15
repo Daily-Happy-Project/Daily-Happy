@@ -14,9 +14,21 @@
 <title>회원관리</title>
 
 <style type="text/css">
+@font-face {
+    font-family: 'Uiyeun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
  table{
+ 	font-family: 'Uiyeun';
+ 	font-size: 30px;
  	border-top: none;
  	text-align: center;
+ }
+ input{
+  	font-family: 'Uiyeun';
+ 	font-size: 25px;
  }
 </style>
 </head>
@@ -65,6 +77,7 @@
 			str += "<td><input type=\"checkbox\" name=\"delUser\" value=\""+ user.getEmail() +"\"></td>";
 			str += "</tr>";
 			}
+			str += "<tr><td>&nbsp</td></tr>";
 			str += "<tr><td colspan=5><input type=\"submit\" value=\"선택한 계정 삭제\"></td></tr>";
 			str += "</table>";
 			str += "</form>";
