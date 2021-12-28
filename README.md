@@ -2,7 +2,7 @@
 ## 개발자
 ### 팀 ZIZIZU
 - [이선아(SeonA Lee)](https://github.com/princesssuna)
-- [유채연()](https://github.com/ycyeon)
+- [유채연(ChaeYeon Yu)](https://github.com/ycyeon)
 - [이민진(MinJin Lee)](https://github.com/3tPepper)
 
 ## 하루, 행복 사이트
@@ -20,6 +20,8 @@
 이 어플리케이션을 통해 행복했던 순간을 잊지 않고, 일상에 지친 사용자들에게 버팀목이 되었으면 합니다.
 
 또한 훗날, 청소년 상담이나 우울증 개선, 갱년기 여성을 대상으로 사회 복지 차원에서 활용될 수 있을 것이라 기대합니다.
+
+[발표 PPT](https://github.com/Daily-Happy-Project/Daily-Happy/blob/main/Image/하루행복%20PPT.pdf)
 
 ## 개발환경
 - Eclipse
