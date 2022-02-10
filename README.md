@@ -8,6 +8,9 @@
 ## 하루, 행복 사이트
 [하루, 행복](http://dailyhappy.kro.kr)
 
+**2022.02.11 웹 페이지 종료**
+[웹 페이지 구현 영상](https://www.notion.so/UI-c624d27297ce45f3892b0755b907725d#504616f634ac4edea3b21130e9cc2f53)
+
 ![](./Image/로고%20시작페이지.png)
 
 ## 개요
