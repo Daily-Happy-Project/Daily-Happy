@@ -8,8 +8,9 @@
 ## 하루, 행복 사이트
 [하루, 행복](http://dailyhappy.kro.kr)
 
-**2022.02.11 웹 페이지 종료**
-[웹 페이지 구현 영상](https://www.notion.so/UI-c624d27297ce45f3892b0755b907725d#504616f634ac4edea3b21130e9cc2f53)
+**<2022.02.11 웹 페이지 종료>**
+
+[웹 페이지 구현 영상](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3fd04a69-85d6-417c-b417-d2abc271c580/하루_행복_2차_제출.mov?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220210%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220210T171343Z&X-Amz-Expires=86400&X-Amz-Signature=39929ad8d732cd5df8a18ef248d52e32a90b8bbd39a3f8e96809dd82784c1085&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25ED%2595%2598%25EB%25A3%25A8%252C%2520%25ED%2596%2589%25EB%25B3%25B5%2520%25EC%25A0%259C%25EC%25B6%259C%2520%28%25EC%25B5%259C%25EC%25A2%2585%29.mov%22&x-id=GetObject)
 
 ![](./Image/로고%20시작페이지.png)
 
