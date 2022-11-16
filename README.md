@@ -30,7 +30,7 @@
 ## 개발환경
 - Eclipse
 - [Github](https://github.com/Daily-Happy-Project/Daily-Happy)
-- [Notion](https://www.notion.so/ae6e5931100b48f2ac52338c7aaa83bb)
+- [Notion](https://faithful-zoo-4d9.notion.site/ae6e5931100b48f2ac52338c7aaa83bb)
 
 ## 사용기술
 ### Backend
