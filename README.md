@@ -1,7 +1,7 @@
 # 행복한 기억 보관소 "하루, 행복" 입니다
 ## 개발자
 ### 팀 ZIZIZU
-- [이선아(SeonA Lee)](https://github.com/princesssuna)
+- [이선아(SeonA Lee)](https://github.com/seo1-say)
 - [유채연(ChaeYeon Yu)](https://github.com/ycyeon)
 - [이민진(MinJin Lee)](https://github.com/3tPepper)
 
